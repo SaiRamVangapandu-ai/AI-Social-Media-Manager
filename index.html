@@ -13,8 +13,25 @@ input::placeholder,textarea::placeholder{color:rgba(255,255,255,0.25)!important}
 select option{background:#0a0a1e;color:white}
 ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-thumb{background:rgba(99,102,241,0.3);border-radius:3px}
 @keyframes livepulse{0%,100%{opacity:1}50%{opacity:0.4}}
+@keyframes numPop{0%{opacity:0;transform:translateY(10px) scale(0.8)}60%{transform:translateY(-3px) scale(1.05)}100%{opacity:1;transform:translateY(0) scale(1)}}
 @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@keyframes slideDown{from{opacity:0;transform:translateY(-22px)}to{opacity:1;transform:none}}
+@keyframes slideUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes zoomIn{from{opacity:0;transform:scale(0.88)}to{opacity:1;transform:scale(1)}}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes shimmer{0%{background-position:200% center}100%{background-position:-200% center}}
+@keyframes countUp{from{opacity:0;transform:translateY(10px) scale(0.85)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes navPop{from{opacity:0;transform:translateY(20px) scale(0.93)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes badgePing{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+@keyframes iconPulseScale{0%,100%{transform:scale(1.15)}50%{transform:scale(1.45)}}
+@keyframes iconSpin{from{transform:rotate(0deg) scale(1.2)}to{transform:rotate(360deg) scale(1.2)}}
+@keyframes iconBounce{0%,100%{transform:translateY(0) scale(1.2)}50%{transform:translateY(-6px) scale(1.25)}}
+@keyframes iconWiggle{0%,100%{transform:rotate(0deg) scale(1.2)}25%{transform:rotate(-15deg) scale(1.25)}75%{transform:rotate(15deg) scale(1.25)}}
+@keyframes iconPop{0%{transform:scale(1.2)}50%{transform:scale(1.45)}100%{transform:scale(1.2)}}
+@keyframes iconPulseGrow{0%,100%{transform:scale(1.15)}50%{transform:scale(1.35)}}
+@keyframes orbitPing{0%{transform:scale(0.8);opacity:0.8}100%{transform:scale(2.2);opacity:0}}
+@keyframes statFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
 .live-dot{width:5px;height:5px;border-radius:50%;background:#10b981;display:inline-block;animation:livepulse 2s infinite;flex-shrink:0;will-change:opacity}
 .card{background:rgba(12,12,32,0.85);border:1px solid rgba(99,102,241,0.18);border-radius:20px;backdrop-filter:blur(24px);box-shadow:0 8px 32px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.04);padding:24px;margin-bottom:16px}
 .lbl{color:rgba(165,180,252,0.75);font-size:10.5px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px}
@@ -46,34 +63,38 @@ select option{background:#0a0a1e;color:white}
 <div style="position:fixed;bottom:-150px;right:-150px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(168,85,247,0.06),transparent 70%);pointer-events:none;z-index:0"></div>
 
 <!-- HEADER -->
-<div style="text-align:center;padding:32px 0 20px;position:relative;z-index:1">
-  <div style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(99,102,241,0.15),rgba(168,85,247,0.15));border:1px solid rgba(99,102,241,0.35);border-radius:20px;padding:4px 14px;margin-bottom:12px">
+<div style="text-align:center;padding:32px 0 20px;position:relative;z-index:1;animation:slideDown 0.7s cubic-bezier(0.22,1,0.36,1) both">
+  <div style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(99,102,241,0.15),rgba(168,85,247,0.15));border:1px solid rgba(99,102,241,0.35);border-radius:20px;padding:4px 14px;margin-bottom:12px;animation:zoomIn 0.6s 0.1s cubic-bezier(0.22,1,0.36,1) both">
     <span class="live-dot"></span>
     <span style="font-size:11px;font-weight:700;color:#a5b4fc;letter-spacing:0.1em;text-transform:uppercase">@gozenoti · Live Profile Data</span>
   </div>
-  <h1 style="font-size:30px;font-weight:900;margin:0 0 6px;background:linear-gradient(135deg,#e0e7ff 0%,#a5b4fc 35%,#c084fc 65%,#f0abfc 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.025em;line-height:1.15">AI Social Media Intelligence Platform</h1>
-  <p style="color:rgba(255,255,255,0.35);font-size:13px">Predict · Personalize · Automate · Amplify</p>
+  <h1 style="font-size:30px;font-weight:900;margin:0 0 6px;background:linear-gradient(270deg,#e0e7ff,#a5b4fc,#c084fc,#f0abfc,#a5b4fc,#e0e7ff);background-size:400% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.025em;line-height:1.15;animation:shimmer 4s linear infinite,slideDown 0.7s 0.15s cubic-bezier(0.22,1,0.36,1) both">AI Social Media Intelligence Platform</h1>
+  <p style="color:rgba(255,255,255,0.35);font-size:13px;animation:slideDown 0.6s 0.25s cubic-bezier(0.22,1,0.36,1) both">Predict · Personalize · Automate · Amplify</p>
 </div>
 
 <!-- LIVE STATS -->
 <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px;position:relative;z-index:1">
-  <div style="background:rgba(225,48,108,0.08);border:1px solid rgba(225,48,108,0.2);border-radius:14px;padding:12px;text-align:center">
-    <div style="font-size:18px;margin-bottom:3px">📸</div><div style="font-size:18px;font-weight:800">14K</div>
+  <div style="background:rgba(225,48,108,0.08);border:1px solid rgba(225,48,108,0.2);border-radius:14px;padding:12px;text-align:center;animation:countUp 0.6s 0.35s cubic-bezier(0.22,1,0.36,1) both;transition:transform 0.2s,box-shadow 0.2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 24px rgba(225,48,108,0.2)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+    <div style="font-size:18px;margin-bottom:3px">📸</div>
+    <div style="font-size:18px;font-weight:800" data-count="14" data-suffix="K">14K</div>
     <div style="font-size:10px;color:rgba(225,48,108,0.8);font-weight:600">Instagram</div>
     <div style="font-size:10px;color:rgba(255,255,255,0.35);margin-top:2px">1.2% eng · +512/mo</div>
   </div>
-  <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:14px;padding:12px;text-align:center">
-    <div style="font-size:18px;margin-bottom:3px">💼</div><div style="font-size:18px;font-weight:800">68.8K</div>
+  <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:14px;padding:12px;text-align:center;animation:countUp 0.6s 0.45s cubic-bezier(0.22,1,0.36,1) both;transition:transform 0.2s,box-shadow 0.2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 24px rgba(0,119,181,0.2)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+    <div style="font-size:18px;margin-bottom:3px">💼</div>
+    <div style="font-size:18px;font-weight:800" data-count="68.8" data-suffix="K">68.8K</div>
     <div style="font-size:10px;color:rgba(0,119,181,0.9);font-weight:600">LinkedIn</div>
     <div style="font-size:10px;color:rgba(255,255,255,0.35);margin-top:2px">2.1% eng · +2.2K/mo</div>
   </div>
-  <div style="background:rgba(29,161,242,0.08);border:1px solid rgba(29,161,242,0.2);border-radius:14px;padding:12px;text-align:center">
-    <div style="font-size:18px;margin-bottom:3px">🐦</div><div style="font-size:18px;font-weight:800">1.3K</div>
+  <div style="background:rgba(29,161,242,0.08);border:1px solid rgba(29,161,242,0.2);border-radius:14px;padding:12px;text-align:center;animation:countUp 0.6s 0.55s cubic-bezier(0.22,1,0.36,1) both;transition:transform 0.2s,box-shadow 0.2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 24px rgba(29,161,242,0.2)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+    <div style="font-size:18px;margin-bottom:3px">🐦</div>
+    <div style="font-size:18px;font-weight:800" data-count="1.3" data-suffix="K">1.3K</div>
     <div style="font-size:10px;color:rgba(29,161,242,0.9);font-weight:600">X / Twitter</div>
     <div style="font-size:10px;color:rgba(255,255,255,0.35);margin-top:2px">0.9% eng · growing</div>
   </div>
-  <div style="background:rgba(24,119,242,0.08);border:1px solid rgba(24,119,242,0.2);border-radius:14px;padding:12px;text-align:center">
-    <div style="font-size:18px;margin-bottom:3px">👥</div><div style="font-size:18px;font-weight:800">12.4K</div>
+  <div style="background:rgba(24,119,242,0.08);border:1px solid rgba(24,119,242,0.2);border-radius:14px;padding:12px;text-align:center;animation:countUp 0.6s 0.65s cubic-bezier(0.22,1,0.36,1) both;transition:transform 0.2s,box-shadow 0.2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 24px rgba(24,119,242,0.2)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+    <div style="font-size:18px;margin-bottom:3px">👥</div>
+    <div style="font-size:18px;font-weight:800" data-count="12.4" data-suffix="K">12.4K</div>
     <div style="font-size:10px;color:rgba(24,119,242,0.9);font-weight:600">Facebook</div>
     <div style="font-size:10px;color:rgba(255,255,255,0.35);margin-top:2px">1.4% eng · stable</div>
   </div>
@@ -81,52 +102,71 @@ select option{background:#0a0a1e;color:white}
 
 <!-- NAV GRID -->
 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px;position:relative;z-index:1">
+
   <button onclick="switchTab('analytics')" id="nav-analytics"
-    style="background:linear-gradient(135deg,rgba(225,48,108,0.2),rgba(236,72,153,0.15));border:1px solid rgba(225,48,108,0.35);border-radius:18px;padding:20px 14px;cursor:pointer;text-align:center;transition:all 0.2s">
-    <div style="font-size:30px;margin-bottom:8px">📊</div>
+    style="background:linear-gradient(135deg,rgba(225,48,108,0.2),rgba(236,72,153,0.15));border:1px solid rgba(225,48,108,0.35);border-radius:18px;padding:20px 14px;cursor:pointer;text-align:center;transition:transform 0.22s,box-shadow 0.22s,border-color 0.22s;animation:navPop 0.6s 0.5s cubic-bezier(0.22,1,0.36,1) both;position:relative;overflow:hidden"
+    onmouseover="this.style.transform='translateY(-6px) scale(1.03)';this.style.boxShadow='0 0 0 2px rgba(225,48,108,0.5),0 16px 40px rgba(225,48,108,0.35)';this.style.borderColor='rgba(225,48,108,0.7)';this.querySelector('.ni').style.animation='iconWiggle 0.5s ease-in-out infinite'"
+    onmouseout="this.style.transform='';this.style.boxShadow='';this.style.borderColor='rgba(225,48,108,0.35)';this.querySelector('.ni').style.animation=''">
+    <div class="ni" style="font-size:32px;margin-bottom:8px;display:inline-block;transition:transform 0.2s">📊</div>
     <div style="font-size:14px;font-weight:800;color:white;margin-bottom:4px">Analytics</div>
     <div style="font-size:11px;color:rgba(249,168,212,0.7);line-height:1.5">IG · LinkedIn · Trends</div>
     <div style="margin-top:10px;background:rgba(225,48,108,0.2);border-radius:20px;font-size:10px;font-weight:700;color:#f9a8d4;padding:3px 10px;display:inline-block">📡 Live Data</div>
   </button>
+
   <button onclick="switchTab('create')" id="nav-create"
-    style="background:linear-gradient(135deg,rgba(99,102,241,0.25),rgba(168,85,247,0.2));border:1px solid rgba(99,102,241,0.4);border-radius:18px;padding:20px 14px;cursor:pointer;text-align:center;transition:all 0.2s">
-    <div style="font-size:30px;margin-bottom:8px">🚀</div>
+    style="background:linear-gradient(135deg,rgba(99,102,241,0.25),rgba(168,85,247,0.2));border:1px solid rgba(99,102,241,0.4);border-radius:18px;padding:20px 14px;cursor:pointer;text-align:center;transition:transform 0.22s,box-shadow 0.22s,border-color 0.22s;animation:navPop 0.6s 0.6s cubic-bezier(0.22,1,0.36,1) both;position:relative;overflow:hidden"
+    onmouseover="this.style.transform='translateY(-6px) scale(1.03)';this.style.boxShadow='0 0 0 2px rgba(99,102,241,0.55),0 16px 40px rgba(99,102,241,0.35)';this.style.borderColor='rgba(99,102,241,0.75)';this.querySelector('.ni').style.animation='iconBounce 0.5s ease-in-out infinite'"
+    onmouseout="this.style.transform='';this.style.boxShadow='';this.style.borderColor='rgba(99,102,241,0.4)';this.querySelector('.ni').style.animation=''">
+    <div class="ni" style="font-size:32px;margin-bottom:8px;display:inline-block;transition:transform 0.2s">🚀</div>
     <div style="font-size:14px;font-weight:800;color:white;margin-bottom:4px">Generate Post</div>
     <div style="font-size:11px;color:rgba(165,180,252,0.7);line-height:1.5">Text · Image · Video</div>
     <div style="margin-top:10px;background:rgba(99,102,241,0.3);border-radius:20px;font-size:10px;font-weight:700;color:#a5b4fc;padding:3px 10px;display:inline-block">🆓 Free</div>
   </button>
+
   <button onclick="switchTab('predict')" id="nav-predict"
-    style="background:linear-gradient(135deg,rgba(245,158,11,0.2),rgba(239,68,68,0.15));border:1px solid rgba(245,158,11,0.35);border-radius:18px;padding:20px 14px;cursor:pointer;text-align:center;transition:all 0.2s">
-    <div style="font-size:30px;margin-bottom:8px">🔬</div>
+    style="background:linear-gradient(135deg,rgba(245,158,11,0.2),rgba(239,68,68,0.15));border:1px solid rgba(245,158,11,0.35);border-radius:18px;padding:20px 14px;cursor:pointer;text-align:center;transition:transform 0.22s,box-shadow 0.22s,border-color 0.22s;animation:navPop 0.6s 0.7s cubic-bezier(0.22,1,0.36,1) both;position:relative;overflow:hidden"
+    onmouseover="this.style.transform='translateY(-6px) scale(1.03)';this.style.boxShadow='0 0 0 2px rgba(245,158,11,0.5),0 16px 40px rgba(245,158,11,0.3)';this.style.borderColor='rgba(245,158,11,0.7)';this.querySelector('.ni').style.animation='iconPulseScale 0.6s ease-in-out infinite'"
+    onmouseout="this.style.transform='';this.style.boxShadow='';this.style.borderColor='rgba(245,158,11,0.35)';this.querySelector('.ni').style.animation=''">
+    <div class="ni" style="font-size:32px;margin-bottom:8px;display:inline-block;transition:transform 0.2s">🔬</div>
     <div style="font-size:14px;font-weight:800;color:white;margin-bottom:4px">Viral Predictor</div>
     <div style="font-size:11px;color:rgba(253,230,138,0.7);line-height:1.5">Score your posts</div>
     <div style="margin-top:10px;background:rgba(245,158,11,0.2);border-radius:20px;font-size:10px;font-weight:700;color:#fde68a;padding:3px 10px;display:inline-block">🆓 Free</div>
   </button>
+
   <button onclick="switchTab('persona')" id="nav-persona"
-    style="background:linear-gradient(135deg,rgba(139,92,246,0.2),rgba(236,72,153,0.15));border:1px solid rgba(139,92,246,0.35);border-radius:18px;padding:20px 14px;cursor:pointer;text-align:center;transition:all 0.2s">
-    <div style="font-size:30px;margin-bottom:8px">🎭</div>
+    style="background:linear-gradient(135deg,rgba(139,92,246,0.2),rgba(236,72,153,0.15));border:1px solid rgba(139,92,246,0.35);border-radius:18px;padding:20px 14px;cursor:pointer;text-align:center;transition:transform 0.22s,box-shadow 0.22s,border-color 0.22s;animation:navPop 0.6s 0.8s cubic-bezier(0.22,1,0.36,1) both;position:relative;overflow:hidden"
+    onmouseover="this.style.transform='translateY(-6px) scale(1.03)';this.style.boxShadow='0 0 0 2px rgba(139,92,246,0.55),0 16px 40px rgba(139,92,246,0.32)';this.style.borderColor='rgba(139,92,246,0.75)';this.querySelector('.ni').style.animation='iconWiggle 0.45s ease-in-out infinite'"
+    onmouseout="this.style.transform='';this.style.boxShadow='';this.style.borderColor='rgba(139,92,246,0.35)';this.querySelector('.ni').style.animation=''">
+    <div class="ni" style="font-size:32px;margin-bottom:8px;display:inline-block;transition:transform 0.2s">🎭</div>
     <div style="font-size:14px;font-weight:800;color:white;margin-bottom:4px">Persona AI</div>
     <div style="font-size:11px;color:rgba(196,181,253,0.7);line-height:1.5">4 audience variants</div>
     <div style="margin-top:10px;background:rgba(139,92,246,0.2);border-radius:20px;font-size:10px;font-weight:700;color:#c4b5fd;padding:3px 10px;display:inline-block">🆓 Free</div>
   </button>
+
   <button onclick="switchTab('repurpose')" id="nav-repurpose"
-    style="background:linear-gradient(135deg,rgba(16,185,129,0.2),rgba(99,102,241,0.15));border:1px solid rgba(16,185,129,0.35);border-radius:18px;padding:20px 14px;cursor:pointer;text-align:center;transition:all 0.2s">
-    <div style="font-size:30px;margin-bottom:8px">♻️</div>
+    style="background:linear-gradient(135deg,rgba(16,185,129,0.2),rgba(99,102,241,0.15));border:1px solid rgba(16,185,129,0.35);border-radius:18px;padding:20px 14px;cursor:pointer;text-align:center;transition:transform 0.22s,box-shadow 0.22s,border-color 0.22s;animation:navPop 0.6s 0.9s cubic-bezier(0.22,1,0.36,1) both;position:relative;overflow:hidden"
+    onmouseover="this.style.transform='translateY(-6px) scale(1.03)';this.style.boxShadow='0 0 0 2px rgba(16,185,129,0.5),0 16px 40px rgba(16,185,129,0.28)';this.style.borderColor='rgba(16,185,129,0.7)';this.querySelector('.ni').style.animation='iconSpin 0.6s linear infinite'"
+    onmouseout="this.style.transform='';this.style.boxShadow='';this.style.borderColor='rgba(16,185,129,0.35)';this.querySelector('.ni').style.animation=''">
+    <div class="ni" style="font-size:32px;margin-bottom:8px;display:inline-block;transition:transform 0.2s">♻️</div>
     <div style="font-size:14px;font-weight:800;color:white;margin-bottom:4px">Repurpose</div>
     <div style="font-size:11px;color:rgba(110,231,183,0.7);line-height:1.5">1 post → 8 formats</div>
     <div style="margin-top:10px;background:rgba(16,185,129,0.2);border-radius:20px;font-size:10px;font-weight:700;color:#6ee7b7;padding:3px 10px;display:inline-block">🆓 Free</div>
   </button>
+
   <button onclick="switchTab('calendar')" id="nav-calendar"
-    style="background:linear-gradient(135deg,rgba(59,130,246,0.2),rgba(99,102,241,0.15));border:1px solid rgba(59,130,246,0.35);border-radius:18px;padding:20px 14px;cursor:pointer;text-align:center;transition:all 0.2s">
-    <div style="font-size:30px;margin-bottom:8px">📅</div>
+    style="background:linear-gradient(135deg,rgba(59,130,246,0.2),rgba(99,102,241,0.15));border:1px solid rgba(59,130,246,0.35);border-radius:18px;padding:20px 14px;cursor:pointer;text-align:center;transition:transform 0.22s,box-shadow 0.22s,border-color 0.22s;animation:navPop 0.6s 1s cubic-bezier(0.22,1,0.36,1) both;position:relative;overflow:hidden"
+    onmouseover="this.style.transform='translateY(-6px) scale(1.03)';this.style.boxShadow='0 0 0 2px rgba(59,130,246,0.5),0 16px 40px rgba(59,130,246,0.28)';this.style.borderColor='rgba(59,130,246,0.7)';this.querySelector('.ni').style.animation='iconBounce 0.5s ease-in-out infinite'"
+    onmouseout="this.style.transform='';this.style.boxShadow='';this.style.borderColor='rgba(59,130,246,0.35)';this.querySelector('.ni').style.animation=''">
+    <div class="ni" style="font-size:32px;margin-bottom:8px;display:inline-block;transition:transform 0.2s">📅</div>
     <div style="font-size:14px;font-weight:800;color:white;margin-bottom:4px">Calendar</div>
     <div style="font-size:11px;color:rgba(147,197,253,0.7);line-height:1.5">Approve · Reject</div>
-    <div style="margin-top:10px;background:rgba(59,130,246,0.2);border-radius:20px;font-size:10px;font-weight:700;color:#93c5fd;padding:3px 10px;display:inline-block"><span id="calBadge">4</span> Pending</div>
+    <div style="margin-top:10px;background:rgba(59,130,246,0.2);border-radius:20px;font-size:10px;font-weight:700;color:#93c5fd;padding:3px 10px;display:inline-block;animation:badgePing 2s 2s ease-in-out infinite"><span id="calBadge">4</span> Pending</div>
   </button>
+
 </div>
 
 <!-- TOP ACTION BAR -->
-<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;position:relative;z-index:1">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;position:relative;z-index:1;animation:slideUp 0.6s 1.05s cubic-bezier(0.22,1,0.36,1) both">
   <button onclick="switchTab('calendar');setTimeout(toggleUploadForm,80)"
     style="background:linear-gradient(135deg,rgba(99,102,241,0.28),rgba(168,85,247,0.22));border:1px solid rgba(99,102,241,0.45);border-radius:12px;color:#a5b4fc;font-size:12.5px;font-weight:700;padding:9px 16px;cursor:pointer;display:flex;align-items:center;gap:6px;transition:all 0.2s"
     onmouseover="this.style.background='rgba(99,102,241,0.4)';this.style.color='white'"
@@ -184,10 +224,10 @@ select option{background:#0a0a1e;color:white}
     </div>
     <div class="divider"></div>
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px">
-      <div style="background:rgba(225,48,108,0.08);border:1px solid rgba(225,48,108,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">👥</div><div style="font-size:20px;font-weight:800">14K</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Followers</div><div style="font-size:10px;color:#10b981;margin-top:3px;font-weight:600">▲ +512/mo</div></div>
-      <div style="background:rgba(225,48,108,0.08);border:1px solid rgba(225,48,108,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">🖼️</div><div style="font-size:20px;font-weight:800">1,089</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Posts</div><div style="font-size:10px;color:#a5b4fc;margin-top:3px;font-weight:600">~6/week</div></div>
-      <div style="background:rgba(225,48,108,0.08);border:1px solid rgba(225,48,108,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">💬</div><div style="font-size:20px;font-weight:800">1.2%</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Eng Rate</div><div style="font-size:10px;color:#f59e0b;margin-top:3px;font-weight:600">Industry avg 3.5%</div></div>
-      <div style="background:rgba(225,48,108,0.08);border:1px solid rgba(225,48,108,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">📡</div><div style="font-size:20px;font-weight:800">18.6K</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Avg Reach</div><div style="font-size:10px;color:#10b981;margin-top:3px;font-weight:600">▲ +8% vs last mo</div></div>
+      <div style="background:rgba(225,48,108,0.08);border:1px solid rgba(225,48,108,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">👥</div><div style="font-size:20px;font-weight:800" data-count="14" data-suffix="K">14K</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Followers</div><div style="font-size:10px;color:#10b981;margin-top:3px;font-weight:600">▲ +512/mo</div></div>
+      <div style="background:rgba(225,48,108,0.08);border:1px solid rgba(225,48,108,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">🖼️</div><div style="font-size:20px;font-weight:800" data-count="1089" data-suffix="">1,089</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Posts</div><div style="font-size:10px;color:#a5b4fc;margin-top:3px;font-weight:600">~6/week</div></div>
+      <div style="background:rgba(225,48,108,0.08);border:1px solid rgba(225,48,108,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">💬</div><div style="font-size:20px;font-weight:800" data-count="1.2" data-suffix="%">1.2%</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Eng Rate</div><div style="font-size:10px;color:#f59e0b;margin-top:3px;font-weight:600">Industry avg 3.5%</div></div>
+      <div style="background:rgba(225,48,108,0.08);border:1px solid rgba(225,48,108,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">📡</div><div style="font-size:20px;font-weight:800" data-count="18.6" data-suffix="K">18.6K</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Avg Reach</div><div style="font-size:10px;color:#10b981;margin-top:3px;font-weight:600">▲ +8% vs last mo</div></div>
     </div>
     <div class="lbl">📊 Content Format Performance</div>
     <div id="ig-perf"></div>
@@ -219,10 +259,10 @@ select option{background:#0a0a1e;color:white}
     </div>
     <div class="divider"></div>
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px">
-      <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">👥</div><div style="font-size:20px;font-weight:800">68.8K</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Followers</div><div style="font-size:10px;color:#10b981;margin-top:3px;font-weight:600">▲ +2.2K/mo</div></div>
-      <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">💬</div><div style="font-size:20px;font-weight:800">2.1%</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Eng Rate</div><div style="font-size:10px;color:#10b981;margin-top:3px;font-weight:600">Top 15% industry</div></div>
-      <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">👁️</div><div style="font-size:20px;font-weight:800">124K</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Impressions/mo</div><div style="font-size:10px;color:#f59e0b;margin-top:3px;font-weight:600">▲ +18% vs prev</div></div>
-      <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">📈</div><div style="font-size:20px;font-weight:800">+2.2K</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">New/Month</div><div style="font-size:10px;color:#10b981;margin-top:3px;font-weight:600">Goal: 100K by Q4</div></div>
+      <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">👥</div><div style="font-size:20px;font-weight:800" data-count="68.8" data-suffix="K">68.8K</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Followers</div><div style="font-size:10px;color:#10b981;margin-top:3px;font-weight:600">▲ +2.2K/mo</div></div>
+      <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">💬</div><div style="font-size:20px;font-weight:800" data-count="2.1" data-suffix="%">2.1%</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Eng Rate</div><div style="font-size:10px;color:#10b981;margin-top:3px;font-weight:600">Top 15% industry</div></div>
+      <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">👁️</div><div style="font-size:20px;font-weight:800" data-count="124" data-suffix="K">124K</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Impressions/mo</div><div style="font-size:10px;color:#f59e0b;margin-top:3px;font-weight:600">▲ +18% vs prev</div></div>
+      <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">📈</div><div style="font-size:20px;font-weight:800" data-count="2.2" data-prefix="+" data-suffix="K">+2.2K</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">New/Month</div><div style="font-size:10px;color:#10b981;margin-top:3px;font-weight:600">Goal: 100K by Q4</div></div>
     </div>
     <div class="lbl">📊 Post Format Performance</div>
     <div id="li-perf"></div>
@@ -596,8 +636,25 @@ function switchTab(id){
   document.querySelectorAll('.tab-panel').forEach(function(p){p.style.display='none';});
   var panel=$('panel-'+id);
   panel.style.display='block';
+
+  // animate all cards in the panel
+  var cards=panel.querySelectorAll('.card');
+  cards.forEach(function(c,i){
+    c.style.animation='none';
+    c.offsetHeight;
+    c.style.animation='cardSlideUp 0.5s '+(i*0.1)+'s cubic-bezier(0.22,1,0.36,1) both';
+  });
+
+  // animate inner rows/items inside each panel
+  panel.querySelectorAll('.post-card,.bar-row,.insight-row,.trend-row').forEach(function(el,i){
+    el.style.animation='none';
+    el.offsetHeight;
+    el.style.animation='cardSlideUp 0.4s '+(0.08+i*0.05)+'s cubic-bezier(0.22,1,0.36,1) both';
+  });
+
   if(id==='analytics') renderAnalytics();
   if(id==='calendar')  renderCal();
+
   setTimeout(function(){
     var top=panel.getBoundingClientRect().top+window.pageYOffset-16;
     window.scrollTo({top:top,behavior:'smooth'});
@@ -612,29 +669,80 @@ async function freeAI(prompt){
 
 // ── ANALYTICS RENDER ───────────────────────────────────────────
 function renderAnalytics(){
+  // cards slide up via CSS only — no inline opacity override
+  var cards=document.querySelectorAll('#panel-analytics .card');
+  cards.forEach(function(c,i){
+    c.style.animation='none';
+    c.offsetHeight; // force reflow
+    c.style.animation='cardSlideUp 0.55s '+(i*0.13)+'s cubic-bezier(0.22,1,0.36,1) both';
+  });
+
+  // IG perf bars
   setH('ig-perf',igPerfData.map(function(d,i){
-    return '<div class="bar-row" style="animation-delay:'+i*0.07+'s"><span style="min-width:120px;font-size:12.5px;color:rgba(255,255,255,0.72);font-weight:600">'+d[0]+'</span><div class="minibar-wrap" style="height:8px"><div class="bar-fill" style="width:'+d[1]+'%;background:linear-gradient(90deg,'+d[2]+','+d[2]+'88);height:8px;box-shadow:0 0 8px '+d[2]+'44"></div></div><span style="min-width:26px;font-size:12.5px;font-weight:800;text-align:right;color:'+d[2]+'">'+d[1]+'</span><span style="font-size:10px;color:rgba(255,255,255,0.28);white-space:nowrap;min-width:160px;padding-left:4px">'+d[3]+'</span></div>';
+    return '<div class="bar-row" style="animation:cardSlideUp 0.45s '+(0.1+i*0.07)+'s cubic-bezier(0.22,1,0.36,1) both">'+
+      '<span style="min-width:120px;font-size:12.5px;color:rgba(255,255,255,0.72);font-weight:600">'+d[0]+'</span>'+
+      '<div class="minibar-wrap" style="height:8px">'+
+        '<div class="bar-fill" data-w="'+d[1]+'" style="width:0%;background:linear-gradient(90deg,'+d[2]+','+d[2]+'88);height:8px;box-shadow:0 0 8px '+d[2]+'44;transition:width 0.85s '+(0.25+i*0.09)+'s cubic-bezier(0.22,1,0.36,1)"></div>'+
+      '</div>'+
+      '<span style="min-width:26px;font-size:12.5px;font-weight:800;text-align:right;color:'+d[2]+'">'+d[1]+'</span>'+
+      '<span style="font-size:10px;color:rgba(255,255,255,0.28);white-space:nowrap;min-width:160px;padding-left:4px">'+d[3]+'</span>'+
+    '</div>';
   }).join(''));
 
-  setH('ig-tags','<div style="display:flex;flex-wrap:wrap;gap:0;margin-bottom:8px">'+igTagsData.map(function(h){
-    return '<span style="display:inline-block;margin:3px;background:'+h.color+'18;border:1px solid '+h.color+'40;border-radius:20px;font-size:11.5px;color:'+h.color+';padding:5px 12px;font-weight:700">'+h.tag+' <span style="opacity:0.5;font-size:10px">· '+h.reach+'</span></span>';
-  }).join('')+'</div><div style="font-size:10.5px;color:rgba(255,255,255,0.28)">Mix large (100K+) &amp; niche (&lt;50K) tags for best discovery</div>');
-
+  // LI perf bars
   setH('li-perf',liPerfData.map(function(d,i){
-    return '<div class="bar-row" style="animation-delay:'+i*0.07+'s"><span style="min-width:145px;font-size:12.5px;color:rgba(255,255,255,0.72);font-weight:600">'+d[0]+'</span><div class="minibar-wrap" style="height:8px"><div class="bar-fill" style="width:'+d[1]+'%;background:linear-gradient(90deg,'+d[2]+','+d[2]+'88);height:8px;box-shadow:0 0 8px '+d[2]+'44"></div></div><span style="min-width:26px;font-size:12.5px;font-weight:800;text-align:right;color:'+d[2]+'">'+d[1]+'</span><span style="font-size:10px;color:rgba(255,255,255,0.28);white-space:nowrap;min-width:145px;padding-left:4px">'+d[3]+'</span></div>';
+    return '<div class="bar-row" style="animation:cardSlideUp 0.45s '+(0.1+i*0.07)+'s cubic-bezier(0.22,1,0.36,1) both">'+
+      '<span style="min-width:145px;font-size:12.5px;color:rgba(255,255,255,0.72);font-weight:600">'+d[0]+'</span>'+
+      '<div class="minibar-wrap" style="height:8px">'+
+        '<div class="bar-fill" data-w="'+d[1]+'" style="width:0%;background:linear-gradient(90deg,'+d[2]+','+d[2]+'88);height:8px;box-shadow:0 0 8px '+d[2]+'44;transition:width 0.85s '+(0.25+i*0.09)+'s cubic-bezier(0.22,1,0.36,1)"></div>'+
+      '</div>'+
+      '<span style="min-width:26px;font-size:12.5px;font-weight:800;text-align:right;color:'+d[2]+'">'+d[1]+'</span>'+
+      '<span style="font-size:10px;color:rgba(255,255,255,0.28);white-space:nowrap;min-width:145px;padding-left:4px">'+d[3]+'</span>'+
+    '</div>';
   }).join(''));
 
+  // IG hashtags
+  setH('ig-tags','<div style="display:flex;flex-wrap:wrap;gap:0;margin-bottom:8px">'+
+    igTagsData.map(function(h,i){
+      return '<span style="display:inline-block;margin:3px;background:'+h.color+'18;border:1px solid '+h.color+'40;border-radius:20px;font-size:11.5px;color:'+h.color+';padding:5px 12px;font-weight:700;animation:tagFadeIn 0.4s '+(0.08+i*0.05)+'s cubic-bezier(0.22,1,0.36,1) both">'+
+        h.tag+' <span style="opacity:0.5;font-size:10px">· '+h.reach+'</span>'+
+      '</span>';
+    }).join('')+
+  '</div><div style="font-size:10.5px;color:rgba(255,255,255,0.28)">Mix large (100K+) &amp; niche (&lt;50K) tags for best discovery</div>');
+
+  // LI insights
   setH('li-insights',liInsightsData.map(function(ins,i){
-    return '<div class="insight-row" style="background:'+ins.bg+';border:1px solid '+ins.border+';animation-delay:'+i*0.08+'s"><span style="font-size:16px;flex-shrink:0">'+ins.icon+'</span><span style="font-size:12px;color:rgba(255,255,255,0.65);line-height:1.65">'+ins.text+'</span></div>';
+    return '<div class="insight-row" style="background:'+ins.bg+';border:1px solid '+ins.border+';animation:insightSlide 0.5s '+(0.08+i*0.1)+'s cubic-bezier(0.22,1,0.36,1) both">'+
+      '<span style="font-size:16px;flex-shrink:0">'+ins.icon+'</span>'+
+      '<span style="font-size:12px;color:rgba(255,255,255,0.65);line-height:1.65">'+ins.text+'</span>'+
+    '</div>';
   }).join(''));
 
-  setH('li-roles',liRolesData.map(function(d){
-    return '<div style="display:flex;align-items:center;gap:8px;margin-bottom:9px"><span style="font-size:11px;color:rgba(255,255,255,0.5);min-width:95px">'+d[0]+'</span><div class="minibar-wrap"><div class="bar-fill" style="width:'+d[1]+'%;background:'+d[2]+';height:6px"></div></div><span style="font-size:11px;font-weight:700;color:'+d[2]+';min-width:28px">'+d[1]+'%</span></div>';
+  // LI roles
+  setH('li-roles',liRolesData.map(function(d,i){
+    return '<div style="display:flex;align-items:center;gap:8px;margin-bottom:9px;animation:cardSlideUp 0.4s '+(0.08+i*0.07)+'s cubic-bezier(0.22,1,0.36,1) both">'+
+      '<span style="font-size:11px;color:rgba(255,255,255,0.5);min-width:95px">'+d[0]+'</span>'+
+      '<div class="minibar-wrap"><div class="bar-fill" data-w="'+d[1]+'" style="width:0%;background:'+d[2]+';height:6px;transition:width 0.8s '+(0.25+i*0.09)+'s cubic-bezier(0.22,1,0.36,1)"></div></div>'+
+      '<span style="font-size:11px;font-weight:700;color:'+d[2]+';min-width:28px">'+d[1]+'%</span>'+
+    '</div>';
   }).join(''));
 
-  setH('li-industries',liIndustriesData.map(function(d){
-    return '<div style="display:flex;align-items:center;gap:8px;margin-bottom:9px"><span style="font-size:11px;color:rgba(255,255,255,0.5);min-width:95px">'+d[0]+'</span><div class="minibar-wrap"><div class="bar-fill" style="width:'+d[1]+'%;background:'+d[2]+';height:6px"></div></div><span style="font-size:11px;font-weight:700;color:'+d[2]+';min-width:28px">'+d[1]+'%</span></div>';
+  // LI industries
+  setH('li-industries',liIndustriesData.map(function(d,i){
+    return '<div style="display:flex;align-items:center;gap:8px;margin-bottom:9px;animation:cardSlideUp 0.4s '+(0.08+i*0.07)+'s cubic-bezier(0.22,1,0.36,1) both">'+
+      '<span style="font-size:11px;color:rgba(255,255,255,0.5);min-width:95px">'+d[0]+'</span>'+
+      '<div class="minibar-wrap"><div class="bar-fill" data-w="'+d[1]+'" style="width:0%;background:'+d[2]+';height:6px;transition:width 0.8s '+(0.25+i*0.09)+'s cubic-bezier(0.22,1,0.36,1)"></div></div>'+
+      '<span style="font-size:11px;font-weight:700;color:'+d[2]+';min-width:28px">'+d[1]+'%</span>'+
+    '</div>';
   }).join(''));
+
+  // trigger all bar widths after a short paint delay
+  setTimeout(function(){
+    document.querySelectorAll('#panel-analytics .bar-fill[data-w]').forEach(function(el){
+      el.style.width=el.getAttribute('data-w')+'%';
+    });
+    observeNumbers();
+  },60);
 
   showTrends(null,'all');
 }
@@ -648,8 +756,14 @@ function showTrends(el,filter){
   var sc=function(s){return s>=85?'#ef4444':s>=75?'#f59e0b':'#10b981';};
   var data=allTrends.filter(function(t){return t.filter.indexOf(filter)>=0;});
   setH('trending',data.map(function(t,i){
-    return '<div class="trend-row" style="'+(i===data.length-1?'border-bottom:none':'')+'"><div style="width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,rgba(99,102,241,0.3),rgba(168,85,247,0.3));display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#a5b4fc;flex-shrink:0">'+(i+1)+'</div><div style="flex:1"><div style="font-size:13.5px;font-weight:700;color:white;margin-bottom:3px">'+t.topic+'</div><div style="display:flex;gap:6px;align-items:center"><span style="font-size:10px;background:rgba(255,255,255,0.05);border-radius:20px;padding:2px 8px;color:rgba(255,255,255,0.4)">'+t.tag+'</span><span style="font-size:11px;color:rgba(255,255,255,0.3)">'+t.plats.join(' ')+'</span></div></div><div style="display:flex;align-items:center;gap:10px;flex-shrink:0"><div class="minibar-wrap" style="max-width:72px"><div class="bar-fill" style="width:'+t.score+'%;background:linear-gradient(90deg,'+sc(t.score)+','+sc(t.score)+'88);height:6px"></div></div><span style="font-size:12px;font-weight:800;color:'+sc(t.score)+';min-width:26px">'+t.score+'</span><span style="font-size:12px;font-weight:700;color:#10b981;min-width:40px">'+t.delta+'</span></div></div>';
+    return '<div class="trend-row" style="'+(i===data.length-1?'border-bottom:none':'')+';opacity:0;animation:trendPop 0.45s '+(0.05+i*0.07)+'s cubic-bezier(0.22,1,0.36,1) both"><div style="width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,rgba(99,102,241,0.3),rgba(168,85,247,0.3));display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#a5b4fc;flex-shrink:0">'+(i+1)+'</div><div style="flex:1"><div style="font-size:13.5px;font-weight:700;color:white;margin-bottom:3px">'+t.topic+'</div><div style="display:flex;gap:6px;align-items:center"><span style="font-size:10px;background:rgba(255,255,255,0.05);border-radius:20px;padding:2px 8px;color:rgba(255,255,255,0.4)">'+t.tag+'</span><span style="font-size:11px;color:rgba(255,255,255,0.3)">'+t.plats.join(' ')+'</span></div></div><div style="display:flex;align-items:center;gap:10px;flex-shrink:0"><div class="minibar-wrap" style="max-width:72px"><div class="bar-fill" style="width:0%;background:linear-gradient(90deg,'+sc(t.score)+','+sc(t.score)+'88);height:6px;transition:width 0.8s '+(0.2+i*0.07)+'s cubic-bezier(0.22,1,0.36,1)" data-w="'+t.score+'"></div></div><span style="font-size:12px;font-weight:800;color:'+sc(t.score)+';min-width:26px">'+t.score+'</span><span style="font-size:12px;font-weight:700;color:#10b981;min-width:40px">'+t.delta+'</span></div></div>';
   }).join(''));
+  // trigger trend bar widths
+  setTimeout(function(){
+    document.querySelectorAll('#trending .bar-fill[data-w]').forEach(function(el){
+      el.style.width=el.getAttribute('data-w')+'%';
+    });
+  },80);
 }
 
 // ── CALENDAR ───────────────────────────────────────────────────
@@ -952,9 +1066,45 @@ async function genRepurpose(){
   doneBtn(btn,'♻️ Repurpose Into 8 Formats — Free');
 }
 
+
+
 // ── INIT ───────────────────────────────────────────────────────
+function animateNumber(el,target,duration,prefix,suffix){
+  prefix=prefix||'';suffix=suffix||'';
+  var startTime=null;
+  var isFloat=target%1!==0;
+  function ease(t){return t<0.5?2*t*t:((-2*t*t)+(4*t)-1);}
+  function step(ts){
+    if(!startTime)startTime=ts;
+    var progress=Math.min((ts-startTime)/duration,1);
+    var val=ease(progress)*target;
+    el.textContent=prefix+(isFloat?val.toFixed(1):Math.floor(val))+suffix;
+    if(progress<1)requestAnimationFrame(step);
+    else el.textContent=prefix+target+suffix;
+  }
+  requestAnimationFrame(step);
+}
+function observeNumbers(){
+  var els=document.querySelectorAll('[data-count]');
+  if(!els.length)return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        var el=entry.target;
+        var prefix=el.getAttribute('data-prefix')||'';
+        var suffix=el.getAttribute('data-suffix')||'';
+        var target=parseFloat(el.getAttribute('data-count'));
+        el.style.animation='numPop 0.5s cubic-bezier(0.22,1,0.36,1) both';
+        animateNumber(el,target,1200,prefix,suffix);
+        io.unobserve(el);
+      }
+    });
+  },{threshold:0.4});
+  els.forEach(function(el){io.observe(el);});
+}
 window.onload=function(){
   $('panel-create').style.display='block';
+  observeNumbers();
   $('freepikKey').addEventListener('input',function(){
     var has=this.value.trim().length>0;
     if($('imgKeyWarn'))$('imgKeyWarn').style.display=has?'none':'block';
