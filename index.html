@@ -126,8 +126,14 @@ select option{background:#0a0a1e;color:white}
   </button>
 </div>
 
-<div style="display:flex;justify-content:flex-end;margin-bottom:16px;position:relative;z-index:1">
-  <button onclick="switchTab('settings',this)"
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;position:relative;z-index:1">
+  <button onclick="switchTab('calendar',document.getElementById('nav-calendar'));setTimeout(()=>{toggleUploadForm()},50)"
+    style="background:linear-gradient(135deg,rgba(99,102,241,0.28),rgba(168,85,247,0.22));border:1px solid rgba(99,102,241,0.45);border-radius:12px;color:#a5b4fc;font-size:12.5px;font-weight:700;padding:9px 16px;cursor:pointer;display:flex;align-items:center;gap:6px;transition:all 0.2s"
+    onmouseover="this.style.background='rgba(99,102,241,0.38)';this.style.color='white'"
+    onmouseout="this.style.background='linear-gradient(135deg,rgba(99,102,241,0.28),rgba(168,85,247,0.22))';this.style.color='#a5b4fc'">
+    ➕ Schedule a Post
+  </button>
+  <button onclick="switchTab('settings',document.getElementById('nav-settings') || this)"
     style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:12px;color:rgba(255,255,255,0.5);font-size:12.5px;font-weight:600;padding:8px 16px;cursor:pointer;display:flex;align-items:center;gap:6px;transition:all 0.2s"
     onmouseover="this.style.background='rgba(99,102,241,0.12)';this.style.color='#a5b4fc'"
     onmouseout="this.style.background='rgba(255,255,255,0.04)';this.style.color='rgba(255,255,255,0.5)'">
@@ -498,9 +504,93 @@ select option{background:#0a0a1e;color:white}
   <div class="card">
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
       <div class="sh" style="margin-bottom:0"><div class="sh-icon">📅</div><div><div style="color:white;font-weight:700;font-size:15.5px">AI Content Calendar</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">AI-planned schedule · Approve or reject</div></div></div>
-      <span id="schCount" style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);border-radius:20px;color:#6ee7b7;font-size:11px;font-weight:700;padding:4px 12px">3 Scheduled</span>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span id="schCount" style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);border-radius:20px;color:#6ee7b7;font-size:11px;font-weight:700;padding:4px 12px">3 Scheduled</span>
+        <button onclick="toggleUploadForm()" id="uploadToggleBtn" style="background:linear-gradient(135deg,rgba(99,102,241,0.3),rgba(168,85,247,0.25));border:1px solid rgba(99,102,241,0.5);border-radius:20px;color:#a5b4fc;font-size:11px;font-weight:700;padding:5px 13px;cursor:pointer;display:flex;align-items:center;gap:5px">
+          ➕ Add Post
+        </button>
+      </div>
     </div>
     <div class="divider"></div>
+
+    <!-- Manual Upload Form -->
+    <div id="uploadForm" style="display:none;background:rgba(99,102,241,0.06);border:1px solid rgba(99,102,241,0.22);border-radius:16px;padding:18px;margin-bottom:18px;animation:fadeIn 0.25s ease">
+      <div style="font-size:13px;font-weight:800;color:white;margin-bottom:14px;display:flex;align-items:center;gap:8px">
+        <span style="width:28px;height:28px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px">📤</span>
+        Schedule a Post Manually
+      </div>
+
+      <!-- Platform + Type -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
+        <div>
+          <div class="lbl">Platform</div>
+          <select id="upPlatform" class="sel">
+            <option value="instagram">📸 Instagram</option>
+            <option value="linkedin">💼 LinkedIn</option>
+            <option value="twitter">🐦 X / Twitter</option>
+            <option value="facebook">👥 Facebook</option>
+          </select>
+        </div>
+        <div>
+          <div class="lbl">Post Type</div>
+          <select id="upType" class="sel">
+            <option>Reels</option>
+            <option>Carousel</option>
+            <option>Static Image</option>
+            <option>Video</option>
+            <option>Story</option>
+            <option>Article</option>
+            <option>Thread</option>
+            <option>Poll</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Topic / Caption -->
+      <div style="margin-bottom:12px">
+        <div class="lbl">Topic / Title</div>
+        <input id="upTopic" class="inp" placeholder="e.g. New AI Feature Launch — Zenoti Smart Scheduling"/>
+      </div>
+      <div style="margin-bottom:12px">
+        <div class="lbl">Caption</div>
+        <textarea id="upCaption" class="inp" rows="3" placeholder="Write your post caption, hashtags, CTA…"></textarea>
+      </div>
+
+      <!-- Media Upload -->
+      <div style="margin-bottom:12px">
+        <div class="lbl">Upload Image or Video</div>
+        <label for="upMedia" id="upMediaLabel" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:rgba(255,255,255,0.03);border:2px dashed rgba(99,102,241,0.3);border-radius:12px;padding:22px;cursor:pointer;transition:all 0.2s" onmouseover="this.style.borderColor='rgba(99,102,241,0.6)';this.style.background='rgba(99,102,241,0.08)'" onmouseout="this.style.borderColor='rgba(99,102,241,0.3)';this.style.background='rgba(255,255,255,0.03)'">
+          <span style="font-size:28px" id="upMediaIcon">🖼️</span>
+          <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,0.6)" id="upMediaText">Click to upload image or video</span>
+          <span style="font-size:11px;color:rgba(255,255,255,0.28)">JPG, PNG, MP4, MOV · Max 200MB</span>
+        </label>
+        <input type="file" id="upMedia" accept="image/*,video/*" style="display:none" onchange="handleMediaUpload(this)"/>
+        <div id="upMediaPreview" style="margin-top:10px;display:none"></div>
+      </div>
+
+      <!-- Schedule Date + Time -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px">
+        <div>
+          <div class="lbl">Schedule Date</div>
+          <input type="date" id="upDate" class="inp" style="color-scheme:dark"/>
+        </div>
+        <div>
+          <div class="lbl">Schedule Time</div>
+          <input type="time" id="upTime" class="inp" style="color-scheme:dark"/>
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <div style="display:flex;gap:8px">
+        <button onclick="submitUpload()" style="flex:2;background:linear-gradient(135deg,#6366f1,#8b5cf6);border:none;border-radius:11px;color:white;font-size:13px;font-weight:700;padding:11px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px">
+          📅 Add to Calendar
+        </button>
+        <button onclick="toggleUploadForm()" style="flex:1;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:11px;color:rgba(255,255,255,0.5);font-size:13px;font-weight:600;padding:11px;cursor:pointer">
+          Cancel
+        </button>
+      </div>
+    </div>
+
     <div id="calItems"></div>
   </div>
 </div>
@@ -846,39 +936,141 @@ Return ONLY valid JSON object no extra text: {"linkedin_post":"...","linkedin_ar
 }
 
 // ── CALENDAR ───────────────────────────────────────────────────
+const calMeta={
+  1:{caption:'Show how Zenoti AI booking works in 60 seconds — real salon walkthrough with before/after booking flow.',hashtags:'#GoZenoti #AIBooking #SalonTech',cta:'Link in bio to book a free demo 👆'},
+  2:{caption:'The beauty industry is at an inflection point. AI isn\'t replacing stylists — it\'s giving them back 10+ hours a week. Here\'s what the next 3 years look like.',hashtags:'#SalonTech #BeautyAndWellness #FutureOfWork',cta:'What\'s your take? Drop a comment 👇'},
+  3:{caption:'5 wellness trends reshaping spas & salons in 2026. Thread 🧵\n\n1/ AI-powered booking → zero no-shows\n2/ Personalized treatment plans\n3/ Real-time inventory management\n4/ Client retention automation\n5/ Revenue forecasting dashboards',hashtags:'#WellnessTrends #SpaLife #MedSpa',cta:'Follow for more industry insights'},
+  4:{caption:'Swipe to see real client transformations powered by Zenoti. Our partners report 40% more repeat bookings after going live.',hashtags:'#BeforeAndAfter #SalonLife #GoZenoti',cta:'DM us to see your salon\'s potential 💬'},
+  5:{caption:'🔴 LIVE WEBINAR: How top salons are using AI to 2x revenue without hiring more staff. Join 500+ salon owners this Thursday.',hashtags:'#Webinar #SalonBusiness #BeautyTech',cta:'Register free — link in bio'},
+  6:{caption:'"We reduced no-shows by 67% in 30 days." — Maria, Owner of Luxe Salon & Spa. Real results. Real salon. Powered by Zenoti.',hashtags:'#CustomerSuccess #SalonOwner #GoZenoti',cta:'Read the full story → link in bio'},
+  7:{caption:'Quick poll for salon owners 👇\n\nWhat\'s your biggest challenge right now?',hashtags:'#SalonOwner #SmallBusiness #BeautyBiz',cta:'Vote & share with a fellow salon owner!'},
+};
+
 function renderCal(){
   const sch=S.cal.filter(x=>x.st==='scheduled').length;
+  const pend=S.cal.filter(x=>x.st==='pending').length;
   $('schCount').textContent=`${sch} Scheduled`;
-  $('calBadge').textContent=S.cal.filter(x=>x.st==='pending').length;
+  $('calBadge').textContent=pend;
   const sc=s=>s>=85?'#10b981':s>=70?'#f59e0b':'#ef4444';
-  setH('calItems',S.cal.map(item=>{
+  const scoreLabel=s=>s>=85?'High Potential':s>=70?'Good':'Needs Work';
+
+  setH('calItems', S.cal.map(item=>{
     const isSch=item.st==='scheduled';
-    return `<div style="background:rgba(255,255,255,0.025);border:1px solid ${isSch?'rgba(16,185,129,0.25)':'rgba(255,255,255,0.07)'};border-radius:14px;padding:16px;display:flex;align-items:center;gap:14px;margin-bottom:10px">
-      <div style="width:42px;height:42px;border-radius:12px;background:${PC[item.pl]}28;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">${PI[item.pl]}</div>
-      <div style="flex:1;min-width:0">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
-          <span style="font-size:13.5px;font-weight:700;color:white">${item.topic}</span>
-          <span style="font-size:10px;background:${PC[item.pl]}22;color:${PC[item.pl]};padding:2px 8px;border-radius:20px;font-weight:600">${item.type}</span>
-        </div>
-        <div style="display:flex;gap:12px;align-items:center">
-          <span style="font-size:11.5px;color:rgba(255,255,255,0.38)">⏰ ${item.time}</span>
-          <div style="display:flex;align-items:center;gap:5px;max-width:100px">
-            <div class="minibar-wrap"><div class="minibar-fill" style="width:${item.score}%;background:linear-gradient(90deg,${sc(item.score)},${sc(item.score)}99)"></div></div>
-            <span style="font-size:11px;font-weight:700;color:white;min-width:22px">${item.score}</span>
+    const meta=calMeta[item.id]||{};
+    const scoreColor=sc(item.score);
+    return `
+    <div style="background:rgba(255,255,255,0.025);border:1px solid ${isSch?'rgba(16,185,129,0.22)':'rgba(255,255,255,0.08)'};border-radius:16px;padding:18px;margin-bottom:12px;animation:fadeIn 0.3s ease">
+
+      <!-- Top row: platform icon + topic + type + time + score -->
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+        <div style="width:44px;height:44px;border-radius:13px;background:${PC[item.pl]}22;border:1px solid ${PC[item.pl]}44;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0">${PI[item.pl]}</div>
+        <div style="flex:1;min-width:0">
+          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:5px">
+            <span style="font-size:14px;font-weight:800;color:white">${item.topic}</span>
+            <span style="font-size:10.5px;background:${PC[item.pl]}22;color:${PC[item.pl]};padding:2px 9px;border-radius:20px;font-weight:700;flex-shrink:0">${item.type}</span>
+            ${isSch?`<span style="font-size:10px;background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);color:#6ee7b7;padding:2px 9px;border-radius:20px;font-weight:700">✓ Approved</span>`:''}
+          </div>
+          <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+            <span style="font-size:11.5px;color:rgba(255,255,255,0.4);display:flex;align-items:center;gap:4px">⏰ ${item.time}</span>
+            <span style="font-size:11.5px;color:rgba(255,255,255,0.4)">${PL[item.pl]}</span>
+            <div style="display:flex;align-items:center;gap:6px">
+              <div style="width:6px;height:6px;border-radius:50%;background:${scoreColor}"></div>
+              <span style="font-size:11px;font-weight:700;color:${scoreColor}">${item.score} — ${scoreLabel(item.score)}</span>
+            </div>
           </div>
         </div>
       </div>
+
+      <!-- Score bar -->
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+        <span style="font-size:10px;color:rgba(255,255,255,0.3);font-weight:600;white-space:nowrap">AI SCORE</span>
+        <div class="minibar-wrap"><div class="minibar-fill" style="width:${item.score}%;background:linear-gradient(90deg,${scoreColor},${scoreColor}88)"></div></div>
+        <span style="font-size:11px;font-weight:800;color:${scoreColor};min-width:28px">${item.score}/100</span>
+      </div>
+
+      <!-- Content preview -->
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:13px 15px;margin-bottom:12px">
+        <div style="font-size:10px;color:rgba(255,255,255,0.3);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:7px">📝 Caption Preview</div>
+        <div style="font-size:12.5px;color:rgba(255,255,255,0.72);line-height:1.7;white-space:pre-wrap;margin-bottom:8px">${meta.caption||'No caption set.'}</div>
+        <div style="font-size:11px;color:rgba(165,180,252,0.6);margin-bottom:6px">${meta.hashtags||''}</div>
+        <div style="font-size:11.5px;color:#6ee7b7;font-weight:600">${meta.cta||''}</div>
+      </div>
+
+      <!-- Action buttons -->
       ${isSch
-        ?`<span style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);border-radius:20px;color:#6ee7b7;font-size:11px;font-weight:700;padding:5px 12px;flex-shrink:0">✓ Approved</span>`
-        :`<div style="display:flex;gap:8px;flex-shrink:0">
-           <button onclick="appCal(${item.id})" style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);border-radius:9px;color:#6ee7b7;font-size:12px;font-weight:700;padding:6px 14px;cursor:pointer">✓ Approve</button>
-           <button onclick="rejCal(${item.id})" style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.25);border-radius:9px;color:#fca5a5;font-size:12px;font-weight:700;padding:6px 14px;cursor:pointer">✕</button>
-         </div>`}
+        ?`<div style="display:flex;gap:8px">
+            <button onclick="rejCal(${item.id})" style="flex:1;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.22);border-radius:10px;color:#fca5a5;font-size:12.5px;font-weight:700;padding:9px;cursor:pointer">✕ Remove</button>
+          </div>`
+        :`<div style="display:flex;gap:8px">
+            <button onclick="appCal(${item.id})" style="flex:2;background:linear-gradient(135deg,rgba(16,185,129,0.2),rgba(16,185,129,0.12));border:1px solid rgba(16,185,129,0.35);border-radius:10px;color:#6ee7b7;font-size:12.5px;font-weight:700;padding:10px;cursor:pointer;transition:all 0.15s" onmouseover="this.style.background='rgba(16,185,129,0.28)'" onmouseout="this.style.background='linear-gradient(135deg,rgba(16,185,129,0.2),rgba(16,185,129,0.12))'">✓ Approve & Schedule</button>
+            <button onclick="rejCal(${item.id})" style="flex:1;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.22);border-radius:10px;color:#fca5a5;font-size:12.5px;font-weight:700;padding:10px;cursor:pointer;transition:all 0.15s" onmouseover="this.style.background='rgba(239,68,68,0.18)'" onmouseout="this.style.background='rgba(239,68,68,0.08)'">✕ Reject</button>
+          </div>`
+      }
     </div>`;
   }).join(''));
 }
 function appCal(id){S.cal=S.cal.map(x=>x.id===id?{...x,st:'scheduled'}:x);renderCal();}
 function rejCal(id){S.cal=S.cal.filter(x=>x.id!==id);renderCal();}
+
+function toggleUploadForm(){
+  const f=$('uploadForm');
+  const open=f.style.display==='block';
+  f.style.display=open?'none':'block';
+  // set default date/time to tomorrow 9am
+  if(!open){
+    const t=new Date();t.setDate(t.getDate()+1);
+    $('upDate').value=t.toISOString().split('T')[0];
+    $('upTime').value='09:00';
+  }
+}
+
+function handleMediaUpload(input){
+  const file=input.files[0];
+  if(!file) return;
+  const isVideo=file.type.startsWith('video/');
+  const url=URL.createObjectURL(file);
+  $('upMediaIcon').textContent=isVideo?'🎬':'🖼️';
+  $('upMediaText').textContent=file.name+' ('+Math.round(file.size/1024/1024*10)/10+' MB)';
+  const prev=$('upMediaPreview');
+  prev.style.display='block';
+  prev.innerHTML=isVideo
+    ?`<video src="${url}" controls style="width:100%;border-radius:10px;border:1px solid rgba(99,102,241,0.3);max-height:200px"></video>`
+    :`<img src="${url}" style="width:100%;border-radius:10px;border:1px solid rgba(99,102,241,0.3);max-height:200px;object-fit:cover"/>`;
+}
+
+function submitUpload(){
+  const topic=getV('upTopic');
+  const caption=getV('upCaption');
+  const pl=$('upPlatform').value;
+  const type=$('upType').value;
+  const date=$('upDate').value;
+  const time=$('upTime').value;
+  const file=$('upMedia').files[0];
+  if(!topic){alert('Please enter a topic/title');return;}
+  if(!date||!time){alert('Please set a schedule date and time');return;}
+  // format time label
+  const d=new Date(date+'T'+time);
+  const days=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const hr=d.getHours();
+  const ampm=hr>=12?'pm':'am';
+  const h12=hr%12||12;
+  const timeLabel=`${days[d.getDay()]} ${h12}${d.getMinutes()?':'+String(d.getMinutes()).padStart(2,'0'):''}${ampm}`;
+  const newId=Date.now();
+  // add to calMeta
+  calMeta[newId]={
+    caption:caption||'No caption provided.',
+    hashtags:'#GoZenoti #BeautyAndWellness #SalonTech',
+    cta:''
+  };
+  S.cal.push({id:newId,pl,type,topic,score:75,time:timeLabel,st:'pending',manual:true,hasMedia:!!file});
+  // reset form
+  $('upTopic').value='';$('upCaption').value='';$('upMedia').value='';
+  $('upMediaPreview').style.display='none';
+  $('upMediaIcon').textContent='🖼️';
+  $('upMediaText').textContent='Click to upload image or video';
+  toggleUploadForm();
+  renderCal();
+}
 
 // ── INIT ───────────────────────────────────────────────────────
 window.onload=()=>{
