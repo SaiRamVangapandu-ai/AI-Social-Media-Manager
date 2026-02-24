@@ -954,7 +954,7 @@ async function genRepurpose(){
 
 // ── INIT ───────────────────────────────────────────────────────
 window.onload=function(){
-  switchTab('create');
+  $('panel-create').style.display='block';
   $('freepikKey').addEventListener('input',function(){
     var has=this.value.trim().length>0;
     if($('imgKeyWarn'))$('imgKeyWarn').style.display=has?'none':'block';
