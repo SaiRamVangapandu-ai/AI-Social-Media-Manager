@@ -13,10 +13,9 @@ input::placeholder,textarea::placeholder{color:rgba(255,255,255,0.25)!important}
 select option{background:#0a0a1e;color:white}
 ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-thumb{background:rgba(99,102,241,0.3);border-radius:3px}
 @keyframes livepulse{0%,100%{opacity:1}50%{opacity:0.4}}
-.live-dot{width:5px;height:5px;border-radius:50%;background:#10b981;display:inline-block;animation:livepulse 2s infinite;flex-shrink:0;will-change:opacity}
 @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-@keyframes barGrow{from{width:0}to{width:var(--w)}}
+.live-dot{width:5px;height:5px;border-radius:50%;background:#10b981;display:inline-block;animation:livepulse 2s infinite;flex-shrink:0;will-change:opacity}
 .card{background:rgba(12,12,32,0.85);border:1px solid rgba(99,102,241,0.18);border-radius:20px;backdrop-filter:blur(24px);box-shadow:0 8px 32px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.04);padding:24px;margin-bottom:16px}
 .lbl{color:rgba(165,180,252,0.75);font-size:10.5px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px}
 .inp{width:100%;background:rgba(255,255,255,0.035);border:1px solid rgba(99,102,241,0.18);border-radius:12px;color:rgba(255,255,255,0.9);font-size:14px;padding:11px 15px;outline:none;transition:border-color 0.2s;resize:none}
@@ -82,42 +81,42 @@ select option{background:#0a0a1e;color:white}
 
 <!-- NAV GRID -->
 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px;position:relative;z-index:1">
-  <button onclick="switchTab('analytics',this)" id="nav-analytics"
+  <button onclick="switchTab('analytics')" id="nav-analytics"
     style="background:linear-gradient(135deg,rgba(225,48,108,0.2),rgba(236,72,153,0.15));border:1px solid rgba(225,48,108,0.35);border-radius:18px;padding:20px 14px;cursor:pointer;text-align:center;transition:all 0.2s">
     <div style="font-size:30px;margin-bottom:8px">📊</div>
     <div style="font-size:14px;font-weight:800;color:white;margin-bottom:4px">Analytics</div>
     <div style="font-size:11px;color:rgba(249,168,212,0.7);line-height:1.5">IG · LinkedIn · Trends</div>
     <div style="margin-top:10px;background:rgba(225,48,108,0.2);border-radius:20px;font-size:10px;font-weight:700;color:#f9a8d4;padding:3px 10px;display:inline-block">📡 Live Data</div>
   </button>
-  <button onclick="switchTab('create',this)" id="nav-create"
+  <button onclick="switchTab('create')" id="nav-create"
     style="background:linear-gradient(135deg,rgba(99,102,241,0.25),rgba(168,85,247,0.2));border:1px solid rgba(99,102,241,0.4);border-radius:18px;padding:20px 14px;cursor:pointer;text-align:center;transition:all 0.2s">
     <div style="font-size:30px;margin-bottom:8px">🚀</div>
     <div style="font-size:14px;font-weight:800;color:white;margin-bottom:4px">Generate Post</div>
     <div style="font-size:11px;color:rgba(165,180,252,0.7);line-height:1.5">Text · Image · Video</div>
     <div style="margin-top:10px;background:rgba(99,102,241,0.3);border-radius:20px;font-size:10px;font-weight:700;color:#a5b4fc;padding:3px 10px;display:inline-block">🆓 Free</div>
   </button>
-  <button onclick="switchTab('predict',this)" id="nav-predict"
+  <button onclick="switchTab('predict')" id="nav-predict"
     style="background:linear-gradient(135deg,rgba(245,158,11,0.2),rgba(239,68,68,0.15));border:1px solid rgba(245,158,11,0.35);border-radius:18px;padding:20px 14px;cursor:pointer;text-align:center;transition:all 0.2s">
     <div style="font-size:30px;margin-bottom:8px">🔬</div>
     <div style="font-size:14px;font-weight:800;color:white;margin-bottom:4px">Viral Predictor</div>
     <div style="font-size:11px;color:rgba(253,230,138,0.7);line-height:1.5">Score your posts</div>
     <div style="margin-top:10px;background:rgba(245,158,11,0.2);border-radius:20px;font-size:10px;font-weight:700;color:#fde68a;padding:3px 10px;display:inline-block">🆓 Free</div>
   </button>
-  <button onclick="switchTab('persona',this)" id="nav-persona"
+  <button onclick="switchTab('persona')" id="nav-persona"
     style="background:linear-gradient(135deg,rgba(139,92,246,0.2),rgba(236,72,153,0.15));border:1px solid rgba(139,92,246,0.35);border-radius:18px;padding:20px 14px;cursor:pointer;text-align:center;transition:all 0.2s">
     <div style="font-size:30px;margin-bottom:8px">🎭</div>
     <div style="font-size:14px;font-weight:800;color:white;margin-bottom:4px">Persona AI</div>
     <div style="font-size:11px;color:rgba(196,181,253,0.7);line-height:1.5">4 audience variants</div>
     <div style="margin-top:10px;background:rgba(139,92,246,0.2);border-radius:20px;font-size:10px;font-weight:700;color:#c4b5fd;padding:3px 10px;display:inline-block">🆓 Free</div>
   </button>
-  <button onclick="switchTab('repurpose',this)" id="nav-repurpose"
+  <button onclick="switchTab('repurpose')" id="nav-repurpose"
     style="background:linear-gradient(135deg,rgba(16,185,129,0.2),rgba(99,102,241,0.15));border:1px solid rgba(16,185,129,0.35);border-radius:18px;padding:20px 14px;cursor:pointer;text-align:center;transition:all 0.2s">
     <div style="font-size:30px;margin-bottom:8px">♻️</div>
     <div style="font-size:14px;font-weight:800;color:white;margin-bottom:4px">Repurpose</div>
     <div style="font-size:11px;color:rgba(110,231,183,0.7);line-height:1.5">1 post → 8 formats</div>
     <div style="margin-top:10px;background:rgba(16,185,129,0.2);border-radius:20px;font-size:10px;font-weight:700;color:#6ee7b7;padding:3px 10px;display:inline-block">🆓 Free</div>
   </button>
-  <button onclick="switchTab('calendar',this)" id="nav-calendar"
+  <button onclick="switchTab('calendar')" id="nav-calendar"
     style="background:linear-gradient(135deg,rgba(59,130,246,0.2),rgba(99,102,241,0.15));border:1px solid rgba(59,130,246,0.35);border-radius:18px;padding:20px 14px;cursor:pointer;text-align:center;transition:all 0.2s">
     <div style="font-size:30px;margin-bottom:8px">📅</div>
     <div style="font-size:14px;font-weight:800;color:white;margin-bottom:4px">Calendar</div>
@@ -126,14 +125,15 @@ select option{background:#0a0a1e;color:white}
   </button>
 </div>
 
+<!-- TOP ACTION BAR -->
 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;position:relative;z-index:1">
-  <button onclick="switchTab('calendar',document.getElementById('nav-calendar'));setTimeout(()=>{toggleUploadForm()},50)"
+  <button onclick="switchTab('calendar');setTimeout(toggleUploadForm,80)"
     style="background:linear-gradient(135deg,rgba(99,102,241,0.28),rgba(168,85,247,0.22));border:1px solid rgba(99,102,241,0.45);border-radius:12px;color:#a5b4fc;font-size:12.5px;font-weight:700;padding:9px 16px;cursor:pointer;display:flex;align-items:center;gap:6px;transition:all 0.2s"
-    onmouseover="this.style.background='rgba(99,102,241,0.38)';this.style.color='white'"
+    onmouseover="this.style.background='rgba(99,102,241,0.4)';this.style.color='white'"
     onmouseout="this.style.background='linear-gradient(135deg,rgba(99,102,241,0.28),rgba(168,85,247,0.22))';this.style.color='#a5b4fc'">
     ➕ Schedule a Post
   </button>
-  <button onclick="switchTab('settings',document.getElementById('nav-settings') || this)"
+  <button onclick="switchTab('settings')"
     style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:12px;color:rgba(255,255,255,0.5);font-size:12.5px;font-weight:600;padding:8px 16px;cursor:pointer;display:flex;align-items:center;gap:6px;transition:all 0.2s"
     onmouseover="this.style.background='rgba(99,102,241,0.12)';this.style.color='#a5b4fc'"
     onmouseout="this.style.background='rgba(255,255,255,0.04)';this.style.color='rgba(255,255,255,0.5)'">
@@ -174,73 +174,30 @@ select option{background:#0a0a1e;color:white}
 
 <!-- ══ ANALYTICS ══ -->
 <div id="panel-analytics" class="tab-panel" style="display:none;position:relative;z-index:1">
-
-  <!-- Instagram Card -->
   <div class="card" style="box-shadow:0 0 40px rgba(225,48,108,0.1),0 8px 32px rgba(0,0,0,0.4)">
     <div class="sh">
       <div class="sh-icon" style="background:linear-gradient(135deg,rgba(225,48,108,0.3),rgba(236,72,153,0.2));border-color:rgba(225,48,108,0.4)">📸</div>
-      <div>
-        <div style="color:white;font-weight:700;font-size:15.5px">@gozenoti Instagram</div>
-        <div style="color:rgba(255,255,255,0.38);font-size:11.5px">14K followers · 1,089 posts · 1.2% engagement</div>
-      </div>
+      <div><div style="color:white;font-weight:700;font-size:15.5px">@gozenoti Instagram</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">14K followers · 1,089 posts · 1.2% engagement</div></div>
       <div style="margin-left:auto;display:flex;align-items:center;gap:5px;background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.3);border-radius:20px;padding:4px 10px">
-        <span class="live-dot"></span>
-        <span style="font-size:10px;font-weight:700;color:#6ee7b7">Live</span>
+        <span class="live-dot"></span><span style="font-size:10px;font-weight:700;color:#6ee7b7">Live</span>
       </div>
     </div>
     <div class="divider"></div>
-
-    <!-- IG stat cards -->
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px">
-      <div style="background:rgba(225,48,108,0.08);border:1px solid rgba(225,48,108,0.2);border-radius:14px;padding:14px;text-align:center">
-        <div style="font-size:18px;margin-bottom:4px">👥</div><div style="font-size:20px;font-weight:800">14K</div>
-        <div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Followers</div>
-        <div style="font-size:10px;color:#10b981;margin-top:3px;font-weight:600">▲ +512/mo</div>
-      </div>
-      <div style="background:rgba(225,48,108,0.08);border:1px solid rgba(225,48,108,0.2);border-radius:14px;padding:14px;text-align:center">
-        <div style="font-size:18px;margin-bottom:4px">🖼️</div><div style="font-size:20px;font-weight:800">1,089</div>
-        <div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Posts</div>
-        <div style="font-size:10px;color:#a5b4fc;margin-top:3px;font-weight:600">~6/week</div>
-      </div>
-      <div style="background:rgba(225,48,108,0.08);border:1px solid rgba(225,48,108,0.2);border-radius:14px;padding:14px;text-align:center">
-        <div style="font-size:18px;margin-bottom:4px">💬</div><div style="font-size:20px;font-weight:800">1.2%</div>
-        <div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Eng Rate</div>
-        <div style="font-size:10px;color:#f59e0b;margin-top:3px;font-weight:600">Industry avg 3.5%</div>
-      </div>
-      <div style="background:rgba(225,48,108,0.08);border:1px solid rgba(225,48,108,0.2);border-radius:14px;padding:14px;text-align:center">
-        <div style="font-size:18px;margin-bottom:4px">📡</div><div style="font-size:20px;font-weight:800">18.6K</div>
-        <div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Avg Reach</div>
-        <div style="font-size:10px;color:#10b981;margin-top:3px;font-weight:600">▲ +8% vs last mo</div>
-      </div>
+      <div style="background:rgba(225,48,108,0.08);border:1px solid rgba(225,48,108,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">👥</div><div style="font-size:20px;font-weight:800">14K</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Followers</div><div style="font-size:10px;color:#10b981;margin-top:3px;font-weight:600">▲ +512/mo</div></div>
+      <div style="background:rgba(225,48,108,0.08);border:1px solid rgba(225,48,108,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">🖼️</div><div style="font-size:20px;font-weight:800">1,089</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Posts</div><div style="font-size:10px;color:#a5b4fc;margin-top:3px;font-weight:600">~6/week</div></div>
+      <div style="background:rgba(225,48,108,0.08);border:1px solid rgba(225,48,108,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">💬</div><div style="font-size:20px;font-weight:800">1.2%</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Eng Rate</div><div style="font-size:10px;color:#f59e0b;margin-top:3px;font-weight:600">Industry avg 3.5%</div></div>
+      <div style="background:rgba(225,48,108,0.08);border:1px solid rgba(225,48,108,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">📡</div><div style="font-size:20px;font-weight:800">18.6K</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Avg Reach</div><div style="font-size:10px;color:#10b981;margin-top:3px;font-weight:600">▲ +8% vs last mo</div></div>
     </div>
-
-    <!-- IG Content Format Performance -->
     <div class="lbl">📊 Content Format Performance</div>
     <div id="ig-perf"></div>
-
     <div class="sec-div"></div>
-
-    <!-- IG Hashtags -->
     <div class="lbl">🏷️ Top Performing Hashtags</div>
     <div id="ig-tags"></div>
-
-    <!-- IG best time + growth -->
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px">
-      <div style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.2);border-radius:12px;padding:14px">
-        <div style="font-size:11px;color:#a5b4fc;font-weight:700;margin-bottom:6px">⏰ Best Posting Time</div>
-        <div style="font-size:14px;color:white;font-weight:700">Mon / Wed / Fri</div>
-        <div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px">6:00 PM – 8:00 PM</div>
-        <div style="font-size:10.5px;color:#10b981;margin-top:6px;font-weight:600">+34% reach vs off-peak</div>
-      </div>
-      <div style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:14px">
-        <div style="font-size:11px;color:#6ee7b7;font-weight:700;margin-bottom:6px">📈 Monthly Growth</div>
-        <div style="font-size:14px;color:white;font-weight:700">+3.8% · +512 followers</div>
-        <div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px">Save rate 4.2% · Stories 82% complete</div>
-        <div style="font-size:10.5px;color:#10b981;margin-top:6px;font-weight:600">Goal: 20K by Q3 2026</div>
-      </div>
+      <div style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.2);border-radius:12px;padding:14px"><div style="font-size:11px;color:#a5b4fc;font-weight:700;margin-bottom:6px">⏰ Best Posting Time</div><div style="font-size:14px;color:white;font-weight:700">Mon / Wed / Fri</div><div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px">6:00 PM – 8:00 PM</div><div style="font-size:10.5px;color:#10b981;margin-top:6px;font-weight:600">+34% reach vs off-peak</div></div>
+      <div style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:14px"><div style="font-size:11px;color:#6ee7b7;font-weight:700;margin-bottom:6px">📈 Monthly Growth</div><div style="font-size:14px;color:white;font-weight:700">+3.8% · +512 followers</div><div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px">Save rate 4.2% · Stories 82% complete</div><div style="font-size:10.5px;color:#10b981;margin-top:6px;font-weight:600">Goal: 20K by Q3 2026</div></div>
     </div>
-
-    <!-- AI Content Mix -->
     <div style="margin-top:14px;background:linear-gradient(135deg,rgba(225,48,108,0.07),rgba(99,102,241,0.07));border:1px solid rgba(225,48,108,0.18);border-radius:14px;padding:16px">
       <div style="font-size:11px;color:#f9a8d4;font-weight:700;margin-bottom:10px">🤖 AI Recommended Content Mix</div>
       <div style="display:flex;gap:8px;flex-wrap:wrap">
@@ -252,115 +209,58 @@ select option{background:#0a0a1e;color:white}
     </div>
   </div>
 
-  <!-- LinkedIn Card -->
   <div class="card" style="box-shadow:0 0 40px rgba(0,119,181,0.1),0 8px 32px rgba(0,0,0,0.4)">
     <div class="sh">
       <div class="sh-icon" style="background:linear-gradient(135deg,rgba(0,119,181,0.3),rgba(0,119,181,0.15));border-color:rgba(0,119,181,0.4)">💼</div>
-      <div>
-        <div style="color:white;font-weight:700;font-size:15.5px">Zenoti LinkedIn</div>
-        <div style="color:rgba(255,255,255,0.38);font-size:11.5px">68.8K followers · 862 employees · 30K+ customers · $1.5B valuation</div>
-      </div>
+      <div><div style="color:white;font-weight:700;font-size:15.5px">Zenoti LinkedIn</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">68.8K followers · 862 employees · 30K+ customers · $1.5B valuation</div></div>
       <div style="margin-left:auto;display:flex;align-items:center;gap:5px;background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.3);border-radius:20px;padding:4px 10px">
-        <span class="live-dot"></span>
-        <span style="font-size:10px;font-weight:700;color:#6ee7b7">Live</span>
+        <span class="live-dot"></span><span style="font-size:10px;font-weight:700;color:#6ee7b7">Live</span>
       </div>
     </div>
     <div class="divider"></div>
-
-    <!-- LI stat cards -->
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px">
-      <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:14px;padding:14px;text-align:center">
-        <div style="font-size:18px;margin-bottom:4px">👥</div><div style="font-size:20px;font-weight:800">68.8K</div>
-        <div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Followers</div>
-        <div style="font-size:10px;color:#10b981;margin-top:3px;font-weight:600">▲ +2.2K/mo</div>
-      </div>
-      <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:14px;padding:14px;text-align:center">
-        <div style="font-size:18px;margin-bottom:4px">💬</div><div style="font-size:20px;font-weight:800">2.1%</div>
-        <div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Eng Rate</div>
-        <div style="font-size:10px;color:#10b981;margin-top:3px;font-weight:600">Top 15% industry</div>
-      </div>
-      <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:14px;padding:14px;text-align:center">
-        <div style="font-size:18px;margin-bottom:4px">👁️</div><div style="font-size:20px;font-weight:800">124K</div>
-        <div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Impressions/mo</div>
-        <div style="font-size:10px;color:#f59e0b;margin-top:3px;font-weight:600">▲ +18% vs prev</div>
-      </div>
-      <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:14px;padding:14px;text-align:center">
-        <div style="font-size:18px;margin-bottom:4px">📈</div><div style="font-size:20px;font-weight:800">+2.2K</div>
-        <div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">New/Month</div>
-        <div style="font-size:10px;color:#10b981;margin-top:3px;font-weight:600">Goal: 100K by Q4</div>
-      </div>
+      <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">👥</div><div style="font-size:20px;font-weight:800">68.8K</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Followers</div><div style="font-size:10px;color:#10b981;margin-top:3px;font-weight:600">▲ +2.2K/mo</div></div>
+      <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">💬</div><div style="font-size:20px;font-weight:800">2.1%</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Eng Rate</div><div style="font-size:10px;color:#10b981;margin-top:3px;font-weight:600">Top 15% industry</div></div>
+      <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">👁️</div><div style="font-size:20px;font-weight:800">124K</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Impressions/mo</div><div style="font-size:10px;color:#f59e0b;margin-top:3px;font-weight:600">▲ +18% vs prev</div></div>
+      <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">📈</div><div style="font-size:20px;font-weight:800">+2.2K</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">New/Month</div><div style="font-size:10px;color:#10b981;margin-top:3px;font-weight:600">Goal: 100K by Q4</div></div>
     </div>
-
-    <!-- LI Post Format Performance -->
     <div class="lbl">📊 Post Format Performance</div>
     <div id="li-perf"></div>
-
     <div class="sec-div"></div>
-
-    <!-- LI Algorithm Insights -->
     <div class="lbl">⚡ LinkedIn 2025 Algorithm Insights</div>
     <div id="li-insights"></div>
-
     <div class="sec-div"></div>
-
-    <!-- LI Audience Breakdown -->
     <div class="lbl">👥 Audience Breakdown</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:4px">
-      <div>
-        <div style="font-size:10px;color:rgba(255,255,255,0.3);font-weight:600;margin-bottom:8px">BY ROLE</div>
-        <div id="li-roles"></div>
-      </div>
-      <div>
-        <div style="font-size:10px;color:rgba(255,255,255,0.3);font-weight:600;margin-bottom:8px">BY INDUSTRY</div>
-        <div id="li-industries"></div>
-      </div>
+      <div><div style="font-size:10px;color:rgba(255,255,255,0.3);font-weight:600;margin-bottom:8px">BY ROLE</div><div id="li-roles"></div></div>
+      <div><div style="font-size:10px;color:rgba(255,255,255,0.3);font-weight:600;margin-bottom:8px">BY INDUSTRY</div><div id="li-industries"></div></div>
     </div>
-
-    <!-- LI best time -->
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px">
-      <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:12px;padding:14px">
-        <div style="font-size:11px;color:#93c5fd;font-weight:700;margin-bottom:6px">⏰ Best Posting Time</div>
-        <div style="font-size:14px;color:white;font-weight:700">Tue / Wed / Thu</div>
-        <div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px">8:00 AM – 10:00 AM</div>
-        <div style="font-size:10.5px;color:#10b981;margin-top:6px;font-weight:600">+52% reach during biz hours</div>
-      </div>
-      <div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:12px;padding:14px">
-        <div style="font-size:11px;color:#fde68a;font-weight:700;margin-bottom:6px">🎯 Growth Target</div>
-        <div style="font-size:14px;color:white;font-weight:700">100K Followers</div>
-        <div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px">Est. Q4 2026 at current pace</div>
-        <div style="font-size:10.5px;color:#f59e0b;margin-top:6px;font-weight:600">68.8% of goal achieved</div>
-      </div>
+      <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:12px;padding:14px"><div style="font-size:11px;color:#93c5fd;font-weight:700;margin-bottom:6px">⏰ Best Posting Time</div><div style="font-size:14px;color:white;font-weight:700">Tue / Wed / Thu</div><div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px">8:00 AM – 10:00 AM</div><div style="font-size:10.5px;color:#10b981;margin-top:6px;font-weight:600">+52% reach during biz hours</div></div>
+      <div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:12px;padding:14px"><div style="font-size:11px;color:#fde68a;font-weight:700;margin-bottom:6px">🎯 Growth Target</div><div style="font-size:14px;color:white;font-weight:700">100K Followers</div><div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px">Est. Q4 2026 at current pace</div><div style="font-size:10.5px;color:#f59e0b;margin-top:6px;font-weight:600">68.8% of goal achieved</div></div>
     </div>
   </div>
 
-  <!-- Trending Card -->
   <div class="card" style="box-shadow:0 0 30px rgba(99,102,241,0.07),0 8px 32px rgba(0,0,0,0.4)">
     <div class="sh">
       <div class="sh-icon" style="background:linear-gradient(135deg,rgba(239,68,68,0.3),rgba(245,158,11,0.2));border-color:rgba(239,68,68,0.35)">🔥</div>
-      <div>
-        <div style="color:white;font-weight:700;font-size:15.5px">Trending Topics for @gozenoti</div>
-        <div style="color:rgba(255,255,255,0.38);font-size:11.5px">Beauty & Wellness · SaaS · AI · Updated daily</div>
-      </div>
+      <div><div style="color:white;font-weight:700;font-size:15.5px">Trending Topics for @gozenoti</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">Beauty & Wellness · SaaS · AI · Updated daily</div></div>
     </div>
     <div class="divider"></div>
-
-    <!-- Trend tabs -->
-    <div style="display:flex;gap:6px;margin-bottom:16px" id="trend-tabs">
+    <div style="display:flex;gap:6px;margin-bottom:16px">
       <button class="chip active" id="tt-all"  onclick="showTrends(this,'all')">🌐 All</button>
       <button class="chip"        id="tt-ig"   onclick="showTrends(this,'ig')">📸 Instagram</button>
       <button class="chip"        id="tt-li"   onclick="showTrends(this,'li')">💼 LinkedIn</button>
       <button class="chip"        id="tt-tw"   onclick="showTrends(this,'tw')">🐦 X/Twitter</button>
     </div>
-
     <div id="trending"></div>
-
     <div style="margin-top:16px;background:linear-gradient(135deg,rgba(99,102,241,0.1),rgba(168,85,247,0.08));border:1px solid rgba(99,102,241,0.25);border-radius:14px;padding:16px">
       <div style="font-size:11px;color:#a5b4fc;font-weight:700;margin-bottom:8px">🚀 Cross-Platform Opportunity</div>
       <div style="font-size:13px;color:rgba(255,255,255,0.7);line-height:1.7"><strong style="color:white">"AI in Beauty & Wellness"</strong> is trending across all platforms — post now for max amplification. Combine with <strong style="color:#c4b5fd">#SalonTech</strong> + <strong style="color:#c4b5fd">#AIBooking</strong> for a 3.2x reach multiplier.</div>
-      <button onclick="switchTab('create',document.getElementById('nav-create'))" style="margin-top:12px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border:none;border-radius:10px;color:white;font-size:12.5px;font-weight:700;padding:9px 18px;cursor:pointer">🚀 Create Post on This Trend →</button>
+      <button onclick="switchTab('create')" style="margin-top:12px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border:none;border-radius:10px;color:white;font-size:12.5px;font-weight:700;padding:9px 18px;cursor:pointer">🚀 Create Post on This Trend →</button>
     </div>
   </div>
-</div><!-- end analytics -->
+</div>
 
 <!-- ══ VIRAL PREDICTOR ══ -->
 <div id="panel-predict" class="tab-panel" style="display:none;position:relative;z-index:1">
@@ -506,24 +406,19 @@ select option{background:#0a0a1e;color:white}
       <div class="sh" style="margin-bottom:0"><div class="sh-icon">📅</div><div><div style="color:white;font-weight:700;font-size:15.5px">AI Content Calendar</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">AI-planned schedule · Approve or reject</div></div></div>
       <div style="display:flex;align-items:center;gap:8px">
         <span id="schCount" style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);border-radius:20px;color:#6ee7b7;font-size:11px;font-weight:700;padding:4px 12px">3 Scheduled</span>
-        <button onclick="toggleUploadForm()" id="uploadToggleBtn" style="background:linear-gradient(135deg,rgba(99,102,241,0.3),rgba(168,85,247,0.25));border:1px solid rgba(99,102,241,0.5);border-radius:20px;color:#a5b4fc;font-size:11px;font-weight:700;padding:5px 13px;cursor:pointer;display:flex;align-items:center;gap:5px">
-          ➕ Add Post
-        </button>
+        <button onclick="toggleUploadForm()" style="background:linear-gradient(135deg,rgba(99,102,241,0.3),rgba(168,85,247,0.25));border:1px solid rgba(99,102,241,0.5);border-radius:20px;color:#a5b4fc;font-size:11px;font-weight:700;padding:5px 13px;cursor:pointer;display:flex;align-items:center;gap:5px">➕ Add Post</button>
       </div>
     </div>
     <div class="divider"></div>
 
-    <!-- Manual Upload Form -->
+    <!-- Upload Form -->
     <div id="uploadForm" style="display:none;background:rgba(99,102,241,0.06);border:1px solid rgba(99,102,241,0.22);border-radius:16px;padding:18px;margin-bottom:18px;animation:fadeIn 0.25s ease">
       <div style="font-size:13px;font-weight:800;color:white;margin-bottom:14px;display:flex;align-items:center;gap:8px">
         <span style="width:28px;height:28px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px">📤</span>
         Schedule a Post Manually
       </div>
-
-      <!-- Platform + Type -->
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
-        <div>
-          <div class="lbl">Platform</div>
+        <div><div class="lbl">Platform</div>
           <select id="upPlatform" class="sel">
             <option value="instagram">📸 Instagram</option>
             <option value="linkedin">💼 LinkedIn</option>
@@ -531,35 +426,52 @@ select option{background:#0a0a1e;color:white}
             <option value="facebook">👥 Facebook</option>
           </select>
         </div>
-        <div>
-          <div class="lbl">Post Type</div>
+        <div><div class="lbl">Post Type</div>
           <select id="upType" class="sel">
-            <option>Reels</option>
-            <option>Carousel</option>
-            <option>Static Image</option>
-            <option>Video</option>
-            <option>Story</option>
-            <option>Article</option>
-            <option>Thread</option>
-            <option>Poll</option>
+            <option>Reels</option><option>Carousel</option><option>Static Image</option>
+            <option>Video</option><option>Story</option><option>Article</option>
+            <option>Thread</option><option>Poll</option>
           </select>
         </div>
       </div>
-
-      <!-- Topic / Caption -->
+      <!-- Topic with AI Enhance -->
       <div style="margin-bottom:12px">
-        <div class="lbl">Topic / Title</div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+          <div class="lbl" style="margin-bottom:0">Topic / Title</div>
+          <button id="aiEnhanceBtn" onclick="aiEnhance()"
+            style="background:linear-gradient(135deg,rgba(139,92,246,0.25),rgba(236,72,153,0.2));border:1px solid rgba(139,92,246,0.45);border-radius:20px;color:#c4b5fd;font-size:11px;font-weight:700;padding:4px 12px;cursor:pointer;display:flex;align-items:center;gap:5px;transition:all 0.2s"
+            onmouseover="this.style.background='linear-gradient(135deg,rgba(139,92,246,0.4),rgba(236,72,153,0.3))';this.style.color='white'"
+            onmouseout="this.style.background='linear-gradient(135deg,rgba(139,92,246,0.25),rgba(236,72,153,0.2))';this.style.color='#c4b5fd'">
+            ✨ AI Enhance
+          </button>
+        </div>
         <input id="upTopic" class="inp" placeholder="e.g. New AI Feature Launch — Zenoti Smart Scheduling"/>
       </div>
+      <!-- Caption -->
       <div style="margin-bottom:12px">
-        <div class="lbl">Caption</div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+          <div class="lbl" style="margin-bottom:0">Caption</div>
+          <span id="aiEnhanceStatus" style="font-size:11px;color:rgba(255,255,255,0.4);display:none">⏳ Enhancing…</span>
+        </div>
         <textarea id="upCaption" class="inp" rows="3" placeholder="Write your post caption, hashtags, CTA…"></textarea>
+        <!-- AI Suggestion Box -->
+        <div id="aiSuggestion" style="display:none;margin-top:10px;background:linear-gradient(135deg,rgba(139,92,246,0.1),rgba(236,72,153,0.07));border:1px solid rgba(139,92,246,0.3);border-radius:12px;padding:14px;animation:fadeIn 0.3s ease">
+          <div style="font-size:10px;color:#c4b5fd;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px">✨ AI Enhanced Version</div>
+          <div id="aiSugTitle" style="font-size:12.5px;font-weight:700;color:white;margin-bottom:6px"></div>
+          <div id="aiSugCaption" style="font-size:12px;color:rgba(255,255,255,0.7);line-height:1.7;margin-bottom:10px"></div>
+          <div style="display:flex;gap:8px">
+            <button onclick="applyAISuggestion()" style="flex:2;background:linear-gradient(135deg,#8b5cf6,#ec4899);border:none;border-radius:9px;color:white;font-size:12px;font-weight:700;padding:8px;cursor:pointer">✓ Apply</button>
+            <button onclick="document.getElementById('aiSuggestion').style.display='none'" style="flex:1;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:9px;color:rgba(255,255,255,0.5);font-size:12px;font-weight:600;padding:8px;cursor:pointer">✕ Dismiss</button>
+          </div>
+        </div>
       </div>
-
       <!-- Media Upload -->
       <div style="margin-bottom:12px">
         <div class="lbl">Upload Image or Video</div>
-        <label for="upMedia" id="upMediaLabel" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:rgba(255,255,255,0.03);border:2px dashed rgba(99,102,241,0.3);border-radius:12px;padding:22px;cursor:pointer;transition:all 0.2s" onmouseover="this.style.borderColor='rgba(99,102,241,0.6)';this.style.background='rgba(99,102,241,0.08)'" onmouseout="this.style.borderColor='rgba(99,102,241,0.3)';this.style.background='rgba(255,255,255,0.03)'">
+        <label for="upMedia" id="upMediaLabel"
+          style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:rgba(255,255,255,0.03);border:2px dashed rgba(99,102,241,0.3);border-radius:12px;padding:22px;cursor:pointer;transition:all 0.2s"
+          onmouseover="this.style.borderColor='rgba(99,102,241,0.6)';this.style.background='rgba(99,102,241,0.08)'"
+          onmouseout="this.style.borderColor='rgba(99,102,241,0.3)';this.style.background='rgba(255,255,255,0.03)'">
           <span style="font-size:28px" id="upMediaIcon">🖼️</span>
           <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,0.6)" id="upMediaText">Click to upload image or video</span>
           <span style="font-size:11px;color:rgba(255,255,255,0.28)">JPG, PNG, MP4, MOV · Max 200MB</span>
@@ -567,27 +479,14 @@ select option{background:#0a0a1e;color:white}
         <input type="file" id="upMedia" accept="image/*,video/*" style="display:none" onchange="handleMediaUpload(this)"/>
         <div id="upMediaPreview" style="margin-top:10px;display:none"></div>
       </div>
-
-      <!-- Schedule Date + Time -->
+      <!-- Date + Time -->
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px">
-        <div>
-          <div class="lbl">Schedule Date</div>
-          <input type="date" id="upDate" class="inp" style="color-scheme:dark"/>
-        </div>
-        <div>
-          <div class="lbl">Schedule Time</div>
-          <input type="time" id="upTime" class="inp" style="color-scheme:dark"/>
-        </div>
+        <div><div class="lbl">Schedule Date</div><input type="date" id="upDate" class="inp" style="color-scheme:dark"/></div>
+        <div><div class="lbl">Schedule Time</div><input type="time" id="upTime" class="inp" style="color-scheme:dark"/></div>
       </div>
-
-      <!-- Submit -->
       <div style="display:flex;gap:8px">
-        <button onclick="submitUpload()" style="flex:2;background:linear-gradient(135deg,#6366f1,#8b5cf6);border:none;border-radius:11px;color:white;font-size:13px;font-weight:700;padding:11px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px">
-          📅 Add to Calendar
-        </button>
-        <button onclick="toggleUploadForm()" style="flex:1;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:11px;color:rgba(255,255,255,0.5);font-size:13px;font-weight:600;padding:11px;cursor:pointer">
-          Cancel
-        </button>
+        <button onclick="submitUpload()" style="flex:2;background:linear-gradient(135deg,#6366f1,#8b5cf6);border:none;border-radius:11px;color:white;font-size:13px;font-weight:700;padding:11px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px">📅 Add to Calendar</button>
+        <button onclick="toggleUploadForm()" style="flex:1;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:11px;color:rgba(255,255,255,0.5);font-size:13px;font-weight:600;padding:11px;cursor:pointer">Cancel</button>
       </div>
     </div>
 
@@ -595,7 +494,7 @@ select option{background:#0a0a1e;color:white}
   </div>
 </div>
 
-</div><!-- #app -->
+</div>
 <script>
 // ── CONSTANTS ──────────────────────────────────────────────────
 const PC={linkedin:'#0077b5',instagram:'#e1306c',twitter:'#1da1f2',facebook:'#1877f2'};
@@ -622,7 +521,7 @@ const igTagsData=[
   {tag:'#WellnessTech',reach:'38K',color:'#10b981'},
   {tag:'#SalonOwner',reach:'89K',color:'#f59e0b'},
   {tag:'#BookingApp',reach:'31K',color:'#ef4444'},
-  {tag:'#BeautyBiz',reach:'167K',color:'#ec4899'},
+  {tag:'#BeautyBiz',reach:'167K',color:'#ec4899'}
 ];
 const liPerfData=[
   ['📄 Document/Carousel',92,'#0077b5','5.2% eng · Top shares & saves'],
@@ -637,11 +536,10 @@ const liInsightsData=[
   {icon:'💬',text:'Comments are 15x more valuable than likes — always reply within 60 min to trigger second distribution wave',bg:'rgba(16,185,129,0.07)',border:'rgba(16,185,129,0.2)'},
   {icon:'⏰',text:'First 90 minutes is the golden window — schedule for 8–10 AM Tue/Wed/Thu when decision-makers are online',bg:'rgba(99,102,241,0.08)',border:'rgba(99,102,241,0.2)'},
   {icon:'📄',text:'Documents & carousels get 3x more saves — saves signal topic authority to the algorithm',bg:'rgba(168,85,247,0.07)',border:'rgba(168,85,247,0.2)'},
-  {icon:'👤',text:'Employee advocacy posts get 2.75x more impressions — tag team members and encourage reshares',bg:'rgba(239,68,68,0.07)',border:'rgba(239,68,68,0.2)'},
+  {icon:'👤',text:'Employee advocacy posts get 2.75x more impressions — tag team members and encourage reshares',bg:'rgba(239,68,68,0.07)',border:'rgba(239,68,68,0.2)'}
 ];
 const liRolesData=[['Salon/Spa Owner',42,'#0077b5'],['C-Suite / VP',18,'#6366f1'],['Product Manager',14,'#8b5cf6'],['Marketing Lead',13,'#ec4899'],['Operations',13,'#10b981']];
 const liIndustriesData=[['Health & Wellness',38,'#0077b5'],['Hospitality',22,'#10b981'],['Beauty & Personal Care',19,'#e1306c'],['Retail & eComm',11,'#f59e0b'],['Technology',10,'#6366f1']];
-
 const allTrends=[
   {topic:'AI in Beauty & Wellness',score:96,delta:'+42%',plats:['📸','💼','🐦'],tag:'🔥 Breakout',filter:['all','ig','li','tw']},
   {topic:'MedSpa Automation',score:88,delta:'+38%',plats:['📸','💼'],tag:'📈 Rising',filter:['all','ig','li']},
@@ -650,13 +548,13 @@ const allTrends=[
   {topic:'AI Appointment Booking',score:76,delta:'+24%',plats:['💼','🐦'],tag:'✅ Steady',filter:['all','li','tw']},
   {topic:'Wellness Tech 2026',score:73,delta:'+19%',plats:['💼','🐦'],tag:'✅ Steady',filter:['all','li','tw']},
   {topic:'Spa Industry Trends',score:70,delta:'+16%',plats:['📸','👥'],tag:'✅ Steady',filter:['all','ig']},
-  {topic:'Beauty Business Tips',score:66,delta:'+12%',plats:['📸','👥','🐦'],tag:'✅ Steady',filter:['all','ig','tw']},
+  {topic:'Beauty Business Tips',score:66,delta:'+12%',plats:['📸','👥','🐦'],tag:'✅ Steady',filter:['all','ig','tw']}
 ];
 
 // ── STATE ──────────────────────────────────────────────────────
 const S={
-  viralPlat:'linkedin', postType:'text',
-  selPlats:['linkedin','instagram'], tone:'Professional',
+  viralPlat:'linkedin',postType:'text',
+  selPlats:['linkedin','instagram'],tone:'Professional',
   trendFilter:'all',
   cal:[
     {id:1,pl:'instagram',type:'Reels',   topic:'AI Booking Demo',         score:94,time:'Mon 6pm', st:'scheduled'},
@@ -665,133 +563,254 @@ const S={
     {id:4,pl:'instagram',type:'Carousel',topic:'Before & After Gallery',  score:91,time:'Wed 6pm', st:'scheduled'},
     {id:5,pl:'facebook', type:'Event',   topic:'Zenoti Webinar Live',     score:79,time:'Thu 2pm', st:'pending'},
     {id:6,pl:'linkedin', type:'Video',   topic:'Customer Success Story',  score:92,time:'Fri 10am',st:'pending'},
-    {id:7,pl:'twitter',  type:'Poll',    topic:'Biggest Salon Challenge?',score:83,time:'Fri 1pm', st:'scheduled'},
+    {id:7,pl:'twitter',  type:'Poll',    topic:'Biggest Salon Challenge?',score:83,time:'Fri 1pm', st:'scheduled'}
   ]
+};
+
+const calMeta={
+  1:{caption:'Show how Zenoti AI booking works in 60 seconds — real salon walkthrough with before/after booking flow.',hashtags:'#GoZenoti #AIBooking #SalonTech',cta:'Link in bio to book a free demo 👆'},
+  2:{caption:'The beauty industry is at an inflection point. AI isn\'t replacing stylists — it\'s giving them back 10+ hours a week. Here\'s what the next 3 years look like.',hashtags:'#SalonTech #BeautyAndWellness #FutureOfWork',cta:'What\'s your take? Drop a comment 👇'},
+  3:{caption:'5 wellness trends reshaping spas & salons in 2026.\n\n1/ AI-powered booking → zero no-shows\n2/ Personalized treatment plans\n3/ Real-time inventory management\n4/ Client retention automation\n5/ Revenue forecasting dashboards',hashtags:'#WellnessTrends #SpaLife #MedSpa',cta:'Follow for more industry insights'},
+  4:{caption:'Swipe to see real client transformations powered by Zenoti. Our partners report 40% more repeat bookings after going live.',hashtags:'#BeforeAndAfter #SalonLife #GoZenoti',cta:'DM us to see your salon\'s potential 💬'},
+  5:{caption:'🔴 LIVE WEBINAR: How top salons are using AI to 2x revenue without hiring more staff. Join 500+ salon owners this Thursday.',hashtags:'#Webinar #SalonBusiness #BeautyTech',cta:'Register free — link in bio'},
+  6:{caption:'"We reduced no-shows by 67% in 30 days." — Maria, Owner of Luxe Salon & Spa. Real results. Real salon. Powered by Zenoti.',hashtags:'#CustomerSuccess #SalonOwner #GoZenoti',cta:'Read the full story → link in bio'},
+  7:{caption:'Quick poll for salon owners 👇\n\nWhat\'s your biggest challenge right now?',hashtags:'#SalonOwner #SmallBusiness #BeautyBiz',cta:'Vote & share with a fellow salon owner!'}
 };
 
 // ── HELPERS ────────────────────────────────────────────────────
 const $=id=>document.getElementById(id);
 const setH=(id,h)=>{if($(id))$(id).innerHTML=h;};
 const getV=id=>$(id)?$(id).value.trim():'';
-function errMsg(id,msg){setH(id,`<div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.3);border-radius:12px;padding:12px 16px;color:#fca5a5;font-size:13px">❌ ${msg}</div>`);}
-function ldBtn(b,m){b.disabled=true;b.innerHTML=`<span style="width:14px;height:14px;border:2px solid rgba(255,255,255,0.3);border-top:2px solid white;border-radius:50%;animation:spin 1s linear infinite;display:inline-block;flex-shrink:0"></span> ${m}`;}
+
+function errMsg(id,msg){
+  setH(id,'<div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.3);border-radius:12px;padding:12px 16px;color:#fca5a5;font-size:13px">❌ '+msg+'</div>');
+}
+function ldBtn(b,m){
+  b.disabled=true;
+  b.innerHTML='<span style="width:14px;height:14px;border:2px solid rgba(255,255,255,0.3);border-top:2px solid white;border-radius:50%;animation:spin 1s linear infinite;display:inline-block;flex-shrink:0"></span> '+m;
+}
 function doneBtn(b,l){b.disabled=false;b.innerHTML=l;}
 
-// ── RENDER ANALYTICS ──────────────────────────────────────────
-function renderAnalytics(){
-  // IG perf bars
-  setH('ig-perf', igPerfData.map(([t,s,c,sub],i)=>`
-    <div class="bar-row" style="animation-delay:${i*0.07}s">
-      <span style="min-width:120px;font-size:12.5px;color:rgba(255,255,255,0.72);font-weight:600">${t}</span>
-      <div class="minibar-wrap" style="height:8px">
-        <div class="bar-fill" style="width:${s}%;background:linear-gradient(90deg,${c},${c}88);height:8px;box-shadow:0 0 8px ${c}44"></div>
-      </div>
-      <span style="min-width:26px;font-size:12.5px;font-weight:800;text-align:right;color:${c}">${s}</span>
-      <span style="font-size:10px;color:rgba(255,255,255,0.28);white-space:nowrap;min-width:160px;padding-left:4px">${sub}</span>
-    </div>`).join(''));
-
-  // IG hashtags
-  setH('ig-tags',`
-    <div style="display:flex;flex-wrap:wrap;gap:0;margin-bottom:8px">
-      ${igTagsData.map(h=>`<span style="display:inline-block;margin:3px;background:${h.color}18;border:1px solid ${h.color}40;border-radius:20px;font-size:11.5px;color:${h.color};padding:5px 12px;font-weight:700">${h.tag} <span style="opacity:0.5;font-size:10px">· ${h.reach}</span></span>`).join('')}
-    </div>
-    <div style="font-size:10.5px;color:rgba(255,255,255,0.28)">Reach = total posts using hashtag · Mix large (100K+) & niche (&lt;50K) for best discovery</div>`);
-
-  // LI post format bars
-  setH('li-perf', liPerfData.map(([t,s,c,sub],i)=>`
-    <div class="bar-row" style="animation-delay:${i*0.07}s">
-      <span style="min-width:145px;font-size:12.5px;color:rgba(255,255,255,0.72);font-weight:600">${t}</span>
-      <div class="minibar-wrap" style="height:8px">
-        <div class="bar-fill" style="width:${s}%;background:linear-gradient(90deg,${c},${c}88);height:8px;box-shadow:0 0 8px ${c}44"></div>
-      </div>
-      <span style="min-width:26px;font-size:12.5px;font-weight:800;text-align:right;color:${c}">${s}</span>
-      <span style="font-size:10px;color:rgba(255,255,255,0.28);white-space:nowrap;min-width:145px;padding-left:4px">${sub}</span>
-    </div>`).join(''));
-
-  // LI insights
-  setH('li-insights', liInsightsData.map((ins,i)=>`
-    <div class="insight-row" style="background:${ins.bg};border:1px solid ${ins.border};animation-delay:${i*0.08}s">
-      <span style="font-size:16px;flex-shrink:0">${ins.icon}</span>
-      <span style="font-size:12px;color:rgba(255,255,255,0.65);line-height:1.65">${ins.text}</span>
-    </div>`).join(''));
-
-  // LI roles
-  setH('li-roles', liRolesData.map(([r,p,c])=>`
-    <div style="display:flex;align-items:center;gap:8px;margin-bottom:9px">
-      <span style="font-size:11px;color:rgba(255,255,255,0.5);min-width:95px">${r}</span>
-      <div class="minibar-wrap"><div class="bar-fill" style="width:${p}%;background:${c};height:6px"></div></div>
-      <span style="font-size:11px;font-weight:700;color:${c};min-width:28px">${p}%</span>
-    </div>`).join(''));
-
-  // LI industries
-  setH('li-industries', liIndustriesData.map(([r,p,c])=>`
-    <div style="display:flex;align-items:center;gap:8px;margin-bottom:9px">
-      <span style="font-size:11px;color:rgba(255,255,255,0.5);min-width:95px">${r}</span>
-      <div class="minibar-wrap"><div class="bar-fill" style="width:${p}%;background:${c};height:6px"></div></div>
-      <span style="font-size:11px;font-weight:700;color:${c};min-width:28px">${p}%</span>
-    </div>`).join(''));
-
-  // Trending
-  showTrends(null, S.trendFilter);
-}
-
-function showTrends(el, filter){
-  S.trendFilter = filter;
-  // update tab chips
-  ['all','ig','li','tw'].forEach(k=>{
-    const b=$('tt-'+k);
-    if(b) b.classList.toggle('active', k===filter);
-  });
-  const sc=s=>s>=85?'#ef4444':s>=75?'#f59e0b':'#10b981';
-  const data=allTrends.filter(t=>t.filter.includes(filter));
-  setH('trending', data.map((t,i)=>`
-    <div class="trend-row" style="${i===data.length-1?'border-bottom:none':''}">
-      <div style="width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,rgba(99,102,241,0.3),rgba(168,85,247,0.3));display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#a5b4fc;flex-shrink:0">${i+1}</div>
-      <div style="flex:1">
-        <div style="font-size:13.5px;font-weight:700;color:white;margin-bottom:3px">${t.topic}</div>
-        <div style="display:flex;gap:6px;align-items:center">
-          <span style="font-size:10px;background:rgba(255,255,255,0.05);border-radius:20px;padding:2px 8px;color:rgba(255,255,255,0.4)">${t.tag}</span>
-          <span style="font-size:11px;color:rgba(255,255,255,0.3)">${t.plats.join(' ')}</span>
-        </div>
-      </div>
-      <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
-        <div class="minibar-wrap" style="max-width:72px"><div class="bar-fill" style="width:${t.score}%;background:linear-gradient(90deg,${sc(t.score)},${sc(t.score)}88);height:6px"></div></div>
-        <span style="font-size:12px;font-weight:800;color:${sc(t.score)};min-width:26px">${t.score}</span>
-        <span style="font-size:12px;font-weight:700;color:#10b981;min-width:40px">${t.delta}</span>
-      </div>
-    </div>`).join(''));
-}
-
 // ── NAV ────────────────────────────────────────────────────────
-function switchTab(id, btn){
-  document.querySelectorAll('.tab-panel').forEach(p=>p.style.display='none');
-  $('panel-'+id).style.display='block';
+function switchTab(id){
+  document.querySelectorAll('.tab-panel').forEach(function(p){p.style.display='none';});
+  var panel=$('panel-'+id);
+  panel.style.display='block';
   if(id==='analytics') renderAnalytics();
   if(id==='calendar')  renderCal();
-  window.scrollTo({top:0,behavior:'smooth'});
+  setTimeout(function(){
+    var top=panel.getBoundingClientRect().top+window.pageYOffset-16;
+    window.scrollTo({top:top,behavior:'smooth'});
+  },50);
 }
 
 // ── FREE AI ────────────────────────────────────────────────────
 async function freeAI(prompt){
-  const r=await fetch(`https://text.pollinations.ai/${encodeURIComponent(prompt)}`,{headers:{'Accept':'text/plain'}});
+  var r=await fetch('https://text.pollinations.ai/'+encodeURIComponent(prompt),{headers:{'Accept':'text/plain'}});
   return await r.text();
 }
 
+// ── ANALYTICS RENDER ───────────────────────────────────────────
+function renderAnalytics(){
+  setH('ig-perf',igPerfData.map(function(d,i){
+    return '<div class="bar-row" style="animation-delay:'+i*0.07+'s"><span style="min-width:120px;font-size:12.5px;color:rgba(255,255,255,0.72);font-weight:600">'+d[0]+'</span><div class="minibar-wrap" style="height:8px"><div class="bar-fill" style="width:'+d[1]+'%;background:linear-gradient(90deg,'+d[2]+','+d[2]+'88);height:8px;box-shadow:0 0 8px '+d[2]+'44"></div></div><span style="min-width:26px;font-size:12.5px;font-weight:800;text-align:right;color:'+d[2]+'">'+d[1]+'</span><span style="font-size:10px;color:rgba(255,255,255,0.28);white-space:nowrap;min-width:160px;padding-left:4px">'+d[3]+'</span></div>';
+  }).join(''));
+
+  setH('ig-tags','<div style="display:flex;flex-wrap:wrap;gap:0;margin-bottom:8px">'+igTagsData.map(function(h){
+    return '<span style="display:inline-block;margin:3px;background:'+h.color+'18;border:1px solid '+h.color+'40;border-radius:20px;font-size:11.5px;color:'+h.color+';padding:5px 12px;font-weight:700">'+h.tag+' <span style="opacity:0.5;font-size:10px">· '+h.reach+'</span></span>';
+  }).join('')+'</div><div style="font-size:10.5px;color:rgba(255,255,255,0.28)">Mix large (100K+) &amp; niche (&lt;50K) tags for best discovery</div>');
+
+  setH('li-perf',liPerfData.map(function(d,i){
+    return '<div class="bar-row" style="animation-delay:'+i*0.07+'s"><span style="min-width:145px;font-size:12.5px;color:rgba(255,255,255,0.72);font-weight:600">'+d[0]+'</span><div class="minibar-wrap" style="height:8px"><div class="bar-fill" style="width:'+d[1]+'%;background:linear-gradient(90deg,'+d[2]+','+d[2]+'88);height:8px;box-shadow:0 0 8px '+d[2]+'44"></div></div><span style="min-width:26px;font-size:12.5px;font-weight:800;text-align:right;color:'+d[2]+'">'+d[1]+'</span><span style="font-size:10px;color:rgba(255,255,255,0.28);white-space:nowrap;min-width:145px;padding-left:4px">'+d[3]+'</span></div>';
+  }).join(''));
+
+  setH('li-insights',liInsightsData.map(function(ins,i){
+    return '<div class="insight-row" style="background:'+ins.bg+';border:1px solid '+ins.border+';animation-delay:'+i*0.08+'s"><span style="font-size:16px;flex-shrink:0">'+ins.icon+'</span><span style="font-size:12px;color:rgba(255,255,255,0.65);line-height:1.65">'+ins.text+'</span></div>';
+  }).join(''));
+
+  setH('li-roles',liRolesData.map(function(d){
+    return '<div style="display:flex;align-items:center;gap:8px;margin-bottom:9px"><span style="font-size:11px;color:rgba(255,255,255,0.5);min-width:95px">'+d[0]+'</span><div class="minibar-wrap"><div class="bar-fill" style="width:'+d[1]+'%;background:'+d[2]+';height:6px"></div></div><span style="font-size:11px;font-weight:700;color:'+d[2]+';min-width:28px">'+d[1]+'%</span></div>';
+  }).join(''));
+
+  setH('li-industries',liIndustriesData.map(function(d){
+    return '<div style="display:flex;align-items:center;gap:8px;margin-bottom:9px"><span style="font-size:11px;color:rgba(255,255,255,0.5);min-width:95px">'+d[0]+'</span><div class="minibar-wrap"><div class="bar-fill" style="width:'+d[1]+'%;background:'+d[2]+';height:6px"></div></div><span style="font-size:11px;font-weight:700;color:'+d[2]+';min-width:28px">'+d[1]+'%</span></div>';
+  }).join(''));
+
+  showTrends(null,'all');
+}
+
+function showTrends(el,filter){
+  S.trendFilter=filter;
+  ['all','ig','li','tw'].forEach(function(k){
+    var b=$('tt-'+k);
+    if(b) b.classList.toggle('active',k===filter);
+  });
+  var sc=function(s){return s>=85?'#ef4444':s>=75?'#f59e0b':'#10b981';};
+  var data=allTrends.filter(function(t){return t.filter.indexOf(filter)>=0;});
+  setH('trending',data.map(function(t,i){
+    return '<div class="trend-row" style="'+(i===data.length-1?'border-bottom:none':'')+'"><div style="width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,rgba(99,102,241,0.3),rgba(168,85,247,0.3));display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#a5b4fc;flex-shrink:0">'+(i+1)+'</div><div style="flex:1"><div style="font-size:13.5px;font-weight:700;color:white;margin-bottom:3px">'+t.topic+'</div><div style="display:flex;gap:6px;align-items:center"><span style="font-size:10px;background:rgba(255,255,255,0.05);border-radius:20px;padding:2px 8px;color:rgba(255,255,255,0.4)">'+t.tag+'</span><span style="font-size:11px;color:rgba(255,255,255,0.3)">'+t.plats.join(' ')+'</span></div></div><div style="display:flex;align-items:center;gap:10px;flex-shrink:0"><div class="minibar-wrap" style="max-width:72px"><div class="bar-fill" style="width:'+t.score+'%;background:linear-gradient(90deg,'+sc(t.score)+','+sc(t.score)+'88);height:6px"></div></div><span style="font-size:12px;font-weight:800;color:'+sc(t.score)+';min-width:26px">'+t.score+'</span><span style="font-size:12px;font-weight:700;color:#10b981;min-width:40px">'+t.delta+'</span></div></div>';
+  }).join(''));
+}
+
+// ── CALENDAR ───────────────────────────────────────────────────
+function renderCal(){
+  var sch=S.cal.filter(function(x){return x.st==='scheduled';}).length;
+  var pend=S.cal.filter(function(x){return x.st==='pending';}).length;
+  $('schCount').textContent=sch+' Scheduled';
+  $('calBadge').textContent=pend;
+  var sc=function(s){return s>=85?'#10b981':s>=70?'#f59e0b':'#ef4444';};
+  var scoreLabel=function(s){return s>=85?'High Potential':s>=70?'Good':'Needs Work';};
+  setH('calItems',S.cal.map(function(item){
+    var isSch=item.st==='scheduled';
+    var meta=calMeta[item.id]||{caption:'No caption set.',hashtags:'',cta:''};
+    var sc2=sc(item.score);
+    return '<div style="background:rgba(255,255,255,0.025);border:1px solid '+(isSch?'rgba(16,185,129,0.22)':'rgba(255,255,255,0.08)')+';border-radius:16px;padding:18px;margin-bottom:12px;animation:fadeIn 0.3s ease">'+
+      '<div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">'+
+        '<div style="width:44px;height:44px;border-radius:13px;background:'+PC[item.pl]+'22;border:1px solid '+PC[item.pl]+'44;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0">'+PI[item.pl]+'</div>'+
+        '<div style="flex:1;min-width:0">'+
+          '<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:5px">'+
+            '<span style="font-size:14px;font-weight:800;color:white">'+item.topic+'</span>'+
+            '<span style="font-size:10.5px;background:'+PC[item.pl]+'22;color:'+PC[item.pl]+';padding:2px 9px;border-radius:20px;font-weight:700;flex-shrink:0">'+item.type+'</span>'+
+            (isSch?'<span style="font-size:10px;background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);color:#6ee7b7;padding:2px 9px;border-radius:20px;font-weight:700">✓ Approved</span>':'')+
+          '</div>'+
+          '<div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">'+
+            '<span style="font-size:11.5px;color:rgba(255,255,255,0.4)">⏰ '+item.time+'</span>'+
+            '<span style="font-size:11.5px;color:rgba(255,255,255,0.4)">'+PL[item.pl]+'</span>'+
+            '<div style="display:flex;align-items:center;gap:6px"><div style="width:6px;height:6px;border-radius:50%;background:'+sc2+'"></div><span style="font-size:11px;font-weight:700;color:'+sc2+'">'+item.score+' — '+scoreLabel(item.score)+'</span></div>'+
+          '</div>'+
+        '</div>'+
+      '</div>'+
+      '<div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">'+
+        '<span style="font-size:10px;color:rgba(255,255,255,0.3);font-weight:600;white-space:nowrap">AI SCORE</span>'+
+        '<div class="minibar-wrap"><div class="minibar-fill" style="width:'+item.score+'%;background:linear-gradient(90deg,'+sc2+','+sc2+'88)"></div></div>'+
+        '<span style="font-size:11px;font-weight:800;color:'+sc2+';min-width:42px">'+item.score+'/100</span>'+
+      '</div>'+
+      '<div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:13px 15px;margin-bottom:12px">'+
+        '<div style="font-size:10px;color:rgba(255,255,255,0.3);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:7px">📝 Caption Preview</div>'+
+        '<div style="font-size:12.5px;color:rgba(255,255,255,0.72);line-height:1.7;white-space:pre-wrap;margin-bottom:8px">'+meta.caption+'</div>'+
+        '<div style="font-size:11px;color:rgba(165,180,252,0.6);margin-bottom:6px">'+meta.hashtags+'</div>'+
+        '<div style="font-size:11.5px;color:#6ee7b7;font-weight:600">'+meta.cta+'</div>'+
+      '</div>'+
+      (isSch
+        ?'<div style="display:flex;gap:8px"><button onclick="rejCal('+item.id+')" style="flex:1;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.22);border-radius:10px;color:#fca5a5;font-size:12.5px;font-weight:700;padding:9px;cursor:pointer">✕ Remove</button></div>'
+        :'<div style="display:flex;gap:8px"><button onclick="appCal('+item.id+')" style="flex:2;background:linear-gradient(135deg,rgba(16,185,129,0.2),rgba(16,185,129,0.12));border:1px solid rgba(16,185,129,0.35);border-radius:10px;color:#6ee7b7;font-size:12.5px;font-weight:700;padding:10px;cursor:pointer">✓ Approve &amp; Schedule</button><button onclick="rejCal('+item.id+')" style="flex:1;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.22);border-radius:10px;color:#fca5a5;font-size:12.5px;font-weight:700;padding:10px;cursor:pointer">✕ Reject</button></div>')+
+    '</div>';
+  }).join(''));
+}
+
+function appCal(id){S.cal=S.cal.map(function(x){return x.id===id?Object.assign({},x,{st:'scheduled'}):x;});renderCal();}
+function rejCal(id){S.cal=S.cal.filter(function(x){return x.id!==id;});renderCal();}
+
+// ── UPLOAD FORM ────────────────────────────────────────────────
+function toggleUploadForm(){
+  var f=$('uploadForm');
+  var open=f.style.display==='block';
+  f.style.display=open?'none':'block';
+  if(!open){
+    var t=new Date();
+    t.setDate(t.getDate()+1);
+    $('upDate').value=t.toISOString().split('T')[0];
+    $('upTime').value='09:00';
+  }
+}
+
+function handleMediaUpload(input){
+  var file=input.files[0];
+  if(!file) return;
+  var isVideo=file.type.startsWith('video/');
+  var url=URL.createObjectURL(file);
+  $('upMediaIcon').textContent=isVideo?'🎬':'🖼️';
+  $('upMediaText').textContent=file.name+' ('+Math.round(file.size/1024/1024*10)/10+' MB)';
+  var prev=$('upMediaPreview');
+  prev.style.display='block';
+  prev.innerHTML=isVideo
+    ?'<video src="'+url+'" controls style="width:100%;border-radius:10px;border:1px solid rgba(99,102,241,0.3);max-height:200px"></video>'
+    :'<img src="'+url+'" style="width:100%;border-radius:10px;border:1px solid rgba(99,102,241,0.3);max-height:200px;object-fit:cover"/>';
+}
+
+function submitUpload(){
+  var topic=getV('upTopic');
+  var caption=getV('upCaption');
+  var pl=$('upPlatform').value;
+  var type=$('upType').value;
+  var date=$('upDate').value;
+  var time=$('upTime').value;
+  var file=$('upMedia').files[0];
+  if(!topic){alert('Please enter a topic/title');return;}
+  if(!date||!time){alert('Please set a schedule date and time');return;}
+  var d=new Date(date+'T'+time);
+  var days=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  var hr=d.getHours();
+  var ampm=hr>=12?'pm':'am';
+  var h12=hr%12||12;
+  var timeLabel=days[d.getDay()]+' '+h12+(d.getMinutes()?':'+String(d.getMinutes()).padStart(2,'0'):'')+ampm;
+  var newId=Date.now();
+  calMeta[newId]={caption:caption||'No caption provided.',hashtags:'#GoZenoti #BeautyAndWellness #SalonTech',cta:''};
+  S.cal.push({id:newId,pl:pl,type:type,topic:topic,score:75,time:timeLabel,st:'pending',manual:true,hasMedia:!!file});
+  $('upTopic').value='';
+  $('upCaption').value='';
+  $('upMedia').value='';
+  $('upMediaPreview').style.display='none';
+  $('upMediaIcon').textContent='🖼️';
+  $('upMediaText').textContent='Click to upload image or video';
+  $('aiSuggestion').style.display='none';
+  toggleUploadForm();
+  renderCal();
+}
+
+// ── AI ENHANCE ─────────────────────────────────────────────────
+async function aiEnhance(){
+  var topic=getV('upTopic');
+  var caption=getV('upCaption');
+  if(!topic&&!caption){alert('Please enter a topic or caption first');return;}
+  var btn=$('aiEnhanceBtn');
+  var status=$('aiEnhanceStatus');
+  btn.style.display='none';
+  status.style.display='block';
+  $('aiSuggestion').style.display='none';
+  var pl=$('upPlatform').value;
+  var type=$('upType').value;
+  try{
+    var raw=await freeAI('You are a social media expert for Zenoti (@gozenoti, beauty & wellness SaaS, 30K+ salons). Enhance this post for '+PL[pl]+' ('+type+' format). Current title: "'+topic+'" Current caption: "'+caption+'". Make it punchy, platform-native, engaging. Include relevant hashtags from: #GoZenoti #BeautyAndWellness #SalonTech #MedSpa #AIBeauty #SpaLife. Return ONLY valid JSON no extra text: {"title":"enhanced title here","caption":"full enhanced caption with hashtags and CTA"}');
+    var cleaned=raw.replace(/```json|```/g,'').trim();
+    var r=JSON.parse(cleaned);
+    $('aiSugTitle').textContent=r.title;
+    $('aiSugCaption').textContent=r.caption;
+    $('aiSuggestion').style.display='block';
+  }catch(e){
+    alert('AI enhance failed — please try again.');
+  }
+  btn.style.display='flex';
+  status.style.display='none';
+}
+
+function applyAISuggestion(){
+  $('upTopic').value=$('aiSugTitle').textContent;
+  $('upCaption').value=$('aiSugCaption').textContent;
+  $('aiSuggestion').style.display='none';
+}
+
 // ── CHIP HELPERS ───────────────────────────────────────────────
-function togPlat(el,p){el.classList.toggle('active');S.selPlats=el.classList.contains('active')?[...S.selPlats,p]:S.selPlats.filter(x=>x!==p);}
-function selTone(el,t){document.querySelectorAll('#panel-create .chip').forEach(c=>{if(c.getAttribute('onclick')?.includes('selTone'))c.classList.remove('active');});el.classList.add('active');S.tone=t;}
-function selVP(el,p){el.parentElement.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));el.classList.add('active');S.viralPlat=p;}
-function selPP(el,p){el.parentElement.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));el.classList.add('active');$('persPlat').value=p;}
+function togPlat(el,p){
+  el.classList.toggle('active');
+  S.selPlats=el.classList.contains('active')?S.selPlats.concat([p]):S.selPlats.filter(function(x){return x!==p;});
+}
+function selTone(el,t){
+  document.querySelectorAll('#panel-create .chip').forEach(function(c){if(c.getAttribute('onclick')&&c.getAttribute('onclick').indexOf('selTone')>=0)c.classList.remove('active');});
+  el.classList.add('active');S.tone=t;
+}
+function selVP(el,p){el.parentElement.querySelectorAll('.chip').forEach(function(c){c.classList.remove('active');});el.classList.add('active');S.viralPlat=p;}
+function selPP(el,p){el.parentElement.querySelectorAll('.chip').forEach(function(c){c.classList.remove('active');});el.classList.add('active');$('persPlat').value=p;}
 function selPostType(t){
   S.postType=t;
-  const cols={text:'#6366f1',image:'#10b981',video:'#ec4899'};
-  ['text','image','video'].forEach(x=>{
-    const b=$('pt-'+x),on=x===t;
-    b.style.background=on?`linear-gradient(135deg,${cols[x]}33,${cols[x]}18)`:'rgba(255,255,255,0.03)';
-    b.style.border=`2px solid ${on?cols[x]+'88':'rgba(255,255,255,0.07)'}`;
+  var colors={text:'#6366f1',image:'#10b981',video:'#ec4899'};
+  ['text','image','video'].forEach(function(x){
+    var b=$('pt-'+x),on=x===t;
+    b.style.background=on?'linear-gradient(135deg,'+colors[x]+'33,'+colors[x]+'18)':'rgba(255,255,255,0.03)';
+    b.style.border='2px solid '+(on?colors[x]+'88':'rgba(255,255,255,0.07)');
     b.style.transform=on?'translateY(-2px)':'none';
-    const old=b.querySelector('.chk');if(old)old.remove();
-    if(on){const d=document.createElement('div');d.className='chk';d.style.cssText=`margin-top:8px;width:22px;height:22px;border-radius:11px;background:${cols[x]};margin-left:auto;margin-right:auto;display:flex;align-items:center;justify-content:center;font-size:12px;color:white;font-weight:800`;d.textContent='✓';b.appendChild(d);}
+    var old=b.querySelector('.chk');if(old)old.remove();
+    if(on){var d=document.createElement('div');d.className='chk';d.style.cssText='margin-top:8px;width:22px;height:22px;border-radius:11px;background:'+colors[x]+';margin-left:auto;margin-right:auto;display:flex;align-items:center;justify-content:center;font-size:12px;color:white;font-weight:800';d.textContent='✓';b.appendChild(d);}
   });
   $('text-panel').style.display=t==='text'?'block':'none';
   $('image-panel').style.display=t==='image'?'block':'none';
@@ -800,106 +819,107 @@ function selPostType(t){
 
 // ── VIRAL ANALYZER ─────────────────────────────────────────────
 async function analyzeViral(){
-  const draft=getV('viralDraft');if(!draft){alert('Please enter a post draft');return;}
-  const btn=$('viralBtn');ldBtn(btn,'Analyzing…');setH('viralResult','');
+  var draft=getV('viralDraft');
+  if(!draft){alert('Please enter a post draft');return;}
+  var btn=$('viralBtn');
+  ldBtn(btn,'Analyzing…');
+  setH('viralResult','');
   try{
-    const raw=await freeAI(`Analyze this ${S.viralPlat} post for Zenoti (@gozenoti). Return ONLY valid JSON no extra text:
-Post: "${draft}"
-{"viralScore":78,"engagementPrediction":"8-12%","reachEstimate":"45K-80K","hookStrength":72,"emotionalTrigger":85,"shareability":68,"clarity":90,"ctaStrength":60,"bestTimeToPost":"Wed 6-8pm","strengths":["point 1","point 2"],"improvements":["fix 1","fix 2"],"rewrittenHook":"better opening","verdict":"2-line assessment"}`);
-    const r=JSON.parse(raw.replace(/```json|```/g,'').trim());
-    const sc=s=>s>=85?'#10b981':s>=70?'#f59e0b':'#ef4444';
-    const ring=(score,lbl,sz=80)=>{const r2=30,ci=2*Math.PI*r2,d=(score/100)*ci,c=sc(score);return `<div style="display:flex;flex-direction:column;align-items:center;gap:5px"><svg width="${sz}" height="${sz}" viewBox="0 0 72 72"><circle cx="36" cy="36" r="${r2}" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="5"/><circle cx="36" cy="36" r="${r2}" fill="none" stroke="${c}" stroke-width="5" stroke-dasharray="${d} ${ci-d}" stroke-dashoffset="${ci/4}" stroke-linecap="round" style="filter:drop-shadow(0 0 6px ${c})"/><text x="36" y="40" text-anchor="middle" fill="white" font-size="14" font-weight="800">${score}</text></svg>${lbl?`<span style="font-size:9px;color:rgba(255,255,255,0.38);font-weight:700;text-transform:uppercase;letter-spacing:0.08em">${lbl}</span>`:''}</div>`;};
-    setH('viralResult',`<div style="display:flex;gap:12px;align-items:center;justify-content:center;margin-bottom:20px;flex-wrap:wrap">${ring(r.viralScore,'Viral Score')}${ring(r.hookStrength,'Hook',64)}${ring(r.emotionalTrigger,'Emotion',64)}${ring(r.shareability,'Share',64)}${ring(r.ctaStrength,'CTA',64)}</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">${[['📊 Engagement',r.engagementPrediction],['📡 Reach',r.reachEstimate],['⏰ Best Time',r.bestTimeToPost],['🎯 Clarity',r.clarity+'/100']].map(([l,v])=>`<div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:12px"><div style="font-size:10px;color:rgba(255,255,255,0.38);margin-bottom:3px">${l}</div><div style="font-size:15px;font-weight:700">${v}</div></div>`).join('')}</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">
-      <div style="background:rgba(16,185,129,0.07);border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:14px"><div style="font-size:10px;color:#6ee7b7;font-weight:700;margin-bottom:8px">✅ STRENGTHS</div>${(r.strengths||[]).map(s=>`<div style="font-size:12px;color:rgba(255,255,255,0.65);margin-bottom:5px;display:flex;gap:5px"><span style="color:#10b981">+</span>${s}</div>`).join('')}</div>
-      <div style="background:rgba(239,68,68,0.07);border:1px solid rgba(239,68,68,0.2);border-radius:12px;padding:14px"><div style="font-size:10px;color:#fca5a5;font-weight:700;margin-bottom:8px">⚡ IMPROVEMENTS</div>${(r.improvements||[]).map(s=>`<div style="font-size:12px;color:rgba(255,255,255,0.65);margin-bottom:5px;display:flex;gap:5px"><span style="color:#f59e0b">→</span>${s}</div>`).join('')}</div>
-    </div>
-    <div style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.22);border-radius:12px;padding:14px;margin-bottom:14px;border-left:3px solid #6366f1"><div style="font-size:10px;color:#a5b4fc;font-weight:700;margin-bottom:5px">🪄 AI REWRITES YOUR HOOK</div><div style="font-size:13px;color:#c4b5fd;font-style:italic;line-height:1.6">"${r.rewrittenHook}"</div></div>
-    <div style="background:rgba(255,255,255,0.03);border-radius:12px;padding:14px"><div style="font-size:10px;color:rgba(255,255,255,0.38);font-weight:700;margin-bottom:4px">🧠 AI VERDICT</div><div style="font-size:13px;color:rgba(255,255,255,0.75);line-height:1.6">${r.verdict}</div></div>`);
+    var raw=await freeAI('Analyze this '+S.viralPlat+' post for Zenoti (@gozenoti). Return ONLY valid JSON no extra text. Post: "'+draft+'" {"viralScore":78,"engagementPrediction":"8-12%","reachEstimate":"45K-80K","hookStrength":72,"emotionalTrigger":85,"shareability":68,"clarity":90,"ctaStrength":60,"bestTimeToPost":"Wed 6-8pm","strengths":["point 1","point 2"],"improvements":["fix 1","fix 2"],"rewrittenHook":"better opening","verdict":"2-line assessment"}');
+    var r=JSON.parse(raw.replace(/```json|```/g,'').trim());
+    var sc=function(s){return s>=85?'#10b981':s>=70?'#f59e0b':'#ef4444';};
+    var ring=function(score,lbl,sz){sz=sz||80;var r2=30,ci=2*Math.PI*r2,d=(score/100)*ci,c=sc(score);return '<div style="display:flex;flex-direction:column;align-items:center;gap:5px"><svg width="'+sz+'" height="'+sz+'" viewBox="0 0 72 72"><circle cx="36" cy="36" r="'+r2+'" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="5"/><circle cx="36" cy="36" r="'+r2+'" fill="none" stroke="'+c+'" stroke-width="5" stroke-dasharray="'+d+' '+(ci-d)+'" stroke-dashoffset="'+ci/4+'" stroke-linecap="round" style="filter:drop-shadow(0 0 6px '+c+')"/><text x="36" y="40" text-anchor="middle" fill="white" font-size="14" font-weight="800">'+score+'</text></svg>'+(lbl?'<span style="font-size:9px;color:rgba(255,255,255,0.38);font-weight:700;text-transform:uppercase;letter-spacing:0.08em">'+lbl+'</span>':'')+'</div>';};
+    setH('viralResult',
+      '<div style="display:flex;gap:12px;align-items:center;justify-content:center;margin-bottom:20px;flex-wrap:wrap">'+ring(r.viralScore,'Viral Score')+ring(r.hookStrength,'Hook',64)+ring(r.emotionalTrigger,'Emotion',64)+ring(r.shareability,'Share',64)+ring(r.ctaStrength,'CTA',64)+'</div>'+
+      '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">'+[['📊 Engagement',r.engagementPrediction],['📡 Reach',r.reachEstimate],['⏰ Best Time',r.bestTimeToPost],['🎯 Clarity',r.clarity+'/100']].map(function(lv){return '<div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:12px"><div style="font-size:10px;color:rgba(255,255,255,0.38);margin-bottom:3px">'+lv[0]+'</div><div style="font-size:15px;font-weight:700">'+lv[1]+'</div></div>';}).join('')+'</div>'+
+      '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px"><div style="background:rgba(16,185,129,0.07);border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:14px"><div style="font-size:10px;color:#6ee7b7;font-weight:700;margin-bottom:8px">✅ STRENGTHS</div>'+(r.strengths||[]).map(function(s){return '<div style="font-size:12px;color:rgba(255,255,255,0.65);margin-bottom:5px;display:flex;gap:5px"><span style="color:#10b981">+</span>'+s+'</div>';}).join('')+'</div><div style="background:rgba(239,68,68,0.07);border:1px solid rgba(239,68,68,0.2);border-radius:12px;padding:14px"><div style="font-size:10px;color:#fca5a5;font-weight:700;margin-bottom:8px">⚡ IMPROVEMENTS</div>'+(r.improvements||[]).map(function(s){return '<div style="font-size:12px;color:rgba(255,255,255,0.65);margin-bottom:5px;display:flex;gap:5px"><span style="color:#f59e0b">→</span>'+s+'</div>';}).join('')+'</div></div>'+
+      '<div style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.22);border-radius:12px;padding:14px;margin-bottom:14px;border-left:3px solid #6366f1"><div style="font-size:10px;color:#a5b4fc;font-weight:700;margin-bottom:5px">🪄 AI REWRITES YOUR HOOK</div><div style="font-size:13px;color:#c4b5fd;font-style:italic;line-height:1.6">"'+r.rewrittenHook+'"</div></div>'+
+      '<div style="background:rgba(255,255,255,0.03);border-radius:12px;padding:14px"><div style="font-size:10px;color:rgba(255,255,255,0.38);font-weight:700;margin-bottom:4px">🧠 AI VERDICT</div><div style="font-size:13px;color:rgba(255,255,255,0.75);line-height:1.6">'+r.verdict+'</div></div>'
+    );
   }catch(e){errMsg('viralResult','Analysis failed — please try again.');}
   doneBtn(btn,'🔬 Analyze Viral Potential — Free');
 }
 
 // ── GENERATE POSTS ─────────────────────────────────────────────
 async function genPosts(){
-  const topic=getV('postTopic');if(!topic){alert('Please enter a topic');return;}
-  const btn=$('genPostsBtn');ldBtn(btn,'Generating…');setH('postsOut','');
+  var topic=getV('postTopic');
+  if(!topic){alert('Please enter a topic');return;}
+  var btn=$('genPostsBtn');
+  ldBtn(btn,'Generating…');
+  setH('postsOut','');
   try{
-    const pd=S.selPlats.map(id=>`${PL[id]}: max ${PM[id]} chars, tone: ${PT[id]}`).join(' | ');
-    const extra=getV('postExtra');
-    const raw=await freeAI(`You are a social media manager for Zenoti (@gozenoti, beauty & wellness SaaS, 30k+ salons). Create posts.
-Topic: ${topic}, Tone: ${S.tone}${extra?', Extra: '+extra:''}
-Hashtags: #GoZenoti #BeautyAndWellness #SalonTech #MedSpa
-Platforms: ${pd}
-Return ONLY valid JSON object no extra text: { ${S.selPlats.map(id=>`"${id}": "post content"`).join(', ')} }`);
-    const posts=JSON.parse(raw.replace(/```json|```/g,'').trim());
-    let html=`<div style="display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap">`;
-    S.selPlats.forEach((id,i)=>{html+=`<button class="chip${i===0?' active':''}" onclick="showPost(this,'${id}')">${PI[id]} ${PL[id]}</button>`;});
-    html+=`<button class="chip" onclick="showAllPosts(this)">📋 All</button></div><div id="postCards">`;
-    S.selPlats.forEach((id,i)=>{
+    var pd=S.selPlats.map(function(id){return PL[id]+': max '+PM[id]+' chars, tone: '+PT[id];}).join(' | ');
+    var extra=getV('postExtra');
+    var raw=await freeAI('You are a social media manager for Zenoti (@gozenoti, beauty & wellness SaaS, 30k+ salons). Topic: '+topic+', Tone: '+S.tone+(extra?', Extra: '+extra:'')+'. Hashtags: #GoZenoti #BeautyAndWellness #SalonTech #MedSpa. Platforms: '+pd+'. Return ONLY valid JSON: { '+S.selPlats.map(function(id){return '"'+id+'": "post content"';}).join(', ')+' }');
+    var posts=JSON.parse(raw.replace(/```json|```/g,'').trim());
+    var html='<div style="display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap">';
+    S.selPlats.forEach(function(id,i){html+='<button class="chip'+(i===0?' active':'')+'" onclick="showPost(this,\''+id+'\')">'+PI[id]+' '+PL[id]+'</button>';});
+    html+='<button class="chip" onclick="showAllPosts(this)">📋 All</button></div><div id="postCards">';
+    S.selPlats.forEach(function(id,i){
       if(!posts[id])return;
-      html+=`<div class="post-card" data-p="${id}" style="${i>0?'display:none':''}"><div style="display:flex;justify-content:space-between;margin-bottom:10px"><span style="color:rgba(255,255,255,0.65);font-weight:600;font-size:12.5px">${PI[id]} ${PL[id]}</span><span style="color:rgba(255,255,255,0.25);font-size:10.5px;font-family:monospace">${posts[id].length}/${PM[id]}</span></div><p style="color:rgba(255,255,255,0.78);font-size:13.5px;line-height:1.72;white-space:pre-wrap;margin-bottom:12px">${posts[id]}</p><button onclick="cpBtn(this)" data-t="${posts[id].replace(/"/g,'&quot;').replace(/'/g,'&#39;')}" style="background:rgba(99,102,241,0.12);border:1px solid rgba(99,102,241,0.28);border-radius:8px;color:#a5b4fc;font-size:11.5px;font-weight:600;padding:5px 13px;cursor:pointer">⎘ Copy</button></div>`;
+      html+='<div class="post-card" data-p="'+id+'" style="'+(i>0?'display:none':'')+'"><div style="display:flex;justify-content:space-between;margin-bottom:10px"><span style="color:rgba(255,255,255,0.65);font-weight:600;font-size:12.5px">'+PI[id]+' '+PL[id]+'</span><span style="color:rgba(255,255,255,0.25);font-size:10.5px;font-family:monospace">'+posts[id].length+'/'+PM[id]+'</span></div><p style="color:rgba(255,255,255,0.78);font-size:13.5px;line-height:1.72;white-space:pre-wrap;margin-bottom:12px">'+posts[id]+'</p><button onclick="cpBtn(this)" data-t="'+posts[id].replace(/"/g,'&quot;').replace(/'/g,'&#39;')+'" style="background:rgba(99,102,241,0.12);border:1px solid rgba(99,102,241,0.28);border-radius:8px;color:#a5b4fc;font-size:11.5px;font-weight:600;padding:5px 13px;cursor:pointer">⎘ Copy</button></div>';
     });
-    html+=`</div><button onclick="genPosts()" style="width:100%;margin-top:8px;background:transparent;border:1px solid rgba(99,102,241,0.22);border-radius:11px;color:rgba(165,180,252,0.55);font-size:12.5px;font-weight:600;padding:10px;cursor:pointer">🔄 Regenerate</button>`;
+    html+='</div><button onclick="genPosts()" style="width:100%;margin-top:8px;background:transparent;border:1px solid rgba(99,102,241,0.22);border-radius:11px;color:rgba(165,180,252,0.55);font-size:12.5px;font-weight:600;padding:10px;cursor:pointer">🔄 Regenerate</button>';
     setH('postsOut',html);
   }catch(e){errMsg('postsOut','Generation failed — please try again.');}
   doneBtn(btn,'✨ Generate Text Posts — Free');
 }
-function showPost(el,p){document.querySelectorAll('#postCards .post-card').forEach(c=>c.style.display=c.dataset.p===p?'block':'none');el.parentElement.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));el.classList.add('active');}
-function showAllPosts(el){document.querySelectorAll('#postCards .post-card').forEach(c=>c.style.display='block');el.parentElement.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));el.classList.add('active');}
-function cpBtn(b){navigator.clipboard.writeText(b.dataset.t).then(()=>{b.textContent='✓ Copied';setTimeout(()=>b.textContent='⎘ Copy',2000);});}
+function showPost(el,p){document.querySelectorAll('#postCards .post-card').forEach(function(c){c.style.display=c.dataset.p===p?'block':'none';});el.parentElement.querySelectorAll('.chip').forEach(function(c){c.classList.remove('active');});el.classList.add('active');}
+function showAllPosts(el){document.querySelectorAll('#postCards .post-card').forEach(function(c){c.style.display='block';});el.parentElement.querySelectorAll('.chip').forEach(function(c){c.classList.remove('active');});el.classList.add('active');}
+function cpBtn(b){navigator.clipboard.writeText(b.dataset.t).then(function(){b.textContent='✓ Copied';setTimeout(function(){b.textContent='⎘ Copy';},2000);});}
 
 // ── IMAGE ──────────────────────────────────────────────────────
 async function genImage(){
-  const fk=getV('freepikKey');if(!fk){alert('Add your Freepik API key in ⚙️ Settings');return;}
-  const prompt=getV('imgPrompt');if(!prompt){alert('Please enter an image prompt');return;}
-  const btn=$('genImgBtn');ldBtn(btn,'Generating…');
+  var fk=getV('freepikKey');if(!fk){alert('Add your Freepik API key in ⚙️ Settings');return;}
+  var prompt=getV('imgPrompt');if(!prompt){alert('Please enter an image prompt');return;}
+  var btn=$('genImgBtn');ldBtn(btn,'Generating…');
   setH('imgStatus','<div style="background:rgba(16,185,129,0.07);border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:12px 16px;color:#6ee7b7;font-size:12.5px;display:flex;align-items:center;gap:8px"><div style="width:14px;height:14px;border:2px solid rgba(16,185,129,0.3);border-top:2px solid #10b981;border-radius:50%;animation:spin 1s linear infinite;flex-shrink:0"></div>Generating via Freepik AI… 15-30s</div>');
   setH('imgOut','');
   try{
-    const fp=`${prompt}, ${$('imgStyle').value} style, professional high quality social media`;
-    const res=await fetch('https://api.freepik.com/v1/ai/text-to-image',{method:'POST',headers:{'Content-Type':'application/json','x-freepik-api-key':fk},body:JSON.stringify({prompt:fp,num_images:1,image:{size:$('imgSize').value},filter_nsfw:true})});
-    const data=await res.json();
-    if(!res.ok)throw new Error(data?.message||`Freepik error ${res.status}`);
-    let imgUrl=null;
-    if(data?.data?.length){const it=data.data[0];imgUrl=it.base64?`data:image/jpeg;base64,${it.base64}`:it.url;}
-    else if(data?.data?.task_id){
-      const tid=data.data.task_id;
-      for(let i=0;i<20;i++){
-        await new Promise(r=>setTimeout(r,4000));
-        setH('imgStatus',`<div style="background:rgba(99,102,241,0.07);border:1px solid rgba(99,102,241,0.18);border-radius:12px;padding:12px 16px;color:rgba(165,180,252,0.75);font-size:12.5px">⟳ Processing… ${(i+1)*4}s</div>`);
-        const p=await(await fetch(`https://api.freepik.com/v1/ai/text-to-image/${tid}`,{headers:{'x-freepik-api-key':fk}})).json();
-        if(p?.data?.status==='COMPLETED'||p?.data?.status==='OK'){const imgs=p?.data?.generated||p?.data||[];if(imgs[0])imgUrl=imgs[0].base64?`data:image/jpeg;base64,${imgs[0].base64}`:imgs[0].url;break;}
-        if(p?.data?.status==='FAILED')throw new Error('Task failed');
+    var fp=prompt+', '+$('imgStyle').value+' style, professional high quality social media';
+    var res=await fetch('https://api.freepik.com/v1/ai/text-to-image',{method:'POST',headers:{'Content-Type':'application/json','x-freepik-api-key':fk},body:JSON.stringify({prompt:fp,num_images:1,image:{size:$('imgSize').value},filter_nsfw:true})});
+    var data=await res.json();
+    if(!res.ok)throw new Error(data&&data.message?data.message:'Freepik error '+res.status);
+    var imgUrl=null;
+    if(data&&data.data&&data.data.length){var it=data.data[0];imgUrl=it.base64?'data:image/jpeg;base64,'+it.base64:it.url;}
+    else if(data&&data.data&&data.data.task_id){
+      var tid=data.data.task_id;
+      for(var i=0;i<20;i++){
+        await new Promise(function(r){setTimeout(r,4000);});
+        setH('imgStatus','<div style="background:rgba(99,102,241,0.07);border:1px solid rgba(99,102,241,0.18);border-radius:12px;padding:12px 16px;color:rgba(165,180,252,0.75);font-size:12.5px">⟳ Processing… '+((i+1)*4)+'s</div>');
+        var p=await(await fetch('https://api.freepik.com/v1/ai/text-to-image/'+tid,{headers:{'x-freepik-api-key':fk}})).json();
+        if(p&&p.data&&(p.data.status==='COMPLETED'||p.data.status==='OK')){var imgs=p.data.generated||p.data||[];if(imgs[0])imgUrl=imgs[0].base64?'data:image/jpeg;base64,'+imgs[0].base64:imgs[0].url;break;}
+        if(p&&p.data&&p.data.status==='FAILED')throw new Error('Task failed');
       }
     }
     if(!imgUrl)throw new Error('No image returned — check Freepik credits');
     setH('imgStatus','<div style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);border-radius:12px;padding:10px 14px;color:#6ee7b7;font-size:12px">✅ Image generated!</div>');
-    setH('imgOut',`<div style="position:relative;border-radius:14px;overflow:hidden;border:1px solid rgba(16,185,129,0.25);margin-top:8px"><img src="${imgUrl}" style="width:100%;display:block"/><a href="${imgUrl}" download="zenoti-image.jpg" target="_blank" style="position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,0.75);border:1px solid rgba(255,255,255,0.15);border-radius:8px;color:white;font-size:12px;font-weight:600;padding:5px 11px;text-decoration:none">⬇ Save</a></div>`);
+    setH('imgOut','<div style="position:relative;border-radius:14px;overflow:hidden;border:1px solid rgba(16,185,129,0.25);margin-top:8px"><img src="'+imgUrl+'" style="width:100%;display:block"/><a href="'+imgUrl+'" download="zenoti-image.jpg" target="_blank" style="position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,0.75);border:1px solid rgba(255,255,255,0.15);border-radius:8px;color:white;font-size:12px;font-weight:600;padding:5px 11px;text-decoration:none">⬇ Save</a></div>');
   }catch(e){setH('imgStatus','');errMsg('imgOut',e.message);}
   doneBtn(btn,'🖼️ Generate Real Image');
 }
 
 // ── VIDEO ──────────────────────────────────────────────────────
 async function genVideo(){
-  const fk=getV('freepikKey');if(!fk){alert('Add your Freepik API key in ⚙️ Settings');return;}
-  const prompt=getV('vidPrompt');if(!prompt){alert('Please enter a video prompt');return;}
-  const btn=$('genVidBtn');ldBtn(btn,'Submitting…');setH('vidStatus','');setH('vidOut','');
+  var fk=getV('freepikKey');if(!fk){alert('Add your Freepik API key in ⚙️ Settings');return;}
+  var prompt=getV('vidPrompt');if(!prompt){alert('Please enter a video prompt');return;}
+  var btn=$('genVidBtn');ldBtn(btn,'Submitting…');setH('vidStatus','');setH('vidOut','');
   try{
-    const res=await fetch('https://api.freepik.com/v1/ai/video/kling-v3-pro',{method:'POST',headers:{'Content-Type':'application/json','x-freepik-api-key':fk},body:JSON.stringify({prompt,aspect_ratio:$('vidAspect').value,duration:$('vidDur').value,negative_prompt:'blurry, low quality, distorted'})});
-    const data=await res.json();
-    if(!res.ok)throw new Error(data?.message||`Freepik error ${res.status}`);
-    const tid=data?.data?.task_id;if(!tid)throw new Error('No task ID');
-    for(let i=0;i<40;i++){
-      await new Promise(r=>setTimeout(r,5000));btn.innerHTML=`⏳ Rendering… ${(i+1)*5}s`;
-      setH('vidStatus',`<div style="background:rgba(99,102,241,0.07);border:1px solid rgba(99,102,241,0.18);border-radius:11px;padding:11px 15px;color:rgba(165,180,252,0.75);font-size:12.5px">⟳ Rendering… ${(i+1)*5}s</div>`);
-      const p=await(await fetch(`https://api.freepik.com/v1/ai/video/kling-v3-pro/${tid}`,{headers:{'x-freepik-api-key':fk}})).json();
-      if(p?.data?.status==='COMPLETED'||p?.data?.status==='OK'){
-        const url=p?.data?.generated?.[0]?.url||p?.data?.url;
-        if(url){setH('vidStatus','');setH('vidOut',`<div style="border-radius:14px;overflow:hidden;border:1px solid rgba(236,72,153,0.3)"><video src="${url}" controls style="width:100%;display:block"></video><div style="display:flex;gap:8px;padding:10px;background:rgba(255,255,255,0.02)"><a href="${url}" download="zenoti-video.mp4" target="_blank" style="flex:1;text-align:center;padding:9px;border-radius:9px;background:linear-gradient(135deg,#db2777,#9333ea);color:white;font-size:12.5px;font-weight:700;text-decoration:none">⬇ Download</a><button onclick="navigator.clipboard.writeText('${url}')" style="padding:9px 14px;border-radius:9px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.55);font-size:12.5px;cursor:pointer">🔗 URL</button></div></div>`);break;}
+    var res=await fetch('https://api.freepik.com/v1/ai/video/kling-v3-pro',{method:'POST',headers:{'Content-Type':'application/json','x-freepik-api-key':fk},body:JSON.stringify({prompt:prompt,aspect_ratio:$('vidAspect').value,duration:$('vidDur').value,negative_prompt:'blurry, low quality, distorted'})});
+    var data=await res.json();
+    if(!res.ok)throw new Error(data&&data.message?data.message:'Freepik error '+res.status);
+    var tid=data&&data.data&&data.data.task_id;
+    if(!tid)throw new Error('No task ID');
+    for(var i=0;i<40;i++){
+      await new Promise(function(r){setTimeout(r,5000);});
+      btn.innerHTML='⏳ Rendering… '+((i+1)*5)+'s';
+      setH('vidStatus','<div style="background:rgba(99,102,241,0.07);border:1px solid rgba(99,102,241,0.18);border-radius:11px;padding:11px 15px;color:rgba(165,180,252,0.75);font-size:12.5px">⟳ Rendering… '+((i+1)*5)+'s</div>');
+      var p=await(await fetch('https://api.freepik.com/v1/ai/video/kling-v3-pro/'+tid,{headers:{'x-freepik-api-key':fk}})).json();
+      if(p&&p.data&&(p.data.status==='COMPLETED'||p.data.status==='OK')){
+        var url=p.data.generated&&p.data.generated[0]?p.data.generated[0].url:p.data.url;
+        if(url){setH('vidStatus','');setH('vidOut','<div style="border-radius:14px;overflow:hidden;border:1px solid rgba(236,72,153,0.3)"><video src="'+url+'" controls style="width:100%;display:block"></video><div style="display:flex;gap:8px;padding:10px;background:rgba(255,255,255,0.02)"><a href="'+url+'" download="zenoti-video.mp4" target="_blank" style="flex:1;text-align:center;padding:9px;border-radius:9px;background:linear-gradient(135deg,#db2777,#9333ea);color:white;font-size:12.5px;font-weight:700;text-decoration:none">⬇ Download</a><button onclick="navigator.clipboard.writeText(\''+url+'\')" style="padding:9px 14px;border-radius:9px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.55);font-size:12.5px;cursor:pointer">🔗 URL</button></div></div>');break;}
       }
-      if(p?.data?.status==='FAILED')throw new Error('Video failed');
+      if(p&&p.data&&p.data.status==='FAILED')throw new Error('Video failed');
     }
   }catch(e){setH('vidStatus','');errMsg('vidOut',e.message);}
   doneBtn(btn,'🎬 Generate Video');
@@ -907,180 +927,37 @@ async function genVideo(){
 
 // ── PERSONA ────────────────────────────────────────────────────
 async function genPersona(){
-  const topic=getV('persTopic');if(!topic){alert('Please enter a topic');return;}
-  const btn=$('persBtn');ldBtn(btn,'Generating 4 variants…');setH('persOut','');
+  var topic=getV('persTopic');if(!topic){alert('Please enter a topic');return;}
+  var btn=$('persBtn');ldBtn(btn,'Generating 4 variants…');setH('persOut','');
   try{
-    const plat=$('persPlat').value,persona=$('persType').value;
-    const raw=await freeAI(`Create 4 different post variants for Zenoti (@gozenoti) on ${PL[plat]}, topic: "${topic}", targeting: ${persona}. Each must have a unique angle.
-Return ONLY valid JSON array no extra text: [{"variant":"Name","hook":"Opening line","body":"Post body max 150 chars","angle":"Strategy","predictedEng":"X-Y%"},{"variant":"...","hook":"...","body":"...","angle":"...","predictedEng":"..."},{"variant":"...","hook":"...","body":"...","angle":"...","predictedEng":"..."},{"variant":"...","hook":"...","body":"...","angle":"...","predictedEng":"..."}]`);
-    const vars=JSON.parse(raw.replace(/```json|```/g,'').trim());
-    const cols=['#6366f1','#8b5cf6','#ec4899','#f59e0b'];
-    setH('persOut',`<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;animation:fadeIn 0.3s ease">${vars.slice(0,4).map((v,i)=>`<div style="background:rgba(255,255,255,0.025);border:1px solid ${cols[i]}33;border-radius:15px;padding:16px"><div style="display:flex;justify-content:space-between;margin-bottom:10px"><span style="font-size:11px;font-weight:700;color:${cols[i]};background:${cols[i]}22;padding:3px 10px;border-radius:20px">${v.variant}</span><span style="font-size:11px;color:#10b981;font-weight:700">${v.predictedEng}</span></div><div style="font-size:13px;font-weight:700;color:white;margin-bottom:6px;line-height:1.5">"${v.hook}"</div><div style="font-size:11.5px;color:rgba(255,255,255,0.5);margin-bottom:8px;line-height:1.6">${v.body}</div><div style="font-size:10.5px;color:${cols[i]};background:${cols[i]}11;padding:5px 10px;border-radius:8px">${v.angle}</div></div>`).join('')}</div>`);
+    var plat=$('persPlat').value,persona=$('persType').value;
+    var raw=await freeAI('Create 4 different post variants for Zenoti (@gozenoti) on '+PL[plat]+', topic: "'+topic+'", targeting: '+persona+'. Each must have a unique angle. Return ONLY valid JSON array no extra text: [{"variant":"Name","hook":"Opening line","body":"Post body max 150 chars","angle":"Strategy","predictedEng":"X-Y%"},{"variant":"...","hook":"...","body":"...","angle":"...","predictedEng":"..."},{"variant":"...","hook":"...","body":"...","angle":"...","predictedEng":"..."},{"variant":"...","hook":"...","body":"...","angle":"...","predictedEng":"..."}]');
+    var vars=JSON.parse(raw.replace(/```json|```/g,'').trim());
+    var cols=['#6366f1','#8b5cf6','#ec4899','#f59e0b'];
+    setH('persOut','<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;animation:fadeIn 0.3s ease">'+vars.slice(0,4).map(function(v,i){return '<div style="background:rgba(255,255,255,0.025);border:1px solid '+cols[i]+'33;border-radius:15px;padding:16px"><div style="display:flex;justify-content:space-between;margin-bottom:10px"><span style="font-size:11px;font-weight:700;color:'+cols[i]+';background:'+cols[i]+'22;padding:3px 10px;border-radius:20px">'+v.variant+'</span><span style="font-size:11px;color:#10b981;font-weight:700">'+v.predictedEng+'</span></div><div style="font-size:13px;font-weight:700;color:white;margin-bottom:6px;line-height:1.5">"'+v.hook+'"</div><div style="font-size:11.5px;color:rgba(255,255,255,0.5);margin-bottom:8px;line-height:1.6">'+v.body+'</div><div style="font-size:10.5px;color:'+cols[i]+';background:'+cols[i]+'11;padding:5px 10px;border-radius:8px">'+v.angle+'</div></div>';}).join('')+'</div>');
   }catch(e){errMsg('persOut','Generation failed — please try again.');}
   doneBtn(btn,'🎭 Generate 4 Persona Variants — Free');
 }
 
 // ── REPURPOSE ──────────────────────────────────────────────────
 async function genRepurpose(){
-  const input=getV('repInput');if(!input){alert('Please paste some content');return;}
-  const btn=$('repBtn');ldBtn(btn,'Repurposing…');setH('repOut','');
+  var input=getV('repInput');if(!input){alert('Please paste some content');return;}
+  var btn=$('repBtn');ldBtn(btn,'Repurposing…');setH('repOut','');
   try{
-    const raw=await freeAI(`Repurpose this for Zenoti (@gozenoti) into 8 formats. Include hashtags #GoZenoti #BeautyAndWellness #SalonTech.
-Content: "${input}"
-Return ONLY valid JSON object no extra text: {"linkedin_post":"...","linkedin_article_hook":"...","instagram_caption":"...","instagram_story":"...","twitter_thread":"Tweet 1\\n\\nTweet 2\\n\\nTweet 3","twitter_single":"...","facebook_post":"...","youtube_short_script":"..."}`);
-    const r=JSON.parse(raw.replace(/```json|```/g,'').trim());
-    const fmts=[{k:'linkedin_post',l:'LinkedIn Post',i:'💼',c:'#0077b5'},{k:'linkedin_article_hook',l:'LinkedIn Article',i:'📰',c:'#0077b5'},{k:'instagram_caption',l:'Instagram Caption',i:'📸',c:'#e1306c'},{k:'instagram_story',l:'Instagram Story',i:'⭕',c:'#e1306c'},{k:'twitter_thread',l:'Twitter Thread',i:'🧵',c:'#1da1f2'},{k:'twitter_single',l:'Twitter Post',i:'🐦',c:'#1da1f2'},{k:'facebook_post',l:'Facebook Post',i:'👥',c:'#1877f2'},{k:'youtube_short_script',l:'YouTube Short',i:'🎬',c:'#ff0000'}];
-    setH('repOut',`<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;animation:fadeIn 0.3s ease">${fmts.map(f=>`<div style="background:rgba(255,255,255,0.025);border:1px solid ${f.c}25;border-radius:13px;padding:14px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><span style="font-size:11px;font-weight:700;color:${f.c}">${f.i} ${f.l}</span><button onclick="navigator.clipboard.writeText(this.dataset.t);this.textContent='✓';setTimeout(()=>this.textContent='⎘',2000)" data-t="${(r[f.k]||'').replace(/"/g,'&quot;').replace(/'/g,'&#39;')}" style="background:transparent;border:1px solid ${f.c}44;border-radius:6px;color:${f.c};font-size:10px;padding:2px 8px;cursor:pointer">⎘</button></div><div style="font-size:12px;color:rgba(255,255,255,0.6);line-height:1.6">${(r[f.k]||'').slice(0,150)}…</div></div>`).join('')}</div>`);
+    var raw=await freeAI('Repurpose this for Zenoti (@gozenoti) into 8 formats. Include hashtags #GoZenoti #BeautyAndWellness #SalonTech. Content: "'+input+'". Return ONLY valid JSON object no extra text: {"linkedin_post":"...","linkedin_article_hook":"...","instagram_caption":"...","instagram_story":"...","twitter_thread":"Tweet 1\\n\\nTweet 2\\n\\nTweet 3","twitter_single":"...","facebook_post":"...","youtube_short_script":"..."}');
+    var r=JSON.parse(raw.replace(/```json|```/g,'').trim());
+    var fmts=[{k:'linkedin_post',l:'LinkedIn Post',i:'💼',c:'#0077b5'},{k:'linkedin_article_hook',l:'LinkedIn Article',i:'📰',c:'#0077b5'},{k:'instagram_caption',l:'Instagram Caption',i:'📸',c:'#e1306c'},{k:'instagram_story',l:'Instagram Story',i:'⭕',c:'#e1306c'},{k:'twitter_thread',l:'Twitter Thread',i:'🧵',c:'#1da1f2'},{k:'twitter_single',l:'Twitter Post',i:'🐦',c:'#1da1f2'},{k:'facebook_post',l:'Facebook Post',i:'👥',c:'#1877f2'},{k:'youtube_short_script',l:'YouTube Short',i:'🎬',c:'#ff0000'}];
+    setH('repOut','<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;animation:fadeIn 0.3s ease">'+fmts.map(function(f){return '<div style="background:rgba(255,255,255,0.025);border:1px solid '+f.c+'25;border-radius:13px;padding:14px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><span style="font-size:11px;font-weight:700;color:'+f.c+'">'+f.i+' '+f.l+'</span><button onclick="navigator.clipboard.writeText(this.dataset.t);this.textContent=\'✓\';setTimeout(()=>this.textContent=\'⎘\',2000)" data-t="'+(r[f.k]||'').replace(/"/g,'&quot;').replace(/'/g,'&#39;')+'" style="background:transparent;border:1px solid '+f.c+'44;border-radius:6px;color:'+f.c+';font-size:10px;padding:2px 8px;cursor:pointer">⎘</button></div><div style="font-size:12px;color:rgba(255,255,255,0.6);line-height:1.6">'+(r[f.k]||'').slice(0,150)+'…</div></div>';}).join('')+'</div>');
   }catch(e){errMsg('repOut','Repurpose failed — please try again.');}
   doneBtn(btn,'♻️ Repurpose Into 8 Formats — Free');
 }
 
-// ── CALENDAR ───────────────────────────────────────────────────
-const calMeta={
-  1:{caption:'Show how Zenoti AI booking works in 60 seconds — real salon walkthrough with before/after booking flow.',hashtags:'#GoZenoti #AIBooking #SalonTech',cta:'Link in bio to book a free demo 👆'},
-  2:{caption:'The beauty industry is at an inflection point. AI isn\'t replacing stylists — it\'s giving them back 10+ hours a week. Here\'s what the next 3 years look like.',hashtags:'#SalonTech #BeautyAndWellness #FutureOfWork',cta:'What\'s your take? Drop a comment 👇'},
-  3:{caption:'5 wellness trends reshaping spas & salons in 2026. Thread 🧵\n\n1/ AI-powered booking → zero no-shows\n2/ Personalized treatment plans\n3/ Real-time inventory management\n4/ Client retention automation\n5/ Revenue forecasting dashboards',hashtags:'#WellnessTrends #SpaLife #MedSpa',cta:'Follow for more industry insights'},
-  4:{caption:'Swipe to see real client transformations powered by Zenoti. Our partners report 40% more repeat bookings after going live.',hashtags:'#BeforeAndAfter #SalonLife #GoZenoti',cta:'DM us to see your salon\'s potential 💬'},
-  5:{caption:'🔴 LIVE WEBINAR: How top salons are using AI to 2x revenue without hiring more staff. Join 500+ salon owners this Thursday.',hashtags:'#Webinar #SalonBusiness #BeautyTech',cta:'Register free — link in bio'},
-  6:{caption:'"We reduced no-shows by 67% in 30 days." — Maria, Owner of Luxe Salon & Spa. Real results. Real salon. Powered by Zenoti.',hashtags:'#CustomerSuccess #SalonOwner #GoZenoti',cta:'Read the full story → link in bio'},
-  7:{caption:'Quick poll for salon owners 👇\n\nWhat\'s your biggest challenge right now?',hashtags:'#SalonOwner #SmallBusiness #BeautyBiz',cta:'Vote & share with a fellow salon owner!'},
-};
-
-function renderCal(){
-  const sch=S.cal.filter(x=>x.st==='scheduled').length;
-  const pend=S.cal.filter(x=>x.st==='pending').length;
-  $('schCount').textContent=`${sch} Scheduled`;
-  $('calBadge').textContent=pend;
-  const sc=s=>s>=85?'#10b981':s>=70?'#f59e0b':'#ef4444';
-  const scoreLabel=s=>s>=85?'High Potential':s>=70?'Good':'Needs Work';
-
-  setH('calItems', S.cal.map(item=>{
-    const isSch=item.st==='scheduled';
-    const meta=calMeta[item.id]||{};
-    const scoreColor=sc(item.score);
-    return `
-    <div style="background:rgba(255,255,255,0.025);border:1px solid ${isSch?'rgba(16,185,129,0.22)':'rgba(255,255,255,0.08)'};border-radius:16px;padding:18px;margin-bottom:12px;animation:fadeIn 0.3s ease">
-
-      <!-- Top row: platform icon + topic + type + time + score -->
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
-        <div style="width:44px;height:44px;border-radius:13px;background:${PC[item.pl]}22;border:1px solid ${PC[item.pl]}44;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0">${PI[item.pl]}</div>
-        <div style="flex:1;min-width:0">
-          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:5px">
-            <span style="font-size:14px;font-weight:800;color:white">${item.topic}</span>
-            <span style="font-size:10.5px;background:${PC[item.pl]}22;color:${PC[item.pl]};padding:2px 9px;border-radius:20px;font-weight:700;flex-shrink:0">${item.type}</span>
-            ${isSch?`<span style="font-size:10px;background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);color:#6ee7b7;padding:2px 9px;border-radius:20px;font-weight:700">✓ Approved</span>`:''}
-          </div>
-          <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
-            <span style="font-size:11.5px;color:rgba(255,255,255,0.4);display:flex;align-items:center;gap:4px">⏰ ${item.time}</span>
-            <span style="font-size:11.5px;color:rgba(255,255,255,0.4)">${PL[item.pl]}</span>
-            <div style="display:flex;align-items:center;gap:6px">
-              <div style="width:6px;height:6px;border-radius:50%;background:${scoreColor}"></div>
-              <span style="font-size:11px;font-weight:700;color:${scoreColor}">${item.score} — ${scoreLabel(item.score)}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Score bar -->
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
-        <span style="font-size:10px;color:rgba(255,255,255,0.3);font-weight:600;white-space:nowrap">AI SCORE</span>
-        <div class="minibar-wrap"><div class="minibar-fill" style="width:${item.score}%;background:linear-gradient(90deg,${scoreColor},${scoreColor}88)"></div></div>
-        <span style="font-size:11px;font-weight:800;color:${scoreColor};min-width:28px">${item.score}/100</span>
-      </div>
-
-      <!-- Content preview -->
-      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:13px 15px;margin-bottom:12px">
-        <div style="font-size:10px;color:rgba(255,255,255,0.3);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:7px">📝 Caption Preview</div>
-        <div style="font-size:12.5px;color:rgba(255,255,255,0.72);line-height:1.7;white-space:pre-wrap;margin-bottom:8px">${meta.caption||'No caption set.'}</div>
-        <div style="font-size:11px;color:rgba(165,180,252,0.6);margin-bottom:6px">${meta.hashtags||''}</div>
-        <div style="font-size:11.5px;color:#6ee7b7;font-weight:600">${meta.cta||''}</div>
-      </div>
-
-      <!-- Action buttons -->
-      ${isSch
-        ?`<div style="display:flex;gap:8px">
-            <button onclick="rejCal(${item.id})" style="flex:1;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.22);border-radius:10px;color:#fca5a5;font-size:12.5px;font-weight:700;padding:9px;cursor:pointer">✕ Remove</button>
-          </div>`
-        :`<div style="display:flex;gap:8px">
-            <button onclick="appCal(${item.id})" style="flex:2;background:linear-gradient(135deg,rgba(16,185,129,0.2),rgba(16,185,129,0.12));border:1px solid rgba(16,185,129,0.35);border-radius:10px;color:#6ee7b7;font-size:12.5px;font-weight:700;padding:10px;cursor:pointer;transition:all 0.15s" onmouseover="this.style.background='rgba(16,185,129,0.28)'" onmouseout="this.style.background='linear-gradient(135deg,rgba(16,185,129,0.2),rgba(16,185,129,0.12))'">✓ Approve & Schedule</button>
-            <button onclick="rejCal(${item.id})" style="flex:1;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.22);border-radius:10px;color:#fca5a5;font-size:12.5px;font-weight:700;padding:10px;cursor:pointer;transition:all 0.15s" onmouseover="this.style.background='rgba(239,68,68,0.18)'" onmouseout="this.style.background='rgba(239,68,68,0.08)'">✕ Reject</button>
-          </div>`
-      }
-    </div>`;
-  }).join(''));
-}
-function appCal(id){S.cal=S.cal.map(x=>x.id===id?{...x,st:'scheduled'}:x);renderCal();}
-function rejCal(id){S.cal=S.cal.filter(x=>x.id!==id);renderCal();}
-
-function toggleUploadForm(){
-  const f=$('uploadForm');
-  const open=f.style.display==='block';
-  f.style.display=open?'none':'block';
-  // set default date/time to tomorrow 9am
-  if(!open){
-    const t=new Date();t.setDate(t.getDate()+1);
-    $('upDate').value=t.toISOString().split('T')[0];
-    $('upTime').value='09:00';
-  }
-}
-
-function handleMediaUpload(input){
-  const file=input.files[0];
-  if(!file) return;
-  const isVideo=file.type.startsWith('video/');
-  const url=URL.createObjectURL(file);
-  $('upMediaIcon').textContent=isVideo?'🎬':'🖼️';
-  $('upMediaText').textContent=file.name+' ('+Math.round(file.size/1024/1024*10)/10+' MB)';
-  const prev=$('upMediaPreview');
-  prev.style.display='block';
-  prev.innerHTML=isVideo
-    ?`<video src="${url}" controls style="width:100%;border-radius:10px;border:1px solid rgba(99,102,241,0.3);max-height:200px"></video>`
-    :`<img src="${url}" style="width:100%;border-radius:10px;border:1px solid rgba(99,102,241,0.3);max-height:200px;object-fit:cover"/>`;
-}
-
-function submitUpload(){
-  const topic=getV('upTopic');
-  const caption=getV('upCaption');
-  const pl=$('upPlatform').value;
-  const type=$('upType').value;
-  const date=$('upDate').value;
-  const time=$('upTime').value;
-  const file=$('upMedia').files[0];
-  if(!topic){alert('Please enter a topic/title');return;}
-  if(!date||!time){alert('Please set a schedule date and time');return;}
-  // format time label
-  const d=new Date(date+'T'+time);
-  const days=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-  const hr=d.getHours();
-  const ampm=hr>=12?'pm':'am';
-  const h12=hr%12||12;
-  const timeLabel=`${days[d.getDay()]} ${h12}${d.getMinutes()?':'+String(d.getMinutes()).padStart(2,'0'):''}${ampm}`;
-  const newId=Date.now();
-  // add to calMeta
-  calMeta[newId]={
-    caption:caption||'No caption provided.',
-    hashtags:'#GoZenoti #BeautyAndWellness #SalonTech',
-    cta:''
-  };
-  S.cal.push({id:newId,pl,type,topic,score:75,time:timeLabel,st:'pending',manual:true,hasMedia:!!file});
-  // reset form
-  $('upTopic').value='';$('upCaption').value='';$('upMedia').value='';
-  $('upMediaPreview').style.display='none';
-  $('upMediaIcon').textContent='🖼️';
-  $('upMediaText').textContent='Click to upload image or video';
-  toggleUploadForm();
-  renderCal();
-}
-
 // ── INIT ───────────────────────────────────────────────────────
-window.onload=()=>{
-  // Show Generate Post by default
-  $('panel-create').style.display='block';
-  renderCal();
-  // Freepik key watcher
+window.onload=function(){
+  switchTab('create');
   $('freepikKey').addEventListener('input',function(){
-    const has=this.value.trim().length>0;
-    $('imgKeyWarn').style.display=has?'none':'block';
+    var has=this.value.trim().length>0;
+    if($('imgKeyWarn'))$('imgKeyWarn').style.display=has?'none':'block';
     $('freepikStatus').innerHTML=has?'✅ Key saved':'🔑 Key required';
     $('freepikStatus').style.background=has?'rgba(16,185,129,0.15)':'rgba(245,158,11,0.15)';
     $('freepikStatus').style.borderColor=has?'rgba(16,185,129,0.3)':'rgba(245,158,11,0.3)';
