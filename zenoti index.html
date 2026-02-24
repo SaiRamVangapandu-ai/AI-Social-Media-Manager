@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Zenoti AI Social Media Intelligence Platform</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#050510;font-family:'Inter',-apple-system,sans-serif;color:white;min-height:100vh}
+input,textarea,select{font-family:'Inter',sans-serif}
+input::placeholder,textarea::placeholder{color:rgba(255,255,255,0.25)!important}
+select option{background:#0a0a1e;color:white}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-thumb{background:rgba(99,102,241,0.3);border-radius:3px}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.card{background:rgba(12,12,32,0.85);border:1px solid rgba(99,102,241,0.18);border-radius:20px;backdrop-filter:blur(24px);box-shadow:0 8px 32px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.04);padding:24px;margin-bottom:16px}
+.grad-border{border-radius:22px;padding:1.5px;background:linear-gradient(135deg,rgba(99,102,241,0.6),rgba(168,85,247,0.5),rgba(236,72,153,0.4));margin-bottom:16px}
+.grad-border-inner{background:rgba(8,8,28,0.97);border-radius:21px;padding:22px}
+.lbl{color:rgba(165,180,252,0.75);font-size:10.5px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px}
+.inp{width:100%;background:rgba(255,255,255,0.035);border:1px solid rgba(99,102,241,0.18);border-radius:12px;color:rgba(255,255,255,0.9);font-size:14px;padding:11px 15px;outline:none;transition:border-color 0.2s;resize:none}
+.inp:focus{border-color:rgba(99,102,241,0.55)}
+.sel{width:100%;background:rgba(8,8,28,0.95);border:1px solid rgba(99,102,241,0.22);border-radius:11px;color:rgba(255,255,255,0.82);font-size:13px;padding:9px 13px;outline:none;cursor:pointer}
+.btn{border:none;border-radius:13px;color:white;font-weight:700;font-size:14px;padding:13px 22px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:7px;transition:all 0.18s;width:100%}
+.btn:disabled{opacity:0.45;cursor:not-allowed}
+.btn:hover:not(:disabled){transform:translateY(-1px)}
+.tab-btn{border-radius:11px;border:1px solid rgba(255,255,255,0.07);color:rgba(255,255,255,0.45);font-weight:600;font-size:13px;padding:9px 17px;cursor:pointer;transition:all 0.18s;display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.04)}
+.tab-btn.active{background:linear-gradient(135deg,#6366f1,#8b5cf6);border-color:rgba(99,102,241,0.6);color:white;box-shadow:0 0 20px rgba(99,102,241,0.28)}
+.chip{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:20px;color:rgba(255,255,255,0.38);font-size:12px;font-weight:600;padding:5px 13px;cursor:pointer;transition:all 0.14s;white-space:nowrap}
+.chip.active{background:linear-gradient(135deg,rgba(99,102,241,0.4),rgba(168,85,247,0.35));border-color:rgba(99,102,241,0.55);color:#c4b5fd}
+.minibar-wrap{background:rgba(255,255,255,0.05);border-radius:4px;overflow:hidden;flex:1}
+.minibar-fill{height:6px;border-radius:4px;transition:width 0.8s ease}
+.post-card{background:rgba(255,255,255,0.025);border:1px solid rgba(99,102,241,0.12);border-radius:15px;padding:18px;margin-bottom:12px;animation:fadeIn 0.3s ease}
+.score-ring-wrap{display:flex;flex-direction:column;align-items:center;gap:6px}
+.section-head{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.section-head-icon{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(99,102,241,0.25),rgba(168,85,247,0.25));border:1px solid rgba(99,102,241,0.3);font-size:17px;flex-shrink:0}
+.section-divider{height:1px;background:linear-gradient(90deg,rgba(99,102,241,0.35),transparent);margin-top:14px;margin-bottom:20px}
+</style>
+</head>
+<body>
+<div id="app" style="max-width:760px;margin:0 auto;padding:0 20px 60px">
+
+<!-- BG orbs -->
+<div style="position:fixed;top:-150px;left:-150px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.07),transparent 70%);pointer-events:none;z-index:0"></div>
+<div style="position:fixed;bottom:-150px;right:-150px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(168,85,247,0.06),transparent 70%);pointer-events:none;z-index:0"></div>
+
+<!-- HEADER -->
+<div style="text-align:center;padding:44px 0 32px;position:relative;z-index:1">
+  <div style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(99,102,241,0.15),rgba(168,85,247,0.15));border:1px solid rgba(99,102,241,0.35);border-radius:20px;padding:4px 14px;margin-bottom:14px">
+    <span style="width:6px;height:6px;border-radius:50%;background:#10b981;display:inline-block;animation:pulse 2s infinite"></span>
+    <span style="font-size:11px;font-weight:700;color:#a5b4fc;letter-spacing:0.1em;text-transform:uppercase">@gozenoti · Live Profile Data</span>
+  </div>
+  <h1 style="font-size:36px;font-weight:900;margin:0 0 8px;background:linear-gradient(135deg,#e0e7ff 0%,#a5b4fc 35%,#c084fc 65%,#f0abfc 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.025em;line-height:1.15">AI Social Media Intelligence Platform</h1>
+  <p style="color:rgba(255,255,255,0.35);font-size:14px">Predict · Personalize · Automate · Amplify</p>
+  <div style="display:flex;justify-content:center;gap:24px;margin-top:18px;flex-wrap:wrap">
+    <span style="color:rgba(165,180,252,0.6);font-size:12px;font-weight:600">📸 14K IG</span>
+    <span style="color:rgba(165,180,252,0.6);font-size:12px;font-weight:600">💼 68.8K LI</span>
+    <span style="color:rgba(165,180,252,0.6);font-size:12px;font-weight:600">🐦 1.3K X</span>
+    <span style="color:rgba(165,180,252,0.6);font-size:12px;font-weight:600">👥 12.4K FB</span>
+  </div>
+</div>
+
+<!-- API KEYS -->
+<div class="grad-border" style="position:relative;z-index:1">
+  <div class="grad-border-inner">
+    <div class="section-head">
+      <div class="section-head-icon">🔑</div>
+      <div><div style="color:white;font-weight:700;font-size:15.5px">API Configuration</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px;margin-top:1px">Enter your API keys to unlock all features</div></div>
+    </div>
+    <div class="section-divider"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div>
+        <div class="lbl">Anthropic API Key</div>
+        <input id="anthropicKey" class="inp" type="password" placeholder="sk-ant-..."/>
+      </div>
+      <div>
+        <div class="lbl">Freepik API Key</div>
+        <input id="freepikKey" class="inp" type="password" placeholder="FPSX-..."/>
+      </div>
+    </div>
+    <div style="margin-top:10px;font-size:11.5px;color:rgba(255,255,255,0.35)">
+      Get Anthropic key: <a href="https://console.anthropic.com" target="_blank" style="color:#a5b4fc">console.anthropic.com</a> &nbsp;·&nbsp;
+      Get Freepik key (free $5): <a href="https://freepik.com/api" target="_blank" style="color:#a5b4fc">freepik.com/api</a>
+    </div>
+  </div>
+</div>
+
+<!-- TABS -->
+<div id="tabs" style="display:flex;gap:7px;margin-bottom:18px;flex-wrap:wrap;position:relative;z-index:1">
+  <button class="tab-btn active" onclick="switchTab('analytics')">📊 Analytics</button>
+  <button class="tab-btn" onclick="switchTab('predict')">🔬 Viral Predictor</button>
+  <button class="tab-btn" onclick="switchTab('create')">✍️ Create</button>
+  <button class="tab-btn" onclick="switchTab('persona')">🎭 Persona AI</button>
+  <button class="tab-btn" onclick="switchTab('repurpose')">♻️ Repurpose</button>
+  <button class="tab-btn" onclick="switchTab('calendar')">📅 Calendar <span style="background:#ef4444;border-radius:20px;font-size:9px;font-weight:800;padding:1px 5px;color:white">4</span></button>
+</div>
+
+<!-- TAB PANELS -->
+<div id="panel-analytics" class="tab-panel" style="position:relative;z-index:1">
+  <!-- IG Stats -->
+  <div class="card" style="box-shadow:0 0 40px rgba(225,48,108,0.08),0 8px 32px rgba(0,0,0,0.4)">
+    <div class="section-head">
+      <div class="section-head-icon">📸</div>
+      <div><div style="color:white;font-weight:700;font-size:15.5px">@gozenoti Instagram</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">14K followers · 1,089 posts · 1.2% engagement</div></div>
+    </div>
+    <div class="section-divider"></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px">
+      <div style="background:rgba(225,48,108,0.08);border:1px solid rgba(225,48,108,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">👥</div><div style="font-size:20px;font-weight:800">14K</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Followers</div></div>
+      <div style="background:rgba(225,48,108,0.08);border:1px solid rgba(225,48,108,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">🖼️</div><div style="font-size:20px;font-weight:800">1,089</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Posts</div></div>
+      <div style="background:rgba(225,48,108,0.08);border:1px solid rgba(225,48,108,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">💬</div><div style="font-size:20px;font-weight:800">1.2%</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Eng Rate</div></div>
+      <div style="background:rgba(225,48,108,0.08);border:1px solid rgba(225,48,108,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">📡</div><div style="font-size:20px;font-weight:800">18.6K</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Avg Reach</div></div>
+    </div>
+    <div class="lbl">Content Format Performance</div>
+    <div id="ig-content-perf"></div>
+    <div class="lbl" style="margin-top:16px">Top Hashtags</div>
+    <div id="ig-hashtags"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px">
+      <div style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.2);border-radius:12px;padding:12px 16px"><div style="font-size:11px;color:#a5b4fc;font-weight:700;margin-bottom:4px">⏰ Best Posting Time</div><div style="font-size:14px;color:white;font-weight:600">Mon/Wed/Fri 6–8pm</div></div>
+      <div style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:12px 16px"><div style="font-size:11px;color:#6ee7b7;font-weight:700;margin-bottom:4px">📈 Monthly Growth</div><div style="font-size:14px;color:white;font-weight:600">+3.8% · +512 followers</div></div>
+    </div>
+  </div>
+
+  <!-- LI Stats -->
+  <div class="card" style="box-shadow:0 0 40px rgba(0,119,181,0.08),0 8px 32px rgba(0,0,0,0.4)">
+    <div class="section-head">
+      <div class="section-head-icon">💼</div>
+      <div><div style="color:white;font-weight:700;font-size:15.5px">Zenoti LinkedIn</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">68.8K followers · 862 employees · 30K+ customers</div></div>
+    </div>
+    <div class="section-divider"></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px">
+      <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">👥</div><div style="font-size:20px;font-weight:800">68.8K</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Followers</div></div>
+      <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">💬</div><div style="font-size:20px;font-weight:800">2.1%</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Eng Rate</div></div>
+      <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">👁️</div><div style="font-size:20px;font-weight:800">8.4K</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Avg Impressions</div></div>
+      <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">📈</div><div style="font-size:20px;font-weight:800">+2.2K</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">New/Month</div></div>
+    </div>
+    <div class="lbl">⚡ LinkedIn 2025 Algorithm Insights</div>
+    <div id="li-insights"></div>
+  </div>
+
+  <!-- Trending -->
+  <div class="card">
+    <div class="section-head"><div class="section-head-icon">🔥</div><div><div style="color:white;font-weight:700;font-size:15.5px">Trending Topics for @gozenoti</div></div></div>
+    <div class="section-divider"></div>
+    <div id="trending-items"></div>
+  </div>
+</div>
+
+<!-- VIRAL PREDICTOR -->
+<div id="panel-predict" class="tab-panel" style="display:none;position:relative;z-index:1">
+  <div class="card">
+    <div class="section-head"><div class="section-head-icon">🔬</div><div><div style="color:white;font-weight:700;font-size:15.5px">Viral Score Analyzer</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">AI predicts your post's performance before you publish</div></div></div>
+    <div class="section-divider"></div>
+    <div class="lbl">Platform</div>
+    <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap">
+      <button class="chip active" onclick="selectPlatformViral(this,'linkedin')">💼 LinkedIn</button>
+      <button class="chip" onclick="selectPlatformViral(this,'instagram')">📸 Instagram</button>
+      <button class="chip" onclick="selectPlatformViral(this,'twitter')">🐦 X / Twitter</button>
+      <button class="chip" onclick="selectPlatformViral(this,'facebook')">👥 Facebook</button>
+    </div>
+    <input type="hidden" id="viralPlatform" value="linkedin"/>
+    <div class="lbl">Draft Content</div>
+    <textarea id="viralDraft" class="inp" rows="4" placeholder="Paste your post draft here to analyze its viral potential…"></textarea>
+    <div style="display:flex;gap:12px;align-items:center;margin-top:12px">
+      <button class="btn" onclick="analyzeViral()" style="background:linear-gradient(135deg,#f59e0b,#ef4444)" id="viralBtn">🔬 Analyze Viral Potential</button>
+    </div>
+    <div id="viralResult" style="margin-top:20px"></div>
+  </div>
+</div>
+
+<!-- CREATE -->
+<div id="panel-create" class="tab-panel" style="display:none;position:relative;z-index:1">
+  <!-- Post type selector -->
+  <div class="card">
+    <div class="section-head"><div class="section-head-icon">🎨</div><div><div style="color:white;font-weight:700;font-size:15.5px">What type of post do you want to create?</div></div></div>
+    <div class="section-divider"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+      <button onclick="selectPostType('text',this)" id="pt-text" style="background:linear-gradient(135deg,rgba(99,102,241,0.33),rgba(99,102,241,0.18));border:2px solid rgba(99,102,241,0.88);border-radius:16px;padding:20px 14px;cursor:pointer;text-align:center;box-shadow:0 0 24px rgba(99,102,241,0.33);transform:translateY(-2px)">
+        <div style="font-size:28px;margin-bottom:10px">✍️</div><div style="font-size:13.5px;font-weight:700;color:white;margin-bottom:5px">Text Post</div><div style="font-size:11px;color:#6366f1;line-height:1.5">Pure copy — no media</div>
+        <div style="margin-top:10px;width:24px;height:24px;border-radius:12px;background:#6366f1;margin-left:auto;margin-right:auto;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:white">✓</div>
+      </button>
+      <button onclick="selectPostType('image',this)" id="pt-image" style="background:rgba(255,255,255,0.03);border:2px solid rgba(255,255,255,0.07);border-radius:16px;padding:20px 14px;cursor:pointer;text-align:center">
+        <div style="font-size:28px;margin-bottom:10px">🖼️</div><div style="font-size:13.5px;font-weight:700;color:rgba(255,255,255,0.55);margin-bottom:5px">Image Post</div><div style="font-size:11px;color:rgba(255,255,255,0.3);line-height:1.5">Freepik AI image + caption</div>
+      </button>
+      <button onclick="selectPostType('video',this)" id="pt-video" style="background:rgba(255,255,255,0.03);border:2px solid rgba(255,255,255,0.07);border-radius:16px;padding:20px 14px;cursor:pointer;text-align:center">
+        <div style="font-size:28px;margin-bottom:10px">🎬</div><div style="font-size:13.5px;font-weight:700;color:rgba(255,255,255,0.55);margin-bottom:5px">Video Post</div><div style="font-size:11px;color:rgba(255,255,255,0.3);line-height:1.5">Freepik AI video + copy</div>
+      </button>
+    </div>
+  </div>
+
+  <!-- Brief -->
+  <div class="card">
+    <div class="section-head"><div class="section-head-icon">✍️</div><div><div style="color:white;font-weight:700;font-size:15.5px">Content Brief</div></div></div>
+    <div class="section-divider"></div>
+    <div style="margin-bottom:14px"><div class="lbl">Topic / Brief *</div><textarea id="postTopic" class="inp" rows="3" placeholder="e.g. Zenoti AI booking launch — trusted by 30k+ salons…"></textarea></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:14px">
+      <div>
+        <div class="lbl">Platforms</div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px">
+          <button class="chip active" onclick="togglePlatChip(this,'linkedin')">💼 LinkedIn</button>
+          <button class="chip active" onclick="togglePlatChip(this,'instagram')">📸 Instagram</button>
+          <button class="chip" onclick="togglePlatChip(this,'twitter')">🐦 X</button>
+          <button class="chip" onclick="togglePlatChip(this,'facebook')">👥 Facebook</button>
+        </div>
+      </div>
+      <div>
+        <div class="lbl">Tone</div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px">
+          <button class="chip active" onclick="selectTone(this,'Professional')">Professional</button>
+          <button class="chip" onclick="selectTone(this,'Casual & Fun')">Casual</button>
+          <button class="chip" onclick="selectTone(this,'Inspirational')">Inspirational</button>
+          <button class="chip" onclick="selectTone(this,'Educational')">Educational</button>
+        </div>
+      </div>
+    </div>
+    <div style="margin-bottom:14px"><div class="lbl">Extra Context</div><input id="postExtra" class="inp" placeholder="e.g. mention 30k+ salons milestone…"/></div>
+  </div>
+
+  <!-- Text generator -->
+  <div id="text-gen-panel" class="card">
+    <div class="section-head"><div class="section-head-icon">📝</div><div><div style="color:white;font-weight:700;font-size:15.5px">Text Post Generator</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">Claude writes copy using @gozenoti's real voice</div></div></div>
+    <div class="section-divider"></div>
+    <button class="btn" onclick="generatePosts()" id="generatePostsBtn" style="background:linear-gradient(135deg,#6366f1,#8b5cf6);margin-bottom:16px">✨ Generate Text Posts</button>
+    <div id="postsOutput"></div>
+  </div>
+
+  <!-- Image generator -->
+  <div id="image-gen-panel" class="card" style="display:none">
+    <div class="section-head"><div class="section-head-icon">🖼️</div><div><div style="color:white;font-weight:700;font-size:15.5px">Image Post Generator</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">Freepik AI generates real JPEG images</div></div></div>
+    <div class="section-divider"></div>
+    <div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.25);border-radius:12px;padding:12px 16px;margin-bottom:16px;color:#fca5a5;font-size:12.5px" id="freepikWarning">⚠️ Freepik API key required — enter it in the 🔑 Configuration section above</div>
+    <div style="margin-bottom:12px"><div class="lbl">Image Prompt *</div><textarea id="imgPrompt" class="inp" rows="3" placeholder="Describe your visual — e.g. Professional salon with AI booking screen, warm lighting…"></textarea></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px">
+      <div><div class="lbl">Art Style</div>
+        <select id="imgStyle" class="sel">
+          <option>realistic</option><option>cinematic</option><option>digital-art</option><option>anime</option><option>oil-painting</option><option>3d-render</option><option>minimalist</option><option>watercolor</option>
+        </select>
+      </div>
+      <div><div class="lbl">Size</div>
+        <select id="imgSize" class="sel">
+          <option value="square_1_1">1:1 Square</option><option value="portrait_4_5">4:5 Portrait</option><option value="widescreen_16_9">16:9 Wide</option><option value="vertical_9_16">9:16 Story</option>
+        </select>
+      </div>
+    </div>
+    <button class="btn" onclick="generateImage()" id="generateImgBtn" style="background:linear-gradient(135deg,#10b981,#6366f1);margin-bottom:14px">🖼️ Generate Real Image</button>
+    <div id="imgStatus" style="margin-bottom:14px"></div>
+    <div id="imgOutput"></div>
+  </div>
+
+  <!-- Video generator -->
+  <div id="video-gen-panel" class="card" style="display:none">
+    <div class="section-head"><div class="section-head-icon">🎬</div><div><div style="color:white;font-weight:700;font-size:15.5px">Video Post Generator</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">Freepik Kling v3 Pro · 60–120s render</div></div></div>
+    <div class="section-divider"></div>
+    <div style="background:rgba(245,158,11,0.07);border:1px solid rgba(245,158,11,0.2);border-radius:10px;padding:9px 13px;margin-bottom:14px;color:rgba(253,224,71,0.7);font-size:11.5px">⚡ Kling v3 Pro · ~$0.49 per 5s video · Requires Freepik API key</div>
+    <div style="margin-bottom:12px"><div class="lbl">Video Prompt *</div><textarea id="vidPrompt" class="inp" rows="3" placeholder="Describe the scene, action, camera movement, mood…"></textarea></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">
+      <div><div class="lbl">Aspect Ratio</div>
+        <select id="vidAspect" class="sel">
+          <option value="16:9">🖥️ Landscape 16:9</option><option value="9:16">📱 Portrait 9:16 (Reels)</option><option value="1:1">⬛ Square 1:1</option>
+        </select>
+      </div>
+      <div><div class="lbl">Duration</div>
+        <select id="vidDuration" class="sel">
+          <option value="5">5 seconds (~$0.49)</option><option value="10">10 seconds (~$0.98)</option><option value="15">15 seconds (~$1.47)</option>
+        </select>
+      </div>
+    </div>
+    <button class="btn" onclick="generateVideo()" id="generateVidBtn" style="background:linear-gradient(135deg,#db2777,#9333ea);margin-bottom:14px">🎬 Generate Video</button>
+    <div id="vidStatus" style="margin-bottom:14px"></div>
+    <div id="vidOutput"></div>
+  </div>
+</div>
+
+<!-- PERSONA AI -->
+<div id="panel-persona" class="tab-panel" style="display:none;position:relative;z-index:1">
+  <div class="card">
+    <div class="section-head"><div class="section-head-icon">🎭</div><div><div style="color:white;font-weight:700;font-size:15.5px">Persona-Based Content Variants</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">One topic → 4 unique variants targeting your audience persona</div></div></div>
+    <div class="section-divider"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px">
+      <div><div class="lbl">Platform</div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap">
+          <button class="chip active" onclick="selectPersonaPlat(this,'instagram')">📸</button>
+          <button class="chip" onclick="selectPersonaPlat(this,'linkedin')">💼</button>
+          <button class="chip" onclick="selectPersonaPlat(this,'twitter')">🐦</button>
+          <button class="chip" onclick="selectPersonaPlat(this,'facebook')">👥</button>
+        </div>
+        <input type="hidden" id="personaPlat" value="instagram"/>
+      </div>
+      <div><div class="lbl">Audience Persona</div>
+        <select id="personaType" class="sel">
+          <option value="Salon Owner (Business-minded, ROI focused, 35-50yo)">💇 Salon Owner</option>
+          <option value="Spa Manager (Wellness focused, staff management, 28-45yo)">🧖 Spa Manager</option>
+          <option value="Wellness Coach (Holistic, community-driven, 25-40yo)">🧘 Wellness Coach</option>
+          <option value="Beauty Pro (Trend-driven, visual, 22-35yo)">💄 Beauty Pro</option>
+        </select>
+      </div>
+    </div>
+    <div style="margin-bottom:14px"><div class="lbl">Topic</div><input id="personaTopic" class="inp" placeholder="e.g. AI appointment booking saves 3 hours a week…"/></div>
+    <button class="btn" onclick="generatePersona()" id="personaBtn" style="background:linear-gradient(135deg,#8b5cf6,#ec4899)">🎭 Generate 4 Persona Variants</button>
+    <div id="personaOutput" style="margin-top:20px"></div>
+  </div>
+</div>
+
+<!-- REPURPOSE -->
+<div id="panel-repurpose" class="tab-panel" style="display:none;position:relative;z-index:1">
+  <div class="card">
+    <div class="section-head"><div class="section-head-icon">♻️</div><div><div style="color:white;font-weight:700;font-size:15.5px">Auto-Repurpose Engine</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">One piece of content → 8 platform-optimized formats instantly</div></div></div>
+    <div class="section-divider"></div>
+    <div style="margin-bottom:14px"><div class="lbl">Paste Blog Post, Article, or Any Content</div><textarea id="repurposeInput" class="inp" rows="5" placeholder="Paste your blog post, article, announcement…"></textarea></div>
+    <button class="btn" onclick="repurposeContent()" id="repurposeBtn" style="background:linear-gradient(135deg,#10b981,#6366f1)">♻️ Repurpose Into 8 Formats</button>
+    <div id="repurposeOutput" style="margin-top:20px"></div>
+  </div>
+</div>
+
+<!-- CALENDAR -->
+<div id="panel-calendar" class="tab-panel" style="display:none;position:relative;z-index:1">
+  <div class="card">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+      <div class="section-head" style="margin-bottom:0">
+        <div class="section-head-icon">📅</div>
+        <div><div style="color:white;font-weight:700;font-size:15.5px">AI Content Calendar</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">AI-planned weekly schedule · Approve or reject</div></div>
+      </div>
+      <span id="scheduledCount" style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);border-radius:20px;color:#6ee7b7;font-size:11px;font-weight:700;padding:4px 12px">3 Scheduled</span>
+    </div>
+    <div class="section-divider"></div>
+    <div id="calendarItems"></div>
+  </div>
+</div>
+
+</div><!-- end #app -->
+
+<script>
+// ── STATE ──────────────────────────────────────────────────────
+const state = {
+  viralPlatform: 'linkedin',
+  postType: 'text',
+  selectedPlats: ['linkedin','instagram'],
+  tone: 'Professional',
+  personaPlat: 'instagram',
+  calendarData: [
+    {id:1,platform:'instagram',type:'Reels',   topic:'AI Booking Demo',         score:94,time:'Mon 6pm', status:'scheduled'},
+    {id:2,platform:'linkedin', type:'Article', topic:'Future of Salon Tech',    score:88,time:'Tue 9am', status:'pending'},
+    {id:3,platform:'twitter',  type:'Thread',  topic:'5 Wellness Trends 2026',  score:85,time:'Wed 12pm',status:'pending'},
+    {id:4,platform:'instagram',type:'Carousel',topic:'Before & After Gallery',  score:91,time:'Wed 6pm', status:'scheduled'},
+    {id:5,platform:'facebook', type:'Event',   topic:'Zenoti Webinar Live',     score:79,time:'Thu 2pm', status:'pending'},
+    {id:6,platform:'linkedin', type:'Video',   topic:'Customer Success Story',  score:92,time:'Fri 10am',status:'pending'},
+    {id:7,platform:'twitter',  type:'Poll',    topic:'Biggest Salon Challenge?',score:83,time:'Fri 1pm', status:'scheduled'},
+  ]
+};
+
+const PLAT_COLORS = {linkedin:'#0077b5',instagram:'#e1306c',twitter:'#1da1f2',facebook:'#1877f2'};
+const PLAT_ICONS  = {linkedin:'💼',instagram:'📸',twitter:'🐦',facebook:'👥'};
+const PLAT_LABELS = {linkedin:'LinkedIn',instagram:'Instagram',twitter:'X/Twitter',facebook:'Facebook'};
+const PLAT_MAX    = {linkedin:3000,instagram:2200,twitter:280,facebook:500};
+const PLAT_TONE   = {linkedin:'professional, insightful',instagram:'visual, engaging, emotional',twitter:'punchy, witty, concise',facebook:'friendly, community-driven'};
+
+// ── TABS ──────────────────────────────────────────────────────
+function switchTab(id){
+  document.querySelectorAll('.tab-panel').forEach(p=>p.style.display='none');
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('panel-'+id).style.display='block';
+  event.currentTarget.classList.add('active');
+  if(id==='calendar') renderCalendar();
+}
+
+// ── HELPERS ───────────────────────────────────────────────────
+function getKey(id){ return document.getElementById(id).value.trim(); }
+function setHTML(id,html){ document.getElementById(id).innerHTML=html; }
+function setLoading(btnId,msg,loading){
+  const b=document.getElementById(btnId);
+  b.disabled=loading;
+  b.innerHTML=loading?`<span style="width:16px;height:16px;border:2px solid rgba(255,255,255,0.3);border-top:2px solid white;border-radius:50%;animation:spin 1s linear infinite;display:inline-block"></span> ${msg}`:b.dataset.original||b.innerHTML;
+  if(!loading && !b.dataset.original) b.dataset.original=b.innerHTML;
+}
+
+async function callClaude(prompt, maxTokens=1200){
+  const key=getKey('anthropicKey');
+  if(!key) throw new Error('Please enter your Anthropic API key above');
+  const res=await fetch('https://api.anthropic.com/v1/messages',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','x-api-key':key,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
+    body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:maxTokens,messages:[{role:'user',content:prompt}]})
+  });
+  if(!res.ok) throw new Error(`API error ${res.status}`);
+  const data=await res.json();
+  return data.content?.[0]?.text||'';
+}
+
+function showError(containerId, msg){
+  setHTML(containerId,`<div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.3);border-radius:12px;padding:12px 16px;color:#fca5a5;font-size:13px">❌ ${msg}</div>`);
+}
+
+// ── CHIP SELECTORS ─────────────────────────────────────────────
+function togglePlatChip(el,plat){
+  el.classList.toggle('active');
+  if(el.classList.contains('active')) state.selectedPlats.push(plat);
+  else state.selectedPlats=state.selectedPlats.filter(p=>p!==plat);
+}
+function selectTone(el,t){
+  document.querySelectorAll('#panel-create .chip').forEach(c=>{if(c.onclick?.toString().includes('selectTone'))c.classList.remove('active');});
+  el.classList.add('active');
+  state.tone=t;
+}
+function selectPlatformViral(el,plat){
+  el.parentElement.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+  state.viralPlatform=plat;
+}
+function selectPersonaPlat(el,plat){
+  el.parentElement.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('personaPlat').value=plat;
+}
+function selectPostType(type,el){
+  state.postType=type;
+  ['text','image','video'].forEach(t=>{
+    const colors={text:'#6366f1',image:'#10b981',video:'#ec4899'};
+    const btn=document.getElementById('pt-'+t);
+    if(t===type){
+      btn.style.background=`linear-gradient(135deg,${colors[t]}33,${colors[t]}18)`;
+      btn.style.border=`2px solid ${colors[t]}88`;
+      btn.style.boxShadow=`0 0 24px ${colors[t]}33`;
+      btn.style.transform='translateY(-2px)';
+      btn.querySelector('div:last-child')?.remove();
+      const check=document.createElement('div');
+      check.style.cssText=`margin-top:10px;width:24px;height:24px;border-radius:12px;background:${colors[t]};margin-left:auto;margin-right:auto;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:white`;
+      check.textContent='✓';btn.appendChild(check);
+    } else {
+      btn.style.background='rgba(255,255,255,0.03)';
+      btn.style.border='2px solid rgba(255,255,255,0.07)';
+      btn.style.boxShadow='none';
+      btn.style.transform='none';
+      btn.querySelector('div:last-child[style*="border-radius:12px"]')?.remove();
+    }
+  });
+  document.getElementById('text-gen-panel').style.display=type==='text'?'block':'none';
+  document.getElementById('image-gen-panel').style.display=type==='image'?'block':'none';
+  document.getElementById('video-gen-panel').style.display=type==='video'?'block':'none';
+}
+
+// ── VIRAL ANALYZER ─────────────────────────────────────────────
+async function analyzeViral(){
+  const draft=document.getElementById('viralDraft').value.trim();
+  if(!draft){alert('Please enter a post draft');return;}
+  setLoading('viralBtn','Analyzing…',true);
+  setHTML('viralResult','');
+  try{
+    const text=await callClaude(`Analyze this ${state.viralPlatform} post for Zenoti (@gozenoti, 14K IG followers, 1.2% engagement). Return ONLY valid JSON:
+Post: "${draft}"
+{"viralScore":78,"engagementPrediction":"8-12%","reachEstimate":"45K-80K","hookStrength":72,"emotionalTrigger":85,"shareability":68,"clarity":90,"ctaStrength":60,"bestTimeToPost":"Wed 6-8pm","strengths":["point 1","point 2"],"improvements":["fix 1","fix 2"],"rewrittenHook":"better opening line","verdict":"2-line assessment"}`,800);
+    const r=JSON.parse(text.replace(/```json|```/g,'').trim());
+    const scoreColor=s=>s>=85?'#10b981':s>=70?'#f59e0b':'#ef4444';
+    const ring=(score,label,size=80)=>{
+      const r2=30,circ=2*Math.PI*r2,dash=(score/100)*circ,col=scoreColor(score);
+      return `<div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+        <svg width="${size}" height="${size}" viewBox="0 0 72 72">
+          <circle cx="36" cy="36" r="${r2}" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="5"/>
+          <circle cx="36" cy="36" r="${r2}" fill="none" stroke="${col}" stroke-width="5" stroke-dasharray="${dash} ${circ-dash}" stroke-dashoffset="${circ/4}" stroke-linecap="round" style="filter:drop-shadow(0 0 6px ${col})"/>
+          <text x="36" y="40" text-anchor="middle" fill="white" font-size="14" font-weight="800">${score}</text>
+        </svg>
+        ${label?`<span style="font-size:10px;color:rgba(255,255,255,0.38);font-weight:600;text-transform:uppercase;letter-spacing:0.08em">${label}</span>`:''}
+      </div>`;
+    };
+    setHTML('viralResult',`
+      <div style="display:flex;gap:16px;align-items:center;justify-content:center;margin-bottom:20px;flex-wrap:wrap">
+        ${ring(r.viralScore,'Viral Score')}${ring(r.hookStrength,'Hook',64)}${ring(r.emotionalTrigger,'Emotion',64)}${ring(r.shareability,'Share',64)}${ring(r.ctaStrength,'CTA',64)}
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">
+        ${[['📊 Predicted Engagement',r.engagementPrediction],['📡 Reach Estimate',r.reachEstimate],['⏰ Best Time',r.bestTimeToPost],['🎯 Clarity',r.clarity+'/100']].map(([l,v])=>`<div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:13px"><div style="font-size:10.5px;color:rgba(255,255,255,0.38);margin-bottom:4px">${l}</div><div style="font-size:15px;font-weight:700">${v}</div></div>`).join('')}
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">
+        <div style="background:rgba(16,185,129,0.07);border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:14px">
+          <div style="font-size:10.5px;color:#6ee7b7;font-weight:700;margin-bottom:8px">✅ STRENGTHS</div>
+          ${r.strengths?.map(s=>`<div style="font-size:12.5px;color:rgba(255,255,255,0.65);margin-bottom:5px;display:flex;gap:6px"><span style="color:#10b981">+</span>${s}</div>`).join('')}
+        </div>
+        <div style="background:rgba(239,68,68,0.07);border:1px solid rgba(239,68,68,0.2);border-radius:12px;padding:14px">
+          <div style="font-size:10.5px;color:#fca5a5;font-weight:700;margin-bottom:8px">⚡ IMPROVEMENTS</div>
+          ${r.improvements?.map(s=>`<div style="font-size:12.5px;color:rgba(255,255,255,0.65);margin-bottom:5px;display:flex;gap:6px"><span style="color:#f59e0b">→</span>${s}</div>`).join('')}
+        </div>
+      </div>
+      <div style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.22);border-radius:12px;padding:14px;margin-bottom:14px;border-left:3px solid #6366f1">
+        <div style="font-size:10.5px;color:#a5b4fc;font-weight:700;margin-bottom:6px">🪄 AI REWRITES YOUR HOOK</div>
+        <div style="font-size:13.5px;color:#c4b5fd;font-style:italic;line-height:1.65">"${r.rewrittenHook}"</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.03);border-radius:12px;padding:14px">
+        <div style="font-size:10.5px;color:rgba(255,255,255,0.38);font-weight:700;margin-bottom:5px">🧠 AI VERDICT</div>
+        <div style="font-size:13.5px;color:rgba(255,255,255,0.75);line-height:1.65">${r.verdict}</div>
+      </div>`);
+  }catch(e){showError('viralResult',e.message);}
+  setLoading('viralBtn','',false);
+  document.getElementById('viralBtn').innerHTML='🔬 Analyze Viral Potential';
+  document.getElementById('viralBtn').disabled=false;
+}
+
+// ── GENERATE POSTS ─────────────────────────────────────────────
+async function generatePosts(){
+  const topic=document.getElementById('postTopic').value.trim();
+  if(!topic){alert('Please enter a topic');return;}
+  const btn=document.getElementById('generatePostsBtn');
+  btn.disabled=true;btn.innerHTML='⏳ Generating…';
+  setHTML('postsOutput','');
+  try{
+    const pd=state.selectedPlats.map(id=>`- ${PLAT_LABELS[id]}: max ${PLAT_MAX[id]} chars, tone: ${PLAT_TONE[id]}`).join('\n');
+    const extra=document.getElementById('postExtra').value;
+    const text=await callClaude(`You are a social media manager for Zenoti (@gozenoti). Topic: ${topic}, Tone: ${state.tone}${extra?', Extra: '+extra:''}.
+Hashtags: #GoZenoti #BeautyAndWellness #SalonTech #MedSpa
+Platforms:\n${pd}
+Return ONLY valid JSON: { ${state.selectedPlats.map(id=>`"${id}": "post content"`).join(', ')} }`);
+    const posts=JSON.parse(text.replace(/```json|```/g,'').trim());
+    let html='<div style="display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap">';
+    state.selectedPlats.forEach((id,i)=>{ html+=`<button class="chip${i===0?' active':''}" onclick="showPost(this,'${id}')">${PLAT_ICONS[id]} ${PLAT_LABELS[id]}</button>`; });
+    html+='<button class="chip" onclick="showAllPosts()">📋 All</button></div>';
+    html+='<div id="postsCards">';
+    state.selectedPlats.forEach((id,i)=>{
+      if(posts[id]) html+=`<div class="post-card" data-plat="${id}" style="${i>0?'display:none':''}">
+        <div style="display:flex;justify-content:space-between;margin-bottom:10px">
+          <span style="color:rgba(255,255,255,0.65);font-weight:600;font-size:12.5px">${PLAT_ICONS[id]} ${PLAT_LABELS[id]}</span>
+          <span style="color:rgba(255,255,255,0.25);font-size:10.5px;font-family:monospace">${posts[id].length}/${PLAT_MAX[id]}</span>
+        </div>
+        <p style="color:rgba(255,255,255,0.78);font-size:13.5px;line-height:1.72;white-space:pre-wrap;margin-bottom:12px">${posts[id]}</p>
+        <button onclick="copyText(this,'${id}_post')" data-text="${posts[id].replace(/"/g,'&quot;')}" style="background:rgba(99,102,241,0.12);border:1px solid rgba(99,102,241,0.28);border-radius:8px;color:#a5b4fc;font-size:11.5px;font-weight:600;padding:5px 13px;cursor:pointer">⎘ Copy</button>
+      </div>`;
+    });
+    html+='</div>';
+    html+='<button onclick="generatePosts()" style="width:100%;margin-top:8px;background:transparent;border:1px solid rgba(99,102,241,0.22);border-radius:11px;color:rgba(165,180,252,0.55);font-size:12.5px;font-weight:600;padding:10px;cursor:pointer">🔄 Regenerate</button>';
+    setHTML('postsOutput',html);
+  }catch(e){showError('postsOutput',e.message);}
+  btn.disabled=false;btn.innerHTML='✨ Generate Text Posts';
+}
+
+function showPost(el,plat){
+  document.querySelectorAll('#postsCards .post-card').forEach(c=>c.style.display=c.dataset.plat===plat?'block':'none');
+  el.parentElement.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+}
+function showAllPosts(){
+  document.querySelectorAll('#postsCards .post-card').forEach(c=>c.style.display='block');
+  event.currentTarget.parentElement.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+}
+function copyText(btn,key){
+  const text=btn.dataset.text;
+  navigator.clipboard.writeText(text).then(()=>{btn.textContent='✓ Copied';setTimeout(()=>btn.textContent='⎘ Copy',2000);});
+}
+
+// ── IMAGE GENERATION ───────────────────────────────────────────
+async function generateImage(){
+  const fKey=getKey('freepikKey');
+  if(!fKey){alert('Please enter your Freepik API key above');return;}
+  const prompt=document.getElementById('imgPrompt').value.trim();
+  if(!prompt){alert('Please enter an image prompt');return;}
+  const btn=document.getElementById('generateImgBtn');
+  btn.disabled=true;btn.innerHTML='⏳ Generating real image…';
+  setHTML('imgStatus','<div style="background:rgba(16,185,129,0.07);border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:12px 16px;color:#6ee7b7;font-size:12.5px;display:flex;align-items:center;gap:8px"><div style="width:16px;height:16px;border:2px solid rgba(16,185,129,0.3);border-top:2px solid #10b981;border-radius:50%;animation:spin 1s linear infinite;flex-shrink:0"></div>Generating via Freepik AI… Please wait 15-30 seconds</div>');
+  setHTML('imgOutput','');
+  try{
+    const style=document.getElementById('imgStyle').value;
+    const size=document.getElementById('imgSize').value;
+    const fullPrompt=`${prompt}, ${style} style, professional high quality social media marketing photo`;
+    const res=await fetch('https://api.freepik.com/v1/ai/text-to-image',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','x-freepik-api-key':fKey},
+      body:JSON.stringify({prompt:fullPrompt,num_images:1,image:{size},filter_nsfw:true})
+    });
+    const data=await res.json();
+    if(!res.ok) throw new Error(data?.message||data?.error||`Freepik error ${res.status}`);
+
+    let imgUrl=null;
+    if(data?.data?.length){
+      const item=data.data[0];
+      imgUrl=item.base64?`data:image/jpeg;base64,${item.base64}`:item.url;
+    } else if(data?.data?.task_id){
+      const taskId=data.data.task_id;
+      setHTML('imgStatus','<div style="background:rgba(99,102,241,0.07);border:1px solid rgba(99,102,241,0.18);border-radius:12px;padding:12px 16px;color:rgba(165,180,252,0.75);font-size:12.5px">⟳ Task submitted — polling for result…</div>');
+      for(let i=0;i<20;i++){
+        await new Promise(r=>setTimeout(r,4000));
+        setHTML('imgStatus',`<div style="background:rgba(99,102,241,0.07);border:1px solid rgba(99,102,241,0.18);border-radius:12px;padding:12px 16px;color:rgba(165,180,252,0.75);font-size:12.5px">⟳ Processing… ${(i+1)*4}s elapsed</div>`);
+        const poll=await fetch(`https://api.freepik.com/v1/ai/text-to-image/${taskId}`,{headers:{'x-freepik-api-key':fKey}});
+        const pd=await poll.json();
+        const st=pd?.data?.status;
+        if(st==='COMPLETED'||st==='OK'){
+          const imgs=pd?.data?.generated||pd?.data||[];
+          if(imgs[0]) imgUrl=imgs[0].base64?`data:image/jpeg;base64,${imgs[0].base64}`:imgs[0].url;
+          break;
+        }
+        if(st==='FAILED'||st==='ERROR') throw new Error('Freepik task failed');
+      }
+    }
+    if(!imgUrl) throw new Error('No image returned — check your Freepik API credits');
+    setHTML('imgStatus','<div style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);border-radius:12px;padding:12px 16px;color:#6ee7b7;font-size:12.5px">✅ Image generated successfully!</div>');
+    setHTML('imgOutput',`<div style="position:relative;border-radius:14px;overflow:hidden;border:1px solid rgba(16,185,129,0.25);margin-top:4px">
+      <img src="${imgUrl}" style="width:100%;display:block" onerror="this.style.opacity=0.3"/>
+      <a href="${imgUrl}" download="zenoti-image.jpg" target="_blank" style="position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,0.75);border:1px solid rgba(255,255,255,0.15);border-radius:8px;color:white;font-size:12px;font-weight:600;padding:6px 12px;text-decoration:none">⬇ Save</a>
+    </div>`);
+  }catch(e){
+    setHTML('imgStatus','');
+    showError('imgOutput',`${e.message}. Make sure your Freepik API key has credits (get free $5 at freepik.com/api)`);
+  }
+  btn.disabled=false;btn.innerHTML='🖼️ Generate Real Image';
+}
+
+// ── VIDEO GENERATION ───────────────────────────────────────────
+async function generateVideo(){
+  const fKey=getKey('freepikKey');
+  if(!fKey){alert('Please enter your Freepik API key above');return;}
+  const prompt=document.getElementById('vidPrompt').value.trim();
+  if(!prompt){alert('Please enter a video prompt');return;}
+  const btn=document.getElementById('generateVidBtn');
+  btn.disabled=true;btn.innerHTML='⏳ Submitting…';
+  setHTML('vidStatus','');setHTML('vidOutput','');
+  try{
+    const aspect=document.getElementById('vidAspect').value;
+    const duration=document.getElementById('vidDuration').value;
+    const res=await fetch('https://api.freepik.com/v1/ai/video/kling-v3-pro',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','x-freepik-api-key':fKey},
+      body:JSON.stringify({prompt,aspect_ratio:aspect,duration,negative_prompt:'blurry, low quality, distorted'})
+    });
+    const data=await res.json();
+    if(!res.ok) throw new Error(data?.message||`Freepik error ${res.status}`);
+    const taskId=data?.data?.task_id;
+    if(!taskId) throw new Error('No task ID returned');
+    for(let i=0;i<40;i++){
+      await new Promise(r=>setTimeout(r,5000));
+      btn.innerHTML=`⏳ Rendering… ${(i+1)*5}s`;
+      setHTML('vidStatus',`<div style="background:rgba(99,102,241,0.07);border:1px solid rgba(99,102,241,0.18);border-radius:11px;padding:11px 15px;color:rgba(165,180,252,0.75);font-size:12.5px">⟳ Rendering video… ${(i+1)*5}s elapsed (may take up to 120s)</div>`);
+      const poll=await fetch(`https://api.freepik.com/v1/ai/video/kling-v3-pro/${taskId}`,{headers:{'x-freepik-api-key':fKey}});
+      const pd=await poll.json();
+      const st=pd?.data?.status;
+      if(st==='COMPLETED'||st==='OK'){
+        const url=pd?.data?.generated?.[0]?.url||pd?.data?.url;
+        if(url){
+          setHTML('vidStatus','');
+          setHTML('vidOutput',`<div style="border-radius:14px;overflow:hidden;border:1px solid rgba(236,72,153,0.3)">
+            <video src="${url}" controls style="width:100%;display:block"></video>
+            <div style="display:flex;gap:8px;padding:10px;background:rgba(255,255,255,0.02)">
+              <a href="${url}" download="zenoti-video.mp4" target="_blank" style="flex:1;text-align:center;padding:9px;border-radius:9px;background:linear-gradient(135deg,#db2777,#9333ea);color:white;font-size:12.5px;font-weight:700;text-decoration:none">⬇ Download Video</a>
+              <button onclick="navigator.clipboard.writeText('${url}')" style="padding:9px 14px;border-radius:9px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.55);font-size:12.5px;cursor:pointer">🔗 URL</button>
+            </div>
+          </div>`);
+          break;
+        }
+      }
+      if(st==='FAILED'||st==='ERROR') throw new Error('Video generation failed');
+    }
+  }catch(e){setHTML('vidStatus','');showError('vidOutput',e.message);}
+  btn.disabled=false;btn.innerHTML='🎬 Generate Video';
+}
+
+// ── PERSONA ────────────────────────────────────────────────────
+async function generatePersona(){
+  const topic=document.getElementById('personaTopic').value.trim();
+  if(!topic){alert('Please enter a topic');return;}
+  const btn=document.getElementById('personaBtn');
+  btn.disabled=true;btn.innerHTML='⏳ Generating variants…';
+  setHTML('personaOutput','');
+  try{
+    const plat=document.getElementById('personaPlat').value;
+    const persona=document.getElementById('personaType').value;
+    const text=await callClaude(`Create 4 distinct post variants for Zenoti (@gozenoti) on ${PLAT_LABELS[plat]}, topic: "${topic}", persona: ${persona}. Each variant different angle.
+Return ONLY JSON array: [{"variant":"Name","hook":"Opening","body":"Full post","angle":"Strategy","predictedEng":"X-Y%"}]`,1500);
+    const variants=JSON.parse(text.replace(/```json|```/g,'').trim());
+    const cols=['#6366f1','#8b5cf6','#ec4899','#f59e0b'];
+    setHTML('personaOutput',`<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;animation:fadeIn 0.3s ease">
+      ${variants.map((v,i)=>`<div style="background:rgba(255,255,255,0.025);border:1px solid ${cols[i]}33;border-radius:15px;padding:16px">
+        <div style="display:flex;justify-content:space-between;margin-bottom:10px">
+          <span style="font-size:11px;font-weight:700;color:${cols[i]};background:${cols[i]}22;padding:3px 10px;border-radius:20px">${v.variant}</span>
+          <span style="font-size:11px;color:#10b981;font-weight:700">${v.predictedEng}</span>
+        </div>
+        <div style="font-size:13px;font-weight:700;color:white;margin-bottom:6px;line-height:1.5">"${v.hook}"</div>
+        <div style="font-size:11.5px;color:rgba(255,255,255,0.5);margin-bottom:8px;line-height:1.6">${v.body?.slice(0,120)}…</div>
+        <div style="font-size:10.5px;color:${cols[i]};background:${cols[i]}11;padding:5px 10px;border-radius:8px">${v.angle}</div>
+      </div>`).join('')}
+    </div>`);
+  }catch(e){showError('personaOutput',e.message);}
+  btn.disabled=false;btn.innerHTML='🎭 Generate 4 Persona Variants';
+}
+
+// ── REPURPOSE ──────────────────────────────────────────────────
+async function repurposeContent(){
+  const input=document.getElementById('repurposeInput').value.trim();
+  if(!input){alert('Please paste some content');return;}
+  const btn=document.getElementById('repurposeBtn');
+  btn.disabled=true;btn.innerHTML='⏳ Repurposing…';
+  setHTML('repurposeOutput','');
+  try{
+    const text=await callClaude(`Repurpose this for Zenoti (@gozenoti) into 8 formats. Use hashtags: #GoZenoti #BeautyAndWellness #SalonTech
+Input: "${input}"
+Return ONLY JSON: {"linkedin_post":"...","linkedin_article_hook":"...","instagram_caption":"...","instagram_story":"...","twitter_thread":"Tweet 1\\n\\nTweet 2\\n\\nTweet 3","twitter_single":"...","facebook_post":"...","youtube_short_script":"..."}`,2000);
+    const r=JSON.parse(text.replace(/```json|```/g,'').trim());
+    const formats=[
+      {k:'linkedin_post',l:'LinkedIn Post',i:'💼',c:'#0077b5'},
+      {k:'linkedin_article_hook',l:'LinkedIn Article',i:'📰',c:'#0077b5'},
+      {k:'instagram_caption',l:'Instagram Caption',i:'📸',c:'#e1306c'},
+      {k:'instagram_story',l:'Instagram Story',i:'⭕',c:'#e1306c'},
+      {k:'twitter_thread',l:'Twitter Thread',i:'🧵',c:'#1da1f2'},
+      {k:'twitter_single',l:'Twitter Post',i:'🐦',c:'#1da1f2'},
+      {k:'facebook_post',l:'Facebook Post',i:'👥',c:'#1877f2'},
+      {k:'youtube_short_script',l:'YouTube Short',i:'🎬',c:'#ff0000'},
+    ];
+    setHTML('repurposeOutput',`<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;animation:fadeIn 0.3s ease">
+      ${formats.map(f=>`<div style="background:rgba(255,255,255,0.025);border:1px solid ${f.c}25;border-radius:13px;padding:14px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+          <span style="font-size:11px;font-weight:700;color:${f.c}">${f.i} ${f.l}</span>
+          <button onclick="navigator.clipboard.writeText(this.dataset.text);this.textContent='✓';setTimeout(()=>this.textContent='⎘',2000)" data-text="${(r[f.k]||'').replace(/"/g,'&quot;')}" style="background:transparent;border:1px solid ${f.c}44;border-radius:6px;color:${f.c};font-size:10px;padding:2px 8px;cursor:pointer">⎘</button>
+        </div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.6);line-height:1.6">${(r[f.k]||'').slice(0,140)}…</div>
+      </div>`).join('')}
+    </div>`);
+  }catch(e){showError('repurposeOutput',e.message);}
+  btn.disabled=false;btn.innerHTML='♻️ Repurpose Into 8 Formats';
+}
+
+// ── CALENDAR ───────────────────────────────────────────────────
+function renderCalendar(){
+  const data=state.calendarData;
+  const scheduled=data.filter(x=>x.status==='scheduled').length;
+  document.getElementById('scheduledCount').textContent=`${scheduled} Scheduled`;
+  const scoreColor=s=>s>=85?'#10b981':s>=70?'#f59e0b':'#ef4444';
+  setHTML('calendarItems',data.map(item=>{
+    const pl=item.platform;
+    const isSch=item.status==='scheduled';
+    return `<div style="background:rgba(255,255,255,0.025);border:1px solid ${isSch?'rgba(16,185,129,0.25)':'rgba(255,255,255,0.07)'};border-radius:14px;padding:16px;display:flex;align-items:center;gap:14px;margin-bottom:10px">
+      <div style="width:42px;height:42px;border-radius:12px;background:${PLAT_COLORS[pl]}28;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">${PLAT_ICONS[pl]}</div>
+      <div style="flex:1;min-width:0">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+          <span style="font-size:13.5px;font-weight:700;color:white">${item.topic}</span>
+          <span style="font-size:10px;background:${PLAT_COLORS[pl]}22;color:${PLAT_COLORS[pl]};padding:2px 8px;border-radius:20px;font-weight:600">${item.type}</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:center">
+          <span style="font-size:11.5px;color:rgba(255,255,255,0.38)">⏰ ${item.time}</span>
+          <div style="display:flex;align-items:center;gap:5px;max-width:100px">
+            <div class="minibar-wrap"><div class="minibar-fill" style="width:${item.score}%;background:linear-gradient(90deg,${scoreColor(item.score)},${scoreColor(item.score)}99)"></div></div>
+            <span style="font-size:11px;font-weight:700;color:white;min-width:24px">${item.score}</span>
+          </div>
+        </div>
+      </div>
+      ${isSch
+        ?`<span style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);border-radius:20px;color:#6ee7b7;font-size:11px;font-weight:700;padding:5px 12px;flex-shrink:0">✓ Approved</span>`
+        :`<div style="display:flex;gap:8px;flex-shrink:0">
+          <button onclick="approveCalItem(${item.id})" style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);border-radius:9px;color:#6ee7b7;font-size:12px;font-weight:700;padding:6px 14px;cursor:pointer">✓ Approve</button>
+          <button onclick="rejectCalItem(${item.id})" style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.25);border-radius:9px;color:#fca5a5;font-size:12px;font-weight:700;padding:6px 14px;cursor:pointer">✕</button>
+        </div>`
+      }
+    </div>`;
+  }).join(''));
+}
+function approveCalItem(id){state.calendarData=state.calendarData.map(x=>x.id===id?{...x,status:'scheduled'}:x);renderCalendar();}
+function rejectCalItem(id){state.calendarData=state.calendarData.filter(x=>x.id!==id);renderCalendar();}
+
+// ── INIT ───────────────────────────────────────────────────────
+window.onload=()=>{
+  renderCalendar();
+
+  // IG Content Performance
+  const igPerf=[['Reels',91],['Carousel',85],['Stories',72],['Image',64],['Link',48]];
+  document.getElementById('ig-content-perf').innerHTML=igPerf.map(([t,s])=>
+    `<div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+      <span style="min-width:70px;font-size:12px;color:rgba(255,255,255,0.6);font-weight:600">${t}</span>
+      <div class="minibar-wrap"><div class="minibar-fill" style="width:${s}%;background:linear-gradient(90deg,#e1306c,#e1306c99)"></div></div>
+      <span style="min-width:32px;font-size:12px;font-weight:700;text-align:right">${s}</span>
+    </div>`).join('');
+
+  // IG Hashtags
+  document.getElementById('ig-hashtags').innerHTML=
+    `<div style="display:flex;flex-wrap:wrap;gap:6px">${
+      ['#GoZenoti','#BeautyAndWellness','#SalonTech','#MedSpa','#SpaLife','#AIBeauty'].map(t=>
+        `<span style="background:rgba(225,48,108,0.12);border:1px solid rgba(225,48,108,0.25);border-radius:20px;font-size:11px;color:#f9a8d4;padding:4px 12px;font-weight:600">${t}</span>`
+      ).join('')
+    }</div>`;
+
+  // LinkedIn Algorithm Insights
+  const insights=['Posts shown to only ~1.6% of followers initially (2025 algorithm)','Comments 15x more valuable than likes for reach','First 60-120 min golden hour determines post fate','Carousels/docs get most saves → best for topic authority','Employee posts get 2.75x more impressions than company page'];
+  document.getElementById('li-insights').innerHTML=insights.map(tip=>
+    `<div style="display:flex;align-items:flex-start;gap:10px;background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.15);border-radius:10px;padding:9px 13px;margin-bottom:7px">
+      <span style="color:#fbbf24;font-size:13px;flex-shrink:0">→</span>
+      <span style="font-size:12px;color:rgba(255,255,255,0.6);line-height:1.6">${tip}</span>
+    </div>`).join('');
+
+  // Trending Topics
+  const trending=[['AI in Beauty & Wellness',94,'+42%'],['MedSpa Automation',88,'+38%'],['Salon Tech 2026',83,'+31%'],['Self-Care Sunday',79,'+27%'],['AI Appointment Booking',76,'+24%']];
+  document.getElementById('trending-items').innerHTML=trending.map(([t,m,tr],i)=>
+    `<div style="display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:${i<4?'1px solid rgba(255,255,255,0.05)':'none'}">
+      <div style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,rgba(99,102,241,0.3),rgba(168,85,247,0.3));display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#a5b4fc;flex-shrink:0">${i+1}</div>
+      <div style="flex:1;min-width:0"><div style="font-size:14px;font-weight:600;color:white">${t}</div></div>
+      <div class="minibar-wrap" style="max-width:80px"><div class="minibar-fill" style="width:${m}%;background:linear-gradient(90deg,#6366f1,#8b5cf6)"></div></div>
+      <div style="min-width:45px;text-align:right;font-size:13px;font-weight:700;color:#10b981">${tr}</div>
+    </div>`).join('');
+
+  // Freepik key watcher
+  document.getElementById('freepikKey').addEventListener('input',function(){
+    document.getElementById('freepikWarning').style.display=this.value.trim()?'none':'block';
+  });
+};
+</script>
+</body>
+</html>
