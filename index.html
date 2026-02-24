@@ -13,6 +13,7 @@ input::placeholder,textarea::placeholder{color:rgba(255,255,255,0.25)!important}
 select option{background:#0a0a1e;color:white}
 ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-thumb{background:rgba(99,102,241,0.3);border-radius:3px}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.live-dot{width:5px;height:5px;border-radius:50%;background:#10b981;display:inline-block;animation:pulse 2s infinite;flex-shrink:0}
 @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 @keyframes barGrow{from{width:0}to{width:var(--w)}}
@@ -48,7 +49,7 @@ select option{background:#0a0a1e;color:white}
 <!-- HEADER -->
 <div style="text-align:center;padding:32px 0 20px;position:relative;z-index:1">
   <div style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(99,102,241,0.15),rgba(168,85,247,0.15));border:1px solid rgba(99,102,241,0.35);border-radius:20px;padding:4px 14px;margin-bottom:12px">
-    <span style="width:6px;height:6px;border-radius:50%;background:#10b981;display:inline-block;animation:pulse 2s infinite"></span>
+    <span class="live-dot"></span>
     <span style="font-size:11px;font-weight:700;color:#a5b4fc;letter-spacing:0.1em;text-transform:uppercase">@gozenoti · Live Profile Data</span>
   </div>
   <h1 style="font-size:30px;font-weight:900;margin:0 0 6px;background:linear-gradient(135deg,#e0e7ff 0%,#a5b4fc 35%,#c084fc 65%,#f0abfc 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.025em;line-height:1.15">AI Social Media Intelligence Platform</h1>
@@ -177,7 +178,7 @@ select option{background:#0a0a1e;color:white}
         <div style="color:rgba(255,255,255,0.38);font-size:11.5px">14K followers · 1,089 posts · 1.2% engagement</div>
       </div>
       <div style="margin-left:auto;display:flex;align-items:center;gap:5px;background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.3);border-radius:20px;padding:4px 10px">
-        <span style="width:5px;height:5px;border-radius:50%;background:#10b981;animation:pulse 2s infinite;display:inline-block"></span>
+        <span class="live-dot"></span>
         <span style="font-size:10px;font-weight:700;color:#6ee7b7">Live</span>
       </div>
     </div>
@@ -254,7 +255,7 @@ select option{background:#0a0a1e;color:white}
         <div style="color:rgba(255,255,255,0.38);font-size:11.5px">68.8K followers · 862 employees · 30K+ customers · $1.5B valuation</div>
       </div>
       <div style="margin-left:auto;display:flex;align-items:center;gap:5px;background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.3);border-radius:20px;padding:4px 10px">
-        <span style="width:5px;height:5px;border-radius:50%;background:#10b981;animation:pulse 2s infinite;display:inline-block"></span>
+        <span class="live-dot"></span>
         <span style="font-size:10px;font-weight:700;color:#6ee7b7">Live</span>
       </div>
     </div>
