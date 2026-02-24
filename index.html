@@ -45,57 +45,132 @@ select option{background:#0a0a1e;color:white}
 <div style="position:fixed;bottom:-150px;right:-150px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(168,85,247,0.06),transparent 70%);pointer-events:none;z-index:0"></div>
 
 <!-- HEADER -->
-<div style="text-align:center;padding:44px 0 28px;position:relative;z-index:1">
-  <div style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(99,102,241,0.15),rgba(168,85,247,0.15));border:1px solid rgba(99,102,241,0.35);border-radius:20px;padding:4px 14px;margin-bottom:14px">
+<div style="text-align:center;padding:32px 0 20px;position:relative;z-index:1">
+  <div style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(99,102,241,0.15),rgba(168,85,247,0.15));border:1px solid rgba(99,102,241,0.35);border-radius:20px;padding:4px 14px;margin-bottom:12px">
     <span style="width:6px;height:6px;border-radius:50%;background:#10b981;display:inline-block;animation:pulse 2s infinite"></span>
     <span style="font-size:11px;font-weight:700;color:#a5b4fc;letter-spacing:0.1em;text-transform:uppercase">@gozenoti · Live Profile Data</span>
   </div>
-  <h1 style="font-size:34px;font-weight:900;margin:0 0 8px;background:linear-gradient(135deg,#e0e7ff 0%,#a5b4fc 35%,#c084fc 65%,#f0abfc 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.025em;line-height:1.15">AI Social Media Intelligence Platform</h1>
-  <p style="color:rgba(255,255,255,0.35);font-size:14px;margin-bottom:14px">Predict · Personalize · Automate · Amplify</p>
-  <div class="free-badge">🆓 100% Free — No API Key Required</div>
-  <div style="display:flex;justify-content:center;gap:24px;margin-top:12px;flex-wrap:wrap">
-    <span style="color:rgba(165,180,252,0.6);font-size:12px;font-weight:600">📸 14K IG</span>
-    <span style="color:rgba(165,180,252,0.6);font-size:12px;font-weight:600">💼 68.8K LI</span>
-    <span style="color:rgba(165,180,252,0.6);font-size:12px;font-weight:600">🐦 1.3K X</span>
-    <span style="color:rgba(165,180,252,0.6);font-size:12px;font-weight:600">👥 12.4K FB</span>
+  <h1 style="font-size:30px;font-weight:900;margin:0 0 6px;background:linear-gradient(135deg,#e0e7ff 0%,#a5b4fc 35%,#c084fc 65%,#f0abfc 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.025em;line-height:1.15">AI Social Media Intelligence Platform</h1>
+  <p style="color:rgba(255,255,255,0.35);font-size:13px;margin-bottom:0">Predict · Personalize · Automate · Amplify</p>
+</div>
+
+<!-- LIVE STATS STRIP -->
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px;position:relative;z-index:1">
+  <div style="background:rgba(225,48,108,0.08);border:1px solid rgba(225,48,108,0.2);border-radius:14px;padding:12px;text-align:center">
+    <div style="font-size:18px;margin-bottom:3px">📸</div>
+    <div style="font-size:18px;font-weight:800;color:white">14K</div>
+    <div style="font-size:10px;color:rgba(225,48,108,0.8);font-weight:600">Instagram</div>
+    <div style="font-size:10px;color:rgba(255,255,255,0.35);margin-top:2px">1.2% eng · +512/mo</div>
+  </div>
+  <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:14px;padding:12px;text-align:center">
+    <div style="font-size:18px;margin-bottom:3px">💼</div>
+    <div style="font-size:18px;font-weight:800;color:white">68.8K</div>
+    <div style="font-size:10px;color:rgba(0,119,181,0.9);font-weight:600">LinkedIn</div>
+    <div style="font-size:10px;color:rgba(255,255,255,0.35);margin-top:2px">2.1% eng · +2.2K/mo</div>
+  </div>
+  <div style="background:rgba(29,161,242,0.08);border:1px solid rgba(29,161,242,0.2);border-radius:14px;padding:12px;text-align:center">
+    <div style="font-size:18px;margin-bottom:3px">🐦</div>
+    <div style="font-size:18px;font-weight:800;color:white">1.3K</div>
+    <div style="font-size:10px;color:rgba(29,161,242,0.9);font-weight:600">X / Twitter</div>
+    <div style="font-size:10px;color:rgba(255,255,255,0.35);margin-top:2px">0.9% eng · growing</div>
+  </div>
+  <div style="background:rgba(24,119,242,0.08);border:1px solid rgba(24,119,242,0.2);border-radius:14px;padding:12px;text-align:center">
+    <div style="font-size:18px;margin-bottom:3px">👥</div>
+    <div style="font-size:18px;font-weight:800;color:white">12.4K</div>
+    <div style="font-size:10px;color:rgba(24,119,242,0.9);font-weight:600">Facebook</div>
+    <div style="font-size:10px;color:rgba(255,255,255,0.35);margin-top:2px">1.4% eng · stable</div>
   </div>
 </div>
 
-<!-- FREE NOTICE -->
-<div class="grad-border" style="position:relative;z-index:1">
-  <div class="grad-border-inner">
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px">
-      <div style="text-align:center;padding:10px">
-        <div style="font-size:24px;margin-bottom:6px">🤖</div>
-        <div style="font-size:12.5px;font-weight:700;color:white;margin-bottom:3px">AI Posts</div>
-        <div style="font-size:11px;color:rgba(255,255,255,0.4)">Powered by free AI — no key needed</div>
-      </div>
-      <div style="text-align:center;padding:10px;border-left:1px solid rgba(99,102,241,0.2);border-right:1px solid rgba(99,102,241,0.2)">
-        <div style="font-size:24px;margin-bottom:6px">🖼️</div>
-        <div style="font-size:12.5px;font-weight:700;color:white;margin-bottom:3px">Images</div>
-        <div style="font-size:11px;color:rgba(255,255,255,0.4)">Add Freepik key for real AI images</div>
-      </div>
-      <div style="text-align:center;padding:10px">
-        <div style="font-size:24px;margin-bottom:6px">📊</div>
-        <div style="font-size:12.5px;font-weight:700;color:white;margin-bottom:3px">Analytics</div>
-        <div style="font-size:11px;color:rgba(255,255,255,0.4)">Real @gozenoti data — always free</div>
-      </div>
+<!-- DASHBOARD GRID NAV -->
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px;position:relative;z-index:1">
+  <button onclick="switchTab('create',this)" id="nav-create"
+    style="background:linear-gradient(135deg,rgba(99,102,241,0.25),rgba(168,85,247,0.2));border:1px solid rgba(99,102,241,0.4);border-radius:18px;padding:20px 14px;cursor:pointer;text-align:center;transition:all 0.2s;position:relative;overflow:hidden">
+    <div style="font-size:30px;margin-bottom:8px">🚀</div>
+    <div style="font-size:14px;font-weight:800;color:white;margin-bottom:4px">Generate Post</div>
+    <div style="font-size:11px;color:rgba(165,180,252,0.7);line-height:1.5">Text · Image · Video<br/>Powered by free AI</div>
+    <div style="margin-top:10px;background:rgba(99,102,241,0.3);border-radius:20px;font-size:10px;font-weight:700;color:#a5b4fc;padding:3px 10px;display:inline-block">🆓 Free</div>
+  </button>
+  <button onclick="switchTab('analytics',this)" id="nav-analytics"
+    style="background:linear-gradient(135deg,rgba(225,48,108,0.2),rgba(236,72,153,0.15));border:1px solid rgba(225,48,108,0.35);border-radius:18px;padding:20px 14px;cursor:pointer;text-align:center;transition:all 0.2s">
+    <div style="font-size:30px;margin-bottom:8px">📊</div>
+    <div style="font-size:14px;font-weight:800;color:white;margin-bottom:4px">Analytics</div>
+    <div style="font-size:11px;color:rgba(249,168,212,0.7);line-height:1.5">@gozenoti real data<br/>IG · LinkedIn · Trends</div>
+    <div style="margin-top:10px;background:rgba(225,48,108,0.2);border-radius:20px;font-size:10px;font-weight:700;color:#f9a8d4;padding:3px 10px;display:inline-block">📡 Live Data</div>
+  </button>
+  <button onclick="switchTab('predict',this)" id="nav-predict"
+    style="background:linear-gradient(135deg,rgba(245,158,11,0.2),rgba(239,68,68,0.15));border:1px solid rgba(245,158,11,0.35);border-radius:18px;padding:20px 14px;cursor:pointer;text-align:center;transition:all 0.2s">
+    <div style="font-size:30px;margin-bottom:8px">🔬</div>
+    <div style="font-size:14px;font-weight:800;color:white;margin-bottom:4px">Viral Predictor</div>
+    <div style="font-size:11px;color:rgba(253,230,138,0.7);line-height:1.5">Score your posts<br/>AI hook rewriter</div>
+    <div style="margin-top:10px;background:rgba(245,158,11,0.2);border-radius:20px;font-size:10px;font-weight:700;color:#fde68a;padding:3px 10px;display:inline-block">🆓 Free</div>
+  </button>
+  <button onclick="switchTab('persona',this)" id="nav-persona"
+    style="background:linear-gradient(135deg,rgba(139,92,246,0.2),rgba(236,72,153,0.15));border:1px solid rgba(139,92,246,0.35);border-radius:18px;padding:20px 14px;cursor:pointer;text-align:center;transition:all 0.2s">
+    <div style="font-size:30px;margin-bottom:8px">🎭</div>
+    <div style="font-size:14px;font-weight:800;color:white;margin-bottom:4px">Persona AI</div>
+    <div style="font-size:11px;color:rgba(196,181,253,0.7);line-height:1.5">4 audience variants<br/>Salon · Spa · Coach</div>
+    <div style="margin-top:10px;background:rgba(139,92,246,0.2);border-radius:20px;font-size:10px;font-weight:700;color:#c4b5fd;padding:3px 10px;display:inline-block">🆓 Free</div>
+  </button>
+  <button onclick="switchTab('repurpose',this)" id="nav-repurpose"
+    style="background:linear-gradient(135deg,rgba(16,185,129,0.2),rgba(99,102,241,0.15));border:1px solid rgba(16,185,129,0.35);border-radius:18px;padding:20px 14px;cursor:pointer;text-align:center;transition:all 0.2s">
+    <div style="font-size:30px;margin-bottom:8px">♻️</div>
+    <div style="font-size:14px;font-weight:800;color:white;margin-bottom:4px">Repurpose</div>
+    <div style="font-size:11px;color:rgba(110,231,183,0.7);line-height:1.5">1 post → 8 formats<br/>All platforms</div>
+    <div style="margin-top:10px;background:rgba(16,185,129,0.2);border-radius:20px;font-size:10px;font-weight:700;color:#6ee7b7;padding:3px 10px;display:inline-block">🆓 Free</div>
+  </button>
+  <button onclick="switchTab('calendar',this)" id="nav-calendar"
+    style="background:linear-gradient(135deg,rgba(59,130,246,0.2),rgba(99,102,241,0.15));border:1px solid rgba(59,130,246,0.35);border-radius:18px;padding:20px 14px;cursor:pointer;text-align:center;transition:all 0.2s;position:relative">
+    <div style="font-size:30px;margin-bottom:8px">📅</div>
+    <div style="font-size:14px;font-weight:800;color:white;margin-bottom:4px">Calendar</div>
+    <div style="font-size:11px;color:rgba(147,197,253,0.7);line-height:1.5">AI planned schedule<br/>Approve · Reject</div>
+    <div style="margin-top:10px;background:rgba(59,130,246,0.2);border-radius:20px;font-size:10px;font-weight:700;color:#93c5fd;padding:3px 10px;display:inline-block">
+      <span id="calBadge">4</span> Pending
     </div>
-    <div style="margin-top:16px;border-top:1px solid rgba(99,102,241,0.15);padding-top:14px">
-      <div class="lbl">Freepik API Key (Optional — only for real AI image & video generation)</div>
-      <input id="freepikKey" class="inp" type="password" placeholder="FPSX-... (optional, get free $5 credits at freepik.com/api)"/>
-    </div>
-  </div>
+  </button>
 </div>
 
-<!-- TABS -->
-<div style="display:flex;gap:7px;margin-bottom:18px;flex-wrap:wrap;position:relative;z-index:1">
-  <button class="tab-btn active" onclick="switchTab('analytics',this)">📊 Analytics</button>
-  <button class="tab-btn" onclick="switchTab('predict',this)">🔬 Viral Predictor</button>
-  <button class="tab-btn" onclick="switchTab('create',this)">✍️ Create</button>
-  <button class="tab-btn" onclick="switchTab('persona',this)">🎭 Persona AI</button>
-  <button class="tab-btn" onclick="switchTab('repurpose',this)">♻️ Repurpose</button>
-  <button class="tab-btn" onclick="switchTab('calendar',this)">📅 Calendar <span style="background:#ef4444;border-radius:20px;font-size:9px;font-weight:800;padding:1px 5px;color:white" id="calBadge">4</span></button>
+<!-- SETTINGS SHORTCUT -->
+<div style="display:flex;justify-content:flex-end;margin-bottom:16px;position:relative;z-index:1">
+  <button onclick="switchTab('settings',this)"
+    style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:12px;color:rgba(255,255,255,0.5);font-size:12.5px;font-weight:600;padding:8px 16px;cursor:pointer;display:flex;align-items:center;gap:6px;transition:all 0.2s"
+    onmouseover="this.style.background='rgba(99,102,241,0.12)';this.style.color='#a5b4fc'"
+    onmouseout="this.style.background='rgba(255,255,255,0.04)';this.style.color='rgba(255,255,255,0.5)'">
+    ⚙️ Settings &amp; API Keys
+  </button>
+</div>
+
+<!-- SETTINGS -->
+<div id="panel-settings" class="tab-panel" style="display:none;position:relative;z-index:1">
+  <div class="card">
+    <div class="section-head"><div class="section-head-icon">⚙️</div><div><div style="color:white;font-weight:700;font-size:15.5px">Settings & API Configuration</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">Configure your API keys for image & video generation</div></div></div>
+    <div class="section-divider"></div>
+    <div style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:14px 16px;margin-bottom:20px">
+      <div style="font-size:12.5px;font-weight:700;color:#6ee7b7;margin-bottom:4px">✅ All AI features work for free</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.5);line-height:1.6">Post generation, viral analysis, persona variants, repurposing — all powered by free AI. No key needed. Only add a Freepik key if you want real AI images & videos.</div>
+    </div>
+    <div style="margin-bottom:20px">
+      <div class="lbl">🖼️ Freepik API Key — for Real AI Images & Videos (Optional)</div>
+      <input id="freepikKey" class="inp" type="password" placeholder="FPSX-... paste your Freepik API key here"/>
+      <div style="margin-top:8px;font-size:11.5px;color:rgba(255,255,255,0.35)">
+        Get free $5 credits at <a href="https://freepik.com/api" target="_blank" style="color:#a5b4fc">freepik.com/api</a> — log in with your Freepik Premium Plus account
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.2);border-radius:14px;padding:16px">
+        <div style="font-size:18px;margin-bottom:8px">🤖</div>
+        <div style="font-size:13px;font-weight:700;color:white;margin-bottom:4px">AI Post Generation</div>
+        <div style="font-size:11.5px;color:rgba(255,255,255,0.4);margin-bottom:8px">Powered by Pollinations.ai free AI</div>
+        <span style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);border-radius:20px;color:#6ee7b7;font-size:11px;font-weight:700;padding:3px 10px">🆓 Free — No key needed</span>
+      </div>
+      <div style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.2);border-radius:14px;padding:16px">
+        <div style="font-size:18px;margin-bottom:8px">🖼️</div>
+        <div style="font-size:13px;font-weight:700;color:white;margin-bottom:4px">Image & Video Generation</div>
+        <div style="font-size:11.5px;color:rgba(255,255,255,0.4);margin-bottom:8px">Powered by Freepik AI (Flux + Kling)</div>
+        <span id="freepikStatus" style="background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.3);border-radius:20px;color:#fde68a;font-size:11px;font-weight:700;padding:3px 10px">🔑 Key required</span>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- ANALYTICS -->
@@ -326,9 +401,12 @@ const getV=id=>$(id).value.trim();
 
 function switchTab(id,btn){
   document.querySelectorAll('.tab-panel').forEach(p=>p.style.display='none');
-  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  // reset all nav buttons
+  ['create','analytics','predict','persona','repurpose','calendar','settings'].forEach(n=>{
+    const nb=document.getElementById('nav-'+n);
+    if(nb) nb.style.opacity='1';
+  });
   $('panel-'+id).style.display='block';
-  btn.classList.add('active');
   if(id==='calendar') renderCal();
 }
 
@@ -661,6 +739,8 @@ function rejCal(id){S.cal=S.cal.filter(x=>x.id!==id);renderCal();}
 
 // ── INIT ───────────────────────────────────────────────────────
 window.onload=()=>{
+  // Show Generate Post by default
+  $('panel-create').style.display='block';
   // IG Performance bars
   $('ig-perf').innerHTML=[['Reels',91],['Carousel',85],['Stories',72],['Image',64],['Link',48]].map(([t,s])=>
     `<div style="display:flex;align-items:center;gap:12px;margin-bottom:10px"><span style="min-width:70px;font-size:12px;color:rgba(255,255,255,0.6);font-weight:600">${t}</span><div class="minibar-wrap"><div class="minibar-fill" style="width:${s}%;background:linear-gradient(90deg,#e1306c,#e1306c99)"></div></div><span style="min-width:30px;font-size:12px;font-weight:700;text-align:right">${s}</span></div>`).join('');
@@ -680,7 +760,14 @@ window.onload=()=>{
 
   // Freepik key watcher
   $('freepikKey').addEventListener('input',function(){
-    $('imgKeyWarn').style.display=this.value.trim()?'none':'block';
+    const hasKey=this.value.trim().length>0;
+    $('imgKeyWarn').style.display=hasKey?'none':'block';
+    $('freepikStatus').innerHTML=hasKey
+      ?'✅ Key saved'
+      :'🔑 Key required';
+    $('freepikStatus').style.background=hasKey?'rgba(16,185,129,0.15)':'rgba(245,158,11,0.15)';
+    $('freepikStatus').style.borderColor=hasKey?'rgba(16,185,129,0.3)':'rgba(245,158,11,0.3)';
+    $('freepikStatus').style.color=hasKey?'#6ee7b7':'#fde68a';
   });
 };
 </script>
