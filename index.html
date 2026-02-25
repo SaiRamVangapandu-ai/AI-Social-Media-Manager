@@ -13,52 +13,49 @@ input::placeholder,textarea::placeholder{color:rgba(255,255,255,0.25)!important}
 select option{background:#0a0a1e;color:white}
 ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-thumb{background:rgba(99,102,241,0.3);border-radius:3px}
 @keyframes livepulse{0%,100%{opacity:1}50%{opacity:0.4}}
-@keyframes numPop{0%{opacity:0;transform:translateY(10px) scale(0.8)}60%{transform:translateY(-3px) scale(1.05)}100%{opacity:1;transform:translateY(0) scale(1)}}
 @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 @keyframes slideDown{from{opacity:0;transform:translateY(-22px)}to{opacity:1;transform:none}}
 @keyframes slideUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
 @keyframes zoomIn{from{opacity:0;transform:scale(0.88)}to{opacity:1;transform:scale(1)}}
-@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
 @keyframes shimmer{0%{background-position:200% center}100%{background-position:-200% center}}
 @keyframes countUp{from{opacity:0;transform:translateY(10px) scale(0.85)}to{opacity:1;transform:translateY(0) scale(1)}}
 @keyframes navPop{from{opacity:0;transform:translateY(20px) scale(0.93)}to{opacity:1;transform:translateY(0) scale(1)}}
 @keyframes badgePing{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
-@keyframes iconPulseScale{0%,100%{transform:scale(1.15)}50%{transform:scale(1.45)}}
-@keyframes iconSpin{from{transform:rotate(0deg) scale(1.2)}to{transform:rotate(360deg) scale(1.2)}}
 @keyframes iconBounce{0%,100%{transform:translateY(0) scale(1.2)}50%{transform:translateY(-6px) scale(1.25)}}
 @keyframes iconWiggle{0%,100%{transform:rotate(0deg) scale(1.2)}25%{transform:rotate(-15deg) scale(1.25)}75%{transform:rotate(15deg) scale(1.25)}}
-@keyframes iconPop{0%{transform:scale(1.2)}50%{transform:scale(1.45)}100%{transform:scale(1.2)}}
-@keyframes iconPulseGrow{0%,100%{transform:scale(1.15)}50%{transform:scale(1.35)}}
-@keyframes orbitPing{0%{transform:scale(0.8);opacity:0.8}100%{transform:scale(2.2);opacity:0}}
-@keyframes statFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes iconSpin{from{transform:rotate(0deg) scale(1.2)}to{transform:rotate(360deg) scale(1.2)}}
+@keyframes iconPulseScale{0%,100%{transform:scale(1.15)}50%{transform:scale(1.45)}}
+@keyframes cardSlideUp{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
+@keyframes tagFadeIn{from{opacity:0;transform:translateY(8px) scale(0.9)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes insightSlide{from{opacity:0;transform:translateX(-18px)}to{opacity:1;transform:translateX(0)}}
+@keyframes numPop{0%{opacity:0;transform:translateY(10px) scale(0.8)}60%{transform:translateY(-3px) scale(1.05)}100%{opacity:1;transform:translateY(0) scale(1)}}
 .live-dot{width:5px;height:5px;border-radius:50%;background:#10b981;display:inline-block;animation:livepulse 2s infinite;flex-shrink:0;will-change:opacity}
-.card{background:rgba(12,12,32,0.85);border:1px solid rgba(99,102,241,0.18);border-radius:20px;backdrop-filter:blur(24px);box-shadow:0 8px 32px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.04);padding:24px;margin-bottom:16px}
-.lbl{color:rgba(165,180,252,0.75);font-size:10.5px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px}
+.card{background:rgba(12,12,32,0.85);border:1px solid rgba(99,102,241,0.18);border-radius:20px;backdrop-filter:blur(24px);box-shadow:0 8px 32px rgba(0,0,0,0.4);padding:24px;margin-bottom:16px}
+.lbl{color:rgba(165,180,252,0.75);font-size:10.5px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px;display:block}
 .inp{width:100%;background:rgba(255,255,255,0.035);border:1px solid rgba(99,102,241,0.18);border-radius:12px;color:rgba(255,255,255,0.9);font-size:14px;padding:11px 15px;outline:none;transition:border-color 0.2s;resize:none}
 .inp:focus{border-color:rgba(99,102,241,0.55)}
 .sel{width:100%;background:rgba(8,8,28,0.95);border:1px solid rgba(99,102,241,0.22);border-radius:11px;color:rgba(255,255,255,0.82);font-size:13px;padding:9px 13px;outline:none;cursor:pointer}
 .btn{border:none;border-radius:13px;color:white;font-weight:700;font-size:14px;padding:13px 22px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:7px;transition:all 0.18s;width:100%}
 .btn:disabled{opacity:0.45;cursor:not-allowed}
-.btn:hover:not(:disabled){transform:translateY(-1px)}
 .chip{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:20px;color:rgba(255,255,255,0.38);font-size:12px;font-weight:600;padding:5px 13px;cursor:pointer;transition:all 0.14s;white-space:nowrap}
 .chip.active{background:linear-gradient(135deg,rgba(99,102,241,0.4),rgba(168,85,247,0.35));border-color:rgba(99,102,241,0.55);color:#c4b5fd}
-.minibar-wrap{background:rgba(255,255,255,0.05);border-radius:4px;overflow:hidden;flex:1}
-.minibar-fill{height:6px;border-radius:4px;transition:width 0.8s ease}
+.mbar{background:rgba(255,255,255,0.05);border-radius:4px;overflow:hidden;flex:1}
+.mbar-fill{height:6px;border-radius:4px;transition:width 0.8s ease}
 .post-card{background:rgba(255,255,255,0.025);border:1px solid rgba(99,102,241,0.12);border-radius:15px;padding:18px;margin-bottom:12px;animation:fadeIn 0.3s ease}
 .sh{display:flex;align-items:center;gap:10px;margin-bottom:16px}
 .sh-icon{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(99,102,241,0.25),rgba(168,85,247,0.25));border:1px solid rgba(99,102,241,0.3);font-size:17px;flex-shrink:0}
 .divider{height:1px;background:linear-gradient(90deg,rgba(99,102,241,0.35),transparent);margin-bottom:20px}
-.bar-row{display:flex;align-items:center;gap:12px;margin-bottom:11px;animation:fadeIn 0.4s ease both}
-.bar-fill{height:8px;border-radius:6px;transition:width 1s ease}
-.insight-row{display:flex;align-items:flex-start;gap:10px;border-radius:10px;padding:10px 13px;margin-bottom:8px;animation:fadeIn 0.35s ease both}
-.trend-row{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+.bar-row{display:flex;align-items:center;gap:12px;margin-bottom:11px}
+.insight-row{display:flex;align-items:flex-start;gap:10px;border-radius:10px;padding:10px 13px;margin-bottom:8px}
 .sec-div{height:1px;background:linear-gradient(90deg,transparent,rgba(99,102,241,0.25),transparent);margin:18px 0}
+.nb{border-radius:18px;padding:20px 14px;cursor:pointer;text-align:center;transition:transform 0.22s,box-shadow 0.22s,border-color 0.22s;animation:navPop 0.6s cubic-bezier(0.22,1,0.36,1) both;position:relative;overflow:hidden}
+.ai-sug{display:none;margin-top:10px;background:linear-gradient(135deg,rgba(139,92,246,0.1),rgba(236,72,153,0.07));border:1px solid rgba(139,92,246,0.3);border-radius:12px;padding:14px}
+.enh-btn{background:linear-gradient(135deg,rgba(139,92,246,0.25),rgba(236,72,153,0.2));border:1px solid rgba(139,92,246,0.45);border-radius:20px;color:#c4b5fd;font-size:11px;font-weight:700;padding:4px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:5px}
 </style>
 </head>
 <body>
 <div id="app" style="max-width:760px;margin:0 auto;padding:0 20px 60px">
-
 <div style="position:fixed;top:-150px;left:-150px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.07),transparent 70%);pointer-events:none;z-index:0"></div>
 <div style="position:fixed;bottom:-150px;right:-150px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(168,85,247,0.06),transparent 70%);pointer-events:none;z-index:0"></div>
 
@@ -68,144 +65,104 @@ select option{background:#0a0a1e;color:white}
     <span class="live-dot"></span>
     <span style="font-size:11px;font-weight:700;color:#a5b4fc;letter-spacing:0.1em;text-transform:uppercase">@gozenoti · Live Profile Data</span>
   </div>
-  <h1 style="font-size:30px;font-weight:900;margin:0 0 6px;background:linear-gradient(270deg,#e0e7ff,#a5b4fc,#c084fc,#f0abfc,#a5b4fc,#e0e7ff);background-size:400% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.025em;line-height:1.15;animation:shimmer 4s linear infinite,slideDown 0.7s 0.15s cubic-bezier(0.22,1,0.36,1) both">AI Social Media Intelligence Platform</h1>
+  <h1 style="font-size:30px;font-weight:900;margin:0 0 6px;background:linear-gradient(270deg,#e0e7ff,#a5b4fc,#c084fc,#f0abfc,#a5b4fc,#e0e7ff);background-size:400% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.025em;line-height:1.15;animation:shimmer 4s linear infinite">AI Social Media Intelligence Platform</h1>
   <p style="color:rgba(255,255,255,0.35);font-size:13px;animation:slideDown 0.6s 0.25s cubic-bezier(0.22,1,0.36,1) both">Predict · Personalize · Automate · Amplify</p>
 </div>
 
-<!-- LIVE STATS -->
+<!-- STATS -->
 <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px;position:relative;z-index:1">
-  <div style="background:rgba(225,48,108,0.08);border:1px solid rgba(225,48,108,0.2);border-radius:14px;padding:12px;text-align:center;animation:countUp 0.6s 0.35s cubic-bezier(0.22,1,0.36,1) both;transition:transform 0.2s,box-shadow 0.2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 24px rgba(225,48,108,0.2)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-    <div style="font-size:18px;margin-bottom:3px">📸</div>
-    <div style="font-size:18px;font-weight:800" data-count="14" data-suffix="K">14K</div>
-    <div style="font-size:10px;color:rgba(225,48,108,0.8);font-weight:600">Instagram</div>
-    <div style="font-size:10px;color:rgba(255,255,255,0.35);margin-top:2px">1.2% eng · +512/mo</div>
+  <div style="background:rgba(225,48,108,0.08);border:1px solid rgba(225,48,108,0.2);border-radius:14px;padding:12px;text-align:center;animation:countUp 0.6s 0.35s both;transition:transform 0.2s,box-shadow 0.2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 24px rgba(225,48,108,0.2)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+    <div style="font-size:18px;margin-bottom:3px">📸</div><div style="font-size:18px;font-weight:800" data-count="14" data-suffix="K">14K</div>
+    <div style="font-size:10px;color:rgba(225,48,108,0.8);font-weight:600">Instagram</div><div style="font-size:10px;color:rgba(255,255,255,0.35);margin-top:2px">1.2% eng · +512/mo</div>
   </div>
-  <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:14px;padding:12px;text-align:center;animation:countUp 0.6s 0.45s cubic-bezier(0.22,1,0.36,1) both;transition:transform 0.2s,box-shadow 0.2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 24px rgba(0,119,181,0.2)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-    <div style="font-size:18px;margin-bottom:3px">💼</div>
-    <div style="font-size:18px;font-weight:800" data-count="68.8" data-suffix="K">68.8K</div>
-    <div style="font-size:10px;color:rgba(0,119,181,0.9);font-weight:600">LinkedIn</div>
-    <div style="font-size:10px;color:rgba(255,255,255,0.35);margin-top:2px">2.1% eng · +2.2K/mo</div>
+  <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:14px;padding:12px;text-align:center;animation:countUp 0.6s 0.45s both;transition:transform 0.2s,box-shadow 0.2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 24px rgba(0,119,181,0.2)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+    <div style="font-size:18px;margin-bottom:3px">💼</div><div style="font-size:18px;font-weight:800" data-count="68.8" data-suffix="K">68.8K</div>
+    <div style="font-size:10px;color:rgba(0,119,181,0.9);font-weight:600">LinkedIn</div><div style="font-size:10px;color:rgba(255,255,255,0.35);margin-top:2px">2.1% eng · +2.2K/mo</div>
   </div>
-  <div style="background:rgba(29,161,242,0.08);border:1px solid rgba(29,161,242,0.2);border-radius:14px;padding:12px;text-align:center;animation:countUp 0.6s 0.55s cubic-bezier(0.22,1,0.36,1) both;transition:transform 0.2s,box-shadow 0.2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 24px rgba(29,161,242,0.2)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-    <div style="font-size:18px;margin-bottom:3px">🐦</div>
-    <div style="font-size:18px;font-weight:800" data-count="1.3" data-suffix="K">1.3K</div>
-    <div style="font-size:10px;color:rgba(29,161,242,0.9);font-weight:600">X / Twitter</div>
-    <div style="font-size:10px;color:rgba(255,255,255,0.35);margin-top:2px">0.9% eng · growing</div>
+  <div style="background:rgba(29,161,242,0.08);border:1px solid rgba(29,161,242,0.2);border-radius:14px;padding:12px;text-align:center;animation:countUp 0.6s 0.55s both;transition:transform 0.2s,box-shadow 0.2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 24px rgba(29,161,242,0.2)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+    <div style="font-size:18px;margin-bottom:3px">🐦</div><div style="font-size:18px;font-weight:800" data-count="1.3" data-suffix="K">1.3K</div>
+    <div style="font-size:10px;color:rgba(29,161,242,0.9);font-weight:600">X / Twitter</div><div style="font-size:10px;color:rgba(255,255,255,0.35);margin-top:2px">0.9% eng · growing</div>
   </div>
-  <div style="background:rgba(24,119,242,0.08);border:1px solid rgba(24,119,242,0.2);border-radius:14px;padding:12px;text-align:center;animation:countUp 0.6s 0.65s cubic-bezier(0.22,1,0.36,1) both;transition:transform 0.2s,box-shadow 0.2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 24px rgba(24,119,242,0.2)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-    <div style="font-size:18px;margin-bottom:3px">👥</div>
-    <div style="font-size:18px;font-weight:800" data-count="12.4" data-suffix="K">12.4K</div>
-    <div style="font-size:10px;color:rgba(24,119,242,0.9);font-weight:600">Facebook</div>
-    <div style="font-size:10px;color:rgba(255,255,255,0.35);margin-top:2px">1.4% eng · stable</div>
+  <div style="background:rgba(24,119,242,0.08);border:1px solid rgba(24,119,242,0.2);border-radius:14px;padding:12px;text-align:center;animation:countUp 0.6s 0.65s both;transition:transform 0.2s,box-shadow 0.2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 24px rgba(24,119,242,0.2)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+    <div style="font-size:18px;margin-bottom:3px">👥</div><div style="font-size:18px;font-weight:800" data-count="12.4" data-suffix="K">12.4K</div>
+    <div style="font-size:10px;color:rgba(24,119,242,0.9);font-weight:600">Facebook</div><div style="font-size:10px;color:rgba(255,255,255,0.35);margin-top:2px">1.4% eng · stable</div>
   </div>
 </div>
 
-<!-- NAV GRID -->
+<!-- NAV -->
 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px;position:relative;z-index:1">
-
-  <button onclick="switchTab('analytics')" id="nav-analytics"
-    style="background:linear-gradient(135deg,rgba(225,48,108,0.2),rgba(236,72,153,0.15));border:1px solid rgba(225,48,108,0.35);border-radius:18px;padding:20px 14px;cursor:pointer;text-align:center;transition:transform 0.22s,box-shadow 0.22s,border-color 0.22s;animation:navPop 0.6s 0.5s cubic-bezier(0.22,1,0.36,1) both;position:relative;overflow:hidden"
-    onmouseover="this.style.transform='translateY(-6px) scale(1.03)';this.style.boxShadow='0 0 0 2px rgba(225,48,108,0.5),0 16px 40px rgba(225,48,108,0.35)';this.style.borderColor='rgba(225,48,108,0.7)';this.querySelector('.ni').style.animation='iconWiggle 0.5s ease-in-out infinite'"
-    onmouseout="this.style.transform='';this.style.boxShadow='';this.style.borderColor='rgba(225,48,108,0.35)';this.querySelector('.ni').style.animation=''">
-    <div class="ni" style="font-size:32px;margin-bottom:8px;display:inline-block;transition:transform 0.2s">📊</div>
+  <button onclick="switchTab('analytics')" class="nb" style="background:linear-gradient(135deg,rgba(225,48,108,0.2),rgba(236,72,153,0.15));border:1px solid rgba(225,48,108,0.35);animation-delay:0.5s" onmouseover="hov(this,'rgba(225,48,108,0.5)','rgba(225,48,108,0.35)','rgba(225,48,108,0.7)','iconWiggle 0.5s ease-in-out infinite')" onmouseout="unHov(this,'rgba(225,48,108,0.35)')">
+    <div class="ni" style="font-size:32px;margin-bottom:8px;display:inline-block">📊</div>
     <div style="font-size:14px;font-weight:800;color:white;margin-bottom:4px">Analytics</div>
-    <div style="font-size:11px;color:rgba(249,168,212,0.7);line-height:1.5">IG · LinkedIn · Trends</div>
+    <div style="font-size:11px;color:rgba(249,168,212,0.7)">IG · LinkedIn · Trends</div>
     <div style="margin-top:10px;background:rgba(225,48,108,0.2);border-radius:20px;font-size:10px;font-weight:700;color:#f9a8d4;padding:3px 10px;display:inline-block">📡 Live Data</div>
   </button>
-
-  <button onclick="switchTab('create')" id="nav-create"
-    style="background:linear-gradient(135deg,rgba(99,102,241,0.25),rgba(168,85,247,0.2));border:1px solid rgba(99,102,241,0.4);border-radius:18px;padding:20px 14px;cursor:pointer;text-align:center;transition:transform 0.22s,box-shadow 0.22s,border-color 0.22s;animation:navPop 0.6s 0.6s cubic-bezier(0.22,1,0.36,1) both;position:relative;overflow:hidden"
-    onmouseover="this.style.transform='translateY(-6px) scale(1.03)';this.style.boxShadow='0 0 0 2px rgba(99,102,241,0.55),0 16px 40px rgba(99,102,241,0.35)';this.style.borderColor='rgba(99,102,241,0.75)';this.querySelector('.ni').style.animation='iconBounce 0.5s ease-in-out infinite'"
-    onmouseout="this.style.transform='';this.style.boxShadow='';this.style.borderColor='rgba(99,102,241,0.4)';this.querySelector('.ni').style.animation=''">
-    <div class="ni" style="font-size:32px;margin-bottom:8px;display:inline-block;transition:transform 0.2s">🚀</div>
+  <button onclick="switchTab('create')" class="nb" style="background:linear-gradient(135deg,rgba(99,102,241,0.25),rgba(168,85,247,0.2));border:1px solid rgba(99,102,241,0.4);animation-delay:0.6s" onmouseover="hov(this,'rgba(99,102,241,0.55)','rgba(99,102,241,0.35)','rgba(99,102,241,0.75)','iconBounce 0.5s ease-in-out infinite')" onmouseout="unHov(this,'rgba(99,102,241,0.4)')">
+    <div class="ni" style="font-size:32px;margin-bottom:8px;display:inline-block">🚀</div>
     <div style="font-size:14px;font-weight:800;color:white;margin-bottom:4px">Generate Post</div>
-    <div style="font-size:11px;color:rgba(165,180,252,0.7);line-height:1.5">Text · Image · Video</div>
+    <div style="font-size:11px;color:rgba(165,180,252,0.7)">Text · Image · Video</div>
     <div style="margin-top:10px;background:rgba(99,102,241,0.3);border-radius:20px;font-size:10px;font-weight:700;color:#a5b4fc;padding:3px 10px;display:inline-block">🆓 Free</div>
   </button>
-
-  <button onclick="switchTab('predict')" id="nav-predict"
-    style="background:linear-gradient(135deg,rgba(245,158,11,0.2),rgba(239,68,68,0.15));border:1px solid rgba(245,158,11,0.35);border-radius:18px;padding:20px 14px;cursor:pointer;text-align:center;transition:transform 0.22s,box-shadow 0.22s,border-color 0.22s;animation:navPop 0.6s 0.7s cubic-bezier(0.22,1,0.36,1) both;position:relative;overflow:hidden"
-    onmouseover="this.style.transform='translateY(-6px) scale(1.03)';this.style.boxShadow='0 0 0 2px rgba(245,158,11,0.5),0 16px 40px rgba(245,158,11,0.3)';this.style.borderColor='rgba(245,158,11,0.7)';this.querySelector('.ni').style.animation='iconPulseScale 0.6s ease-in-out infinite'"
-    onmouseout="this.style.transform='';this.style.boxShadow='';this.style.borderColor='rgba(245,158,11,0.35)';this.querySelector('.ni').style.animation=''">
-    <div class="ni" style="font-size:32px;margin-bottom:8px;display:inline-block;transition:transform 0.2s">🔬</div>
+  <button onclick="switchTab('predict')" class="nb" style="background:linear-gradient(135deg,rgba(245,158,11,0.2),rgba(239,68,68,0.15));border:1px solid rgba(245,158,11,0.35);animation-delay:0.7s" onmouseover="hov(this,'rgba(245,158,11,0.5)','rgba(245,158,11,0.3)','rgba(245,158,11,0.7)','iconPulseScale 0.6s ease-in-out infinite')" onmouseout="unHov(this,'rgba(245,158,11,0.35)')">
+    <div class="ni" style="font-size:32px;margin-bottom:8px;display:inline-block">🔬</div>
     <div style="font-size:14px;font-weight:800;color:white;margin-bottom:4px">Viral Predictor</div>
-    <div style="font-size:11px;color:rgba(253,230,138,0.7);line-height:1.5">Score your posts</div>
+    <div style="font-size:11px;color:rgba(253,230,138,0.7)">Score your posts</div>
     <div style="margin-top:10px;background:rgba(245,158,11,0.2);border-radius:20px;font-size:10px;font-weight:700;color:#fde68a;padding:3px 10px;display:inline-block">🆓 Free</div>
   </button>
-
-  <button onclick="switchTab('persona')" id="nav-persona"
-    style="background:linear-gradient(135deg,rgba(139,92,246,0.2),rgba(236,72,153,0.15));border:1px solid rgba(139,92,246,0.35);border-radius:18px;padding:20px 14px;cursor:pointer;text-align:center;transition:transform 0.22s,box-shadow 0.22s,border-color 0.22s;animation:navPop 0.6s 0.8s cubic-bezier(0.22,1,0.36,1) both;position:relative;overflow:hidden"
-    onmouseover="this.style.transform='translateY(-6px) scale(1.03)';this.style.boxShadow='0 0 0 2px rgba(139,92,246,0.55),0 16px 40px rgba(139,92,246,0.32)';this.style.borderColor='rgba(139,92,246,0.75)';this.querySelector('.ni').style.animation='iconWiggle 0.45s ease-in-out infinite'"
-    onmouseout="this.style.transform='';this.style.boxShadow='';this.style.borderColor='rgba(139,92,246,0.35)';this.querySelector('.ni').style.animation=''">
-    <div class="ni" style="font-size:32px;margin-bottom:8px;display:inline-block;transition:transform 0.2s">🎭</div>
+  <button onclick="switchTab('persona')" class="nb" style="background:linear-gradient(135deg,rgba(139,92,246,0.2),rgba(236,72,153,0.15));border:1px solid rgba(139,92,246,0.35);animation-delay:0.8s" onmouseover="hov(this,'rgba(139,92,246,0.55)','rgba(139,92,246,0.32)','rgba(139,92,246,0.75)','iconWiggle 0.45s ease-in-out infinite')" onmouseout="unHov(this,'rgba(139,92,246,0.35)')">
+    <div class="ni" style="font-size:32px;margin-bottom:8px;display:inline-block">🎭</div>
     <div style="font-size:14px;font-weight:800;color:white;margin-bottom:4px">Persona AI</div>
-    <div style="font-size:11px;color:rgba(196,181,253,0.7);line-height:1.5">4 audience variants</div>
+    <div style="font-size:11px;color:rgba(196,181,253,0.7)">4 audience variants</div>
     <div style="margin-top:10px;background:rgba(139,92,246,0.2);border-radius:20px;font-size:10px;font-weight:700;color:#c4b5fd;padding:3px 10px;display:inline-block">🆓 Free</div>
   </button>
-
-  <button onclick="switchTab('repurpose')" id="nav-repurpose"
-    style="background:linear-gradient(135deg,rgba(16,185,129,0.2),rgba(99,102,241,0.15));border:1px solid rgba(16,185,129,0.35);border-radius:18px;padding:20px 14px;cursor:pointer;text-align:center;transition:transform 0.22s,box-shadow 0.22s,border-color 0.22s;animation:navPop 0.6s 0.9s cubic-bezier(0.22,1,0.36,1) both;position:relative;overflow:hidden"
-    onmouseover="this.style.transform='translateY(-6px) scale(1.03)';this.style.boxShadow='0 0 0 2px rgba(16,185,129,0.5),0 16px 40px rgba(16,185,129,0.28)';this.style.borderColor='rgba(16,185,129,0.7)';this.querySelector('.ni').style.animation='iconSpin 0.6s linear infinite'"
-    onmouseout="this.style.transform='';this.style.boxShadow='';this.style.borderColor='rgba(16,185,129,0.35)';this.querySelector('.ni').style.animation=''">
-    <div class="ni" style="font-size:32px;margin-bottom:8px;display:inline-block;transition:transform 0.2s">♻️</div>
-    <div style="font-size:14px;font-weight:800;color:white;margin-bottom:4px">Repurpose</div>
-    <div style="font-size:11px;color:rgba(110,231,183,0.7);line-height:1.5">1 post → 8 formats</div>
-    <div style="margin-top:10px;background:rgba(16,185,129,0.2);border-radius:20px;font-size:10px;font-weight:700;color:#6ee7b7;padding:3px 10px;display:inline-block">🆓 Free</div>
+  <button onclick="switchTab('ads')" class="nb" style="background:linear-gradient(135deg,rgba(251,191,36,0.2),rgba(239,68,68,0.15));border:1px solid rgba(251,191,36,0.35);animation-delay:0.9s" onmouseover="hov(this,'rgba(251,191,36,0.5)','rgba(251,191,36,0.28)','rgba(251,191,36,0.7)','iconBounce 0.5s ease-in-out infinite')" onmouseout="unHov(this,'rgba(251,191,36,0.35)')">
+    <div class="ni" style="font-size:32px;margin-bottom:8px;display:inline-block">📣</div>
+    <div style="font-size:14px;font-weight:800;color:white;margin-bottom:4px">Run Ads</div>
+    <div style="font-size:11px;color:rgba(253,230,138,0.7)">AI copy · Budget · ROI</div>
+    <div style="margin-top:10px;background:rgba(251,191,36,0.2);border-radius:20px;font-size:10px;font-weight:700;color:#fde68a;padding:3px 10px;display:inline-block">🆓 Free AI</div>
   </button>
-
-  <button onclick="switchTab('calendar')" id="nav-calendar"
-    style="background:linear-gradient(135deg,rgba(59,130,246,0.2),rgba(99,102,241,0.15));border:1px solid rgba(59,130,246,0.35);border-radius:18px;padding:20px 14px;cursor:pointer;text-align:center;transition:transform 0.22s,box-shadow 0.22s,border-color 0.22s;animation:navPop 0.6s 1s cubic-bezier(0.22,1,0.36,1) both;position:relative;overflow:hidden"
-    onmouseover="this.style.transform='translateY(-6px) scale(1.03)';this.style.boxShadow='0 0 0 2px rgba(59,130,246,0.5),0 16px 40px rgba(59,130,246,0.28)';this.style.borderColor='rgba(59,130,246,0.7)';this.querySelector('.ni').style.animation='iconBounce 0.5s ease-in-out infinite'"
-    onmouseout="this.style.transform='';this.style.boxShadow='';this.style.borderColor='rgba(59,130,246,0.35)';this.querySelector('.ni').style.animation=''">
-    <div class="ni" style="font-size:32px;margin-bottom:8px;display:inline-block;transition:transform 0.2s">📅</div>
+  <button onclick="switchTab('calendar')" class="nb" style="background:linear-gradient(135deg,rgba(59,130,246,0.2),rgba(99,102,241,0.15));border:1px solid rgba(59,130,246,0.35);animation-delay:1s" onmouseover="hov(this,'rgba(59,130,246,0.5)','rgba(59,130,246,0.28)','rgba(59,130,246,0.7)','iconBounce 0.5s ease-in-out infinite')" onmouseout="unHov(this,'rgba(59,130,246,0.35)')">
+    <div class="ni" style="font-size:32px;margin-bottom:8px;display:inline-block">📅</div>
     <div style="font-size:14px;font-weight:800;color:white;margin-bottom:4px">Calendar</div>
-    <div style="font-size:11px;color:rgba(147,197,253,0.7);line-height:1.5">Approve · Reject</div>
+    <div style="font-size:11px;color:rgba(147,197,253,0.7)">Approve · Reject</div>
     <div style="margin-top:10px;background:rgba(59,130,246,0.2);border-radius:20px;font-size:10px;font-weight:700;color:#93c5fd;padding:3px 10px;display:inline-block;animation:badgePing 2s 2s ease-in-out infinite"><span id="calBadge">4</span> Pending</div>
   </button>
-
 </div>
 
-<!-- TOP ACTION BAR -->
-<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;position:relative;z-index:1;animation:slideUp 0.6s 1.05s cubic-bezier(0.22,1,0.36,1) both">
-  <button onclick="switchTab('calendar');setTimeout(toggleUploadForm,80)"
-    style="background:linear-gradient(135deg,rgba(99,102,241,0.28),rgba(168,85,247,0.22));border:1px solid rgba(99,102,241,0.45);border-radius:12px;color:#a5b4fc;font-size:12.5px;font-weight:700;padding:9px 16px;cursor:pointer;display:flex;align-items:center;gap:6px;transition:all 0.2s"
-    onmouseover="this.style.background='rgba(99,102,241,0.4)';this.style.color='white'"
-    onmouseout="this.style.background='linear-gradient(135deg,rgba(99,102,241,0.28),rgba(168,85,247,0.22))';this.style.color='#a5b4fc'">
-    ➕ Schedule a Post
-  </button>
-  <button onclick="switchTab('settings')"
-    style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:12px;color:rgba(255,255,255,0.5);font-size:12.5px;font-weight:600;padding:8px 16px;cursor:pointer;display:flex;align-items:center;gap:6px;transition:all 0.2s"
-    onmouseover="this.style.background='rgba(99,102,241,0.12)';this.style.color='#a5b4fc'"
-    onmouseout="this.style.background='rgba(255,255,255,0.04)';this.style.color='rgba(255,255,255,0.5)'">
-    ⚙️ Settings &amp; API Keys
-  </button>
+<!-- ACTION BAR -->
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;position:relative;z-index:1;flex-wrap:wrap;gap:8px">
+  <div style="display:flex;gap:8px;flex-wrap:wrap">
+    <button onclick="switchTab('calendar');setTimeout(toggleUploadForm,80)" style="background:linear-gradient(135deg,rgba(99,102,241,0.28),rgba(168,85,247,0.22));border:1px solid rgba(99,102,241,0.45);border-radius:12px;color:#a5b4fc;font-size:12.5px;font-weight:700;padding:9px 16px;cursor:pointer;transition:all 0.2s" onmouseover="this.style.background='rgba(99,102,241,0.4)';this.style.color='white'" onmouseout="this.style.background='linear-gradient(135deg,rgba(99,102,241,0.28),rgba(168,85,247,0.22))';this.style.color='#a5b4fc'">➕ Schedule a Post</button>
+
+  </div>
+  <button onclick="switchTab('settings')" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:12px;color:rgba(255,255,255,0.5);font-size:12.5px;font-weight:600;padding:8px 16px;cursor:pointer;transition:all 0.2s" onmouseover="this.style.background='rgba(99,102,241,0.12)';this.style.color='#a5b4fc'" onmouseout="this.style.background='rgba(255,255,255,0.04)';this.style.color='rgba(255,255,255,0.5)'">⚙️ Settings</button>
 </div>
 
 <!-- ══ SETTINGS ══ -->
 <div id="panel-settings" class="tab-panel" style="display:none;position:relative;z-index:1">
   <div class="card">
-    <div class="sh"><div class="sh-icon">⚙️</div><div><div style="color:white;font-weight:700;font-size:15.5px">Settings & API Configuration</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">Configure your API keys for image & video generation</div></div></div>
+    <div class="sh"><div class="sh-icon">⚙️</div><div><div style="color:white;font-weight:700;font-size:15.5px">Settings &amp; API Configuration</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">Configure your API keys</div></div></div>
     <div class="divider"></div>
     <div style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:14px 16px;margin-bottom:20px">
-      <div style="font-size:12.5px;font-weight:700;color:#6ee7b7;margin-bottom:4px">✅ All AI features work for free — no key needed</div>
-      <div style="font-size:12px;color:rgba(255,255,255,0.5);line-height:1.6">Only add a Freepik key if you want real AI images & videos.</div>
+      <div style="font-size:12.5px;font-weight:700;color:#6ee7b7;margin-bottom:4px">✅ All AI features work for free</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.5);line-height:1.6">Only add a Freepik key for real AI images and videos.</div>
     </div>
     <div style="margin-bottom:20px">
       <div class="lbl">🖼️ Freepik API Key (Optional)</div>
-      <input id="freepikKey" class="inp" type="password" placeholder="FPSX-... paste your Freepik API key here"/>
+      <input id="freepikKey" class="inp" type="password" placeholder="FPSX-..."/>
       <div style="margin-top:8px;font-size:11.5px;color:rgba(255,255,255,0.35)">Get free $5 credits at <a href="https://freepik.com/api" target="_blank" style="color:#a5b4fc">freepik.com/api</a></div>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
       <div style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.2);border-radius:14px;padding:16px">
         <div style="font-size:18px;margin-bottom:8px">🤖</div>
         <div style="font-size:13px;font-weight:700;color:white;margin-bottom:4px">AI Post Generation</div>
-        <div style="font-size:11.5px;color:rgba(255,255,255,0.4);margin-bottom:8px">Powered by Pollinations.ai</div>
+        <div style="font-size:11.5px;color:rgba(255,255,255,0.4);margin-bottom:8px">Pollinations.ai</div>
         <span style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);border-radius:20px;color:#6ee7b7;font-size:11px;font-weight:700;padding:3px 10px">🆓 Free</span>
       </div>
       <div style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.2);border-radius:14px;padding:16px">
         <div style="font-size:18px;margin-bottom:8px">🖼️</div>
-        <div style="font-size:13px;font-weight:700;color:white;margin-bottom:4px">Image & Video Generation</div>
-        <div style="font-size:11.5px;color:rgba(255,255,255,0.4);margin-bottom:8px">Powered by Freepik AI</div>
+        <div style="font-size:13px;font-weight:700;color:white;margin-bottom:4px">Image &amp; Video Gen</div>
+        <div style="font-size:11.5px;color:rgba(255,255,255,0.4);margin-bottom:8px">Freepik AI</div>
         <span id="freepikStatus" style="background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.3);border-radius:20px;color:#fde68a;font-size:11px;font-weight:700;padding:3px 10px">🔑 Key required</span>
       </div>
     </div>
@@ -214,102 +171,81 @@ select option{background:#0a0a1e;color:white}
 
 <!-- ══ ANALYTICS ══ -->
 <div id="panel-analytics" class="tab-panel" style="display:none;position:relative;z-index:1">
-  <div class="card" style="box-shadow:0 0 40px rgba(225,48,108,0.1),0 8px 32px rgba(0,0,0,0.4)">
+  <div class="card" style="box-shadow:0 0 40px rgba(225,48,108,0.1)">
     <div class="sh">
       <div class="sh-icon" style="background:linear-gradient(135deg,rgba(225,48,108,0.3),rgba(236,72,153,0.2));border-color:rgba(225,48,108,0.4)">📸</div>
       <div><div style="color:white;font-weight:700;font-size:15.5px">@gozenoti Instagram</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">14K followers · 1,089 posts · 1.2% engagement</div></div>
-      <div style="margin-left:auto;display:flex;align-items:center;gap:5px;background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.3);border-radius:20px;padding:4px 10px">
-        <span class="live-dot"></span><span style="font-size:10px;font-weight:700;color:#6ee7b7">Live</span>
-      </div>
+      <div style="margin-left:auto;display:flex;align-items:center;gap:5px;background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.3);border-radius:20px;padding:4px 10px"><span class="live-dot"></span><span style="font-size:10px;font-weight:700;color:#6ee7b7">Live</span></div>
     </div>
     <div class="divider"></div>
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px">
-      <div style="background:rgba(225,48,108,0.08);border:1px solid rgba(225,48,108,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">👥</div><div style="font-size:20px;font-weight:800" data-count="14" data-suffix="K">14K</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Followers</div><div style="font-size:10px;color:#10b981;margin-top:3px;font-weight:600">▲ +512/mo</div></div>
-      <div style="background:rgba(225,48,108,0.08);border:1px solid rgba(225,48,108,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">🖼️</div><div style="font-size:20px;font-weight:800" data-count="1089" data-suffix="">1,089</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Posts</div><div style="font-size:10px;color:#a5b4fc;margin-top:3px;font-weight:600">~6/week</div></div>
-      <div style="background:rgba(225,48,108,0.08);border:1px solid rgba(225,48,108,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">💬</div><div style="font-size:20px;font-weight:800" data-count="1.2" data-suffix="%">1.2%</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Eng Rate</div><div style="font-size:10px;color:#f59e0b;margin-top:3px;font-weight:600">Industry avg 3.5%</div></div>
-      <div style="background:rgba(225,48,108,0.08);border:1px solid rgba(225,48,108,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">📡</div><div style="font-size:20px;font-weight:800" data-count="18.6" data-suffix="K">18.6K</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Avg Reach</div><div style="font-size:10px;color:#10b981;margin-top:3px;font-weight:600">▲ +8% vs last mo</div></div>
+      <div style="background:rgba(225,48,108,0.08);border:1px solid rgba(225,48,108,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">👥</div><div style="font-size:20px;font-weight:800" data-count="14" data-suffix="K">14K</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-top:2px">Followers</div><div style="font-size:10px;color:#10b981;margin-top:3px;font-weight:600">▲ +512/mo</div></div>
+      <div style="background:rgba(225,48,108,0.08);border:1px solid rgba(225,48,108,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">🖼️</div><div style="font-size:20px;font-weight:800" data-count="1089" data-suffix="">1,089</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-top:2px">Posts</div><div style="font-size:10px;color:#a5b4fc;margin-top:3px;font-weight:600">~6/week</div></div>
+      <div style="background:rgba(225,48,108,0.08);border:1px solid rgba(225,48,108,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">💬</div><div style="font-size:20px;font-weight:800" data-count="1.2" data-suffix="%">1.2%</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-top:2px">Eng Rate</div><div style="font-size:10px;color:#f59e0b;margin-top:3px;font-weight:600">Avg 3.5%</div></div>
+      <div style="background:rgba(225,48,108,0.08);border:1px solid rgba(225,48,108,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">📡</div><div style="font-size:20px;font-weight:800" data-count="18.6" data-suffix="K">18.6K</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-top:2px">Avg Reach</div><div style="font-size:10px;color:#10b981;margin-top:3px;font-weight:600">▲ +8%</div></div>
     </div>
     <div class="lbl">📊 Content Format Performance</div>
     <div id="ig-perf"></div>
     <div class="sec-div"></div>
-    <div class="lbl">🏷️ Top Performing Hashtags</div>
+    <div class="lbl">🏷️ Top Hashtags</div>
     <div id="ig-tags"></div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px">
-      <div style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.2);border-radius:12px;padding:14px"><div style="font-size:11px;color:#a5b4fc;font-weight:700;margin-bottom:6px">⏰ Best Posting Time</div><div style="font-size:14px;color:white;font-weight:700">Mon / Wed / Fri</div><div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px">6:00 PM – 8:00 PM</div><div style="font-size:10.5px;color:#10b981;margin-top:6px;font-weight:600">+34% reach vs off-peak</div></div>
-      <div style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:14px"><div style="font-size:11px;color:#6ee7b7;font-weight:700;margin-bottom:6px">📈 Monthly Growth</div><div style="font-size:14px;color:white;font-weight:700">+3.8% · +512 followers</div><div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px">Save rate 4.2% · Stories 82% complete</div><div style="font-size:10.5px;color:#10b981;margin-top:6px;font-weight:600">Goal: 20K by Q3 2026</div></div>
-    </div>
-    <div style="margin-top:14px;background:linear-gradient(135deg,rgba(225,48,108,0.07),rgba(99,102,241,0.07));border:1px solid rgba(225,48,108,0.18);border-radius:14px;padding:16px">
-      <div style="font-size:11px;color:#f9a8d4;font-weight:700;margin-bottom:10px">🤖 AI Recommended Content Mix</div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap">
-        <div style="flex:1;min-width:80px;background:rgba(225,48,108,0.12);border-radius:10px;padding:10px;text-align:center"><div style="font-size:18px;font-weight:800;color:#e1306c">40%</div><div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:2px">Reels</div></div>
-        <div style="flex:1;min-width:80px;background:rgba(99,102,241,0.12);border-radius:10px;padding:10px;text-align:center"><div style="font-size:18px;font-weight:800;color:#a5b4fc">30%</div><div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:2px">Carousels</div></div>
-        <div style="flex:1;min-width:80px;background:rgba(245,158,11,0.12);border-radius:10px;padding:10px;text-align:center"><div style="font-size:18px;font-weight:800;color:#fbbf24">20%</div><div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:2px">Stories</div></div>
-        <div style="flex:1;min-width:80px;background:rgba(16,185,129,0.12);border-radius:10px;padding:10px;text-align:center"><div style="font-size:18px;font-weight:800;color:#6ee7b7">10%</div><div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:2px">Static</div></div>
-      </div>
+      <div style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.2);border-radius:12px;padding:14px"><div style="font-size:11px;color:#a5b4fc;font-weight:700;margin-bottom:6px">⏰ Best Time</div><div style="font-size:14px;color:white;font-weight:700">Mon / Wed / Fri</div><div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px">6:00 PM – 8:00 PM</div></div>
+      <div style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:14px"><div style="font-size:11px;color:#6ee7b7;font-weight:700;margin-bottom:6px">📈 Monthly Growth</div><div style="font-size:14px;color:white;font-weight:700">+3.8% · +512 followers</div><div style="font-size:10.5px;color:#10b981;margin-top:6px;font-weight:600">Goal: 20K by Q3 2026</div></div>
     </div>
   </div>
-
-  <div class="card" style="box-shadow:0 0 40px rgba(0,119,181,0.1),0 8px 32px rgba(0,0,0,0.4)">
+  <div class="card" style="box-shadow:0 0 40px rgba(0,119,181,0.1)">
     <div class="sh">
       <div class="sh-icon" style="background:linear-gradient(135deg,rgba(0,119,181,0.3),rgba(0,119,181,0.15));border-color:rgba(0,119,181,0.4)">💼</div>
-      <div><div style="color:white;font-weight:700;font-size:15.5px">Zenoti LinkedIn</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">68.8K followers · 862 employees · 30K+ customers · $1.5B valuation</div></div>
-      <div style="margin-left:auto;display:flex;align-items:center;gap:5px;background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.3);border-radius:20px;padding:4px 10px">
-        <span class="live-dot"></span><span style="font-size:10px;font-weight:700;color:#6ee7b7">Live</span>
-      </div>
+      <div><div style="color:white;font-weight:700;font-size:15.5px">Zenoti LinkedIn</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">68.8K followers · 30K+ customers · $1.5B valuation</div></div>
+      <div style="margin-left:auto;display:flex;align-items:center;gap:5px;background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.3);border-radius:20px;padding:4px 10px"><span class="live-dot"></span><span style="font-size:10px;font-weight:700;color:#6ee7b7">Live</span></div>
     </div>
     <div class="divider"></div>
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px">
-      <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">👥</div><div style="font-size:20px;font-weight:800" data-count="68.8" data-suffix="K">68.8K</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Followers</div><div style="font-size:10px;color:#10b981;margin-top:3px;font-weight:600">▲ +2.2K/mo</div></div>
-      <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">💬</div><div style="font-size:20px;font-weight:800" data-count="2.1" data-suffix="%">2.1%</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Eng Rate</div><div style="font-size:10px;color:#10b981;margin-top:3px;font-weight:600">Top 15% industry</div></div>
-      <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">👁️</div><div style="font-size:20px;font-weight:800" data-count="124" data-suffix="K">124K</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">Impressions/mo</div><div style="font-size:10px;color:#f59e0b;margin-top:3px;font-weight:600">▲ +18% vs prev</div></div>
-      <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">📈</div><div style="font-size:20px;font-weight:800" data-count="2.2" data-prefix="+" data-suffix="K">+2.2K</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px">New/Month</div><div style="font-size:10px;color:#10b981;margin-top:3px;font-weight:600">Goal: 100K by Q4</div></div>
+      <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">👥</div><div style="font-size:20px;font-weight:800" data-count="68.8" data-suffix="K">68.8K</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-top:2px">Followers</div><div style="font-size:10px;color:#10b981;margin-top:3px;font-weight:600">▲ +2.2K/mo</div></div>
+      <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">💬</div><div style="font-size:20px;font-weight:800" data-count="2.1" data-suffix="%">2.1%</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-top:2px">Eng Rate</div><div style="font-size:10px;color:#10b981;margin-top:3px;font-weight:600">Top 15%</div></div>
+      <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">👁️</div><div style="font-size:20px;font-weight:800" data-count="124" data-suffix="K">124K</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-top:2px">Impressions/mo</div><div style="font-size:10px;color:#f59e0b;margin-top:3px;font-weight:600">▲ +18%</div></div>
+      <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:18px;margin-bottom:4px">📈</div><div style="font-size:20px;font-weight:800" data-count="2.2" data-prefix="+" data-suffix="K">+2.2K</div><div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-top:2px">New/Month</div><div style="font-size:10px;color:#10b981;margin-top:3px;font-weight:600">Goal: 100K</div></div>
     </div>
-    <div class="lbl">📊 Post Format Performance</div>
-    <div id="li-perf"></div>
+    <div class="lbl">📊 Post Format Performance</div><div id="li-perf"></div>
     <div class="sec-div"></div>
-    <div class="lbl">⚡ LinkedIn 2025 Algorithm Insights</div>
-    <div id="li-insights"></div>
+    <div class="lbl">⚡ 2025 Algorithm Insights</div><div id="li-insights"></div>
     <div class="sec-div"></div>
     <div class="lbl">👥 Audience Breakdown</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:4px">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
       <div><div style="font-size:10px;color:rgba(255,255,255,0.3);font-weight:600;margin-bottom:8px">BY ROLE</div><div id="li-roles"></div></div>
       <div><div style="font-size:10px;color:rgba(255,255,255,0.3);font-weight:600;margin-bottom:8px">BY INDUSTRY</div><div id="li-industries"></div></div>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px">
-      <div style="background:rgba(0,119,181,0.08);border:1px solid rgba(0,119,181,0.2);border-radius:12px;padding:14px"><div style="font-size:11px;color:#93c5fd;font-weight:700;margin-bottom:6px">⏰ Best Posting Time</div><div style="font-size:14px;color:white;font-weight:700">Tue / Wed / Thu</div><div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px">8:00 AM – 10:00 AM</div><div style="font-size:10.5px;color:#10b981;margin-top:6px;font-weight:600">+52% reach during biz hours</div></div>
-      <div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:12px;padding:14px"><div style="font-size:11px;color:#fde68a;font-weight:700;margin-bottom:6px">🎯 Growth Target</div><div style="font-size:14px;color:white;font-weight:700">100K Followers</div><div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px">Est. Q4 2026 at current pace</div><div style="font-size:10.5px;color:#f59e0b;margin-top:6px;font-weight:600">68.8% of goal achieved</div></div>
-    </div>
   </div>
-
-  <div class="card" style="box-shadow:0 0 30px rgba(99,102,241,0.07),0 8px 32px rgba(0,0,0,0.4)">
+  <div class="card">
     <div class="sh">
       <div class="sh-icon" style="background:linear-gradient(135deg,rgba(239,68,68,0.3),rgba(245,158,11,0.2));border-color:rgba(239,68,68,0.35)">🔥</div>
-      <div><div style="color:white;font-weight:700;font-size:15.5px">Trending Topics for @gozenoti</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">Beauty & Wellness · SaaS · AI · Updated daily</div></div>
+      <div><div style="color:white;font-weight:700;font-size:15.5px">Trending Topics for @gozenoti</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">Beauty &amp; Wellness · SaaS · AI · Updated daily</div></div>
     </div>
     <div class="divider"></div>
     <div style="display:flex;gap:6px;margin-bottom:16px">
-      <button class="chip active" id="tt-all"  onclick="showTrends(this,'all')">🌐 All</button>
-      <button class="chip"        id="tt-ig"   onclick="showTrends(this,'ig')">📸 Instagram</button>
-      <button class="chip"        id="tt-li"   onclick="showTrends(this,'li')">💼 LinkedIn</button>
-      <button class="chip"        id="tt-tw"   onclick="showTrends(this,'tw')">🐦 X/Twitter</button>
+      <button class="chip active" id="tt-all" onclick="showTrends('all')">🌐 All</button>
+      <button class="chip" id="tt-ig" onclick="showTrends('ig')">📸 Instagram</button>
+      <button class="chip" id="tt-li" onclick="showTrends('li')">💼 LinkedIn</button>
+      <button class="chip" id="tt-tw" onclick="showTrends('tw')">🐦 X/Twitter</button>
     </div>
     <div style="display:flex;align-items:center;gap:12px;padding:0 12px;margin-bottom:8px">
       <div style="width:26px;flex-shrink:0"></div>
       <div style="flex:1;font-size:9.5px;font-weight:700;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:0.1em">Topic</div>
       <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
-        <div style="width:50px;font-size:9.5px;font-weight:700;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:0.1em;text-align:center">Trend</div>
-        <div style="min-width:52px;font-size:9.5px;font-weight:700;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:0.1em;text-align:center">Score</div>
-        <div style="min-width:36px;font-size:9.5px;font-weight:700;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:0.1em;text-align:right">Growth</div>
+        <div style="width:50px;font-size:9.5px;font-weight:700;color:rgba(255,255,255,0.3);text-transform:uppercase;text-align:center">Trend</div>
+        <div style="min-width:52px;font-size:9.5px;font-weight:700;color:rgba(255,255,255,0.3);text-transform:uppercase;text-align:center">Score</div>
+        <div style="min-width:36px;font-size:9.5px;font-weight:700;color:rgba(255,255,255,0.3);text-transform:uppercase;text-align:right">Growth</div>
       </div>
     </div>
     <div id="trending" style="min-height:20px"></div>
     <div style="margin-top:12px;padding:8px 12px;background:rgba(255,255,255,0.03);border-radius:10px;font-size:10.5px;color:rgba(255,255,255,0.3);display:flex;align-items:center;gap:6px">
-      <span>🤖</span><span><strong style="color:rgba(255,255,255,0.45)">Score</strong> = AI Virality Score (0–100) · <strong style="color:#ef4444">85+</strong> Breakout · <strong style="color:#f59e0b">75+</strong> Rising · <strong style="color:#10b981">&lt;75</strong> Steady</span>
+      <span>🤖</span><span><strong style="color:rgba(255,255,255,0.45)">Score</strong> = AI Virality Score · <strong style="color:#ef4444">85+</strong> Breakout · <strong style="color:#f59e0b">75+</strong> Rising · <strong style="color:#10b981">&lt;75</strong> Steady</span>
     </div>
     <div style="margin-top:16px;background:linear-gradient(135deg,rgba(99,102,241,0.1),rgba(168,85,247,0.08));border:1px solid rgba(99,102,241,0.25);border-radius:14px;padding:16px">
       <div style="font-size:11px;color:#a5b4fc;font-weight:700;margin-bottom:8px">🚀 Cross-Platform Opportunity</div>
-      <div style="font-size:13px;color:rgba(255,255,255,0.7);line-height:1.7"><strong style="color:white">"AI in Beauty & Wellness"</strong> is trending across all platforms — post now for max amplification. Combine with <strong style="color:#c4b5fd">#SalonTech</strong> + <strong style="color:#c4b5fd">#AIBooking</strong> for a 3.2x reach multiplier.</div>
-      <button onclick="switchTab('create')" style="margin-top:12px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border:none;border-radius:10px;color:white;font-size:12.5px;font-weight:700;padding:9px 18px;cursor:pointer">🚀 Create Post on This Trend →</button>
+      <div style="font-size:13px;color:rgba(255,255,255,0.7);line-height:1.7"><strong style="color:white">"AI in Beauty &amp; Wellness"</strong> is trending across all platforms — post now for max amplification.</div>
+      <button onclick="switchTab('create')" style="margin-top:12px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border:none;border-radius:10px;color:white;font-size:12.5px;font-weight:700;padding:9px 18px;cursor:pointer">🚀 Create Post on This Trend</button>
     </div>
   </div>
 </div>
@@ -317,7 +253,7 @@ select option{background:#0a0a1e;color:white}
 <!-- ══ VIRAL PREDICTOR ══ -->
 <div id="panel-predict" class="tab-panel" style="display:none;position:relative;z-index:1">
   <div class="card">
-    <div class="sh"><div class="sh-icon">🔬</div><div><div style="color:white;font-weight:700;font-size:15.5px">Viral Score Analyzer</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">Paste your draft — AI scores its performance potential</div></div></div>
+    <div class="sh"><div class="sh-icon">🔬</div><div><div style="color:white;font-weight:700;font-size:15.5px">Viral Score Analyzer</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">Paste your draft — AI scores its potential</div></div></div>
     <div class="divider"></div>
     <div class="lbl">Platform</div>
     <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap">
@@ -327,7 +263,7 @@ select option{background:#0a0a1e;color:white}
       <button class="chip" onclick="selVP(this,'facebook')">👥 Facebook</button>
     </div>
     <div class="lbl">Draft Post</div>
-    <textarea id="viralDraft" class="inp" rows="4" placeholder="Paste your post draft here…"></textarea>
+    <textarea id="viralDraft" class="inp" rows="4" placeholder="Paste your post draft here..."></textarea>
     <button class="btn" onclick="analyzeViral()" id="viralBtn" style="background:linear-gradient(135deg,#f59e0b,#ef4444);margin-top:12px">🔬 Analyze Viral Potential — Free</button>
     <div id="viralResult" style="margin-top:20px"></div>
   </div>
@@ -340,24 +276,21 @@ select option{background:#0a0a1e;color:white}
     <div class="divider"></div>
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
       <button onclick="selPostType('text')" id="pt-text" style="background:linear-gradient(135deg,rgba(99,102,241,0.33),rgba(99,102,241,0.18));border:2px solid rgba(99,102,241,0.88);border-radius:16px;padding:18px 12px;cursor:pointer;text-align:center;transform:translateY(-2px)">
-        <div style="font-size:26px;margin-bottom:8px">✍️</div><div style="font-size:13px;font-weight:700;color:white;margin-bottom:4px">Text Post</div>
-        <div style="font-size:10px;color:#a5b4fc">Pure copy · Free AI</div>
+        <div style="font-size:26px;margin-bottom:8px">✍️</div><div style="font-size:13px;font-weight:700;color:white;margin-bottom:4px">Text Post</div><div style="font-size:10px;color:#a5b4fc">Pure copy · Free AI</div>
         <div style="margin-top:8px;width:22px;height:22px;border-radius:11px;background:#6366f1;margin-left:auto;margin-right:auto;display:flex;align-items:center;justify-content:center;font-size:12px;color:white;font-weight:800">✓</div>
       </button>
       <button onclick="selPostType('image')" id="pt-image" style="background:rgba(255,255,255,0.03);border:2px solid rgba(255,255,255,0.07);border-radius:16px;padding:18px 12px;cursor:pointer;text-align:center">
-        <div style="font-size:26px;margin-bottom:8px">🖼️</div><div style="font-size:13px;font-weight:700;color:rgba(255,255,255,0.55);margin-bottom:4px">Image Post</div>
-        <div style="font-size:10px;color:rgba(255,255,255,0.3)">Freepik AI image</div>
+        <div style="font-size:26px;margin-bottom:8px">🖼️</div><div style="font-size:13px;font-weight:700;color:rgba(255,255,255,0.55);margin-bottom:4px">Image Post</div><div style="font-size:10px;color:rgba(255,255,255,0.3)">Freepik AI image</div>
       </button>
       <button onclick="selPostType('video')" id="pt-video" style="background:rgba(255,255,255,0.03);border:2px solid rgba(255,255,255,0.07);border-radius:16px;padding:18px 12px;cursor:pointer;text-align:center">
-        <div style="font-size:26px;margin-bottom:8px">🎬</div><div style="font-size:13px;font-weight:700;color:rgba(255,255,255,0.55);margin-bottom:4px">Video Post</div>
-        <div style="font-size:10px;color:rgba(255,255,255,0.3)">Freepik AI video</div>
+        <div style="font-size:26px;margin-bottom:8px">🎬</div><div style="font-size:13px;font-weight:700;color:rgba(255,255,255,0.55);margin-bottom:4px">Video Post</div><div style="font-size:10px;color:rgba(255,255,255,0.3)">Freepik AI video</div>
       </button>
     </div>
   </div>
   <div class="card">
     <div class="sh"><div class="sh-icon">✍️</div><div><div style="color:white;font-weight:700;font-size:15.5px">Content Brief</div></div></div>
     <div class="divider"></div>
-    <div style="margin-bottom:14px"><div class="lbl">Topic / Brief *</div><textarea id="postTopic" class="inp" rows="3" placeholder="e.g. Zenoti AI booking launch — trusted by 30k+ salons…"></textarea></div>
+    <div style="margin-bottom:14px"><div class="lbl">Topic / Brief *</div><textarea id="postTopic" class="inp" rows="3" placeholder="e.g. Zenoti AI booking launch — trusted by 30k+ salons..."></textarea></div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:14px">
       <div><div class="lbl">Platforms</div>
         <div style="display:flex;flex-wrap:wrap;gap:6px">
@@ -370,16 +303,16 @@ select option{background:#0a0a1e;color:white}
       <div><div class="lbl">Tone</div>
         <div style="display:flex;flex-wrap:wrap;gap:6px">
           <button class="chip active" onclick="selTone(this,'Professional')">Professional</button>
-          <button class="chip" onclick="selTone(this,'Casual & Fun')">Casual</button>
+          <button class="chip" onclick="selTone(this,'Casual')">Casual</button>
           <button class="chip" onclick="selTone(this,'Inspirational')">Inspirational</button>
           <button class="chip" onclick="selTone(this,'Educational')">Educational</button>
         </div>
       </div>
     </div>
-    <div style="margin-bottom:14px"><div class="lbl">Extra Context</div><input id="postExtra" class="inp" placeholder="e.g. mention 30k+ salons milestone…"/></div>
+    <div style="margin-bottom:14px"><div class="lbl">Extra Context</div><input id="postExtra" class="inp" placeholder="e.g. mention 30k+ salons milestone..."/></div>
   </div>
   <div id="text-panel" class="card">
-    <div class="sh"><div class="sh-icon">📝</div><div><div style="color:white;font-weight:700;font-size:15.5px">Text Post Generator</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">Free AI · @gozenoti voice & hashtags</div></div></div>
+    <div class="sh"><div class="sh-icon">📝</div><div><div style="color:white;font-weight:700;font-size:15.5px">Text Post Generator</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">Free AI · @gozenoti voice</div></div></div>
     <div class="divider"></div>
     <button class="btn" onclick="genPosts()" id="genPostsBtn" style="background:linear-gradient(135deg,#6366f1,#8b5cf6);margin-bottom:16px">✨ Generate Text Posts — Free</button>
     <div id="postsOut"></div>
@@ -388,21 +321,21 @@ select option{background:#0a0a1e;color:white}
     <div class="sh"><div class="sh-icon">🖼️</div><div><div style="color:white;font-weight:700;font-size:15.5px">Image Post Generator</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">Freepik AI — real JPEG images</div></div></div>
     <div class="divider"></div>
     <div id="imgKeyWarn" style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.25);border-radius:12px;padding:12px 16px;margin-bottom:16px;color:#fca5a5;font-size:12.5px">⚠️ Freepik API key required — add it in ⚙️ Settings</div>
-    <div style="margin-bottom:12px"><div class="lbl">Image Prompt *</div><textarea id="imgPrompt" class="inp" rows="3" placeholder="Describe your visual…"></textarea></div>
+    <div style="margin-bottom:12px"><div class="lbl">Image Prompt *</div><textarea id="imgPrompt" class="inp" rows="3" placeholder="Describe your visual..."></textarea></div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px">
-      <div><div class="lbl">Style</div><select id="imgStyle" class="sel"><option>realistic</option><option>cinematic</option><option>digital-art</option><option>anime</option><option>oil-painting</option><option>3d-render</option><option>minimalist</option><option>watercolor</option></select></div>
+      <div><div class="lbl">Style</div><select id="imgStyle" class="sel"><option>realistic</option><option>cinematic</option><option>digital-art</option><option>anime</option><option>3d-render</option><option>minimalist</option></select></div>
       <div><div class="lbl">Size</div><select id="imgSize" class="sel"><option value="square_1_1">1:1 Square</option><option value="portrait_4_5">4:5 Portrait</option><option value="widescreen_16_9">16:9 Wide</option><option value="vertical_9_16">9:16 Story</option></select></div>
     </div>
     <button class="btn" onclick="genImage()" id="genImgBtn" style="background:linear-gradient(135deg,#10b981,#6366f1);margin-bottom:14px">🖼️ Generate Real Image</button>
     <div id="imgStatus"></div><div id="imgOut"></div>
   </div>
   <div id="video-panel" class="card" style="display:none">
-    <div class="sh"><div class="sh-icon">🎬</div><div><div style="color:white;font-weight:700;font-size:15.5px">Video Post Generator</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">Freepik Kling v3 Pro · 60–120s render</div></div></div>
+    <div class="sh"><div class="sh-icon">🎬</div><div><div style="color:white;font-weight:700;font-size:15.5px">Video Post Generator</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">Freepik Kling v3 Pro</div></div></div>
     <div class="divider"></div>
-    <div style="background:rgba(245,158,11,0.07);border:1px solid rgba(245,158,11,0.2);border-radius:10px;padding:9px 13px;margin-bottom:14px;color:rgba(253,224,71,0.7);font-size:11.5px">⚡ ~$0.49 per 5s · Freepik API key required in ⚙️ Settings</div>
-    <div style="margin-bottom:12px"><div class="lbl">Video Prompt *</div><textarea id="vidPrompt" class="inp" rows="3" placeholder="Describe the scene, action, camera movement…"></textarea></div>
+    <div style="background:rgba(245,158,11,0.07);border:1px solid rgba(245,158,11,0.2);border-radius:10px;padding:9px 13px;margin-bottom:14px;color:rgba(253,224,71,0.7);font-size:11.5px">⚡ ~$0.49 per 5s · Freepik API key required</div>
+    <div style="margin-bottom:12px"><div class="lbl">Video Prompt *</div><textarea id="vidPrompt" class="inp" rows="3" placeholder="Describe the scene..."></textarea></div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">
-      <div><div class="lbl">Aspect</div><select id="vidAspect" class="sel"><option value="16:9">🖥️ 16:9 Landscape</option><option value="9:16">📱 9:16 Reels</option><option value="1:1">⬛ 1:1 Square</option></select></div>
+      <div><div class="lbl">Aspect</div><select id="vidAspect" class="sel"><option value="16:9">🖥️ 16:9</option><option value="9:16">📱 9:16 Reels</option><option value="1:1">⬛ 1:1</option></select></div>
       <div><div class="lbl">Duration</div><select id="vidDur" class="sel"><option value="5">5s (~$0.49)</option><option value="10">10s (~$0.98)</option><option value="15">15s (~$1.47)</option></select></div>
     </div>
     <button class="btn" onclick="genVideo()" id="genVidBtn" style="background:linear-gradient(135deg,#db2777,#9333ea);margin-bottom:14px">🎬 Generate Video</button>
@@ -413,7 +346,7 @@ select option{background:#0a0a1e;color:white}
 <!-- ══ PERSONA ══ -->
 <div id="panel-persona" class="tab-panel" style="display:none;position:relative;z-index:1">
   <div class="card">
-    <div class="sh"><div class="sh-icon">🎭</div><div><div style="color:white;font-weight:700;font-size:15.5px">Persona-Based Content Variants</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">One topic → 4 unique audience-targeted variants — Free</div></div></div>
+    <div class="sh"><div class="sh-icon">🎭</div><div><div style="color:white;font-weight:700;font-size:15.5px">Persona-Based Content Variants</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">One topic → 4 unique audience-targeted variants</div></div></div>
     <div class="divider"></div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px">
       <div><div class="lbl">Platform</div>
@@ -434,7 +367,7 @@ select option{background:#0a0a1e;color:white}
         </select>
       </div>
     </div>
-    <div style="margin-bottom:14px"><div class="lbl">Topic</div><input id="persTopic" class="inp" placeholder="e.g. AI appointment booking saves 3 hours a week…"/></div>
+    <div style="margin-bottom:14px"><div class="lbl">Topic</div><input id="persTopic" class="inp" placeholder="e.g. AI appointment booking saves 3 hours a week..."/></div>
     <button class="btn" onclick="genPersona()" id="persBtn" style="background:linear-gradient(135deg,#8b5cf6,#ec4899)">🎭 Generate 4 Persona Variants — Free</button>
     <div id="persOut" style="margin-top:20px"></div>
   </div>
@@ -443,11 +376,186 @@ select option{background:#0a0a1e;color:white}
 <!-- ══ REPURPOSE ══ -->
 <div id="panel-repurpose" class="tab-panel" style="display:none;position:relative;z-index:1">
   <div class="card">
-    <div class="sh"><div class="sh-icon">♻️</div><div><div style="color:white;font-weight:700;font-size:15.5px">Auto-Repurpose Engine</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">One piece of content → 8 platform-optimized formats — Free</div></div></div>
+    <div class="sh"><div class="sh-icon">♻️</div><div><div style="color:white;font-weight:700;font-size:15.5px">Auto-Repurpose Engine</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">One piece of content → 8 platform-optimized formats</div></div></div>
     <div class="divider"></div>
-    <div style="margin-bottom:14px"><div class="lbl">Paste Blog Post, Article, or Any Content</div><textarea id="repInput" class="inp" rows="5" placeholder="Paste your blog post, article, announcement…"></textarea></div>
+    <div style="margin-bottom:14px"><div class="lbl">Paste Blog Post, Article, or Any Content</div><textarea id="repInput" class="inp" rows="5" placeholder="Paste your blog post, article, announcement..."></textarea></div>
     <button class="btn" onclick="genRepurpose()" id="repBtn" style="background:linear-gradient(135deg,#10b981,#6366f1)">♻️ Repurpose Into 8 Formats — Free</button>
     <div id="repOut" style="margin-top:20px"></div>
+  </div>
+</div>
+
+<!-- ══ ADS ══ -->
+<div id="panel-ads" class="tab-panel" style="display:none;position:relative;z-index:1">
+  <div class="card">
+    <div class="sh">
+      <div class="sh-icon" style="background:linear-gradient(135deg,rgba(251,191,36,0.3),rgba(239,68,68,0.2));border-color:rgba(251,191,36,0.4)">📣</div>
+      <div><div style="color:white;font-weight:700;font-size:15.5px">Run Ads for @gozenoti</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">AI copy · Image · Video · Upload your creative</div></div>
+    </div>
+    <div class="divider"></div>
+
+    <div class="lbl">Ad Platform</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px">
+      <button onclick="selAdPlat(this,'instagram')" id="adp-instagram" style="background:rgba(225,48,108,0.15);border:2px solid rgba(225,48,108,0.6);border-radius:12px;padding:10px 6px;cursor:pointer;text-align:center;color:white;transition:all 0.2s"><div style="font-size:20px;margin-bottom:4px">📸</div><div style="font-size:11px;font-weight:700">Instagram</div></button>
+      <button onclick="selAdPlat(this,'linkedin')" id="adp-linkedin" style="background:rgba(255,255,255,0.03);border:2px solid rgba(255,255,255,0.08);border-radius:12px;padding:10px 6px;cursor:pointer;text-align:center;color:rgba(255,255,255,0.5);transition:all 0.2s"><div style="font-size:20px;margin-bottom:4px">💼</div><div style="font-size:11px;font-weight:700">LinkedIn</div></button>
+      <button onclick="selAdPlat(this,'facebook')" id="adp-facebook" style="background:rgba(255,255,255,0.03);border:2px solid rgba(255,255,255,0.08);border-radius:12px;padding:10px 6px;cursor:pointer;text-align:center;color:rgba(255,255,255,0.5);transition:all 0.2s"><div style="font-size:20px;margin-bottom:4px">👥</div><div style="font-size:11px;font-weight:700">Facebook</div></button>
+      <button onclick="selAdPlat(this,'twitter')" id="adp-twitter" style="background:rgba(255,255,255,0.03);border:2px solid rgba(255,255,255,0.08);border-radius:12px;padding:10px 6px;cursor:pointer;text-align:center;color:rgba(255,255,255,0.5);transition:all 0.2s"><div style="font-size:20px;margin-bottom:4px">🐦</div><div style="font-size:11px;font-weight:700">X / Twitter</div></button>
+    </div>
+
+    <div class="lbl">Campaign Objective</div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px">
+      <button class="chip active" onclick="selAdObj(this,'Brand Awareness')">📢 Brand Awareness</button>
+      <button class="chip" onclick="selAdObj(this,'Lead Generation')">🎯 Lead Generation</button>
+      <button class="chip" onclick="selAdObj(this,'App Downloads')">📲 App Downloads</button>
+      <button class="chip" onclick="selAdObj(this,'Website Traffic')">🌐 Traffic</button>
+      <button class="chip" onclick="selAdObj(this,'Conversions')">💰 Conversions</button>
+    </div>
+
+    <div style="margin-bottom:16px"><div class="lbl">Target Audience</div><input id="adAudience" class="inp" placeholder="e.g. Salon owners, spa managers, 30-55yo..."/></div>
+
+    <div class="lbl">Ad Content Type</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:20px">
+      <button onclick="selAdType(this,'text')" id="adt-text" style="background:linear-gradient(135deg,rgba(99,102,241,0.3),rgba(99,102,241,0.18));border:2px solid rgba(99,102,241,0.8);border-radius:12px;padding:10px 6px;cursor:pointer;text-align:center;color:white;transition:all 0.2s"><div style="font-size:18px;margin-bottom:4px">✍️</div><div style="font-size:10px;font-weight:700">Text Ad</div></button>
+      <button onclick="selAdType(this,'image')" id="adt-image" style="background:rgba(255,255,255,0.03);border:2px solid rgba(255,255,255,0.08);border-radius:12px;padding:10px 6px;cursor:pointer;text-align:center;color:rgba(255,255,255,0.5);transition:all 0.2s"><div style="font-size:18px;margin-bottom:4px">🖼️</div><div style="font-size:10px;font-weight:700">Image Ad</div></button>
+      <button onclick="selAdType(this,'video')" id="adt-video" style="background:rgba(255,255,255,0.03);border:2px solid rgba(255,255,255,0.08);border-radius:12px;padding:10px 6px;cursor:pointer;text-align:center;color:rgba(255,255,255,0.5);transition:all 0.2s"><div style="font-size:18px;margin-bottom:4px">🎬</div><div style="font-size:10px;font-weight:700">Video Ad</div></button>
+      <button onclick="selAdType(this,'upload')" id="adt-upload" style="background:rgba(255,255,255,0.03);border:2px solid rgba(255,255,255,0.08);border-radius:12px;padding:10px 6px;cursor:pointer;text-align:center;color:rgba(255,255,255,0.5);transition:all 0.2s"><div style="font-size:18px;margin-bottom:4px">📤</div><div style="font-size:10px;font-weight:700">Upload</div></button>
+    </div>
+
+    <!-- TEXT AD -->
+    <div id="adtype-text">
+      <div class="lbl" style="display:flex;align-items:center;justify-content:space-between">
+        <span>Ad Brief</span>
+        <button class="enh-btn" onclick="enhAdText('adBrief','adBriefStatus','adBriefSug','adBriefSugTxt')">✨ AI Enhance</button>
+      </div>
+      <span id="adBriefStatus" style="font-size:11px;color:rgba(255,255,255,0.4);display:none">⏳ Enhancing...</span>
+      <textarea id="adBrief" class="inp" rows="3" placeholder="e.g. Zenoti AI booking — help salon owners save 3 hours/week, reduce no-shows by 67%..." style="margin-bottom:8px"></textarea>
+      <div id="adBriefSug" class="ai-sug">
+        <div style="font-size:10px;color:#c4b5fd;font-weight:700;text-transform:uppercase;margin-bottom:8px">✨ AI Enhanced</div>
+        <div id="adBriefSugTxt" style="font-size:12.5px;color:rgba(255,255,255,0.8);line-height:1.7;margin-bottom:10px"></div>
+        <div style="display:flex;gap:8px">
+          <button onclick="applyEnh('adBrief','adBriefSugTxt','adBriefSug')" style="flex:2;background:linear-gradient(135deg,#8b5cf6,#ec4899);border:none;border-radius:9px;color:white;font-size:12px;font-weight:700;padding:8px;cursor:pointer">✓ Apply</button>
+          <button onclick="G('adBriefSug').style.display='none'" style="flex:1;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:9px;color:rgba(255,255,255,0.5);font-size:12px;padding:8px;cursor:pointer">✕</button>
+        </div>
+      </div>
+      <button class="btn" onclick="genAd()" id="genAdBtn" style="background:linear-gradient(135deg,#f59e0b,#ef4444);margin-top:12px">📣 Generate Ad Copy — Free</button>
+      <div id="adOut" style="margin-top:16px"></div>
+    </div>
+
+    <!-- IMAGE AD -->
+    <div id="adtype-image" style="display:none">
+      <div id="adImgKeyWarn" style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.25);border-radius:12px;padding:12px 16px;margin-bottom:14px;color:#fca5a5;font-size:12.5px">⚠️ Freepik API key required — add in ⚙️ Settings</div>
+      <div style="margin-bottom:12px"><div class="lbl">Visual Prompt</div><textarea id="adImgPrompt" class="inp" rows="3" placeholder="e.g. Luxury salon with AI dashboard, warm lighting, professional..."></textarea></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px">
+        <div><div class="lbl">Style</div><select id="adImgStyle" class="sel"><option>realistic</option><option>cinematic</option><option>digital-art</option><option>3d-render</option><option>minimalist</option></select></div>
+        <div><div class="lbl">Format</div><select id="adImgSize" class="sel"><option value="widescreen_16_9">16:9 Banner</option><option value="square_1_1">1:1 Square</option><option value="portrait_4_5">4:5 Feed</option><option value="vertical_9_16">9:16 Story</option></select></div>
+      </div>
+      <div class="lbl" style="display:flex;align-items:center;justify-content:space-between">
+        <span>Ad Copy</span>
+        <button class="enh-btn" onclick="enhAdText('adImgCopy','adImgCopyStatus','adImgCopySug','adImgCopySugTxt')">✨ AI Enhance</button>
+      </div>
+      <span id="adImgCopyStatus" style="font-size:11px;color:rgba(255,255,255,0.4);display:none">⏳ Enhancing...</span>
+      <textarea id="adImgCopy" class="inp" rows="2" placeholder="e.g. Save 3 hours/week with AI booking. Join 30K+ salons." style="margin-bottom:8px"></textarea>
+      <div id="adImgCopySug" class="ai-sug">
+        <div style="font-size:10px;color:#c4b5fd;font-weight:700;text-transform:uppercase;margin-bottom:8px">✨ AI Enhanced</div>
+        <div id="adImgCopySugTxt" style="font-size:12.5px;color:rgba(255,255,255,0.8);line-height:1.7;margin-bottom:10px"></div>
+        <div style="display:flex;gap:8px">
+          <button onclick="applyEnh('adImgCopy','adImgCopySugTxt','adImgCopySug')" style="flex:2;background:linear-gradient(135deg,#8b5cf6,#ec4899);border:none;border-radius:9px;color:white;font-size:12px;font-weight:700;padding:8px;cursor:pointer">✓ Apply</button>
+          <button onclick="G('adImgCopySug').style.display='none'" style="flex:1;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:9px;color:rgba(255,255,255,0.5);font-size:12px;padding:8px;cursor:pointer">✕</button>
+        </div>
+      </div>
+      <button class="btn" onclick="genAdImage()" id="genAdImgBtn" style="background:linear-gradient(135deg,#10b981,#6366f1);margin-top:12px;margin-bottom:14px">🖼️ Generate Ad Image</button>
+      <div id="adImgStatus"></div><div id="adImgOut"></div>
+    </div>
+
+    <!-- VIDEO AD -->
+    <div id="adtype-video" style="display:none">
+      <div style="background:rgba(245,158,11,0.07);border:1px solid rgba(245,158,11,0.2);border-radius:10px;padding:9px 13px;margin-bottom:14px;color:rgba(253,224,71,0.7);font-size:11.5px">⚡ Kling v3 Pro · ~$0.49/5s · Freepik API key required</div>
+      <div style="margin-bottom:12px"><div class="lbl">Scene Prompt</div><textarea id="adVidPrompt" class="inp" rows="3" placeholder="e.g. Busy salon before Zenoti vs calm efficient salon after, smooth camera pan..."></textarea></div>
+      <div class="lbl" style="display:flex;align-items:center;justify-content:space-between">
+        <span>Script / Voiceover</span>
+        <button class="enh-btn" onclick="enhAdText('adVidScript','adVidScriptStatus','adVidScriptSug','adVidScriptSugTxt')">✨ AI Enhance</button>
+      </div>
+      <span id="adVidScriptStatus" style="font-size:11px;color:rgba(255,255,255,0.4);display:none">⏳ Enhancing...</span>
+      <textarea id="adVidScript" class="inp" rows="2" placeholder="e.g. Tired of no-shows? Zenoti AI fills your calendar automatically..." style="margin-bottom:8px"></textarea>
+      <div id="adVidScriptSug" class="ai-sug">
+        <div style="font-size:10px;color:#c4b5fd;font-weight:700;text-transform:uppercase;margin-bottom:8px">✨ AI Enhanced</div>
+        <div id="adVidScriptSugTxt" style="font-size:12.5px;color:rgba(255,255,255,0.8);line-height:1.7;margin-bottom:10px"></div>
+        <div style="display:flex;gap:8px">
+          <button onclick="applyEnh('adVidScript','adVidScriptSugTxt','adVidScriptSug')" style="flex:2;background:linear-gradient(135deg,#8b5cf6,#ec4899);border:none;border-radius:9px;color:white;font-size:12px;font-weight:700;padding:8px;cursor:pointer">✓ Apply</button>
+          <button onclick="G('adVidScriptSug').style.display='none'" style="flex:1;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:9px;color:rgba(255,255,255,0.5);font-size:12px;padding:8px;cursor:pointer">✕</button>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0">
+        <div><div class="lbl">Aspect Ratio</div><select id="adVidAspect" class="sel"><option value="16:9">🖥️ 16:9</option><option value="9:16">📱 9:16 Story</option><option value="1:1">⬛ 1:1</option></select></div>
+        <div><div class="lbl">Duration</div><select id="adVidDur" class="sel"><option value="5">5s (~$0.49)</option><option value="10">10s (~$0.98)</option><option value="15">15s (~$1.47)</option></select></div>
+      </div>
+      <button class="btn" onclick="genAdVideo()" id="genAdVidBtn" style="background:linear-gradient(135deg,#db2777,#9333ea);margin-bottom:14px">🎬 Generate Ad Video</button>
+      <div id="adVidStatus"></div><div id="adVidOut"></div>
+    </div>
+
+    <!-- UPLOAD AD -->
+    <div id="adtype-upload" style="display:none">
+      <div class="lbl" style="display:flex;align-items:center;justify-content:space-between">
+        <span>Ad Copy</span>
+        <button class="enh-btn" onclick="enhAdText('adUpCopy','adUpCopyStatus','adUpCopySug','adUpCopySugTxt')">✨ AI Enhance</button>
+      </div>
+      <span id="adUpCopyStatus" style="font-size:11px;color:rgba(255,255,255,0.4);display:none">⏳ Enhancing...</span>
+      <textarea id="adUpCopy" class="inp" rows="2" placeholder="e.g. Join 30K+ salons using Zenoti AI. Book a free demo today." style="margin-bottom:8px"></textarea>
+      <div id="adUpCopySug" class="ai-sug">
+        <div style="font-size:10px;color:#c4b5fd;font-weight:700;text-transform:uppercase;margin-bottom:8px">✨ AI Enhanced</div>
+        <div id="adUpCopySugTxt" style="font-size:12.5px;color:rgba(255,255,255,0.8);line-height:1.7;margin-bottom:10px"></div>
+        <div style="display:flex;gap:8px">
+          <button onclick="applyEnh('adUpCopy','adUpCopySugTxt','adUpCopySug')" style="flex:2;background:linear-gradient(135deg,#8b5cf6,#ec4899);border:none;border-radius:9px;color:white;font-size:12px;font-weight:700;padding:8px;cursor:pointer">✓ Apply</button>
+          <button onclick="G('adUpCopySug').style.display='none'" style="flex:1;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:9px;color:rgba(255,255,255,0.5);font-size:12px;padding:8px;cursor:pointer">✕</button>
+        </div>
+      </div>
+      <div class="lbl" style="margin-top:12px">Upload Creative</div>
+      <label for="adUpMedia" id="adUpLabel" style="display:flex;flex-direction:column;align-items:center;gap:8px;background:rgba(255,255,255,0.03);border:2px dashed rgba(251,191,36,0.3);border-radius:12px;padding:24px;cursor:pointer;transition:all 0.2s;margin-bottom:14px" onmouseover="this.style.borderColor='rgba(251,191,36,0.6)';this.style.background='rgba(251,191,36,0.06)'" onmouseout="this.style.borderColor='rgba(251,191,36,0.3)';this.style.background='rgba(255,255,255,0.03)'">
+        <span id="adUpIcon" style="font-size:30px">📤</span>
+        <span id="adUpText" style="font-size:13px;font-weight:600;color:rgba(255,255,255,0.6)">Click to upload image or video</span>
+        <span style="font-size:11px;color:rgba(255,255,255,0.28)">JPG, PNG, MP4, MOV · Max 200MB</span>
+      </label>
+      <input type="file" id="adUpMedia" accept="image/*,video/*" style="display:none" onchange="handleAdUpload(this)"/>
+      <div id="adUpPreview" style="display:none;margin-bottom:14px"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">
+        <div><div class="lbl">CTA Text</div><input id="adUpCTA" class="inp" placeholder="Book Free Demo"/></div>
+        <div><div class="lbl">Landing URL</div><input id="adUpURL" class="inp" placeholder="https://zenoti.com/demo"/></div>
+      </div>
+      <button class="btn" onclick="previewUploadAd()" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">👁️ Preview Ad</button>
+      <div id="adUpOut" style="margin-top:14px"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="sh"><div class="sh-icon" style="background:linear-gradient(135deg,rgba(16,185,129,0.3),rgba(99,102,241,0.2));border-color:rgba(16,185,129,0.4)">💰</div>
+      <div><div style="color:white;font-weight:700;font-size:15.5px">Budget Planner &amp; ROI Estimator</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">Enter your budget — see estimated reach &amp; results</div></div>
+    </div>
+    <div class="divider"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px">
+      <div><div class="lbl">Daily Budget (USD)</div><input type="number" id="adBudget" class="inp" placeholder="50" oninput="calcROI()" style="font-size:16px;font-weight:700"/></div>
+      <div><div class="lbl">Duration</div><select id="adDuration" class="sel" onchange="calcROI()"><option value="7">7 days</option><option value="14">14 days</option><option value="30" selected>30 days</option><option value="60">60 days</option><option value="90">90 days</option></select></div>
+    </div>
+    <div id="roiOut" style="display:none">
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:14px">
+        <div style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:11px;color:#a5b4fc;font-weight:700;margin-bottom:4px">💸 Total Spend</div><div id="roi-spend" style="font-size:22px;font-weight:800;color:white"></div></div>
+        <div style="background:rgba(225,48,108,0.08);border:1px solid rgba(225,48,108,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:11px;color:#f9a8d4;font-weight:700;margin-bottom:4px">📡 Est. Reach</div><div id="roi-reach" style="font-size:22px;font-weight:800;color:white"></div></div>
+        <div style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:11px;color:#6ee7b7;font-weight:700;margin-bottom:4px">👆 Est. Clicks</div><div id="roi-clicks" style="font-size:22px;font-weight:800;color:white"></div></div>
+        <div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:14px;padding:14px;text-align:center"><div style="font-size:11px;color:#fde68a;font-weight:700;margin-bottom:4px">🎯 Est. Leads</div><div id="roi-leads" style="font-size:22px;font-weight:800;color:white"></div></div>
+      </div>
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:14px">
+        <div style="display:flex;justify-content:space-between;margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,0.5)">Cost Per Click</span><span id="roi-cpc" style="font-size:13px;font-weight:700;color:white"></span></div>
+        <div style="display:flex;justify-content:space-between;margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,0.5)">Cost Per Lead</span><span id="roi-cpl" style="font-size:13px;font-weight:700;color:white"></span></div>
+        <div style="display:flex;justify-content:space-between"><span style="font-size:12px;color:rgba(255,255,255,0.5)">Expected ROAS</span><span id="roi-roas" style="font-size:13px;font-weight:700;color:#10b981"></span></div>
+      </div>
+    </div>
+    <div id="roiEmpty" style="text-align:center;padding:20px;color:rgba(255,255,255,0.25);font-size:13px">Enter a daily budget above to see estimated results</div>
+  </div>
+
+  <div class="card">
+    <div class="sh"><div class="sh-icon" style="background:linear-gradient(135deg,rgba(139,92,246,0.3),rgba(236,72,153,0.2));border-color:rgba(139,92,246,0.4)">📊</div>
+      <div><div style="color:white;font-weight:700;font-size:15.5px">Ad Performance Benchmarks</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">Beauty &amp; Wellness industry averages</div></div>
+    </div>
+    <div class="divider"></div>
+    <div id="adBenchmarks"></div>
   </div>
 </div>
 
@@ -455,142 +563,79 @@ select option{background:#0a0a1e;color:white}
 <div id="panel-calendar" class="tab-panel" style="display:none;position:relative;z-index:1">
   <div class="card">
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
-      <div class="sh" style="margin-bottom:0"><div class="sh-icon">📅</div><div><div style="color:white;font-weight:700;font-size:15.5px">AI Content Calendar</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">AI-planned schedule · Approve or reject</div></div></div>
+      <div class="sh" style="margin-bottom:0"><div class="sh-icon">📅</div><div><div style="color:white;font-weight:700;font-size:15.5px">AI Content Calendar</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">Approve or reject scheduled posts</div></div></div>
       <div style="display:flex;align-items:center;gap:8px">
         <span id="schCount" style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);border-radius:20px;color:#6ee7b7;font-size:11px;font-weight:700;padding:4px 12px">3 Scheduled</span>
-        <button onclick="toggleUploadForm()" style="background:linear-gradient(135deg,rgba(99,102,241,0.3),rgba(168,85,247,0.25));border:1px solid rgba(99,102,241,0.5);border-radius:20px;color:#a5b4fc;font-size:11px;font-weight:700;padding:5px 13px;cursor:pointer;display:flex;align-items:center;gap:5px">➕ Add Post</button>
+        <button onclick="toggleUploadForm()" style="background:linear-gradient(135deg,rgba(99,102,241,0.3),rgba(168,85,247,0.25));border:1px solid rgba(99,102,241,0.5);border-radius:20px;color:#a5b4fc;font-size:11px;font-weight:700;padding:5px 13px;cursor:pointer">➕ Add Post</button>
       </div>
     </div>
     <div class="divider"></div>
-
-    <!-- Upload Form -->
-    <div id="uploadForm" style="display:none;background:rgba(99,102,241,0.06);border:1px solid rgba(99,102,241,0.22);border-radius:16px;padding:18px;margin-bottom:18px;animation:fadeIn 0.25s ease">
+    <div id="uploadForm" style="display:none;background:rgba(99,102,241,0.06);border:1px solid rgba(99,102,241,0.22);border-radius:16px;padding:18px;margin-bottom:18px">
       <div style="font-size:13px;font-weight:800;color:white;margin-bottom:14px;display:flex;align-items:center;gap:8px">
         <span style="width:28px;height:28px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px">📤</span>
         Schedule a Post Manually
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
-        <div><div class="lbl">Platform</div>
-          <select id="upPlatform" class="sel">
-            <option value="instagram">📸 Instagram</option>
-            <option value="linkedin">💼 LinkedIn</option>
-            <option value="twitter">🐦 X / Twitter</option>
-            <option value="facebook">👥 Facebook</option>
-          </select>
-        </div>
-        <div><div class="lbl">Post Type</div>
-          <select id="upType" class="sel">
-            <option>Reels</option><option>Carousel</option><option>Static Image</option>
-            <option>Video</option><option>Story</option><option>Article</option>
-            <option>Thread</option><option>Poll</option>
-          </select>
-        </div>
+        <div><div class="lbl">Platform</div><select id="upPlatform" class="sel"><option value="instagram">📸 Instagram</option><option value="linkedin">💼 LinkedIn</option><option value="twitter">🐦 X</option><option value="facebook">👥 Facebook</option></select></div>
+        <div><div class="lbl">Post Type</div><select id="upType" class="sel"><option>Reels</option><option>Carousel</option><option>Static Image</option><option>Video</option><option>Story</option><option>Article</option><option>Thread</option><option>Poll</option></select></div>
       </div>
-      <!-- Topic with AI Enhance -->
       <div style="margin-bottom:12px">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
-          <div class="lbl" style="margin-bottom:0">Topic / Title</div>
-          <button id="aiEnhanceBtn" onclick="aiEnhance()"
-            style="background:linear-gradient(135deg,rgba(139,92,246,0.25),rgba(236,72,153,0.2));border:1px solid rgba(139,92,246,0.45);border-radius:20px;color:#c4b5fd;font-size:11px;font-weight:700;padding:4px 12px;cursor:pointer;display:flex;align-items:center;gap:5px;transition:all 0.2s"
-            onmouseover="this.style.background='linear-gradient(135deg,rgba(139,92,246,0.4),rgba(236,72,153,0.3))';this.style.color='white'"
-            onmouseout="this.style.background='linear-gradient(135deg,rgba(139,92,246,0.25),rgba(236,72,153,0.2))';this.style.color='#c4b5fd'">
-            ✨ AI Enhance
-          </button>
+        <div class="lbl" style="display:flex;align-items:center;justify-content:space-between">
+          <span>Topic / Title</span>
+          <button class="enh-btn" onclick="aiEnhance()" id="aiEnhanceBtn">✨ AI Enhance</button>
         </div>
-        <input id="upTopic" class="inp" placeholder="e.g. New AI Feature Launch — Zenoti Smart Scheduling"/>
+        <span id="aiEnhanceStatus" style="font-size:11px;color:rgba(255,255,255,0.4);display:none">⏳ Enhancing...</span>
+        <input id="upTopic" class="inp" placeholder="e.g. New AI Feature Launch"/>
       </div>
-      <!-- Caption -->
       <div style="margin-bottom:12px">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
-          <div class="lbl" style="margin-bottom:0">Caption</div>
-          <span id="aiEnhanceStatus" style="font-size:11px;color:rgba(255,255,255,0.4);display:none">⏳ Enhancing…</span>
-        </div>
-        <textarea id="upCaption" class="inp" rows="3" placeholder="Write your post caption, hashtags, CTA…"></textarea>
-        <!-- AI Suggestion Box -->
-        <div id="aiSuggestion" style="display:none;margin-top:10px;background:linear-gradient(135deg,rgba(139,92,246,0.1),rgba(236,72,153,0.07));border:1px solid rgba(139,92,246,0.3);border-radius:12px;padding:14px;animation:fadeIn 0.3s ease">
-          <div style="font-size:10px;color:#c4b5fd;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px">✨ AI Enhanced Version</div>
+        <div class="lbl">Caption</div>
+        <textarea id="upCaption" class="inp" rows="3" placeholder="Write your post caption, hashtags, CTA..."></textarea>
+        <div id="aiSuggestion" class="ai-sug" style="margin-top:10px">
+          <div style="font-size:10px;color:#c4b5fd;font-weight:700;text-transform:uppercase;margin-bottom:8px">✨ AI Enhanced Version</div>
           <div id="aiSugTitle" style="font-size:12.5px;font-weight:700;color:white;margin-bottom:6px"></div>
           <div id="aiSugCaption" style="font-size:12px;color:rgba(255,255,255,0.7);line-height:1.7;margin-bottom:10px"></div>
           <div style="display:flex;gap:8px">
             <button onclick="applyAISuggestion()" style="flex:2;background:linear-gradient(135deg,#8b5cf6,#ec4899);border:none;border-radius:9px;color:white;font-size:12px;font-weight:700;padding:8px;cursor:pointer">✓ Apply</button>
-            <button onclick="document.getElementById('aiSuggestion').style.display='none'" style="flex:1;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:9px;color:rgba(255,255,255,0.5);font-size:12px;font-weight:600;padding:8px;cursor:pointer">✕ Dismiss</button>
+            <button onclick="G('aiSuggestion').style.display='none'" style="flex:1;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:9px;color:rgba(255,255,255,0.5);font-size:12px;padding:8px;cursor:pointer">✕</button>
           </div>
         </div>
       </div>
-      <!-- Media Upload -->
       <div style="margin-bottom:12px">
-        <div class="lbl">Upload Image or Video</div>
-        <label for="upMedia" id="upMediaLabel"
-          style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:rgba(255,255,255,0.03);border:2px dashed rgba(99,102,241,0.3);border-radius:12px;padding:22px;cursor:pointer;transition:all 0.2s"
-          onmouseover="this.style.borderColor='rgba(99,102,241,0.6)';this.style.background='rgba(99,102,241,0.08)'"
-          onmouseout="this.style.borderColor='rgba(99,102,241,0.3)';this.style.background='rgba(255,255,255,0.03)'">
-          <span style="font-size:28px" id="upMediaIcon">🖼️</span>
-          <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,0.6)" id="upMediaText">Click to upload image or video</span>
+        <div class="lbl">Upload Media</div>
+        <label for="upMedia" style="display:flex;flex-direction:column;align-items:center;gap:8px;background:rgba(255,255,255,0.03);border:2px dashed rgba(99,102,241,0.3);border-radius:12px;padding:22px;cursor:pointer;transition:all 0.2s" onmouseover="this.style.borderColor='rgba(99,102,241,0.6)'" onmouseout="this.style.borderColor='rgba(99,102,241,0.3)'">
+          <span id="upMediaIcon" style="font-size:28px">🖼️</span>
+          <span id="upMediaText" style="font-size:13px;font-weight:600;color:rgba(255,255,255,0.6)">Click to upload image or video</span>
           <span style="font-size:11px;color:rgba(255,255,255,0.28)">JPG, PNG, MP4, MOV · Max 200MB</span>
         </label>
         <input type="file" id="upMedia" accept="image/*,video/*" style="display:none" onchange="handleMediaUpload(this)"/>
         <div id="upMediaPreview" style="margin-top:10px;display:none"></div>
       </div>
-      <!-- Date + Time -->
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px">
-        <div><div class="lbl">Schedule Date</div><input type="date" id="upDate" class="inp" style="color-scheme:dark"/></div>
-        <div><div class="lbl">Schedule Time</div><input type="time" id="upTime" class="inp" style="color-scheme:dark"/></div>
+        <div><div class="lbl">Date</div><input type="date" id="upDate" class="inp" style="color-scheme:dark"/></div>
+        <div><div class="lbl">Time</div><input type="time" id="upTime" class="inp" style="color-scheme:dark"/></div>
       </div>
       <div style="display:flex;gap:8px">
-        <button onclick="submitUpload()" style="flex:2;background:linear-gradient(135deg,#6366f1,#8b5cf6);border:none;border-radius:11px;color:white;font-size:13px;font-weight:700;padding:11px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px">📅 Add to Calendar</button>
+        <button onclick="submitUpload()" style="flex:2;background:linear-gradient(135deg,#6366f1,#8b5cf6);border:none;border-radius:11px;color:white;font-size:13px;font-weight:700;padding:11px;cursor:pointer">📅 Add to Calendar</button>
         <button onclick="toggleUploadForm()" style="flex:1;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:11px;color:rgba(255,255,255,0.5);font-size:13px;font-weight:600;padding:11px;cursor:pointer">Cancel</button>
       </div>
     </div>
-
     <div id="calItems"></div>
   </div>
 </div>
 
 </div>
 <script>
-
-
 var PC={linkedin:'#0077b5',instagram:'#e1306c',twitter:'#1da1f2',facebook:'#1877f2'};
 var PI={linkedin:'💼',instagram:'📸',twitter:'🐦',facebook:'👥'};
 var PL={linkedin:'LinkedIn',instagram:'Instagram',twitter:'X/Twitter',facebook:'Facebook'};
 var PM={linkedin:3000,instagram:2200,twitter:280,facebook:500};
 var PT={linkedin:'professional, insightful',instagram:'visual, engaging, emotional',twitter:'punchy, witty, concise',facebook:'friendly, community-driven'};
-var igPerfData=[
-  ['🎬 Reels',91,'#e1306c','4.8% eng · 3.2x reach boost'],
-  ['🎠 Carousel',85,'#c026d3','3.6% eng · Highest saves'],
-  ['⭕ Stories',72,'#9333ea','82% completion · Strong DMs'],
-  ['🖼️ Static Image',64,'#6366f1','2.1% eng · Quick to produce'],
-  ['🔗 Link Post',38,'#3b82f6','0.9% eng · Reach penalty']
-];
-var igTagsData=[
-  {tag:'#GoZenoti',reach:'18.4K',color:'#e1306c'},
-  {tag:'#SalonTech',reach:'142K',color:'#c026d3'},
-  {tag:'#BeautyAndWellness',reach:'98K',color:'#9333ea'},
-  {tag:'#MedSpa',reach:'76K',color:'#6366f1'},
-  {tag:'#AIBeauty',reach:'54K',color:'#3b82f6'},
-  {tag:'#SpaLife',reach:'211K',color:'#0ea5e9'},
-  {tag:'#WellnessTech',reach:'38K',color:'#10b981'},
-  {tag:'#SalonOwner',reach:'89K',color:'#f59e0b'},
-  {tag:'#BookingApp',reach:'31K',color:'#ef4444'},
-  {tag:'#BeautyBiz',reach:'167K',color:'#ec4899'}
-];
-var liPerfData=[
-  ['📄 Document/Carousel',92,'#0077b5','5.2% eng · Top shares & saves'],
-  ['🎬 Native Video',86,'#0ea5e9','4.1% eng · 2.8x organic reach'],
-  ['✍️ Text-only Post',78,'#6366f1','3.8% eng · High comment rate'],
-  ['🗳️ Poll',71,'#8b5cf6','Avg 340 votes · Great discovery'],
-  ['📰 Article',62,'#a855f7','Long shelf-life · SEO value'],
-  ['🔗 External Link',34,'#64748b','Algorithm penalized · Use sparingly']
-];
-var liInsightsData=[
-  {icon:'⚡',text:'Posts shown to only ~1.6% of followers initially — quality of early engagement determines viral fate',bg:'rgba(245,158,11,0.07)',border:'rgba(245,158,11,0.2)'},
-  {icon:'💬',text:'Comments are 15x more valuable than likes — always reply within 60 min to trigger second distribution wave',bg:'rgba(16,185,129,0.07)',border:'rgba(16,185,129,0.2)'},
-  {icon:'⏰',text:'First 90 minutes is the golden window — schedule for 8–10 AM Tue/Wed/Thu when decision-makers are online',bg:'rgba(99,102,241,0.08)',border:'rgba(99,102,241,0.2)'},
-  {icon:'📄',text:'Documents & carousels get 3x more saves — saves signal topic authority to the algorithm',bg:'rgba(168,85,247,0.07)',border:'rgba(168,85,247,0.2)'},
-  {icon:'👤',text:'Employee advocacy posts get 2.75x more impressions — tag team members and encourage reshares',bg:'rgba(239,68,68,0.07)',border:'rgba(239,68,68,0.2)'}
-];
-var liRolesData=[['Salon/Spa Owner',42,'#0077b5'],['C-Suite / VP',18,'#6366f1'],['Product Manager',14,'#8b5cf6'],['Marketing Lead',13,'#ec4899'],['Operations',13,'#10b981']];
-var liIndustriesData=[['Health & Wellness',38,'#0077b5'],['Hospitality',22,'#10b981'],['Beauty & Personal Care',19,'#e1306c'],['Retail & eComm',11,'#f59e0b'],['Technology',10,'#6366f1']];
+var igPD=[['🎬 Reels',91,'#e1306c','4.8% eng · 3.2x reach'],['🎠 Carousel',85,'#c026d3','3.6% eng · Highest saves'],['⭕ Stories',72,'#9333ea','82% completion'],['🖼️ Static',64,'#6366f1','2.1% eng'],['🔗 Link',38,'#3b82f6','0.9% eng · penalized']];
+var igTD=[{tag:'#GoZenoti',reach:'18.4K',color:'#e1306c'},{tag:'#SalonTech',reach:'142K',color:'#c026d3'},{tag:'#BeautyAndWellness',reach:'98K',color:'#9333ea'},{tag:'#MedSpa',reach:'76K',color:'#6366f1'},{tag:'#AIBeauty',reach:'54K',color:'#3b82f6'},{tag:'#SpaLife',reach:'211K',color:'#0ea5e9'},{tag:'#WellnessTech',reach:'38K',color:'#10b981'},{tag:'#SalonOwner',reach:'89K',color:'#f59e0b'},{tag:'#BookingApp',reach:'31K',color:'#ef4444'},{tag:'#BeautyBiz',reach:'167K',color:'#ec4899'}];
+var liPD=[['📄 Document',92,'#0077b5','5.2% eng · Top saves'],['🎬 Native Video',86,'#0ea5e9','4.1% eng · 2.8x reach'],['✍️ Text Post',78,'#6366f1','3.8% eng · Comments'],['🗳️ Poll',71,'#8b5cf6','Avg 340 votes'],['📰 Article',62,'#a855f7','SEO value'],['🔗 Link',34,'#64748b','Penalized']];
+var liID=[{icon:'⚡',text:'Posts shown to only ~1.6% of followers initially — early engagement determines viral fate',bg:'rgba(245,158,11,0.07)',bd:'rgba(245,158,11,0.2)'},{icon:'💬',text:'Comments are 15x more valuable than likes — reply within 60 min to trigger second wave',bg:'rgba(16,185,129,0.07)',bd:'rgba(16,185,129,0.2)'},{icon:'⏰',text:'First 90 min is the golden window — schedule 8-10 AM Tue/Wed/Thu',bg:'rgba(99,102,241,0.08)',bd:'rgba(99,102,241,0.2)'},{icon:'📄',text:'Documents get 3x more saves — saves signal topic authority to the algorithm',bg:'rgba(168,85,247,0.07)',bd:'rgba(168,85,247,0.2)'},{icon:'👤',text:'Employee posts get 2.75x more impressions — tag team members',bg:'rgba(239,68,68,0.07)',bd:'rgba(239,68,68,0.2)'}];
+var liRD=[['Salon/Spa Owner',42,'#0077b5'],['C-Suite / VP',18,'#6366f1'],['Product Manager',14,'#8b5cf6'],['Marketing Lead',13,'#ec4899'],['Operations',13,'#10b981']];
+var liInD=[['Health & Wellness',38,'#0077b5'],['Hospitality',22,'#10b981'],['Beauty & Personal Care',19,'#e1306c'],['Retail & eComm',11,'#f59e0b'],['Technology',10,'#6366f1']];
 var allTrends=[
   {topic:'AI in Beauty & Wellness',score:96,delta:'+42%',plats:['📸','💼','🐦'],tag:'🔥 Breakout',filter:['all','ig','li','tw']},
   {topic:'MedSpa Automation',score:88,delta:'+38%',plats:['📸','💼'],tag:'📈 Rising',filter:['all','ig','li']},
@@ -601,381 +646,350 @@ var allTrends=[
   {topic:'Spa Industry Trends',score:70,delta:'+16%',plats:['📸','👥'],tag:'✅ Steady',filter:['all','ig']},
   {topic:'Beauty Business Tips',score:66,delta:'+12%',plats:['📸','👥','🐦'],tag:'✅ Steady',filter:['all','ig','tw']}
 ];
-
-// ── STATE ──────────────────────────────────────────────────────
-const S={
-  viralPlat:'linkedin',postType:'text',
-  selPlats:['linkedin','instagram'],tone:'Professional',
-  trendFilter:'all',
+var adBD={instagram:{cpc:1.28,cpl:12.5,ctr:1.08,roas:3.2,rpd:420},linkedin:{cpc:5.26,cpl:35.0,ctr:0.65,roas:2.1,rpd:180},facebook:{cpc:0.97,cpl:10.2,ctr:1.32,roas:3.8,rpd:510},twitter:{cpc:1.35,cpl:14.0,ctr:0.90,roas:2.5,rpd:380}};
+var S={viralPlat:'linkedin',postType:'text',selPlats:['linkedin','instagram'],tone:'Professional',adPlatform:'instagram',adObjective:'Brand Awareness',
   cal:[
-    {id:1,pl:'instagram',type:'Reels',   topic:'AI Booking Demo',         score:94,time:'Mon 6pm', st:'scheduled'},
-    {id:2,pl:'linkedin', type:'Article', topic:'Future of Salon Tech',    score:88,time:'Tue 9am', st:'pending'},
-    {id:3,pl:'twitter',  type:'Thread',  topic:'5 Wellness Trends 2026',  score:85,time:'Wed 12pm',st:'pending'},
-    {id:4,pl:'instagram',type:'Carousel',topic:'Before & After Gallery',  score:91,time:'Wed 6pm', st:'scheduled'},
-    {id:5,pl:'facebook', type:'Event',   topic:'Zenoti Webinar Live',     score:79,time:'Thu 2pm', st:'pending'},
-    {id:6,pl:'linkedin', type:'Video',   topic:'Customer Success Story',  score:92,time:'Fri 10am',st:'pending'},
-    {id:7,pl:'twitter',  type:'Poll',    topic:'Biggest Salon Challenge?',score:83,time:'Fri 1pm', st:'scheduled'}
+    {id:1,pl:'instagram',type:'Reels',topic:'AI Booking Demo',score:94,time:'Mon 6pm',st:'scheduled'},
+    {id:2,pl:'linkedin',type:'Article',topic:'Future of Salon Tech',score:88,time:'Tue 9am',st:'pending'},
+    {id:3,pl:'twitter',type:'Thread',topic:'5 Wellness Trends 2026',score:85,time:'Wed 12pm',st:'pending'},
+    {id:4,pl:'instagram',type:'Carousel',topic:'Before & After Gallery',score:91,time:'Wed 6pm',st:'scheduled'},
+    {id:5,pl:'facebook',type:'Event',topic:'Zenoti Webinar Live',score:79,time:'Thu 2pm',st:'pending'},
+    {id:6,pl:'linkedin',type:'Video',topic:'Customer Success Story',score:92,time:'Fri 10am',st:'pending'},
+    {id:7,pl:'twitter',type:'Poll',topic:'Biggest Salon Challenge?',score:83,time:'Fri 1pm',st:'scheduled'}
   ]
 };
-
-const calMeta={
-  1:{caption:'Show how Zenoti AI booking works in 60 seconds — real salon walkthrough with before/after booking flow.',hashtags:'#GoZenoti #AIBooking #SalonTech',cta:'Link in bio to book a free demo 👆'},
-  2:{caption:'The beauty industry is at an inflection point. AI isn\'t replacing stylists — it\'s giving them back 10+ hours a week. Here\'s what the next 3 years look like.',hashtags:'#SalonTech #BeautyAndWellness #FutureOfWork',cta:'What\'s your take? Drop a comment 👇'},
-  3:{caption:'5 wellness trends reshaping spas & salons in 2026.\n\n1/ AI-powered booking → zero no-shows\n2/ Personalized treatment plans\n3/ Real-time inventory management\n4/ Client retention automation\n5/ Revenue forecasting dashboards',hashtags:'#WellnessTrends #SpaLife #MedSpa',cta:'Follow for more industry insights'},
-  4:{caption:'Swipe to see real client transformations powered by Zenoti. Our partners report 40% more repeat bookings after going live.',hashtags:'#BeforeAndAfter #SalonLife #GoZenoti',cta:'DM us to see your salon\'s potential 💬'},
-  5:{caption:'🔴 LIVE WEBINAR: How top salons are using AI to 2x revenue without hiring more staff. Join 500+ salon owners this Thursday.',hashtags:'#Webinar #SalonBusiness #BeautyTech',cta:'Register free — link in bio'},
-  6:{caption:'"We reduced no-shows by 67% in 30 days." — Maria, Owner of Luxe Salon & Spa. Real results. Real salon. Powered by Zenoti.',hashtags:'#CustomerSuccess #SalonOwner #GoZenoti',cta:'Read the full story → link in bio'},
-  7:{caption:'Quick poll for salon owners 👇\n\nWhat\'s your biggest challenge right now?',hashtags:'#SalonOwner #SmallBusiness #BeautyBiz',cta:'Vote & share with a fellow salon owner!'}
+var calMeta={
+  1:{caption:'Show how Zenoti AI booking works in 60 seconds.',hashtags:'#GoZenoti #AIBooking #SalonTech',cta:'Link in bio to book a free demo 👆'},
+  2:{caption:'The beauty industry is at an inflection point. AI is giving stylists back 10+ hours a week.',hashtags:'#SalonTech #BeautyAndWellness',cta:'Drop a comment 👇'},
+  3:{caption:'5 wellness trends reshaping spas and salons in 2026.',hashtags:'#WellnessTrends #SpaLife',cta:'Follow for more insights'},
+  4:{caption:'Swipe to see real client transformations powered by Zenoti.',hashtags:'#BeforeAndAfter #GoZenoti',cta:'DM us 💬'},
+  5:{caption:'LIVE WEBINAR: How top salons are using AI to 2x revenue.',hashtags:'#Webinar #SalonBusiness',cta:'Register free — link in bio'},
+  6:{caption:'We reduced no-shows by 67% in 30 days. Powered by Zenoti.',hashtags:'#CustomerSuccess #GoZenoti',cta:'Read full story — link in bio'},
+  7:{caption:'Quick poll for salon owners. What is your biggest challenge?',hashtags:'#SalonOwner #BeautyBiz',cta:'Vote and share!'}
 };
 
-// ── HELPERS ────────────────────────────────────────────────────
-const $=id=>document.getElementById(id);
-const setH=(id,h)=>{if($(id))$(id).innerHTML=h;};
-const getV=id=>$(id)?$(id).value.trim():'';
-
-function errMsg(id,msg){
-  setH(id,'<div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.3);border-radius:12px;padding:12px 16px;color:#fca5a5;font-size:13px">❌ '+msg+'</div>');
-}
-function ldBtn(b,m){
-  b.disabled=true;
-  b.innerHTML='<span style="width:14px;height:14px;border:2px solid rgba(255,255,255,0.3);border-top:2px solid white;border-radius:50%;animation:spin 1s linear infinite;display:inline-block;flex-shrink:0"></span> '+m;
-}
+var G=function(id){return document.getElementById(id);};
+var setH=function(id,h){if(G(id))G(id).innerHTML=h;};
+var getV=function(id){return G(id)?G(id).value.trim():'';};
+function errMsg(id,msg){setH(id,'<div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.3);border-radius:12px;padding:12px 16px;color:#fca5a5;font-size:13px">❌ '+msg+'</div>');}
+function ldBtn(b,m){b.disabled=true;b.innerHTML='<span style="width:14px;height:14px;border:2px solid rgba(255,255,255,0.3);border-top:2px solid white;border-radius:50%;animation:spin 1s linear infinite;display:inline-block;flex-shrink:0"></span> '+m;}
 function doneBtn(b,l){b.disabled=false;b.innerHTML=l;}
+function hov(el,s1,s2,bc,an){el.style.transform='translateY(-6px) scale(1.03)';el.style.boxShadow='0 0 0 2px '+s1+',0 16px 40px '+s2;el.style.borderColor=bc;var ni=el.querySelector('.ni');if(ni)ni.style.animation=an;}
+function unHov(el,bc){el.style.transform='';el.style.boxShadow='';el.style.borderColor=bc;var ni=el.querySelector('.ni');if(ni)ni.style.animation='';}
 
-// ── NAV ────────────────────────────────────────────────────────
+function animateNumber(el,target,dur,pre,suf){
+  pre=pre||'';suf=suf||'';var st=null,isF=target%1!==0;
+  function ease(t){return t<0.5?2*t*t:(-2*t*t+4*t-1);}
+  function step(ts){if(!st)st=ts;var p=Math.min((ts-st)/dur,1),v=ease(p)*target;el.textContent=pre+(isF?v.toFixed(1):Math.floor(v))+suf;if(p<1)requestAnimationFrame(step);else el.textContent=pre+target+suf;}
+  requestAnimationFrame(step);
+}
+function observeNumbers(){
+  var els=document.querySelectorAll('[data-count]');if(!els.length)return;
+  var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){var el=e.target;el.style.animation='numPop 0.5s cubic-bezier(0.22,1,0.36,1) both';animateNumber(el,parseFloat(el.getAttribute('data-count')),1200,el.getAttribute('data-prefix')||'',el.getAttribute('data-suffix')||'');io.unobserve(el);}});},{threshold:0.4});
+  els.forEach(function(el){io.observe(el);});
+}
+
 function switchTab(id){
   document.querySelectorAll('.tab-panel').forEach(function(p){p.style.display='none';});
-  var panel=$('panel-'+id);
-  panel.style.display='block';
-
-  // animate cards only on first visit
-  var cards=panel.querySelectorAll('.card');
-  cards.forEach(function(c,i){
-    if(!c.dataset.animated){
-      c.style.animation='none';
-      c.offsetHeight;
-      c.style.animation='cardSlideUp 0.5s '+(i*0.1)+'s cubic-bezier(0.22,1,0.36,1) both';
-      c.dataset.animated='1';
-    }
-  });
-
-  if(id==='analytics') renderAnalytics();
-  if(id==='calendar')  renderCal();
-
-  setTimeout(function(){
-    var top=panel.getBoundingClientRect().top+window.pageYOffset-16;
-    window.scrollTo({top:top,behavior:'smooth'});
-  },50);
+  var panel=G('panel-'+id);panel.style.display='block';
+  panel.querySelectorAll('.card').forEach(function(c,i){if(!c.dataset.animated){c.style.animation='none';c.offsetHeight;c.style.animation='cardSlideUp 0.5s '+(i*0.1)+'s cubic-bezier(0.22,1,0.36,1) both';c.dataset.animated='1';}});
+  if(id==='analytics')renderAnalytics();
+  if(id==='calendar')renderCal();
+  if(id==='ads')renderAdBenchmarks();
+  setTimeout(function(){var top=panel.getBoundingClientRect().top+window.pageYOffset-16;window.scrollTo({top:top,behavior:'smooth'});},50);
 }
 
-// ── FREE AI ────────────────────────────────────────────────────
-async function freeAI(prompt){
-  var r=await fetch('https://text.pollinations.ai/'+encodeURIComponent(prompt),{headers:{'Accept':'text/plain'}});
-  return await r.text();
-}
+async function freeAI(prompt){var r=await fetch('https://text.pollinations.ai/'+encodeURIComponent(prompt),{headers:{'Accept':'text/plain'}});return await r.text();}
 
-// ── ANALYTICS RENDER ───────────────────────────────────────────
 function renderAnalytics(){
   var cards=document.querySelectorAll('#panel-analytics .card');
-  cards.forEach(function(c,i){
-    if(!c.dataset.animated){
-      c.style.animation='none';
-      c.offsetHeight;
-      c.style.animation='cardSlideUp 0.55s '+(i*0.13)+'s cubic-bezier(0.22,1,0.36,1) both';
-      c.dataset.animated='1';
-    }
-  });
-
-  setH('ig-perf',igPerfData.map(function(d,i){
-    return '<div class="bar-row" style="animation:cardSlideUp 0.45s '+(0.1+i*0.07)+'s cubic-bezier(0.22,1,0.36,1) both">'+
-      '<span style="min-width:120px;font-size:12.5px;color:rgba(255,255,255,0.72);font-weight:600">'+d[0]+'</span>'+
-      '<div class="minibar-wrap" style="height:8px"><div id="igbar'+i+'" style="height:8px;border-radius:6px;width:0%;background:linear-gradient(90deg,'+d[2]+','+d[2]+'88);box-shadow:0 0 8px '+d[2]+'44;transition:width 0.85s '+(0.25+i*0.09)+'s cubic-bezier(0.22,1,0.36,1)"></div></div>'+
-      '<span style="min-width:26px;font-size:12.5px;font-weight:800;text-align:right;color:'+d[2]+'">'+d[1]+'</span>'+
-      '<span style="font-size:10px;color:rgba(255,255,255,0.28);white-space:nowrap;min-width:160px;padding-left:4px">'+d[3]+'</span>'+
-    '</div>';
-  }).join(''));
-
-  setH('li-perf',liPerfData.map(function(d,i){
-    return '<div class="bar-row" style="animation:cardSlideUp 0.45s '+(0.1+i*0.07)+'s cubic-bezier(0.22,1,0.36,1) both">'+
-      '<span style="min-width:145px;font-size:12.5px;color:rgba(255,255,255,0.72);font-weight:600">'+d[0]+'</span>'+
-      '<div class="minibar-wrap" style="height:8px"><div id="libar'+i+'" style="height:8px;border-radius:6px;width:0%;background:linear-gradient(90deg,'+d[2]+','+d[2]+'88);box-shadow:0 0 8px '+d[2]+'44;transition:width 0.85s '+(0.25+i*0.09)+'s cubic-bezier(0.22,1,0.36,1)"></div></div>'+
-      '<span style="min-width:26px;font-size:12.5px;font-weight:800;text-align:right;color:'+d[2]+'">'+d[1]+'</span>'+
-      '<span style="font-size:10px;color:rgba(255,255,255,0.28);white-space:nowrap;min-width:145px;padding-left:4px">'+d[3]+'</span>'+
-    '</div>';
-  }).join(''));
-
-  setH('ig-tags','<div style="display:flex;flex-wrap:wrap;gap:0;margin-bottom:8px">'+
-    igTagsData.map(function(h,i){
-      return '<span style="display:inline-block;margin:3px;background:'+h.color+'18;border:1px solid '+h.color+'40;border-radius:20px;font-size:11.5px;color:'+h.color+';padding:5px 12px;font-weight:700;animation:tagFadeIn 0.4s '+(0.08+i*0.05)+'s cubic-bezier(0.22,1,0.36,1) both">'+h.tag+' <span style="opacity:0.5;font-size:10px">· '+h.reach+'</span></span>';
-    }).join('')+
-  '</div><div style="font-size:10.5px;color:rgba(255,255,255,0.28)">Mix large (100K+) &amp; niche (&lt;50K) tags for best discovery</div>');
-
-  setH('li-insights',liInsightsData.map(function(ins,i){
-    return '<div class="insight-row" style="background:'+ins.bg+';border:1px solid '+ins.border+';animation:insightSlide 0.5s '+(0.08+i*0.1)+'s cubic-bezier(0.22,1,0.36,1) both">'+
-      '<span style="font-size:16px;flex-shrink:0">'+ins.icon+'</span>'+
-      '<span style="font-size:12px;color:rgba(255,255,255,0.65);line-height:1.65">'+ins.text+'</span>'+
-    '</div>';
-  }).join(''));
-
-  setH('li-roles',liRolesData.map(function(d,i){
-    return '<div style="display:flex;align-items:center;gap:8px;margin-bottom:9px;animation:cardSlideUp 0.4s '+(0.08+i*0.07)+'s cubic-bezier(0.22,1,0.36,1) both">'+
-      '<span style="font-size:11px;color:rgba(255,255,255,0.5);min-width:95px">'+d[0]+'</span>'+
-      '<div class="minibar-wrap"><div id="rbar'+i+'" style="height:6px;border-radius:4px;width:0%;background:'+d[2]+';transition:width 0.8s '+(0.25+i*0.09)+'s cubic-bezier(0.22,1,0.36,1)"></div></div>'+
-      '<span style="font-size:11px;font-weight:700;color:'+d[2]+';min-width:28px">'+d[1]+'%</span>'+
-    '</div>';
-  }).join(''));
-
-  setH('li-industries',liIndustriesData.map(function(d,i){
-    return '<div style="display:flex;align-items:center;gap:8px;margin-bottom:9px;animation:cardSlideUp 0.4s '+(0.08+i*0.07)+'s cubic-bezier(0.22,1,0.36,1) both">'+
-      '<span style="font-size:11px;color:rgba(255,255,255,0.5);min-width:95px">'+d[0]+'</span>'+
-      '<div class="minibar-wrap"><div id="ibar'+i+'" style="height:6px;border-radius:4px;width:0%;background:'+d[2]+';transition:width 0.8s '+(0.25+i*0.09)+'s cubic-bezier(0.22,1,0.36,1)"></div></div>'+
-      '<span style="font-size:11px;font-weight:700;color:'+d[2]+';min-width:28px">'+d[1]+'%</span>'+
-    '</div>';
-  }).join(''));
-
+  cards.forEach(function(c,i){if(!c.dataset.animated){c.style.animation='none';c.offsetHeight;c.style.animation='cardSlideUp 0.55s '+(i*0.13)+'s cubic-bezier(0.22,1,0.36,1) both';c.dataset.animated='1';}});
+  setH('ig-perf',igPD.map(function(d,i){return '<div class="bar-row" style="animation:cardSlideUp 0.45s '+(0.1+i*0.07)+'s both"><span style="min-width:110px;font-size:12.5px;color:rgba(255,255,255,0.72);font-weight:600">'+d[0]+'</span><div class="mbar" style="height:8px"><div id="igb'+i+'" style="height:8px;border-radius:6px;width:0%;background:linear-gradient(90deg,'+d[2]+','+d[2]+'88);transition:width 0.85s '+(0.25+i*0.09)+'s ease"></div></div><span style="min-width:26px;font-size:12.5px;font-weight:800;color:'+d[2]+'">'+d[1]+'</span><span style="font-size:10px;color:rgba(255,255,255,0.28);padding-left:4px">'+d[3]+'</span></div>';}).join(''));
+  setH('li-perf',liPD.map(function(d,i){return '<div class="bar-row" style="animation:cardSlideUp 0.45s '+(0.1+i*0.07)+'s both"><span style="min-width:130px;font-size:12.5px;color:rgba(255,255,255,0.72);font-weight:600">'+d[0]+'</span><div class="mbar" style="height:8px"><div id="lib'+i+'" style="height:8px;border-radius:6px;width:0%;background:linear-gradient(90deg,'+d[2]+','+d[2]+'88);transition:width 0.85s '+(0.25+i*0.09)+'s ease"></div></div><span style="min-width:26px;font-size:12.5px;font-weight:800;color:'+d[2]+'">'+d[1]+'</span><span style="font-size:10px;color:rgba(255,255,255,0.28);padding-left:4px">'+d[3]+'</span></div>';}).join(''));
+  setH('ig-tags','<div style="display:flex;flex-wrap:wrap;gap:0;margin-bottom:8px">'+igTD.map(function(h,i){return '<span style="display:inline-block;margin:3px;background:'+h.color+'18;border:1px solid '+h.color+'40;border-radius:20px;font-size:11.5px;color:'+h.color+';padding:5px 12px;font-weight:700;animation:tagFadeIn 0.4s '+(0.08+i*0.05)+'s both">'+h.tag+' <span style="opacity:0.5;font-size:10px">· '+h.reach+'</span></span>';}).join('')+'</div>');
+  setH('li-insights',liID.map(function(ins,i){return '<div class="insight-row" style="background:'+ins.bg+';border:1px solid '+ins.bd+';animation:insightSlide 0.5s '+(0.08+i*0.1)+'s both"><span style="font-size:16px;flex-shrink:0">'+ins.icon+'</span><span style="font-size:12px;color:rgba(255,255,255,0.65);line-height:1.65">'+ins.text+'</span></div>';}).join(''));
+  setH('li-roles',liRD.map(function(d,i){return '<div style="display:flex;align-items:center;gap:8px;margin-bottom:9px"><span style="font-size:11px;color:rgba(255,255,255,0.5);min-width:95px">'+d[0]+'</span><div class="mbar"><div id="rb'+i+'" style="height:6px;border-radius:4px;width:0%;background:'+d[2]+';transition:width 0.8s '+(0.25+i*0.09)+'s ease"></div></div><span style="font-size:11px;font-weight:700;color:'+d[2]+';min-width:28px">'+d[1]+'%</span></div>';}).join(''));
+  setH('li-industries',liInD.map(function(d,i){return '<div style="display:flex;align-items:center;gap:8px;margin-bottom:9px"><span style="font-size:11px;color:rgba(255,255,255,0.5);min-width:95px">'+d[0]+'</span><div class="mbar"><div id="ib'+i+'" style="height:6px;border-radius:4px;width:0%;background:'+d[2]+';transition:width 0.8s '+(0.25+i*0.09)+'s ease"></div></div><span style="font-size:11px;font-weight:700;color:'+d[2]+';min-width:28px">'+d[1]+'%</span></div>';}).join(''));
   setTimeout(function(){
-    igPerfData.forEach(function(d,i){ var el=$('igbar'+i); if(el) el.style.width=d[1]+'%'; });
-    liPerfData.forEach(function(d,i){ var el=$('libar'+i); if(el) el.style.width=d[1]+'%'; });
-    liRolesData.forEach(function(d,i){ var el=$('rbar'+i); if(el) el.style.width=d[1]+'%'; });
-    liIndustriesData.forEach(function(d,i){ var el=$('ibar'+i); if(el) el.style.width=d[1]+'%'; });
+    igPD.forEach(function(d,i){var el=G('igb'+i);if(el)el.style.width=d[1]+'%';});
+    liPD.forEach(function(d,i){var el=G('lib'+i);if(el)el.style.width=d[1]+'%';});
+    liRD.forEach(function(d,i){var el=G('rb'+i);if(el)el.style.width=d[1]+'%';});
+    liInD.forEach(function(d,i){var el=G('ib'+i);if(el)el.style.width=d[1]+'%';});
     observeNumbers();
   },60);
-
-  // render trending topics separately after full paint
   setTimeout(function(){
-    var tEl=$('trending');
-    if(!tEl){ return; }
-    var scoreColor=function(s){ return s>=85?'#ef4444':s>=75?'#f59e0b':'#10b981'; };
-    var scoreBg=function(s){ return s>=85?'rgba(239,68,68,0.12)':s>=75?'rgba(245,158,11,0.12)':'rgba(16,185,129,0.12)'; };
+    var tEl=G('trending');if(!tEl)return;
+    var sc=function(s){return s>=85?'#ef4444':s>=75?'#f59e0b':'#10b981';};
+    var sbg=function(s){return s>=85?'rgba(239,68,68,0.12)':s>=75?'rgba(245,158,11,0.12)':'rgba(16,185,129,0.12)';};
     var rows='';
     for(var i=0;i<allTrends.length;i++){
-      var t=allTrends[i];
-      var c=scoreColor(t.score);
-      var bg=scoreBg(t.score);
-      rows+=
-        '<div style="display:flex;align-items:center;gap:12px;padding:10px 12px;margin-bottom:6px;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.06);border-radius:12px">'+
-          '<div style="width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,rgba(99,102,241,0.35),rgba(168,85,247,0.35));display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#a5b4fc;flex-shrink:0">'+(i+1)+'</div>'+
-          '<div style="flex:1;min-width:0">'+
-            '<div style="font-size:13px;font-weight:700;color:white;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+t.topic+'</div>'+
-            '<div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap">'+
-              '<span style="font-size:9.5px;background:rgba(255,255,255,0.06);border-radius:20px;padding:2px 7px;color:rgba(255,255,255,0.4)">'+t.tag+'</span>'+
-              '<span style="font-size:10px;color:rgba(255,255,255,0.25)">'+t.plats.join(' ')+'</span>'+
-            '</div>'+
-          '</div>'+
-          '<div style="display:flex;align-items:center;gap:8px;flex-shrink:0">'+
-            '<div style="width:50px;height:5px;background:rgba(255,255,255,0.06);border-radius:3px;overflow:hidden">'+
-              '<div id="tr'+i+'" style="height:5px;border-radius:3px;width:0;background:'+c+';transition:width 0.7s ease"></div>'+
-            '</div>'+
-            '<div style="background:'+bg+';border:1px solid '+c+'55;border-radius:20px;padding:3px 10px;display:flex;align-items:center;gap:4px">'+
-              '<span style="font-size:12px;font-weight:800;color:'+c+'">'+t.score+'</span>'+
-            '</div>'+
-            '<span style="font-size:11px;font-weight:700;color:#10b981;min-width:36px;text-align:right">'+t.delta+'</span>'+
-          '</div>'+
-        '</div>';
+      var t=allTrends[i],c=sc(t.score),bg=sbg(t.score);
+      rows+='<div style="display:flex;align-items:center;gap:12px;padding:10px 12px;margin-bottom:6px;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.06);border-radius:12px">'+
+        '<div style="width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,rgba(99,102,241,0.35),rgba(168,85,247,0.35));display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#a5b4fc;flex-shrink:0">'+(i+1)+'</div>'+
+        '<div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:700;color:white;margin-bottom:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+t.topic+'</div>'+
+        '<div style="display:flex;gap:5px"><span style="font-size:9.5px;background:rgba(255,255,255,0.06);border-radius:20px;padding:2px 7px;color:rgba(255,255,255,0.4)">'+t.tag+'</span><span style="font-size:10px;color:rgba(255,255,255,0.25)">'+t.plats.join(' ')+'</span></div></div>'+
+        '<div style="display:flex;align-items:center;gap:8px;flex-shrink:0">'+
+          '<div style="width:50px;height:5px;background:rgba(255,255,255,0.06);border-radius:3px;overflow:hidden"><div id="tr'+i+'" style="height:5px;border-radius:3px;width:0;background:'+c+';transition:width 0.7s ease"></div></div>'+
+          '<div style="background:'+bg+';border:1px solid '+c+'55;border-radius:20px;padding:3px 10px"><span style="font-size:12px;font-weight:800;color:'+c+'">'+t.score+'</span></div>'+
+          '<span style="font-size:11px;font-weight:700;color:#10b981;min-width:36px;text-align:right">'+t.delta+'</span>'+
+        '</div></div>';
     }
     tEl.innerHTML=rows;
-    setTimeout(function(){
-      for(var j=0;j<allTrends.length;j++){
-        var bar=$('tr'+j);
-        if(bar) bar.style.width=allTrends[j].score+'%';
-      }
-    },50);
+    setTimeout(function(){for(var j=0;j<allTrends.length;j++){var b=G('tr'+j);if(b)b.style.width=allTrends[j].score+'%';}},50);
   },200);
 }
 
-function showTrends(el,filter){
-  S.trendFilter=filter;
-  ['all','ig','li','tw'].forEach(function(k){
-    var b=$('tt-'+k);
-    if(b) b.classList.toggle('active',k===filter);
-  });
+function showTrends(filter){
+  S.trendFilter=filter||'all';
+  ['all','ig','li','tw'].forEach(function(k){var b=G('tt-'+k);if(b)b.classList.toggle('active',k===S.trendFilter);});
+  var tEl=G('trending');if(!tEl)return;
   var sc=function(s){return s>=85?'#ef4444':s>=75?'#f59e0b':'#10b981';};
-  var data=allTrends.filter(function(t){return t.filter.indexOf(filter)>=0;});
-  setH('trending',data.map(function(t,i){
-    return '<div class="trend-row" style="'+(i===data.length-1?'border-bottom:none':'')+';opacity:0;animation:trendPop 0.45s '+(0.05+i*0.07)+'s cubic-bezier(0.22,1,0.36,1) both"><div style="width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,rgba(99,102,241,0.3),rgba(168,85,247,0.3));display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#a5b4fc;flex-shrink:0">'+(i+1)+'</div><div style="flex:1"><div style="font-size:13.5px;font-weight:700;color:white;margin-bottom:3px">'+t.topic+'</div><div style="display:flex;gap:6px;align-items:center"><span style="font-size:10px;background:rgba(255,255,255,0.05);border-radius:20px;padding:2px 8px;color:rgba(255,255,255,0.4)">'+t.tag+'</span><span style="font-size:11px;color:rgba(255,255,255,0.3)">'+t.plats.join(' ')+'</span></div></div><div style="display:flex;align-items:center;gap:10px;flex-shrink:0"><div class="minibar-wrap" style="max-width:72px"><div class="bar-fill" style="width:0%;background:linear-gradient(90deg,'+sc(t.score)+','+sc(t.score)+'88);height:6px;transition:width 0.8s '+(0.2+i*0.07)+'s cubic-bezier(0.22,1,0.36,1)" data-w="'+t.score+'"></div></div><span style="font-size:12px;font-weight:800;color:'+sc(t.score)+';min-width:26px">'+t.score+'</span><span style="font-size:12px;font-weight:700;color:#10b981;min-width:40px">'+t.delta+'</span></div></div>';
-  }).join(''));
-  // trigger trend bar widths
-  setTimeout(function(){
-    document.querySelectorAll('#trending .bar-fill[data-w]').forEach(function(el){
-      el.style.width=el.getAttribute('data-w')+'%';
-    });
-  },80);
+  var sbg=function(s){return s>=85?'rgba(239,68,68,0.12)':s>=75?'rgba(245,158,11,0.12)':'rgba(16,185,129,0.12)';};
+  var rows='',cnt=0;
+  for(var i=0;i<allTrends.length;i++){
+    var t=allTrends[i],inF=false;
+    for(var f=0;f<t.filter.length;f++){if(t.filter[f]===S.trendFilter){inF=true;break;}}
+    if(!inF)continue;
+    var c=sc(t.score),bg=sbg(t.score);
+    rows+='<div style="display:flex;align-items:center;gap:12px;padding:10px 12px;margin-bottom:6px;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.06);border-radius:12px">'+
+      '<div style="width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,rgba(99,102,241,0.35),rgba(168,85,247,0.35));display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#a5b4fc;flex-shrink:0">'+(cnt+1)+'</div>'+
+      '<div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:700;color:white;margin-bottom:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+t.topic+'</div>'+
+      '<div style="display:flex;gap:5px"><span style="font-size:9.5px;background:rgba(255,255,255,0.06);border-radius:20px;padding:2px 7px;color:rgba(255,255,255,0.4)">'+t.tag+'</span><span style="font-size:10px;color:rgba(255,255,255,0.25)">'+t.plats.join(' ')+'</span></div></div>'+
+      '<div style="display:flex;align-items:center;gap:8px;flex-shrink:0">'+
+        '<div style="width:50px;height:5px;background:rgba(255,255,255,0.06);border-radius:3px;overflow:hidden"><div id="ftr'+i+'" style="height:5px;border-radius:3px;width:0;background:'+c+';transition:width 0.7s ease"></div></div>'+
+        '<div style="background:'+bg+';border:1px solid '+c+'55;border-radius:20px;padding:3px 10px"><span style="font-size:12px;font-weight:800;color:'+c+'">'+t.score+'</span></div>'+
+        '<span style="font-size:11px;font-weight:700;color:#10b981;min-width:36px;text-align:right">'+t.delta+'</span>'+
+      '</div></div>';
+    cnt++;
+  }
+  tEl.innerHTML=rows;
+  setTimeout(function(){for(var j=0;j<allTrends.length;j++){var b=G('ftr'+j);if(b)b.style.width=allTrends[j].score+'%';}},50);
 }
 
-// ── CALENDAR ───────────────────────────────────────────────────
 function renderCal(){
   var sch=S.cal.filter(function(x){return x.st==='scheduled';}).length;
   var pend=S.cal.filter(function(x){return x.st==='pending';}).length;
-  $('schCount').textContent=sch+' Scheduled';
-  $('calBadge').textContent=pend;
+  G('schCount').textContent=sch+' Scheduled';G('calBadge').textContent=pend;
   var sc=function(s){return s>=85?'#10b981':s>=70?'#f59e0b':'#ef4444';};
-  var scoreLabel=function(s){return s>=85?'High Potential':s>=70?'Good':'Needs Work';};
+  var sl=function(s){return s>=85?'High Potential':s>=70?'Good':'Needs Work';};
   setH('calItems',S.cal.map(function(item){
-    var isSch=item.st==='scheduled';
-    var meta=calMeta[item.id]||{caption:'No caption set.',hashtags:'',cta:''};
-    var sc2=sc(item.score);
-    return '<div style="background:rgba(255,255,255,0.025);border:1px solid '+(isSch?'rgba(16,185,129,0.22)':'rgba(255,255,255,0.08)')+';border-radius:16px;padding:18px;margin-bottom:12px;animation:fadeIn 0.3s ease">'+
+    var isSch=item.st==='scheduled',meta=calMeta[item.id]||{caption:'',hashtags:'',cta:''},sc2=sc(item.score);
+    return '<div style="background:rgba(255,255,255,0.025);border:1px solid '+(isSch?'rgba(16,185,129,0.22)':'rgba(255,255,255,0.08)')+';border-radius:16px;padding:18px;margin-bottom:12px">'+
       '<div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">'+
         '<div style="width:44px;height:44px;border-radius:13px;background:'+PC[item.pl]+'22;border:1px solid '+PC[item.pl]+'44;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0">'+PI[item.pl]+'</div>'+
-        '<div style="flex:1;min-width:0">'+
-          '<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:5px">'+
-            '<span style="font-size:14px;font-weight:800;color:white">'+item.topic+'</span>'+
-            '<span style="font-size:10.5px;background:'+PC[item.pl]+'22;color:'+PC[item.pl]+';padding:2px 9px;border-radius:20px;font-weight:700;flex-shrink:0">'+item.type+'</span>'+
-            (isSch?'<span style="font-size:10px;background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);color:#6ee7b7;padding:2px 9px;border-radius:20px;font-weight:700">✓ Approved</span>':'')+
-          '</div>'+
-          '<div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">'+
-            '<span style="font-size:11.5px;color:rgba(255,255,255,0.4)">⏰ '+item.time+'</span>'+
-            '<span style="font-size:11.5px;color:rgba(255,255,255,0.4)">'+PL[item.pl]+'</span>'+
-            '<div style="display:flex;align-items:center;gap:6px"><div style="width:6px;height:6px;border-radius:50%;background:'+sc2+'"></div><span style="font-size:11px;font-weight:700;color:'+sc2+'">'+item.score+' — '+scoreLabel(item.score)+'</span></div>'+
-          '</div>'+
-        '</div>'+
+        '<div style="flex:1"><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:5px"><span style="font-size:14px;font-weight:800;color:white">'+item.topic+'</span><span style="font-size:10.5px;background:'+PC[item.pl]+'22;color:'+PC[item.pl]+';padding:2px 9px;border-radius:20px;font-weight:700">'+item.type+'</span>'+(isSch?'<span style="font-size:10px;background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);color:#6ee7b7;padding:2px 9px;border-radius:20px;font-weight:700">✓ Approved</span>':'')+'</div>'+
+        '<div style="display:flex;gap:14px;align-items:center"><span style="font-size:11.5px;color:rgba(255,255,255,0.4)">⏰ '+item.time+'</span><span style="font-size:11.5px;color:rgba(255,255,255,0.4)">'+PL[item.pl]+'</span><div style="display:flex;align-items:center;gap:6px"><div style="width:6px;height:6px;border-radius:50%;background:'+sc2+'"></div><span style="font-size:11px;font-weight:700;color:'+sc2+'">'+item.score+' — '+sl(item.score)+'</span></div></div></div>'+
       '</div>'+
-      '<div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">'+
-        '<span style="font-size:10px;color:rgba(255,255,255,0.3);font-weight:600;white-space:nowrap">AI SCORE</span>'+
-        '<div class="minibar-wrap"><div class="minibar-fill" style="width:'+item.score+'%;background:linear-gradient(90deg,'+sc2+','+sc2+'88)"></div></div>'+
-        '<span style="font-size:11px;font-weight:800;color:'+sc2+';min-width:42px">'+item.score+'/100</span>'+
-      '</div>'+
-      '<div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:13px 15px;margin-bottom:12px">'+
-        '<div style="font-size:10px;color:rgba(255,255,255,0.3);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:7px">📝 Caption Preview</div>'+
-        '<div style="font-size:12.5px;color:rgba(255,255,255,0.72);line-height:1.7;white-space:pre-wrap;margin-bottom:8px">'+meta.caption+'</div>'+
-        '<div style="font-size:11px;color:rgba(165,180,252,0.6);margin-bottom:6px">'+meta.hashtags+'</div>'+
-        '<div style="font-size:11.5px;color:#6ee7b7;font-weight:600">'+meta.cta+'</div>'+
-      '</div>'+
-      (isSch
-        ?'<div style="display:flex;gap:8px"><button onclick="rejCal('+item.id+')" style="flex:1;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.22);border-radius:10px;color:#fca5a5;font-size:12.5px;font-weight:700;padding:9px;cursor:pointer">✕ Remove</button></div>'
-        :'<div style="display:flex;gap:8px"><button onclick="appCal('+item.id+')" style="flex:2;background:linear-gradient(135deg,rgba(16,185,129,0.2),rgba(16,185,129,0.12));border:1px solid rgba(16,185,129,0.35);border-radius:10px;color:#6ee7b7;font-size:12.5px;font-weight:700;padding:10px;cursor:pointer">✓ Approve &amp; Schedule</button><button onclick="rejCal('+item.id+')" style="flex:1;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.22);border-radius:10px;color:#fca5a5;font-size:12.5px;font-weight:700;padding:10px;cursor:pointer">✕ Reject</button></div>')+
+      '<div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="font-size:10px;color:rgba(255,255,255,0.3);font-weight:600;white-space:nowrap">AI SCORE</span><div class="mbar"><div class="mbar-fill" style="width:'+item.score+'%;background:linear-gradient(90deg,'+sc2+','+sc2+'88)"></div></div><span style="font-size:11px;font-weight:800;color:'+sc2+';min-width:42px">'+item.score+'/100</span></div>'+
+      '<div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:13px 15px;margin-bottom:12px"><div style="font-size:10px;color:rgba(255,255,255,0.3);font-weight:700;text-transform:uppercase;margin-bottom:7px">📝 Caption Preview</div><div style="font-size:12.5px;color:rgba(255,255,255,0.72);line-height:1.7;margin-bottom:8px">'+meta.caption+'</div><div style="font-size:11px;color:rgba(165,180,252,0.6);margin-bottom:6px">'+meta.hashtags+'</div><div style="font-size:11.5px;color:#6ee7b7;font-weight:600">'+meta.cta+'</div></div>'+
+      (isSch?'<div style="display:flex;gap:8px"><button onclick="rejCal('+item.id+')" style="flex:1;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.22);border-radius:10px;color:#fca5a5;font-size:12.5px;font-weight:700;padding:9px;cursor:pointer">✕ Remove</button></div>':
+        '<div style="display:flex;gap:8px"><button onclick="appCal('+item.id+')" style="flex:2;background:linear-gradient(135deg,rgba(16,185,129,0.2),rgba(16,185,129,0.12));border:1px solid rgba(16,185,129,0.35);border-radius:10px;color:#6ee7b7;font-size:12.5px;font-weight:700;padding:10px;cursor:pointer">✓ Approve</button><button onclick="rejCal('+item.id+')" style="flex:1;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.22);border-radius:10px;color:#fca5a5;font-size:12.5px;font-weight:700;padding:10px;cursor:pointer">✕ Reject</button></div>')+
     '</div>';
   }).join(''));
 }
-
 function appCal(id){S.cal=S.cal.map(function(x){return x.id===id?Object.assign({},x,{st:'scheduled'}):x;});renderCal();}
 function rejCal(id){S.cal=S.cal.filter(function(x){return x.id!==id;});renderCal();}
 
-// ── UPLOAD FORM ────────────────────────────────────────────────
 function toggleUploadForm(){
-  var f=$('uploadForm');
-  var open=f.style.display==='block';
+  var f=G('uploadForm'),open=f.style.display==='block';
   f.style.display=open?'none':'block';
-  if(!open){
-    var t=new Date();
-    t.setDate(t.getDate()+1);
-    $('upDate').value=t.toISOString().split('T')[0];
-    $('upTime').value='09:00';
-  }
+  if(!open){var t=new Date();t.setDate(t.getDate()+1);G('upDate').value=t.toISOString().split('T')[0];G('upTime').value='09:00';}
 }
-
 function handleMediaUpload(input){
-  var file=input.files[0];
-  if(!file) return;
-  var isVideo=file.type.startsWith('video/');
-  var url=URL.createObjectURL(file);
-  $('upMediaIcon').textContent=isVideo?'🎬':'🖼️';
-  $('upMediaText').textContent=file.name+' ('+Math.round(file.size/1024/1024*10)/10+' MB)';
-  var prev=$('upMediaPreview');
-  prev.style.display='block';
-  prev.innerHTML=isVideo
-    ?'<video src="'+url+'" controls style="width:100%;border-radius:10px;border:1px solid rgba(99,102,241,0.3);max-height:200px"></video>'
-    :'<img src="'+url+'" style="width:100%;border-radius:10px;border:1px solid rgba(99,102,241,0.3);max-height:200px;object-fit:cover"/>';
+  var file=input.files[0];if(!file)return;
+  var isV=file.type.startsWith('video/'),url=URL.createObjectURL(file);
+  G('upMediaIcon').textContent=isV?'🎬':'🖼️';G('upMediaText').textContent=file.name;
+  var p=G('upMediaPreview');p.style.display='block';
+  p.innerHTML=isV?'<video src="'+url+'" controls style="width:100%;border-radius:10px;border:1px solid rgba(99,102,241,0.3);max-height:200px"></video>':'<img src="'+url+'" style="width:100%;border-radius:10px;border:1px solid rgba(99,102,241,0.3);max-height:200px;object-fit:cover"/>';
 }
-
 function submitUpload(){
-  var topic=getV('upTopic');
-  var caption=getV('upCaption');
-  var pl=$('upPlatform').value;
-  var type=$('upType').value;
-  var date=$('upDate').value;
-  var time=$('upTime').value;
-  var file=$('upMedia').files[0];
-  if(!topic){alert('Please enter a topic/title');return;}
+  var topic=getV('upTopic');if(!topic){alert('Please enter a topic');return;}
+  var date=G('upDate').value,time=G('upTime').value;
   if(!date||!time){alert('Please set a schedule date and time');return;}
-  var d=new Date(date+'T'+time);
-  var days=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-  var hr=d.getHours();
-  var ampm=hr>=12?'pm':'am';
-  var h12=hr%12||12;
-  var timeLabel=days[d.getDay()]+' '+h12+(d.getMinutes()?':'+String(d.getMinutes()).padStart(2,'0'):'')+ampm;
+  var d=new Date(date+'T'+time),days=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],hr=d.getHours(),ampm=hr>=12?'pm':'am',h12=hr%12||12;
+  var tl=days[d.getDay()]+' '+h12+(d.getMinutes()?':'+String(d.getMinutes()).padStart(2,'0'):'')+ampm;
   var newId=Date.now();
-  calMeta[newId]={caption:caption||'No caption provided.',hashtags:'#GoZenoti #BeautyAndWellness #SalonTech',cta:''};
-  S.cal.push({id:newId,pl:pl,type:type,topic:topic,score:75,time:timeLabel,st:'pending',manual:true,hasMedia:!!file});
-  $('upTopic').value='';
-  $('upCaption').value='';
-  $('upMedia').value='';
-  $('upMediaPreview').style.display='none';
-  $('upMediaIcon').textContent='🖼️';
-  $('upMediaText').textContent='Click to upload image or video';
-  $('aiSuggestion').style.display='none';
-  toggleUploadForm();
-  renderCal();
+  calMeta[newId]={caption:getV('upCaption')||'No caption.',hashtags:'#GoZenoti #BeautyAndWellness',cta:''};
+  S.cal.push({id:newId,pl:G('upPlatform').value,type:G('upType').value,topic:topic,score:75,time:tl,st:'pending'});
+  G('upTopic').value='';G('upCaption').value='';G('upMedia').value='';G('upMediaPreview').style.display='none';G('upMediaIcon').textContent='🖼️';G('upMediaText').textContent='Click to upload';G('aiSuggestion').style.display='none';
+  toggleUploadForm();renderCal();
 }
-
-// ── AI ENHANCE ─────────────────────────────────────────────────
 async function aiEnhance(){
-  var topic=getV('upTopic');
-  var caption=getV('upCaption');
+  var topic=getV('upTopic'),caption=getV('upCaption');
   if(!topic&&!caption){alert('Please enter a topic or caption first');return;}
-  var btn=$('aiEnhanceBtn');
-  var status=$('aiEnhanceStatus');
-  btn.style.display='none';
-  status.style.display='block';
-  $('aiSuggestion').style.display='none';
-  var pl=$('upPlatform').value;
-  var type=$('upType').value;
+  var btn=G('aiEnhanceBtn'),status=G('aiEnhanceStatus');
+  btn.style.display='none';status.style.display='block';G('aiSuggestion').style.display='none';
   try{
-    var raw=await freeAI('You are a social media expert for Zenoti (@gozenoti, beauty & wellness SaaS, 30K+ salons). Enhance this post for '+PL[pl]+' ('+type+' format). Current title: "'+topic+'" Current caption: "'+caption+'". Make it punchy, platform-native, engaging. Include relevant hashtags from: #GoZenoti #BeautyAndWellness #SalonTech #MedSpa #AIBeauty #SpaLife. Return ONLY valid JSON no extra text: {"title":"enhanced title here","caption":"full enhanced caption with hashtags and CTA"}');
-    var cleaned=raw.replace(/```json|```/g,'').trim();
-    var r=JSON.parse(cleaned);
-    $('aiSugTitle').textContent=r.title;
-    $('aiSugCaption').textContent=r.caption;
-    $('aiSuggestion').style.display='block';
-  }catch(e){
-    alert('AI enhance failed — please try again.');
-  }
-  btn.style.display='flex';
-  status.style.display='none';
+    var raw=await freeAI('Enhance this social media post for Zenoti (@gozenoti) on '+PL[G('upPlatform').value]+' ('+G('upType').value+'). Title: "'+topic+'" Caption: "'+caption+'". Return ONLY valid JSON: {"title":"enhanced","caption":"enhanced caption"}');
+    var r=JSON.parse(raw.replace(/```json|```/g,'').trim());
+    G('aiSugTitle').textContent=r.title;G('aiSugCaption').textContent=r.caption;G('aiSuggestion').style.display='block';
+  }catch(e){alert('Enhance failed.');}
+  btn.style.display='flex';status.style.display='none';
 }
+function applyAISuggestion(){G('upTopic').value=G('aiSugTitle').textContent;G('upCaption').value=G('aiSugCaption').textContent;G('aiSuggestion').style.display='none';}
 
-function applyAISuggestion(){
-  $('upTopic').value=$('aiSugTitle').textContent;
-  $('upCaption').value=$('aiSugCaption').textContent;
-  $('aiSuggestion').style.display='none';
+// Ad functions
+function selAdPlat(el,pl){
+  S.adPlatform=pl;
+  var colors={instagram:'rgba(225,48,108',linkedin:'rgba(0,119,181',facebook:'rgba(24,119,242',twitter:'rgba(29,161,242'};
+  ['instagram','linkedin','facebook','twitter'].forEach(function(p){var b=G('adp-'+p);if(!b)return;var act=p===pl,c=colors[p];b.style.background=act?c+',0.15)':'rgba(255,255,255,0.03)';b.style.borderColor=act?c+',0.7)':'rgba(255,255,255,0.08)';b.style.color=act?'white':'rgba(255,255,255,0.5)';});
+  calcROI();renderAdBenchmarks();
 }
-
-// ── CHIP HELPERS ───────────────────────────────────────────────
-function togPlat(el,p){
-  el.classList.toggle('active');
-  S.selPlats=el.classList.contains('active')?S.selPlats.concat([p]):S.selPlats.filter(function(x){return x!==p;});
-}
-function selTone(el,t){
-  document.querySelectorAll('#panel-create .chip').forEach(function(c){if(c.getAttribute('onclick')&&c.getAttribute('onclick').indexOf('selTone')>=0)c.classList.remove('active');});
-  el.classList.add('active');S.tone=t;
-}
-function selVP(el,p){el.parentElement.querySelectorAll('.chip').forEach(function(c){c.classList.remove('active');});el.classList.add('active');S.viralPlat=p;}
-function selPP(el,p){el.parentElement.querySelectorAll('.chip').forEach(function(c){c.classList.remove('active');});el.classList.add('active');$('persPlat').value=p;}
-function selPostType(t){
-  S.postType=t;
-  var colors={text:'#6366f1',image:'#10b981',video:'#ec4899'};
-  ['text','image','video'].forEach(function(x){
-    var b=$('pt-'+x),on=x===t;
-    b.style.background=on?'linear-gradient(135deg,'+colors[x]+'33,'+colors[x]+'18)':'rgba(255,255,255,0.03)';
-    b.style.border='2px solid '+(on?colors[x]+'88':'rgba(255,255,255,0.07)');
-    b.style.transform=on?'translateY(-2px)':'none';
-    var old=b.querySelector('.chk');if(old)old.remove();
-    if(on){var d=document.createElement('div');d.className='chk';d.style.cssText='margin-top:8px;width:22px;height:22px;border-radius:11px;background:'+colors[x]+';margin-left:auto;margin-right:auto;display:flex;align-items:center;justify-content:center;font-size:12px;color:white;font-weight:800';d.textContent='✓';b.appendChild(d);}
+function selAdObj(el,obj){S.adObjective=obj;el.parentElement.querySelectorAll('.chip').forEach(function(c){c.classList.remove('active');});el.classList.add('active');}
+function selAdType(el,type){
+  var cols={text:'rgba(99,102,241',image:'rgba(16,185,129',video:'rgba(236,72,153',upload:'rgba(251,191,36'};
+  ['text','image','video','upload'].forEach(function(t){
+    var btn=G('adt-'+t),panel=G('adtype-'+t),act=t===type,c=cols[t];
+    if(btn){btn.style.background=act?'linear-gradient(135deg,'+c+',0.3),'+c+',0.18))':'rgba(255,255,255,0.03)';btn.style.borderColor=act?c+',0.8)':'rgba(255,255,255,0.08)';btn.style.color=act?'white':'rgba(255,255,255,0.5)';}
+    if(panel)panel.style.display=act?'block':'none';
   });
-  $('text-panel').style.display=t==='text'?'block':'none';
-  $('image-panel').style.display=t==='image'?'block':'none';
-  $('video-panel').style.display=t==='video'?'block':'none';
+}
+async function enhAdText(fieldId,statusId,sugId,sugTxtId){
+  var text=getV(fieldId);if(!text){alert('Please enter some copy first');return;}
+  var statusEl=G(statusId);if(statusEl)statusEl.style.display='block';
+  G(sugId).style.display='none';
+  try{
+    var raw=await freeAI('Enhance this ad copy for Zenoti (@gozenoti) on '+S.adPlatform+' ('+S.adObjective+'): "'+text+'". Make it persuasive and conversion-focused. Return ONLY valid JSON: {"enhanced":"improved copy here"}');
+    var r=JSON.parse(raw.replace(/```json|```/g,'').trim());
+    G(sugTxtId).textContent=r.enhanced;G(sugId).style.display='block';
+  }catch(e){alert('Enhance failed.');}
+  if(statusEl)statusEl.style.display='none';
+}
+function applyEnh(fieldId,sugTxtId,sugId){G(fieldId).value=G(sugTxtId).textContent;G(sugId).style.display='none';}
+function calcROI(){
+  var budget=parseFloat((G('adBudget')||{}).value)||0,days=parseInt((G('adDuration')||{}).value)||30;
+  if(!budget){if(G('roiOut'))G('roiOut').style.display='none';if(G('roiEmpty'))G('roiEmpty').style.display='block';return;}
+  var b=adBD[S.adPlatform],total=budget*days,reach=Math.round(total*b.rpd),clicks=Math.round(total/b.cpc),leads=Math.round(total/b.cpl);
+  G('roi-spend').textContent='$'+total.toLocaleString();G('roi-reach').textContent=reach>=1000?(reach/1000).toFixed(1)+'K':reach;G('roi-clicks').textContent=clicks>=1000?(clicks/1000).toFixed(1)+'K':clicks;G('roi-leads').textContent=leads;G('roi-cpc').textContent='$'+b.cpc.toFixed(2);G('roi-cpl').textContent='$'+b.cpl.toFixed(2);G('roi-roas').textContent=b.roas+'x return';
+  G('roiOut').style.display='block';G('roiEmpty').style.display='none';
+}
+function renderAdBenchmarks(){
+  var b=adBD[S.adPlatform||'instagram'];
+  var metrics=[['📊 Avg CTR',b.ctr+'%','#a5b4fc'],['👆 Avg CPC','$'+b.cpc,'#f9a8d4'],['🎯 Avg CPL','$'+b.cpl,'#6ee7b7'],['📈 Avg ROAS',b.roas+'x','#fde68a'],['📡 Reach/$1',b.rpd+' people','#c4b5fd']];
+  setH('adBenchmarks','<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">'+metrics.map(function(m){return '<div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;color:rgba(255,255,255,0.5)">'+m[0]+'</span><span style="font-size:14px;font-weight:800;color:'+m[2]+'">'+m[1]+'</span></div>';}).join('')+'</div><div style="background:rgba(245,158,11,0.07);border:1px solid rgba(245,158,11,0.18);border-radius:12px;padding:12px 14px;font-size:12px;color:rgba(255,255,255,0.5);line-height:1.7">⚡ <strong style="color:rgba(255,255,255,0.75)">Pro tip:</strong> Beauty ads perform best with before/after visuals, social proof (30K+ salons), and urgency CTAs like "Book Free Demo Today".</div>');
+}
+async function genAd(){
+  var brief=getV('adBrief');if(!brief){alert('Please enter an ad brief');return;}
+  var btn=G('genAdBtn');ldBtn(btn,'Generating...');setH('adOut','');
+  try{
+    var audience=getV('adAudience')||'salon owners and spa managers';
+    var raw=await freeAI('Expert ad copywriter for Zenoti (@gozenoti). Create a '+S.adPlatform+' ad for '+S.adObjective+'. Brief: "'+brief+'". Target: "'+audience+'". Return ONLY valid JSON: {"headline":"short headline","primaryText":"ad copy 2-3 sentences","description":"1 sentence","cta":"button text","hashtags":"3-5 hashtags","hook":"opening line","whyItWorks":"strategy in one sentence"}');
+    var r=JSON.parse(raw.replace(/```json|```/g,'').trim());
+    var pc=PC[S.adPlatform]||'#f59e0b';
+    setH('adOut',
+      '<div style="background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.08);border-radius:16px;overflow:hidden">'+
+      '<div style="background:linear-gradient(135deg,rgba(99,102,241,0.15),rgba(168,85,247,0.1));padding:12px 16px;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between">'+
+        '<div style="display:flex;align-items:center;gap:8px"><div style="width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#6366f1,#8b5cf6);display:flex;align-items:center;justify-content:center;font-size:16px">'+PI[S.adPlatform]+'</div>'+
+        '<div><div style="font-size:12px;font-weight:700;color:white">@gozenoti</div><div style="font-size:10px;color:rgba(255,255,255,0.35)">Sponsored · '+S.adObjective+'</div></div></div>'+
+        '<span style="font-size:10px;background:'+pc+'22;color:'+pc+';border:1px solid '+pc+'44;border-radius:20px;padding:3px 10px;font-weight:700">'+PL[S.adPlatform]+' Ad</span>'+
+      '</div>'+
+      '<div style="padding:16px"><div style="font-size:14px;font-weight:800;color:white;margin-bottom:8px">'+r.headline+'</div>'+
+      '<div style="font-size:13px;color:rgba(255,255,255,0.72);line-height:1.7;margin-bottom:10px">'+r.primaryText+'</div>'+
+      '<div style="font-size:11.5px;color:rgba(255,255,255,0.45);margin-bottom:10px">'+r.description+'</div>'+
+      '<div style="font-size:11px;color:#a5b4fc;margin-bottom:12px">'+r.hashtags+'</div>'+
+      '<div style="display:flex;justify-content:space-between;align-items:center">'+
+        '<div style="background:linear-gradient(135deg,'+pc+','+pc+'cc);border-radius:8px;padding:8px 18px;font-size:12.5px;font-weight:700;color:white">'+r.cta+'</div>'+
+        '<button onclick="navigator.clipboard.writeText(G(\'adCopyTxt\').textContent)" style="background:rgba(99,102,241,0.12);border:1px solid rgba(99,102,241,0.28);border-radius:8px;color:#a5b4fc;font-size:11.5px;font-weight:600;padding:6px 13px;cursor:pointer">⎘ Copy</button>'+
+      '</div></div>'+
+      '<div style="border-top:1px solid rgba(255,255,255,0.06);padding:14px 16px;display:grid;grid-template-columns:1fr 1fr;gap:10px">'+
+        '<div style="background:rgba(99,102,241,0.08);border-radius:10px;padding:10px"><div style="font-size:9.5px;color:#a5b4fc;font-weight:700;text-transform:uppercase;margin-bottom:5px">🪝 Hook</div><div style="font-size:12px;color:rgba(255,255,255,0.65);font-style:italic">"'+r.hook+'"</div></div>'+
+        '<div style="background:rgba(16,185,129,0.08);border-radius:10px;padding:10px"><div style="font-size:9.5px;color:#6ee7b7;font-weight:700;text-transform:uppercase;margin-bottom:5px">🧠 Why It Works</div><div style="font-size:12px;color:rgba(255,255,255,0.65)">'+r.whyItWorks+'</div></div>'+
+      '</div></div>'+
+      '<span id="adCopyTxt" style="display:none">'+r.headline+'\n\n'+r.primaryText+'\n\n'+r.description+'\n\n'+r.hashtags+'\n\nCTA: '+r.cta+'</span>'+
+      '<button onclick="genAd()" style="width:100%;margin-top:8px;background:transparent;border:1px solid rgba(245,158,11,0.22);border-radius:11px;color:rgba(253,230,138,0.55);font-size:12.5px;font-weight:600;padding:10px;cursor:pointer">🔄 Regenerate</button>'
+    );
+  }catch(e){errMsg('adOut','Ad generation failed.');}
+  doneBtn(btn,'📣 Generate Ad Copy — Free');
+}
+async function genAdImage(){
+  var fk=getV('freepikKey');if(!fk){alert('Add Freepik API key in Settings');return;}
+  var prompt=getV('adImgPrompt');if(!prompt){alert('Please enter a visual prompt');return;}
+  var btn=G('genAdImgBtn');ldBtn(btn,'Generating...');
+  setH('adImgStatus','<div style="background:rgba(16,185,129,0.07);border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:12px 16px;color:#6ee7b7;font-size:12.5px;display:flex;align-items:center;gap:8px"><div style="width:14px;height:14px;border:2px solid rgba(16,185,129,0.3);border-top:2px solid #10b981;border-radius:50%;animation:spin 1s linear infinite;flex-shrink:0"></div>Generating via Freepik AI...</div>');
+  setH('adImgOut','');
+  try{
+    var fp=prompt+', '+G('adImgStyle').value+' style, professional advertising';
+    var res=await fetch('https://api.freepik.com/v1/ai/text-to-image',{method:'POST',headers:{'Content-Type':'application/json','x-freepik-api-key':fk},body:JSON.stringify({prompt:fp,num_images:1,image:{size:G('adImgSize').value},filter_nsfw:true})});
+    var data=await res.json();if(!res.ok)throw new Error(data&&data.message?data.message:'Freepik error');
+    var imgUrl=null;
+    if(data&&data.data&&data.data.length){var it=data.data[0];imgUrl=it.base64?'data:image/jpeg;base64,'+it.base64:it.url;}
+    else if(data&&data.data&&data.data.task_id){
+      var tid=data.data.task_id;
+      for(var i=0;i<20;i++){
+        await new Promise(function(r){setTimeout(r,4000);});
+        setH('adImgStatus','<div style="background:rgba(99,102,241,0.07);border:1px solid rgba(99,102,241,0.18);border-radius:12px;padding:12px 16px;color:rgba(165,180,252,0.75);font-size:12.5px">Processing... '+((i+1)*4)+'s</div>');
+        var p=await(await fetch('https://api.freepik.com/v1/ai/text-to-image/'+tid,{headers:{'x-freepik-api-key':fk}})).json();
+        if(p&&p.data&&(p.data.status==='COMPLETED'||p.data.status==='OK')){var imgs=p.data.generated||p.data||[];if(imgs[0])imgUrl=imgs[0].base64?'data:image/jpeg;base64,'+imgs[0].base64:imgs[0].url;break;}
+        if(p&&p.data&&p.data.status==='FAILED')throw new Error('Task failed');
+      }
+    }
+    if(!imgUrl)throw new Error('No image returned');
+    setH('adImgStatus','<div style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);border-radius:12px;padding:10px 14px;color:#6ee7b7;font-size:12px">✅ Ad image generated!</div>');
+    var copy=getV('adImgCopy'),pc=PC[S.adPlatform]||'#f59e0b';
+    setH('adImgOut','<div style="background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;margin-top:8px">'+(copy?'<div style="padding:12px 14px;border-bottom:1px solid rgba(255,255,255,0.06);font-size:13px;font-weight:700;color:white">'+copy+'</div>':'')+'<img src="'+imgUrl+'" style="width:100%;display:block"/><div style="padding:10px 14px;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,0.02)"><span style="background:'+pc+'22;color:'+pc+';border:1px solid '+pc+'44;border-radius:20px;font-size:10.5px;font-weight:700;padding:3px 10px">'+PL[S.adPlatform]+' Ad</span><a href="'+imgUrl+'" download="zenoti-ad.jpg" target="_blank" style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);border-radius:8px;color:#6ee7b7;font-size:11.5px;font-weight:600;padding:6px 12px;text-decoration:none">⬇ Save</a></div></div>');
+  }catch(e){setH('adImgStatus','');errMsg('adImgOut',e.message);}
+  doneBtn(btn,'🖼️ Generate Ad Image');
+}
+async function genAdVideo(){
+  var fk=getV('freepikKey');if(!fk){alert('Add Freepik API key in Settings');return;}
+  var prompt=getV('adVidPrompt');if(!prompt){alert('Please enter a scene prompt');return;}
+  var btn=G('genAdVidBtn');ldBtn(btn,'Submitting...');setH('adVidStatus','');setH('adVidOut','');
+  try{
+    var script=getV('adVidScript');
+    var res=await fetch('https://api.freepik.com/v1/ai/video/kling-v3-pro',{method:'POST',headers:{'Content-Type':'application/json','x-freepik-api-key':fk},body:JSON.stringify({prompt:prompt+(script?' Voiceover: '+script:''),aspect_ratio:G('adVidAspect').value,duration:G('adVidDur').value,negative_prompt:'blurry, low quality'})});
+    var data=await res.json();if(!res.ok)throw new Error(data&&data.message?data.message:'Freepik error');
+    var tid=data&&data.data&&data.data.task_id;if(!tid)throw new Error('No task ID');
+    for(var i=0;i<40;i++){
+      await new Promise(function(r){setTimeout(r,5000);});btn.innerHTML='Rendering... '+((i+1)*5)+'s';
+      setH('adVidStatus','<div style="background:rgba(99,102,241,0.07);border:1px solid rgba(99,102,241,0.18);border-radius:11px;padding:11px 15px;color:rgba(165,180,252,0.75);font-size:12.5px">Rendering... '+((i+1)*5)+'s</div>');
+      var p=await(await fetch('https://api.freepik.com/v1/ai/video/kling-v3-pro/'+tid,{headers:{'x-freepik-api-key':fk}})).json();
+      if(p&&p.data&&(p.data.status==='COMPLETED'||p.data.status==='OK')){var url=p.data.generated&&p.data.generated[0]?p.data.generated[0].url:p.data.url;if(url){setH('adVidStatus','');setH('adVidOut','<div style="border-radius:14px;overflow:hidden;border:1px solid rgba(236,72,153,0.3)"><video src="'+url+'" controls style="width:100%;display:block"></video><div style="display:flex;gap:8px;padding:10px;background:rgba(255,255,255,0.02)"><a href="'+url+'" download="zenoti-ad.mp4" target="_blank" style="flex:1;text-align:center;padding:9px;border-radius:9px;background:linear-gradient(135deg,#db2777,#9333ea);color:white;font-size:12.5px;font-weight:700;text-decoration:none">⬇ Download Ad</a><button onclick="navigator.clipboard.writeText(\''+url+'\')" style="padding:9px 14px;border-radius:9px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.55);font-size:12.5px;cursor:pointer">🔗 URL</button></div></div>');break;}}
+      if(p&&p.data&&p.data.status==='FAILED')throw new Error('Video failed');
+    }
+  }catch(e){setH('adVidStatus','');errMsg('adVidOut',e.message);}
+  doneBtn(btn,'🎬 Generate Ad Video');
+}
+function handleAdUpload(input){
+  var file=input.files[0];if(!file)return;
+  var isV=file.type.startsWith('video/'),url=URL.createObjectURL(file);
+  G('adUpIcon').textContent=isV?'🎬':'🖼️';G('adUpText').textContent=file.name;
+  var p=G('adUpPreview');p.style.display='block';
+  p.innerHTML=isV?'<video src="'+url+'" controls style="width:100%;border-radius:10px;border:1px solid rgba(251,191,36,0.3);max-height:220px"></video>':'<img src="'+url+'" style="width:100%;border-radius:10px;border:1px solid rgba(251,191,36,0.3);max-height:220px;object-fit:cover"/>';
+}
+function previewUploadAd(){
+  var copy=getV('adUpCopy'),cta=getV('adUpCTA')||'Learn More',url=getV('adUpURL'),file=G('adUpMedia').files[0];
+  if(!copy){alert('Please enter ad copy');return;}if(!file){alert('Please upload a creative');return;}
+  var pc=PC[S.adPlatform]||'#f59e0b',mediaHTML=G('adUpPreview').innerHTML;
+  setH('adUpOut',
+    '<div style="background:rgba(255,255,255,0.025);border:1px solid rgba(251,191,36,0.2);border-radius:14px;overflow:hidden;animation:cardSlideUp 0.4s cubic-bezier(0.22,1,0.36,1) both">'+
+    '<div style="background:linear-gradient(135deg,rgba(251,191,36,0.1),rgba(239,68,68,0.08));padding:12px 16px;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between">'+
+      '<div style="display:flex;align-items:center;gap:8px"><div style="width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#f59e0b,#ef4444);display:flex;align-items:center;justify-content:center;font-size:16px">'+PI[S.adPlatform]+'</div>'+
+      '<div><div style="font-size:12px;font-weight:700;color:white">@gozenoti</div><div style="font-size:10px;color:rgba(255,255,255,0.35)">Sponsored · '+S.adObjective+'</div></div></div>'+
+      '<span style="font-size:10px;background:'+pc+'22;color:'+pc+';border:1px solid '+pc+'44;border-radius:20px;padding:3px 10px;font-weight:700">'+PL[S.adPlatform]+' Ad</span>'+
+    '</div>'+
+    mediaHTML.replace('max-height:220px','max-height:300px')+
+    '<div style="padding:14px"><div style="font-size:13.5px;font-weight:700;color:white;margin-bottom:10px">'+copy+'</div>'+(url?'<div style="font-size:11px;color:rgba(255,255,255,0.35);margin-bottom:10px">'+url+'</div>':'')+'<div style="display:inline-block;background:linear-gradient(135deg,'+pc+','+pc+'cc);border-radius:8px;padding:9px 20px;font-size:13px;font-weight:700;color:white">'+cta+'</div></div>'+
+    '<div style="padding:10px 14px;background:rgba(16,185,129,0.06);border-top:1px solid rgba(16,185,129,0.15);display:flex;align-items:center;gap:8px"><span style="font-size:11px;color:#6ee7b7;font-weight:700">✅ Ad Preview Ready</span><span style="font-size:11px;color:rgba(255,255,255,0.3)">· Publish via your ad platform</span></div>'+
+    '</div>'
+  );
 }
 
-// ── VIRAL ANALYZER ─────────────────────────────────────────────
+// Post functions
+function togPlat(el,p){el.classList.toggle('active');S.selPlats=el.classList.contains('active')?S.selPlats.concat([p]):S.selPlats.filter(function(x){return x!==p;});}
+function selTone(el,t){document.querySelectorAll('#panel-create .chip').forEach(function(c){if(c.getAttribute('onclick')&&c.getAttribute('onclick').indexOf('selTone')>=0)c.classList.remove('active');});el.classList.add('active');S.tone=t;}
+function selVP(el,p){el.parentElement.querySelectorAll('.chip').forEach(function(c){c.classList.remove('active');});el.classList.add('active');S.viralPlat=p;}
+function selPP(el,p){el.parentElement.querySelectorAll('.chip').forEach(function(c){c.classList.remove('active');});el.classList.add('active');G('persPlat').value=p;}
+function selPostType(t){
+  S.postType=t;var cols={text:'#6366f1',image:'#10b981',video:'#ec4899'};
+  ['text','image','video'].forEach(function(x){var b=G('pt-'+x),on=x===t;b.style.background=on?'linear-gradient(135deg,'+cols[x]+'33,'+cols[x]+'18)':'rgba(255,255,255,0.03)';b.style.border='2px solid '+(on?cols[x]+'88':'rgba(255,255,255,0.07)');b.style.transform=on?'translateY(-2px)':'none';var old=b.querySelector('.chk');if(old)old.remove();if(on){var d=document.createElement('div');d.className='chk';d.style.cssText='margin-top:8px;width:22px;height:22px;border-radius:11px;background:'+cols[x]+';margin-left:auto;margin-right:auto;display:flex;align-items:center;justify-content:center;font-size:12px;color:white;font-weight:800';d.textContent='✓';b.appendChild(d);}});
+  G('text-panel').style.display=t==='text'?'block':'none';G('image-panel').style.display=t==='image'?'block':'none';G('video-panel').style.display=t==='video'?'block':'none';
+}
+
 async function analyzeViral(){
-  var draft=getV('viralDraft');
-  if(!draft){alert('Please enter a post draft');return;}
-  var btn=$('viralBtn');
-  ldBtn(btn,'Analyzing…');
-  setH('viralResult','');
+  var draft=getV('viralDraft');if(!draft){alert('Please enter a post draft');return;}
+  var btn=G('viralBtn');ldBtn(btn,'Analyzing...');setH('viralResult','');
   try{
-    var raw=await freeAI('Analyze this '+S.viralPlat+' post for Zenoti (@gozenoti). Return ONLY valid JSON no extra text. Post: "'+draft+'" {"viralScore":78,"engagementPrediction":"8-12%","reachEstimate":"45K-80K","hookStrength":72,"emotionalTrigger":85,"shareability":68,"clarity":90,"ctaStrength":60,"bestTimeToPost":"Wed 6-8pm","strengths":["point 1","point 2"],"improvements":["fix 1","fix 2"],"rewrittenHook":"better opening","verdict":"2-line assessment"}');
+    var raw=await freeAI('Analyze this '+S.viralPlat+' post for Zenoti. Return ONLY valid JSON. Post: "'+draft+'" {"viralScore":78,"engagementPrediction":"8-12%","reachEstimate":"45K-80K","hookStrength":72,"emotionalTrigger":85,"shareability":68,"clarity":90,"ctaStrength":60,"bestTimeToPost":"Wed 6-8pm","strengths":["point 1","point 2"],"improvements":["fix 1","fix 2"],"rewrittenHook":"better opening","verdict":"2-line assessment"}');
     var r=JSON.parse(raw.replace(/```json|```/g,'').trim());
     var sc=function(s){return s>=85?'#10b981':s>=70?'#f59e0b':'#ef4444';};
     var ring=function(score,lbl,sz){sz=sz||80;var r2=30,ci=2*Math.PI*r2,d=(score/100)*ci,c=sc(score);return '<div style="display:flex;flex-direction:column;align-items:center;gap:5px"><svg width="'+sz+'" height="'+sz+'" viewBox="0 0 72 72"><circle cx="36" cy="36" r="'+r2+'" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="5"/><circle cx="36" cy="36" r="'+r2+'" fill="none" stroke="'+c+'" stroke-width="5" stroke-dasharray="'+d+' '+(ci-d)+'" stroke-dashoffset="'+ci/4+'" stroke-linecap="round" style="filter:drop-shadow(0 0 6px '+c+')"/><text x="36" y="40" text-anchor="middle" fill="white" font-size="14" font-weight="800">'+score+'</text></svg>'+(lbl?'<span style="font-size:9px;color:rgba(255,255,255,0.38);font-weight:700;text-transform:uppercase;letter-spacing:0.08em">'+lbl+'</span>':'')+'</div>';};
@@ -986,168 +1000,115 @@ async function analyzeViral(){
       '<div style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.22);border-radius:12px;padding:14px;margin-bottom:14px;border-left:3px solid #6366f1"><div style="font-size:10px;color:#a5b4fc;font-weight:700;margin-bottom:5px">🪄 AI REWRITES YOUR HOOK</div><div style="font-size:13px;color:#c4b5fd;font-style:italic;line-height:1.6">"'+r.rewrittenHook+'"</div></div>'+
       '<div style="background:rgba(255,255,255,0.03);border-radius:12px;padding:14px"><div style="font-size:10px;color:rgba(255,255,255,0.38);font-weight:700;margin-bottom:4px">🧠 AI VERDICT</div><div style="font-size:13px;color:rgba(255,255,255,0.75);line-height:1.6">'+r.verdict+'</div></div>'
     );
-  }catch(e){errMsg('viralResult','Analysis failed — please try again.');}
+  }catch(e){errMsg('viralResult','Analysis failed.');}
   doneBtn(btn,'🔬 Analyze Viral Potential — Free');
 }
 
-// ── GENERATE POSTS ─────────────────────────────────────────────
 async function genPosts(){
-  var topic=getV('postTopic');
-  if(!topic){alert('Please enter a topic');return;}
-  var btn=$('genPostsBtn');
-  ldBtn(btn,'Generating…');
-  setH('postsOut','');
+  var topic=getV('postTopic');if(!topic){alert('Please enter a topic');return;}
+  var btn=G('genPostsBtn');ldBtn(btn,'Generating...');setH('postsOut','');
   try{
     var pd=S.selPlats.map(function(id){return PL[id]+': max '+PM[id]+' chars, tone: '+PT[id];}).join(' | ');
     var extra=getV('postExtra');
-    var raw=await freeAI('You are a social media manager for Zenoti (@gozenoti, beauty & wellness SaaS, 30k+ salons). Topic: '+topic+', Tone: '+S.tone+(extra?', Extra: '+extra:'')+'. Hashtags: #GoZenoti #BeautyAndWellness #SalonTech #MedSpa. Platforms: '+pd+'. Return ONLY valid JSON: { '+S.selPlats.map(function(id){return '"'+id+'": "post content"';}).join(', ')+' }');
+    var raw=await freeAI('Social media manager for Zenoti (@gozenoti). Topic: '+topic+', Tone: '+S.tone+(extra?', Extra: '+extra:'')+'. Hashtags: #GoZenoti #BeautyAndWellness #SalonTech. Platforms: '+pd+'. Return ONLY valid JSON: { '+S.selPlats.map(function(id){return '"'+id+'": "post content"';}).join(', ')+' }');
     var posts=JSON.parse(raw.replace(/```json|```/g,'').trim());
     var html='<div style="display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap">';
     S.selPlats.forEach(function(id,i){html+='<button class="chip'+(i===0?' active':'')+'" onclick="showPost(this,\''+id+'\')">'+PI[id]+' '+PL[id]+'</button>';});
     html+='<button class="chip" onclick="showAllPosts(this)">📋 All</button></div><div id="postCards">';
-    S.selPlats.forEach(function(id,i){
-      if(!posts[id])return;
-      html+='<div class="post-card" data-p="'+id+'" style="'+(i>0?'display:none':'')+'"><div style="display:flex;justify-content:space-between;margin-bottom:10px"><span style="color:rgba(255,255,255,0.65);font-weight:600;font-size:12.5px">'+PI[id]+' '+PL[id]+'</span><span style="color:rgba(255,255,255,0.25);font-size:10.5px;font-family:monospace">'+posts[id].length+'/'+PM[id]+'</span></div><p style="color:rgba(255,255,255,0.78);font-size:13.5px;line-height:1.72;white-space:pre-wrap;margin-bottom:12px">'+posts[id]+'</p><button onclick="cpBtn(this)" data-t="'+posts[id].replace(/"/g,'&quot;').replace(/'/g,'&#39;')+'" style="background:rgba(99,102,241,0.12);border:1px solid rgba(99,102,241,0.28);border-radius:8px;color:#a5b4fc;font-size:11.5px;font-weight:600;padding:5px 13px;cursor:pointer">⎘ Copy</button></div>';
-    });
+    S.selPlats.forEach(function(id,i){if(!posts[id])return;html+='<div class="post-card" data-p="'+id+'" style="'+(i>0?'display:none':'')+'"><div style="display:flex;justify-content:space-between;margin-bottom:10px"><span style="color:rgba(255,255,255,0.65);font-weight:600;font-size:12.5px">'+PI[id]+' '+PL[id]+'</span><span style="color:rgba(255,255,255,0.25);font-size:10.5px">'+posts[id].length+'/'+PM[id]+'</span></div><p style="color:rgba(255,255,255,0.78);font-size:13.5px;line-height:1.72;white-space:pre-wrap;margin-bottom:12px">'+posts[id]+'</p><button onclick="cpBtn(this)" data-t="'+posts[id].replace(/"/g,'&quot;').replace(/'/g,'&#39;')+'" style="background:rgba(99,102,241,0.12);border:1px solid rgba(99,102,241,0.28);border-radius:8px;color:#a5b4fc;font-size:11.5px;font-weight:600;padding:5px 13px;cursor:pointer">⎘ Copy</button></div>';});
     html+='</div><button onclick="genPosts()" style="width:100%;margin-top:8px;background:transparent;border:1px solid rgba(99,102,241,0.22);border-radius:11px;color:rgba(165,180,252,0.55);font-size:12.5px;font-weight:600;padding:10px;cursor:pointer">🔄 Regenerate</button>';
     setH('postsOut',html);
-  }catch(e){errMsg('postsOut','Generation failed — please try again.');}
+  }catch(e){errMsg('postsOut','Generation failed.');}
   doneBtn(btn,'✨ Generate Text Posts — Free');
 }
 function showPost(el,p){document.querySelectorAll('#postCards .post-card').forEach(function(c){c.style.display=c.dataset.p===p?'block':'none';});el.parentElement.querySelectorAll('.chip').forEach(function(c){c.classList.remove('active');});el.classList.add('active');}
 function showAllPosts(el){document.querySelectorAll('#postCards .post-card').forEach(function(c){c.style.display='block';});el.parentElement.querySelectorAll('.chip').forEach(function(c){c.classList.remove('active');});el.classList.add('active');}
 function cpBtn(b){navigator.clipboard.writeText(b.dataset.t).then(function(){b.textContent='✓ Copied';setTimeout(function(){b.textContent='⎘ Copy';},2000);});}
 
-// ── IMAGE ──────────────────────────────────────────────────────
 async function genImage(){
-  var fk=getV('freepikKey');if(!fk){alert('Add your Freepik API key in ⚙️ Settings');return;}
+  var fk=getV('freepikKey');if(!fk){alert('Add Freepik API key in Settings');return;}
   var prompt=getV('imgPrompt');if(!prompt){alert('Please enter an image prompt');return;}
-  var btn=$('genImgBtn');ldBtn(btn,'Generating…');
-  setH('imgStatus','<div style="background:rgba(16,185,129,0.07);border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:12px 16px;color:#6ee7b7;font-size:12.5px;display:flex;align-items:center;gap:8px"><div style="width:14px;height:14px;border:2px solid rgba(16,185,129,0.3);border-top:2px solid #10b981;border-radius:50%;animation:spin 1s linear infinite;flex-shrink:0"></div>Generating via Freepik AI… 15-30s</div>');
+  var btn=G('genImgBtn');ldBtn(btn,'Generating...');
+  setH('imgStatus','<div style="background:rgba(16,185,129,0.07);border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:12px 16px;color:#6ee7b7;font-size:12.5px;display:flex;align-items:center;gap:8px"><div style="width:14px;height:14px;border:2px solid rgba(16,185,129,0.3);border-top:2px solid #10b981;border-radius:50%;animation:spin 1s linear infinite;flex-shrink:0"></div>Generating...</div>');
   setH('imgOut','');
   try{
-    var fp=prompt+', '+$('imgStyle').value+' style, professional high quality social media';
-    var res=await fetch('https://api.freepik.com/v1/ai/text-to-image',{method:'POST',headers:{'Content-Type':'application/json','x-freepik-api-key':fk},body:JSON.stringify({prompt:fp,num_images:1,image:{size:$('imgSize').value},filter_nsfw:true})});
-    var data=await res.json();
-    if(!res.ok)throw new Error(data&&data.message?data.message:'Freepik error '+res.status);
+    var fp=prompt+', '+G('imgStyle').value+' style, professional social media';
+    var res=await fetch('https://api.freepik.com/v1/ai/text-to-image',{method:'POST',headers:{'Content-Type':'application/json','x-freepik-api-key':fk},body:JSON.stringify({prompt:fp,num_images:1,image:{size:G('imgSize').value},filter_nsfw:true})});
+    var data=await res.json();if(!res.ok)throw new Error(data&&data.message?data.message:'Freepik error');
     var imgUrl=null;
     if(data&&data.data&&data.data.length){var it=data.data[0];imgUrl=it.base64?'data:image/jpeg;base64,'+it.base64:it.url;}
     else if(data&&data.data&&data.data.task_id){
       var tid=data.data.task_id;
       for(var i=0;i<20;i++){
         await new Promise(function(r){setTimeout(r,4000);});
-        setH('imgStatus','<div style="background:rgba(99,102,241,0.07);border:1px solid rgba(99,102,241,0.18);border-radius:12px;padding:12px 16px;color:rgba(165,180,252,0.75);font-size:12.5px">⟳ Processing… '+((i+1)*4)+'s</div>');
+        setH('imgStatus','<div style="background:rgba(99,102,241,0.07);border:1px solid rgba(99,102,241,0.18);border-radius:12px;padding:12px 16px;color:rgba(165,180,252,0.75);font-size:12.5px">Processing... '+((i+1)*4)+'s</div>');
         var p=await(await fetch('https://api.freepik.com/v1/ai/text-to-image/'+tid,{headers:{'x-freepik-api-key':fk}})).json();
         if(p&&p.data&&(p.data.status==='COMPLETED'||p.data.status==='OK')){var imgs=p.data.generated||p.data||[];if(imgs[0])imgUrl=imgs[0].base64?'data:image/jpeg;base64,'+imgs[0].base64:imgs[0].url;break;}
         if(p&&p.data&&p.data.status==='FAILED')throw new Error('Task failed');
       }
     }
-    if(!imgUrl)throw new Error('No image returned — check Freepik credits');
+    if(!imgUrl)throw new Error('No image returned');
     setH('imgStatus','<div style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);border-radius:12px;padding:10px 14px;color:#6ee7b7;font-size:12px">✅ Image generated!</div>');
     setH('imgOut','<div style="position:relative;border-radius:14px;overflow:hidden;border:1px solid rgba(16,185,129,0.25);margin-top:8px"><img src="'+imgUrl+'" style="width:100%;display:block"/><a href="'+imgUrl+'" download="zenoti-image.jpg" target="_blank" style="position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,0.75);border:1px solid rgba(255,255,255,0.15);border-radius:8px;color:white;font-size:12px;font-weight:600;padding:5px 11px;text-decoration:none">⬇ Save</a></div>');
   }catch(e){setH('imgStatus','');errMsg('imgOut',e.message);}
   doneBtn(btn,'🖼️ Generate Real Image');
 }
 
-// ── VIDEO ──────────────────────────────────────────────────────
 async function genVideo(){
-  var fk=getV('freepikKey');if(!fk){alert('Add your Freepik API key in ⚙️ Settings');return;}
+  var fk=getV('freepikKey');if(!fk){alert('Add Freepik API key in Settings');return;}
   var prompt=getV('vidPrompt');if(!prompt){alert('Please enter a video prompt');return;}
-  var btn=$('genVidBtn');ldBtn(btn,'Submitting…');setH('vidStatus','');setH('vidOut','');
+  var btn=G('genVidBtn');ldBtn(btn,'Submitting...');setH('vidStatus','');setH('vidOut','');
   try{
-    var res=await fetch('https://api.freepik.com/v1/ai/video/kling-v3-pro',{method:'POST',headers:{'Content-Type':'application/json','x-freepik-api-key':fk},body:JSON.stringify({prompt:prompt,aspect_ratio:$('vidAspect').value,duration:$('vidDur').value,negative_prompt:'blurry, low quality, distorted'})});
-    var data=await res.json();
-    if(!res.ok)throw new Error(data&&data.message?data.message:'Freepik error '+res.status);
-    var tid=data&&data.data&&data.data.task_id;
-    if(!tid)throw new Error('No task ID');
+    var res=await fetch('https://api.freepik.com/v1/ai/video/kling-v3-pro',{method:'POST',headers:{'Content-Type':'application/json','x-freepik-api-key':fk},body:JSON.stringify({prompt:prompt,aspect_ratio:G('vidAspect').value,duration:G('vidDur').value,negative_prompt:'blurry, low quality'})});
+    var data=await res.json();if(!res.ok)throw new Error(data&&data.message?data.message:'Freepik error');
+    var tid=data&&data.data&&data.data.task_id;if(!tid)throw new Error('No task ID');
     for(var i=0;i<40;i++){
-      await new Promise(function(r){setTimeout(r,5000);});
-      btn.innerHTML='⏳ Rendering… '+((i+1)*5)+'s';
-      setH('vidStatus','<div style="background:rgba(99,102,241,0.07);border:1px solid rgba(99,102,241,0.18);border-radius:11px;padding:11px 15px;color:rgba(165,180,252,0.75);font-size:12.5px">⟳ Rendering… '+((i+1)*5)+'s</div>');
+      await new Promise(function(r){setTimeout(r,5000);});btn.innerHTML='Rendering... '+((i+1)*5)+'s';
+      setH('vidStatus','<div style="background:rgba(99,102,241,0.07);border:1px solid rgba(99,102,241,0.18);border-radius:11px;padding:11px 15px;color:rgba(165,180,252,0.75);font-size:12.5px">Rendering... '+((i+1)*5)+'s</div>');
       var p=await(await fetch('https://api.freepik.com/v1/ai/video/kling-v3-pro/'+tid,{headers:{'x-freepik-api-key':fk}})).json();
-      if(p&&p.data&&(p.data.status==='COMPLETED'||p.data.status==='OK')){
-        var url=p.data.generated&&p.data.generated[0]?p.data.generated[0].url:p.data.url;
-        if(url){setH('vidStatus','');setH('vidOut','<div style="border-radius:14px;overflow:hidden;border:1px solid rgba(236,72,153,0.3)"><video src="'+url+'" controls style="width:100%;display:block"></video><div style="display:flex;gap:8px;padding:10px;background:rgba(255,255,255,0.02)"><a href="'+url+'" download="zenoti-video.mp4" target="_blank" style="flex:1;text-align:center;padding:9px;border-radius:9px;background:linear-gradient(135deg,#db2777,#9333ea);color:white;font-size:12.5px;font-weight:700;text-decoration:none">⬇ Download</a><button onclick="navigator.clipboard.writeText(\''+url+'\')" style="padding:9px 14px;border-radius:9px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.55);font-size:12.5px;cursor:pointer">🔗 URL</button></div></div>');break;}
-      }
+      if(p&&p.data&&(p.data.status==='COMPLETED'||p.data.status==='OK')){var url=p.data.generated&&p.data.generated[0]?p.data.generated[0].url:p.data.url;if(url){setH('vidStatus','');setH('vidOut','<div style="border-radius:14px;overflow:hidden;border:1px solid rgba(236,72,153,0.3)"><video src="'+url+'" controls style="width:100%;display:block"></video><div style="display:flex;gap:8px;padding:10px;background:rgba(255,255,255,0.02)"><a href="'+url+'" download="zenoti-video.mp4" target="_blank" style="flex:1;text-align:center;padding:9px;border-radius:9px;background:linear-gradient(135deg,#db2777,#9333ea);color:white;font-size:12.5px;font-weight:700;text-decoration:none">⬇ Download</a></div></div>');break;}}
       if(p&&p.data&&p.data.status==='FAILED')throw new Error('Video failed');
     }
   }catch(e){setH('vidStatus','');errMsg('vidOut',e.message);}
   doneBtn(btn,'🎬 Generate Video');
 }
 
-// ── PERSONA ────────────────────────────────────────────────────
 async function genPersona(){
   var topic=getV('persTopic');if(!topic){alert('Please enter a topic');return;}
-  var btn=$('persBtn');ldBtn(btn,'Generating 4 variants…');setH('persOut','');
+  var btn=G('persBtn');ldBtn(btn,'Generating...');setH('persOut','');
   try{
-    var plat=$('persPlat').value,persona=$('persType').value;
-    var raw=await freeAI('Create 4 different post variants for Zenoti (@gozenoti) on '+PL[plat]+', topic: "'+topic+'", targeting: '+persona+'. Each must have a unique angle. Return ONLY valid JSON array no extra text: [{"variant":"Name","hook":"Opening line","body":"Post body max 150 chars","angle":"Strategy","predictedEng":"X-Y%"},{"variant":"...","hook":"...","body":"...","angle":"...","predictedEng":"..."},{"variant":"...","hook":"...","body":"...","angle":"...","predictedEng":"..."},{"variant":"...","hook":"...","body":"...","angle":"...","predictedEng":"..."}]');
+    var plat=G('persPlat').value,persona=G('persType').value;
+    var raw=await freeAI('Create 4 post variants for Zenoti on '+PL[plat]+', topic: "'+topic+'", targeting: '+persona+'. Return ONLY valid JSON array: [{"variant":"Name","hook":"Opening","body":"Body max 150 chars","angle":"Strategy","predictedEng":"X-Y%"},{"variant":"...","hook":"...","body":"...","angle":"...","predictedEng":"..."},{"variant":"...","hook":"...","body":"...","angle":"...","predictedEng":"..."},{"variant":"...","hook":"...","body":"...","angle":"...","predictedEng":"..."}]');
     var vars=JSON.parse(raw.replace(/```json|```/g,'').trim());
     var cols=['#6366f1','#8b5cf6','#ec4899','#f59e0b'];
-    setH('persOut','<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;animation:fadeIn 0.3s ease">'+vars.slice(0,4).map(function(v,i){return '<div style="background:rgba(255,255,255,0.025);border:1px solid '+cols[i]+'33;border-radius:15px;padding:16px"><div style="display:flex;justify-content:space-between;margin-bottom:10px"><span style="font-size:11px;font-weight:700;color:'+cols[i]+';background:'+cols[i]+'22;padding:3px 10px;border-radius:20px">'+v.variant+'</span><span style="font-size:11px;color:#10b981;font-weight:700">'+v.predictedEng+'</span></div><div style="font-size:13px;font-weight:700;color:white;margin-bottom:6px;line-height:1.5">"'+v.hook+'"</div><div style="font-size:11.5px;color:rgba(255,255,255,0.5);margin-bottom:8px;line-height:1.6">'+v.body+'</div><div style="font-size:10.5px;color:'+cols[i]+';background:'+cols[i]+'11;padding:5px 10px;border-radius:8px">'+v.angle+'</div></div>';}).join('')+'</div>');
-  }catch(e){errMsg('persOut','Generation failed — please try again.');}
+    setH('persOut','<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">'+vars.slice(0,4).map(function(v,i){return '<div style="background:rgba(255,255,255,0.025);border:1px solid '+cols[i]+'33;border-radius:15px;padding:16px"><div style="display:flex;justify-content:space-between;margin-bottom:10px"><span style="font-size:11px;font-weight:700;color:'+cols[i]+';background:'+cols[i]+'22;padding:3px 10px;border-radius:20px">'+v.variant+'</span><span style="font-size:11px;color:#10b981;font-weight:700">'+v.predictedEng+'</span></div><div style="font-size:13px;font-weight:700;color:white;margin-bottom:6px">"'+v.hook+'"</div><div style="font-size:11.5px;color:rgba(255,255,255,0.5);margin-bottom:8px;line-height:1.6">'+v.body+'</div><div style="font-size:10.5px;color:'+cols[i]+';background:'+cols[i]+'11;padding:5px 10px;border-radius:8px">'+v.angle+'</div></div>';}).join('')+'</div>');
+  }catch(e){errMsg('persOut','Generation failed.');}
   doneBtn(btn,'🎭 Generate 4 Persona Variants — Free');
 }
 
-// ── REPURPOSE ──────────────────────────────────────────────────
 async function genRepurpose(){
   var input=getV('repInput');if(!input){alert('Please paste some content');return;}
-  var btn=$('repBtn');ldBtn(btn,'Repurposing…');setH('repOut','');
+  var btn=G('repBtn');ldBtn(btn,'Repurposing...');setH('repOut','');
   try{
-    var raw=await freeAI('Repurpose this for Zenoti (@gozenoti) into 8 formats. Include hashtags #GoZenoti #BeautyAndWellness #SalonTech. Content: "'+input+'". Return ONLY valid JSON object no extra text: {"linkedin_post":"...","linkedin_article_hook":"...","instagram_caption":"...","instagram_story":"...","twitter_thread":"Tweet 1\\n\\nTweet 2\\n\\nTweet 3","twitter_single":"...","facebook_post":"...","youtube_short_script":"..."}');
+    var raw=await freeAI('Repurpose for Zenoti (@gozenoti) into 8 formats. Hashtags: #GoZenoti #BeautyAndWellness. Content: "'+input+'". Return ONLY valid JSON: {"linkedin_post":"...","linkedin_article_hook":"...","instagram_caption":"...","instagram_story":"...","twitter_thread":"T1\\n\\nT2\\n\\nT3","twitter_single":"...","facebook_post":"...","youtube_short_script":"..."}');
     var r=JSON.parse(raw.replace(/```json|```/g,'').trim());
     var fmts=[{k:'linkedin_post',l:'LinkedIn Post',i:'💼',c:'#0077b5'},{k:'linkedin_article_hook',l:'LinkedIn Article',i:'📰',c:'#0077b5'},{k:'instagram_caption',l:'Instagram Caption',i:'📸',c:'#e1306c'},{k:'instagram_story',l:'Instagram Story',i:'⭕',c:'#e1306c'},{k:'twitter_thread',l:'Twitter Thread',i:'🧵',c:'#1da1f2'},{k:'twitter_single',l:'Twitter Post',i:'🐦',c:'#1da1f2'},{k:'facebook_post',l:'Facebook Post',i:'👥',c:'#1877f2'},{k:'youtube_short_script',l:'YouTube Short',i:'🎬',c:'#ff0000'}];
-    setH('repOut','<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;animation:fadeIn 0.3s ease">'+fmts.map(function(f){return '<div style="background:rgba(255,255,255,0.025);border:1px solid '+f.c+'25;border-radius:13px;padding:14px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><span style="font-size:11px;font-weight:700;color:'+f.c+'">'+f.i+' '+f.l+'</span><button onclick="navigator.clipboard.writeText(this.dataset.t);this.textContent=\'✓\';setTimeout(()=>this.textContent=\'⎘\',2000)" data-t="'+(r[f.k]||'').replace(/"/g,'&quot;').replace(/'/g,'&#39;')+'" style="background:transparent;border:1px solid '+f.c+'44;border-radius:6px;color:'+f.c+';font-size:10px;padding:2px 8px;cursor:pointer">⎘</button></div><div style="font-size:12px;color:rgba(255,255,255,0.6);line-height:1.6">'+(r[f.k]||'').slice(0,150)+'…</div></div>';}).join('')+'</div>');
-  }catch(e){errMsg('repOut','Repurpose failed — please try again.');}
+    setH('repOut','<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">'+fmts.map(function(f){return '<div style="background:rgba(255,255,255,0.025);border:1px solid '+f.c+'25;border-radius:13px;padding:14px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><span style="font-size:11px;font-weight:700;color:'+f.c+'">'+f.i+' '+f.l+'</span><button onclick="navigator.clipboard.writeText(this.dataset.t);this.textContent=\'✓\';setTimeout(function(){this.textContent=\'⎘\';}.bind(this),2000)" data-t="'+(r[f.k]||'').replace(/"/g,'&quot;').replace(/'/g,'&#39;')+'" style="background:transparent;border:1px solid '+f.c+'44;border-radius:6px;color:'+f.c+';font-size:10px;padding:2px 8px;cursor:pointer">⎘</button></div><div style="font-size:12px;color:rgba(255,255,255,0.6);line-height:1.6">'+(r[f.k]||'').slice(0,150)+'...</div></div>';}).join('')+'</div>');
+  }catch(e){errMsg('repOut','Repurpose failed.');}
   doneBtn(btn,'♻️ Repurpose Into 8 Formats — Free');
 }
 
-
-
-// ── INIT ───────────────────────────────────────────────────────
-function animateNumber(el,target,duration,prefix,suffix){
-  prefix=prefix||'';suffix=suffix||'';
-  var startTime=null;
-  var isFloat=target%1!==0;
-  function ease(t){return t<0.5?2*t*t:((-2*t*t)+(4*t)-1);}
-  function step(ts){
-    if(!startTime)startTime=ts;
-    var progress=Math.min((ts-startTime)/duration,1);
-    var val=ease(progress)*target;
-    el.textContent=prefix+(isFloat?val.toFixed(1):Math.floor(val))+suffix;
-    if(progress<1)requestAnimationFrame(step);
-    else el.textContent=prefix+target+suffix;
-  }
-  requestAnimationFrame(step);
-}
-function observeNumbers(){
-  var els=document.querySelectorAll('[data-count]');
-  if(!els.length)return;
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(entry.isIntersecting){
-        var el=entry.target;
-        var prefix=el.getAttribute('data-prefix')||'';
-        var suffix=el.getAttribute('data-suffix')||'';
-        var target=parseFloat(el.getAttribute('data-count'));
-        el.style.animation='numPop 0.5s cubic-bezier(0.22,1,0.36,1) both';
-        animateNumber(el,target,1200,prefix,suffix);
-        io.unobserve(el);
-      }
-    });
-  },{threshold:0.4});
-  els.forEach(function(el){io.observe(el);});
-}
 window.onload=function(){
-  $('panel-create').style.display='block';
+  G('panel-create').style.display='block';
   observeNumbers();
-  $('freepikKey').addEventListener('input',function(){
+  G('freepikKey').addEventListener('input',function(){
     var has=this.value.trim().length>0;
-    if($('imgKeyWarn'))$('imgKeyWarn').style.display=has?'none':'block';
-    $('freepikStatus').innerHTML=has?'✅ Key saved':'🔑 Key required';
-    $('freepikStatus').style.background=has?'rgba(16,185,129,0.15)':'rgba(245,158,11,0.15)';
-    $('freepikStatus').style.borderColor=has?'rgba(16,185,129,0.3)':'rgba(245,158,11,0.3)';
-    $('freepikStatus').style.color=has?'#6ee7b7':'#fde68a';
+    if(G('imgKeyWarn'))G('imgKeyWarn').style.display=has?'none':'block';
+    if(G('adImgKeyWarn'))G('adImgKeyWarn').style.display=has?'none':'block';
+    G('freepikStatus').innerHTML=has?'✅ Key saved':'🔑 Key required';
+    G('freepikStatus').style.background=has?'rgba(16,185,129,0.15)':'rgba(245,158,11,0.15)';
+    G('freepikStatus').style.borderColor=has?'rgba(16,185,129,0.3)':'rgba(245,158,11,0.3)';
+    G('freepikStatus').style.color=has?'#6ee7b7':'#fde68a';
   });
 };
 </script>
