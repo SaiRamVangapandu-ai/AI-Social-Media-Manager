@@ -648,19 +648,15 @@ function switchTab(id){
   var panel=$('panel-'+id);
   panel.style.display='block';
 
-  // animate all cards in the panel
+  // animate cards only on first visit
   var cards=panel.querySelectorAll('.card');
   cards.forEach(function(c,i){
-    c.style.animation='none';
-    c.offsetHeight;
-    c.style.animation='cardSlideUp 0.5s '+(i*0.1)+'s cubic-bezier(0.22,1,0.36,1) both';
-  });
-
-  // animate inner rows/items inside each panel
-  panel.querySelectorAll('.post-card,.bar-row,.insight-row,.trend-row').forEach(function(el,i){
-    el.style.animation='none';
-    el.offsetHeight;
-    el.style.animation='cardSlideUp 0.4s '+(0.08+i*0.05)+'s cubic-bezier(0.22,1,0.36,1) both';
+    if(!c.dataset.animated){
+      c.style.animation='none';
+      c.offsetHeight;
+      c.style.animation='cardSlideUp 0.5s '+(i*0.1)+'s cubic-bezier(0.22,1,0.36,1) both';
+      c.dataset.animated='1';
+    }
   });
 
   if(id==='analytics') renderAnalytics();
@@ -682,9 +678,12 @@ async function freeAI(prompt){
 function renderAnalytics(){
   var cards=document.querySelectorAll('#panel-analytics .card');
   cards.forEach(function(c,i){
-    c.style.animation='none';
-    c.offsetHeight;
-    c.style.animation='cardSlideUp 0.55s '+(i*0.13)+'s cubic-bezier(0.22,1,0.36,1) both';
+    if(!c.dataset.animated){
+      c.style.animation='none';
+      c.offsetHeight;
+      c.style.animation='cardSlideUp 0.55s '+(i*0.13)+'s cubic-bezier(0.22,1,0.36,1) both';
+      c.dataset.animated='1';
+    }
   });
 
   setH('ig-perf',igPerfData.map(function(d,i){
