@@ -918,7 +918,13 @@ async function genMonetizationStrategy(){
 
 // ── INIT ──
 window.onload=function(){
-  switchTab('create');
+  // Show create panel without scrolling on first load
+  document.querySelectorAll('.tab-panel').forEach(function(p){p.style.display='none';});
+  var panel=G('panel-create');
+  if(panel){
+    panel.style.display='block';
+    panel.querySelectorAll('.card').forEach(function(c,i){c.style.animation='none';c.offsetHeight;c.style.animation='cardSlideUp 0.5s '+(i*0.1)+'s cubic-bezier(0.22,1,0.36,1) both';});
+  }
   G('freepikKey').addEventListener('input',function(){
     var has=this.value.trim().length>0;
     var fs=G('freepikStatus');
