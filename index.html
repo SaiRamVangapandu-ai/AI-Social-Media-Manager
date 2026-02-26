@@ -17,14 +17,14 @@ select option{background:#0a0a1e;color:white}
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 @keyframes slideDown{from{opacity:0;transform:translateY(-22px)}to{opacity:1;transform:none}}
 @keyframes zoomIn{from{opacity:0;transform:scale(0.88)}to{opacity:1;transform:scale(1)}}
-@keyframes shimmer{0%{background-position:200% center}100%{background-position:-200% center}}
+@keyframes gradientShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
 @keyframes countUp{from{opacity:0;transform:translateY(10px) scale(0.85)}to{opacity:1;transform:translateY(0) scale(1)}}
 @keyframes navPop{from{opacity:0;transform:translateY(20px) scale(0.93)}to{opacity:1;transform:translateY(0) scale(1)}}
 @keyframes badgePing{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
 @keyframes cardSlideUp{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
 @keyframes tagFadeIn{from{opacity:0;transform:translateY(8px) scale(0.9)}to{opacity:1;transform:translateY(0) scale(1)}}
 @keyframes insightSlide{from{opacity:0;transform:translateX(-18px)}to{opacity:1;transform:translateX(0)}}
-.live-dot{width:5px;height:5px;border-radius:50%;background:#10b981;display:inline-block;animation:livepulse 2s infinite;flex-shrink:0}
+.live-dot{width:5px;height:5px;border-radius:50%;background:#10b981;display:inline-block;animation:livepulse 2.5s ease-in-out infinite;flex-shrink:0;will-change:opacity}
 .card{background:rgba(12,12,32,0.85);border:1px solid rgba(99,102,241,0.18);border-radius:20px;backdrop-filter:blur(24px);box-shadow:0 8px 32px rgba(0,0,0,0.4);padding:24px;margin-bottom:16px}
 .lbl{color:rgba(165,180,252,0.75);font-size:10.5px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px;display:block}
 .inp{width:100%;background:rgba(255,255,255,0.035);border:1px solid rgba(99,102,241,0.18);border-radius:12px;color:rgba(255,255,255,0.9);font-size:14px;padding:11px 15px;outline:none;transition:border-color 0.2s;resize:none}
@@ -63,7 +63,7 @@ select option{background:#0a0a1e;color:white}
     <span class="live-dot"></span>
     <span style="font-size:11px;font-weight:700;color:#a5b4fc;letter-spacing:0.1em;text-transform:uppercase">@gozenoti · Live Profile Data</span>
   </div>
-  <h1 style="font-size:30px;font-weight:900;margin:0 0 6px;background:linear-gradient(270deg,#e0e7ff,#a5b4fc,#c084fc,#f0abfc,#a5b4fc,#e0e7ff);background-size:400% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.025em;line-height:1.15;animation:shimmer 4s linear infinite">AI Social Media Intelligence Platform</h1>
+  <h1 style="font-size:30px;font-weight:900;margin:0 0 6px;background:linear-gradient(270deg,#e0e7ff,#a5b4fc,#c084fc,#f0abfc,#a5b4fc,#e0e7ff);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.025em;line-height:1.15;animation:gradientShift 6s ease infinite;will-change:background-position">AI Social Media Intelligence Platform</h1>
   <p style="color:rgba(255,255,255,0.35);font-size:13px">Predict · Personalize · Automate · Amplify</p>
 </div>
 
@@ -392,7 +392,6 @@ select option{background:#0a0a1e;color:white}
       <button onclick="showYTTab('monetize')" id="yts-monetize" class="yts-btn" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:12px 6px;cursor:pointer;text-align:center;color:rgba(255,255,255,0.5)"><div style="font-size:20px;margin-bottom:4px">💰</div><div style="font-size:11px;font-weight:700">Monetization</div></button>
     </div>
   </div>
-
   <div id="ytp-analytics" class="yt-sub-panel">
     <div class="card"><div class="sh"><div class="sh-icon" style="background:linear-gradient(135deg,rgba(255,0,0,0.3),rgba(255,80,0,0.2));border-color:rgba(255,0,0,0.4)">▶️</div><div><div style="color:white;font-weight:700;font-size:15.5px">@gozenoti YouTube Channel</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">8.2K subscribers · 4.8% engagement</div></div><div style="margin-left:auto;display:flex;align-items:center;gap:5px;background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.3);border-radius:20px;padding:4px 10px"><span class="live-dot"></span><span style="font-size:10px;font-weight:700;color:#6ee7b7">Live</span></div></div>
       <div class="divider"></div>
@@ -412,7 +411,6 @@ select option{background:#0a0a1e;color:white}
       </div>
     </div>
   </div>
-
   <div id="ytp-seo" class="yt-sub-panel" style="display:none">
     <div class="card"><div class="sh"><div class="sh-icon">🔍</div><div><div style="color:white;font-weight:700;font-size:15.5px">SEO Title &amp; Description Optimizer</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">Rank higher · More clicks · Better discovery</div></div></div>
       <div class="divider"></div>
@@ -425,7 +423,6 @@ select option{background:#0a0a1e;color:white}
       <div id="seoOut"></div>
     </div>
   </div>
-
   <div id="ytp-ideas" class="yt-sub-panel" style="display:none">
     <div class="card"><div class="sh"><div class="sh-icon">💡</div><div><div style="color:white;font-weight:700;font-size:15.5px">Video Ideas Generator</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">AI-powered ideas tailored to Zenoti's audience</div></div></div>
       <div class="divider"></div>
@@ -438,7 +435,6 @@ select option{background:#0a0a1e;color:white}
       <div id="ideasOut"></div>
     </div>
   </div>
-
   <div id="ytp-thumbnail" class="yt-sub-panel" style="display:none">
     <div class="card"><div class="sh"><div class="sh-icon">🖼️</div><div><div style="color:white;font-weight:700;font-size:15.5px">AI Thumbnail Generator</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">High-CTR concepts + Freepik AI image</div></div></div>
       <div class="divider"></div>
@@ -462,7 +458,6 @@ select option{background:#0a0a1e;color:white}
       <div id="thumbImgOut" style="margin-top:8px"></div>
     </div>
   </div>
-
   <div id="ytp-shorts" class="yt-sub-panel" style="display:none">
     <div class="card"><div class="sh"><div class="sh-icon">🩳</div><div><div style="color:white;font-weight:700;font-size:15.5px">YouTube Shorts Storyboard</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">Scene-by-scene script + visual direction</div></div></div>
       <div class="divider"></div>
@@ -475,7 +470,6 @@ select option{background:#0a0a1e;color:white}
       <div id="shortsOut"></div>
     </div>
   </div>
-
   <div id="ytp-comments" class="yt-sub-panel" style="display:none">
     <div class="card"><div class="sh"><div class="sh-icon">💬</div><div><div style="color:white;font-weight:700;font-size:15.5px">Comment Reply AI</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">Turn comments into conversions</div></div></div>
       <div class="divider"></div>
@@ -488,7 +482,6 @@ select option{background:#0a0a1e;color:white}
       <div id="commentOut"></div>
     </div>
   </div>
-
   <div id="ytp-competitor" class="yt-sub-panel" style="display:none">
     <div class="card"><div class="sh"><div class="sh-icon">🔬</div><div><div style="color:white;font-weight:700;font-size:15.5px">Competitor Channel Analyzer</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">Find content gaps · Win</div></div></div>
       <div class="divider"></div>
@@ -501,7 +494,6 @@ select option{background:#0a0a1e;color:white}
       <div id="competitorOut"></div>
     </div>
   </div>
-
   <div id="ytp-monetize" class="yt-sub-panel" style="display:none">
     <div class="card"><div class="sh"><div class="sh-icon">💰</div><div><div style="color:white;font-weight:700;font-size:15.5px">Monetization Estimator</div><div style="color:rgba(255,255,255,0.38);font-size:11.5px">Revenue projections + strategy</div></div></div>
       <div class="divider"></div>
@@ -577,8 +569,8 @@ function switchTab(id){
   panel.querySelectorAll('.card').forEach(function(c,i){c.style.animation='none';c.offsetHeight;c.style.animation='cardSlideUp 0.5s '+(i*0.1)+'s cubic-bezier(0.22,1,0.36,1) both';});
   if(id==='analytics')renderAnalytics();
   if(id==='calendar')renderCal();
-  if(id==='ads'){renderAdBenchmarks();}
-  if(id==='youtube'){showYTTab('analytics');}
+  if(id==='ads')renderAdBenchmarks();
+  if(id==='youtube')showYTTab('analytics');
   setTimeout(function(){var top=panel.getBoundingClientRect().top+window.pageYOffset-16;window.scrollTo({top:top,behavior:'smooth'});},50);
 }
 
@@ -594,16 +586,9 @@ function showYTTab(id){
 }
 
 // ── ANALYTICS ──
-function barHTML(arr,prefix,minW){
-  return arr.map(function(d,i){
-    return '<div class="bar-row"><span style="min-width:'+(minW||'110px')+';font-size:12.5px;color:rgba(255,255,255,0.72);font-weight:600">'+d[0]+'</span><div class="mbar" style="height:8px"><div id="'+prefix+i+'" style="height:8px;border-radius:6px;width:0%;background:linear-gradient(90deg,'+d[2]+','+d[2]+'88);transition:width 0.85s '+(0.25+i*0.09)+'s ease"></div></div><span style="min-width:26px;font-size:12.5px;font-weight:800;color:'+d[2]+'">'+d[1]+'</span><span style="font-size:10px;color:rgba(255,255,255,0.28);padding-left:4px">'+d[3]+'</span></div>';
-  }).join('');
-}
-function smallBarHTML(arr,prefix){
-  return arr.map(function(d,i){
-    return '<div style="display:flex;align-items:center;gap:8px;margin-bottom:9px"><span style="font-size:11px;color:rgba(255,255,255,0.5);min-width:95px">'+d[0]+'</span><div class="mbar"><div id="'+prefix+i+'" style="height:6px;border-radius:4px;width:0%;background:'+d[2]+';transition:width 0.8s '+(0.25+i*0.09)+'s ease"></div></div><span style="font-size:11px;font-weight:700;color:'+d[2]+';min-width:28px">'+d[1]+'%</span></div>';
-  }).join('');
-}
+function barHTML(arr,prefix,minW){return arr.map(function(d,i){return '<div class="bar-row"><span style="min-width:'+(minW||'110px')+';font-size:12.5px;color:rgba(255,255,255,0.72);font-weight:600">'+d[0]+'</span><div class="mbar" style="height:8px"><div id="'+prefix+i+'" style="height:8px;border-radius:6px;width:0%;background:linear-gradient(90deg,'+d[2]+','+d[2]+'88);transition:width 0.85s '+(0.25+i*0.09)+'s ease"></div></div><span style="min-width:26px;font-size:12.5px;font-weight:800;color:'+d[2]+'">'+d[1]+'</span><span style="font-size:10px;color:rgba(255,255,255,0.28);padding-left:4px">'+d[3]+'</span></div>';}).join('');}
+function smallBarHTML(arr,prefix){return arr.map(function(d,i){return '<div style="display:flex;align-items:center;gap:8px;margin-bottom:9px"><span style="font-size:11px;color:rgba(255,255,255,0.5);min-width:95px">'+d[0]+'</span><div class="mbar"><div id="'+prefix+i+'" style="height:6px;border-radius:4px;width:0%;background:'+d[2]+';transition:width 0.8s '+(0.25+i*0.09)+'s ease"></div></div><span style="font-size:11px;font-weight:700;color:'+d[2]+';min-width:28px">'+d[1]+'%</span></div>';}).join('');}
+
 function renderAnalytics(){
   setH('ig-perf',barHTML(igPD,'igb','110px'));
   setH('li-perf',barHTML(liPD,'lib','130px'));
@@ -611,14 +596,10 @@ function renderAnalytics(){
   setH('li-insights',liID.map(function(ins){return '<div class="insight-row" style="background:'+ins.bg+';border:1px solid '+ins.bd+'"><span style="font-size:16px;flex-shrink:0">'+ins.icon+'</span><span style="font-size:12px;color:rgba(255,255,255,0.65);line-height:1.65">'+ins.text+'</span></div>';}).join(''));
   setH('li-roles',smallBarHTML(liRD,'rb'));
   setH('li-industries',smallBarHTML(liInD,'ib'));
-  setTimeout(function(){
-    igPD.forEach(function(d,i){var el=G('igb'+i);if(el)el.style.width=d[1]+'%';});
-    liPD.forEach(function(d,i){var el=G('lib'+i);if(el)el.style.width=d[1]+'%';});
-    liRD.forEach(function(d,i){var el=G('rb'+i);if(el)el.style.width=d[1]+'%';});
-    liInD.forEach(function(d,i){var el=G('ib'+i);if(el)el.style.width=d[1]+'%';});
-  },60);
+  setTimeout(function(){igPD.forEach(function(d,i){var el=G('igb'+i);if(el)el.style.width=d[1]+'%';});liPD.forEach(function(d,i){var el=G('lib'+i);if(el)el.style.width=d[1]+'%';});liRD.forEach(function(d,i){var el=G('rb'+i);if(el)el.style.width=d[1]+'%';});liInD.forEach(function(d,i){var el=G('ib'+i);if(el)el.style.width=d[1]+'%';});},60);
   renderTrendRows(allTrends,'trending','tr');
 }
+
 function renderYTAnalytics(){
   setH('yt-analytics-perf',barHTML(ytAnalyticsPD,'ytab','150px'));
   setH('yt-analytics-insights',ytAnalyticsInsights.map(function(ins){return '<div class="insight-row" style="background:'+ins.bg+';border:1px solid '+ins.bd+'"><span style="font-size:16px;flex-shrink:0">'+ins.icon+'</span><span style="font-size:12px;color:rgba(255,255,255,0.65);line-height:1.65">'+ins.text+'</span></div>';}).join(''));
@@ -629,10 +610,7 @@ function trendScoreColor(s){return s>=85?'#ef4444':s>=75?'#f59e0b':'#10b981';}
 function renderTrendRows(list,containerId,prefix){
   var tEl=G(containerId);if(!tEl)return;
   var rows='';
-  list.forEach(function(t,i){
-    var c=trendScoreColor(t.score),bg=t.score>=85?'rgba(239,68,68,0.12)':t.score>=75?'rgba(245,158,11,0.12)':'rgba(16,185,129,0.12)';
-    rows+='<div style="display:flex;align-items:center;gap:12px;padding:10px 12px;margin-bottom:6px;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.06);border-radius:12px"><div style="width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,rgba(99,102,241,0.35),rgba(168,85,247,0.35));display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#a5b4fc;flex-shrink:0">'+(i+1)+'</div><div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:700;color:white;margin-bottom:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+t.topic+'</div><div style="display:flex;gap:5px"><span style="font-size:9.5px;background:rgba(255,255,255,0.06);border-radius:20px;padding:2px 7px;color:rgba(255,255,255,0.4)">'+t.tag+'</span><span style="font-size:10px;color:rgba(255,255,255,0.25)">'+t.plats.join(' ')+'</span></div></div><div style="display:flex;align-items:center;gap:8px;flex-shrink:0"><div style="width:50px;height:5px;background:rgba(255,255,255,0.06);border-radius:3px;overflow:hidden"><div id="'+prefix+i+'" style="height:5px;border-radius:3px;width:0;background:'+c+';transition:width 0.7s ease"></div></div><div style="background:'+bg+';border:1px solid '+c+'55;border-radius:20px;padding:3px 10px"><span style="font-size:12px;font-weight:800;color:'+c+'">'+t.score+'</span></div><span style="font-size:11px;font-weight:700;color:#10b981;min-width:36px;text-align:right">'+t.delta+'</span></div></div>';
-  });
+  list.forEach(function(t,i){var c=trendScoreColor(t.score),bg=t.score>=85?'rgba(239,68,68,0.12)':t.score>=75?'rgba(245,158,11,0.12)':'rgba(16,185,129,0.12)';rows+='<div style="display:flex;align-items:center;gap:12px;padding:10px 12px;margin-bottom:6px;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.06);border-radius:12px"><div style="width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,rgba(99,102,241,0.35),rgba(168,85,247,0.35));display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#a5b4fc;flex-shrink:0">'+(i+1)+'</div><div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:700;color:white;margin-bottom:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+t.topic+'</div><div style="display:flex;gap:5px"><span style="font-size:9.5px;background:rgba(255,255,255,0.06);border-radius:20px;padding:2px 7px;color:rgba(255,255,255,0.4)">'+t.tag+'</span><span style="font-size:10px;color:rgba(255,255,255,0.25)">'+t.plats.join(' ')+'</span></div></div><div style="display:flex;align-items:center;gap:8px;flex-shrink:0"><div style="width:50px;height:5px;background:rgba(255,255,255,0.06);border-radius:3px;overflow:hidden"><div id="'+prefix+i+'" style="height:5px;border-radius:3px;width:0;background:'+c+';transition:width 0.7s ease"></div></div><div style="background:'+bg+';border:1px solid '+c+'55;border-radius:20px;padding:3px 10px"><span style="font-size:12px;font-weight:800;color:'+c+'">'+t.score+'</span></div><span style="font-size:11px;font-weight:700;color:#10b981;min-width:36px;text-align:right">'+t.delta+'</span></div></div>';});
   tEl.innerHTML=rows;
   setTimeout(function(){list.forEach(function(t,i){var b=G(prefix+i);if(b)b.style.width=t.score+'%';});},50);
 }
@@ -724,12 +702,7 @@ async function freepikImg(prompt,size,fk){
   if(data&&data.data&&data.data.length&&data.data[0]){var it=data.data[0];return it.base64?'data:image/jpeg;base64,'+it.base64:it.url;}
   if(data&&data.data&&data.data.task_id){
     var tid=data.data.task_id;
-    for(var i=0;i<20;i++){
-      await sleep(4000);
-      var p=await(await fetch('https://api.freepik.com/v1/ai/text-to-image/'+tid,{headers:{'x-freepik-api-key':fk}})).json();
-      if(p&&p.data&&(p.data.status==='COMPLETED'||p.data.status==='OK')){var imgs=p.data.generated||p.data||[];if(imgs[0])return imgs[0].base64?'data:image/jpeg;base64,'+imgs[0].base64:imgs[0].url;}
-      if(p&&p.data&&p.data.status==='FAILED')throw new Error('Task failed');
-    }
+    for(var i=0;i<20;i++){await sleep(4000);var p=await(await fetch('https://api.freepik.com/v1/ai/text-to-image/'+tid,{headers:{'x-freepik-api-key':fk}})).json();if(p&&p.data&&(p.data.status==='COMPLETED'||p.data.status==='OK')){var imgs=p.data.generated||p.data||[];if(imgs[0])return imgs[0].base64?'data:image/jpeg;base64,'+imgs[0].base64:imgs[0].url;}if(p&&p.data&&p.data.status==='FAILED')throw new Error('Task failed');}
   }
   throw new Error('No image returned');
 }
@@ -753,7 +726,7 @@ async function genAdVideo(){
   doneBtn(btn,'🎬 Generate Ad Video');
 }
 function handleAdUpload(input){var file=input.files[0];if(!file)return;var isV=file.type.startsWith('video/'),url=URL.createObjectURL(file);G('adUpIcon').textContent=isV?'🎬':'🖼️';G('adUpText').textContent=file.name;var p=G('adUpPreview');p.style.display='block';p.innerHTML=isV?'<video src="'+url+'" controls style="width:100%;border-radius:10px;max-height:200px"></video>':'<img src="'+url+'" style="width:100%;border-radius:10px;max-height:200px;object-fit:cover"/>';}
-function previewUploadAd(){var copy=getV('adUpCopy'),file=G('adUpMedia').files[0];if(!copy){alert('Please enter ad copy');return;}if(!file){alert('Please upload a creative');return;}setH('adUpOut','<div style="background:rgba(255,255,255,0.025);border:1px solid rgba(251,191,36,0.2);border-radius:14px;overflow:hidden;padding:14px"><div style="font-size:13.5px;font-weight:700;color:white;margin-bottom:10px">'+copy+'</div>'+G('adUpPreview').innerHTML+'<div style="margin-top:10px;background:rgba(16,185,129,0.06);border-top:1px solid rgba(16,185,129,0.15);padding:10px;border-radius:8px;font-size:11px;color:#6ee7b7;font-weight:700">✅ Ad Preview Ready — Publish via your ad platform</div></div>');}
+function previewUploadAd(){var copy=getV('adUpCopy'),file=G('adUpMedia').files[0];if(!copy){alert('Please enter ad copy');return;}if(!file){alert('Please upload a creative');return;}setH('adUpOut','<div style="background:rgba(255,255,255,0.025);border:1px solid rgba(251,191,36,0.2);border-radius:14px;overflow:hidden;padding:14px"><div style="font-size:13.5px;font-weight:700;color:white;margin-bottom:10px">'+copy+'</div>'+G('adUpPreview').innerHTML+'<div style="margin-top:10px;background:rgba(16,185,129,0.06);border-top:1px solid rgba(16,185,129,0.15);padding:10px;border-radius:8px;font-size:11px;color:#6ee7b7;font-weight:700">✅ Ad Preview Ready</div></div>');}
 
 // ── POST GENERATION ──
 function togPlat(el,p){el.classList.toggle('active');if(el.classList.contains('active')){if(S.selPlats.indexOf(p)<0)S.selPlats.push(p);}else{S.selPlats=S.selPlats.filter(function(x){return x!==p;});}}
@@ -872,10 +845,10 @@ async function genThumbConcept(){
   var title=getV('thumbTitle');if(!title){alert('Please enter the video title');return;}
   var btn=G('thumbConceptBtn');ldBtn(btn,'Generating...');setH('thumbOut','');
   try{
-    var r=safeJSON(await freeAI('YouTube thumbnail designer for Zenoti. Video title: "'+title+'". Thumbnail text: "'+getV('thumbText')+'". Style: '+S.thumbStyleSel+'. Color: '+G('thumbColor').value+'. Return ONLY valid JSON: {"concept1":{"layout":"description","mainElement":"what to show","textPlacement":"where","emotion":"feeling"},"concept2":{"layout":"...","mainElement":"...","textPlacement":"...","emotion":"..."},"concept3":{"layout":"...","mainElement":"...","textPlacement":"...","emotion":"..."},"freepikPrompt":"Detailed image generation prompt for the best concept","ctrTips":["tip1","tip2","tip3"]}'));
+    var r=safeJSON(await freeAI('YouTube thumbnail designer for Zenoti. Video title: "'+title+'". Text: "'+getV('thumbText')+'". Style: '+S.thumbStyleSel+'. Color: '+G('thumbColor').value+'. Return ONLY valid JSON: {"concept1":{"layout":"description","mainElement":"what to show","textPlacement":"where","emotion":"feeling"},"concept2":{"layout":"...","mainElement":"...","textPlacement":"...","emotion":"..."},"concept3":{"layout":"...","mainElement":"...","textPlacement":"...","emotion":"..."},"freepikPrompt":"Detailed image generation prompt","ctrTips":["tip1","tip2","tip3"]}'));
     window._thumbPrompt=r.freepikPrompt;
     var cols=['#6366f1','#ec4899','#f59e0b'];
-    setH('thumbOut','<div class="lbl" style="margin-bottom:10px">🎨 3 Thumbnail Concepts</div><div style="display:grid;gap:10px;margin-bottom:14px">'+[r.concept1,r.concept2,r.concept3].map(function(c,i){return '<div style="background:rgba(255,255,255,0.025);border:1px solid '+cols[i]+'33;border-radius:13px;padding:14px"><div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><span style="background:'+cols[i]+'22;color:'+cols[i]+';border:1px solid '+cols[i]+'44;border-radius:20px;padding:3px 10px;font-size:11px;font-weight:700">Concept '+(i+1)+'</span><span style="font-size:11px;color:rgba(255,255,255,0.4);font-style:italic">'+c.emotion+'</span></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:12px;color:rgba(255,255,255,0.65)"><div><span style="color:rgba(255,255,255,0.35);font-size:10px;font-weight:700;display:block;margin-bottom:2px">LAYOUT</span>'+c.layout+'</div><div><span style="color:rgba(255,255,255,0.35);font-size:10px;font-weight:700;display:block;margin-bottom:2px">MAIN ELEMENT</span>'+c.mainElement+'</div><div style="grid-column:span 2"><span style="color:rgba(255,255,255,0.35);font-size:10px;font-weight:700;display:block;margin-bottom:2px">TEXT PLACEMENT</span>'+c.textPlacement+'</div></div></div>';}).join('')+'</div><div style="background:rgba(16,185,129,0.07);border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:14px;margin-bottom:12px"><div style="font-size:10px;color:#6ee7b7;font-weight:700;text-transform:uppercase;margin-bottom:8px">✅ High-CTR Tips</div>'+(r.ctrTips||[]).map(function(t){return '<div style="font-size:12px;color:rgba(255,255,255,0.65);margin-bottom:5px"><span style="color:#10b981">+ </span>'+t+'</div>';}).join('')+'</div><div style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.22);border-radius:12px;padding:14px"><div style="font-size:10px;color:#a5b4fc;font-weight:700;text-transform:uppercase;margin-bottom:6px">🤖 Freepik AI Prompt (ready to use)</div><div style="font-size:12px;color:rgba(255,255,255,0.65);line-height:1.7;margin-bottom:8px;font-style:italic">'+r.freepikPrompt+'</div><button onclick="navigator.clipboard.writeText(this.dataset.t)" data-t="'+esc(r.freepikPrompt)+'" style="background:rgba(99,102,241,0.18);border:1px solid rgba(99,102,241,0.35);border-radius:8px;color:#a5b4fc;font-size:11.5px;padding:6px 13px;cursor:pointer">⎘ Copy Prompt</button></div>');
+    setH('thumbOut','<div class="lbl" style="margin-bottom:10px">🎨 3 Thumbnail Concepts</div><div style="display:grid;gap:10px;margin-bottom:14px">'+[r.concept1,r.concept2,r.concept3].map(function(c,i){return '<div style="background:rgba(255,255,255,0.025);border:1px solid '+cols[i]+'33;border-radius:13px;padding:14px"><div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><span style="background:'+cols[i]+'22;color:'+cols[i]+';border:1px solid '+cols[i]+'44;border-radius:20px;padding:3px 10px;font-size:11px;font-weight:700">Concept '+(i+1)+'</span><span style="font-size:11px;color:rgba(255,255,255,0.4);font-style:italic">'+c.emotion+'</span></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:12px;color:rgba(255,255,255,0.65)"><div><span style="color:rgba(255,255,255,0.35);font-size:10px;font-weight:700;display:block;margin-bottom:2px">LAYOUT</span>'+c.layout+'</div><div><span style="color:rgba(255,255,255,0.35);font-size:10px;font-weight:700;display:block;margin-bottom:2px">MAIN ELEMENT</span>'+c.mainElement+'</div><div style="grid-column:span 2"><span style="color:rgba(255,255,255,0.35);font-size:10px;font-weight:700;display:block;margin-bottom:2px">TEXT PLACEMENT</span>'+c.textPlacement+'</div></div></div>';}).join('')+'</div><div style="background:rgba(16,185,129,0.07);border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:14px;margin-bottom:12px"><div style="font-size:10px;color:#6ee7b7;font-weight:700;text-transform:uppercase;margin-bottom:8px">✅ High-CTR Tips</div>'+(r.ctrTips||[]).map(function(t){return '<div style="font-size:12px;color:rgba(255,255,255,0.65);margin-bottom:5px"><span style="color:#10b981">+ </span>'+t+'</div>';}).join('')+'</div><div style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.22);border-radius:12px;padding:14px"><div style="font-size:10px;color:#a5b4fc;font-weight:700;text-transform:uppercase;margin-bottom:6px">🤖 Freepik AI Prompt</div><div style="font-size:12px;color:rgba(255,255,255,0.65);line-height:1.7;margin-bottom:8px;font-style:italic">'+r.freepikPrompt+'</div><button onclick="navigator.clipboard.writeText(this.dataset.t)" data-t="'+esc(r.freepikPrompt)+'" style="background:rgba(99,102,241,0.18);border:1px solid rgba(99,102,241,0.35);border-radius:8px;color:#a5b4fc;font-size:11.5px;padding:6px 13px;cursor:pointer">⎘ Copy Prompt</button></div>');
   }catch(e){errMsg('thumbOut','Concept generation failed.');}
   doneBtn(btn,'🎨 Generate Concepts — Free');
 }
